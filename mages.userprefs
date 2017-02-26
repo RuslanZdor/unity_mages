@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\ability\effect\ElementalMiultiplicators.cs">
+    <Files>
+      <File FileName="Assets\script\item\weapon\TrollMace.cs" Line="9" Column="17" />
+      <File FileName="Assets\script\Person.cs" Line="60" Column="1" />
+      <File FileName="Assets\script\event\BasicHealEvent.cs" Line="6" Column="1" />
+      <File FileName="Assets\script\ability\effect\HealAbilityEffect.cs" Line="16" Column="1" />
+      <File FileName="Assets\script\ability\effect\DamageAbilityEffect.cs" Line="16" Column="1" />
+      <File FileName="Assets\script\ability\effect\ElementalMiultiplicators.cs" Line="142" Column="48" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="D:\ruslan_zdor\Unity\UnityProjects\mages\Assets\FightStartController.cs" line="9" column="1" />
+      <Breakpoint file="D:\ruslan_zdor\Unity\UnityProjects\mages\Assets\object\FightStartController.cs" line="9" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
