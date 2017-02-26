@@ -4,7 +4,7 @@ using System.Collections;
 public class Constants {
 
     /*Person parameters*/
-	public static int PERSON_BASE_HEALTH = 10;
+	public static int PERSON_BASE_HEALTH = 11;
     public static  int PERSON_BASE_MANA = 0;
     public static  int PERSON_HEALTH_PER_LEVEL = 0;
     public static  int PERSON_MANA_PER_LEVEL = 0;
