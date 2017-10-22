@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class FireMage : BaseMage {
-	public FireMage(AbilityTargetType ally, AbilityTargetType enemy) : base(ally, enemy) {
+	public FireMage() : base() {
         init();
     }
 

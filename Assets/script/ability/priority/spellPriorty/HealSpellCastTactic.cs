@@ -5,7 +5,7 @@ public class HealSpellCastTactic : AbstractTactic {
     
 	public override int getPriority() {
         bool hasDamage = false;
-		foreach (Person p in PartiesSingleton.getParty(person.ally).partyList) {
+		foreach (Person p in PartiesSingleton.getParty(person.ally).getLivePersons()) {
             if (p.isDamaged()) {
                 hasDamage = true;
             }

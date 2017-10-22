@@ -5,8 +5,8 @@ public class Weakness : Buff {
 
 	public Weakness(Person person) :  base(person, new DamageSpellCastTactic(3)) {
 		name = "Weakness";
-		timeCast = 1.0;
-		targetType = person.enemy;
+		timeCast = 1.0f;
+		targetType = AbilityTargetType.ENEMY;
 		manaCost = 1;
 		duration = 5;
 

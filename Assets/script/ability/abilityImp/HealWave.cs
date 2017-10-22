@@ -5,9 +5,9 @@ public class HealWave : Ability {
 
 	public HealWave(Person person) : base(person, new DamageSpellCastTactic(3)) {
 		name = "Heal Wave";
-		timeCast = 2.0;
+		timeCast = 2.0f;
 		manaCost = 1;
-		targetType = person.ally;
+		targetType = AbilityTargetType.FRIEND;
 
 		AbstractAbilityEffect effect = new HealAbilityEffect();
 		effect.targetsNumber = 1;

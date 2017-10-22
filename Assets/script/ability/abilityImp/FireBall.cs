@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class FireBall : Ability {
 	public FireBall(Person person) : base(person, new DamageSpellCastTactic(3)) {
 		name  = "Fireball";
-		timeCast = 1.5;
+		timeCast = 1.5f;
 		manaCost = 1;
-		targetType = person.enemy;
+		targetType = AbilityTargetType.ENEMY;
 
 		AbstractAbilityEffect effect = new DamageAbilityEffect();
 		effect.targetsNumber = 1;

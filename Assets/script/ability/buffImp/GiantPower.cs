@@ -5,8 +5,8 @@ public class GiantPower : Buff {
 
 	public GiantPower(Person person) : base(person, new DamageSpellCastTactic(3)) {
 		name = "Giant Power";
-		timeCast = 1.0;
-		targetType = person.ally;
+		timeCast = 1.0f;
+		targetType = AbilityTargetType.FRIEND;
 		manaCost = 1;
 		duration = 5;
 

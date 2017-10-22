@@ -8,7 +8,7 @@ public class RemoveSummonEvent : BasicTargetEvent {
 
 	public override void eventStart() {
 		Debug.Log(person.name + "was removed");
-        PartiesSingleton.getParty(target.ally).partyList.Remove(person);
+        PartiesSingleton.getParty(target.ally).removePerson(person);
         EventQueueSingleton.queue.removePersonEvents(person);
     }
 }

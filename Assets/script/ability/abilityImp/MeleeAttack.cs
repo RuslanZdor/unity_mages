@@ -6,7 +6,7 @@ public class MeleeAttack : Ability {
 	public MeleeAttack(Person person, string n) :  base(person, new MeleeAttackTactic()){
 		name = n;
 		timeCast = Constants.PERSON_MELEE_ATTACK_SPEED;
-		targetType = person.enemy;
+		targetType = AbilityTargetType.ENEMY;
 
 		AbstractAbilityEffect effect = new DamageAbilityEffect();
 		effect.targetsNumber = 1;

@@ -6,7 +6,7 @@ public class RemoveBuffEvent : BasicTargetEvent{
 	public Buff buff;
 
 	public override void eventStart() {
-        target.effectList.Remove(buff);
+        target.removeEffect(buff);
 		Debug.Log(eventTime + " : " + " remove " + buff.name + " from " +
                 target.name + "[" + target.health + "/" + target.maxHealth + "]");
     }

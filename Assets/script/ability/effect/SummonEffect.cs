@@ -10,18 +10,19 @@ public class SummonEffect : AbstractAbilityEffect{
 
 		Person clonePerson = (Person) person.Clone();
         clonePerson.summoner = owner;
+
         SummonEvent e = new SummonEvent();
         e.owner = owner;
         e.target = target;
         e.person = clonePerson;
         e.eventTime = EventQueueSingleton.queue.currentTime;
-        EventQueueSingleton.queue.events.Add(e);
+        EventQueueSingleton.queue.add(e);
 
         RemoveSummonEvent removeEvent = new RemoveSummonEvent();
         removeEvent.owner = owner;
         removeEvent.target = target;
         removeEvent.person = clonePerson;
         removeEvent.eventTime = EventQueueSingleton.queue.currentTime + duration;
-        EventQueueSingleton.queue.events.Add(removeEvent);
+        EventQueueSingleton.queue.add(removeEvent);
     }
 }

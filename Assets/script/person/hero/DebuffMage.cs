@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class DebuffMage : BaseMage {
-	public DebuffMage(AbilityTargetType ally, AbilityTargetType enemy) : base(ally, enemy)  {
+	public DebuffMage() : base()  {
         init();
     }
 

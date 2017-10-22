@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Ability : Named, ICloneable {
-	public double timeCast;
-	public double manaCost;
+public class Ability : ICloneable {
+    public String name;
+
+    public float timeCast;
+	public float manaCost;
 	public List<AbstractAbilityEffect> effectList = new List<AbstractAbilityEffect>();
 	public AbilityTargetType targetType;
 	public AbstractTactic abilityTactic;
@@ -13,11 +15,17 @@ public class Ability : Named, ICloneable {
 
 	public Person personOwner;
 
-	public virtual void eventStart() {
+    public virtual void eventStart() {
         if (canUse()) {
             personOwner.mana = personOwner.mana - manaCost;
 			foreach (AbstractAbilityEffect effect in effectList) {
-                Party party = PartiesSingleton.getParty(targetType);
+                AbilityTargetType targetParty = AbilityTargetType.ENEMY;
+                if (targetType == AbilityTargetType.ENEMY) {
+                    targetParty = personOwner.enemy;
+                }else {
+                    targetParty = personOwner.ally;
+                }
+                Party party = PartiesSingleton.getParty(targetParty);
                 List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber);
 				foreach (Person target in targets) {
                     effect.applyEffect(personOwner, target);
@@ -40,7 +48,7 @@ public class Ability : Named, ICloneable {
             e.eventTime = EventQueueSingleton.queue.currentTime + timeCast;
             e.ability = this;
             e.owner = person;
-            EventQueueSingleton.queue.events.Add(e);
+            EventQueueSingleton.queue.add(e);
         }
     }
 

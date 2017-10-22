@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class FastTroll : Troll {
-	public FastTroll (AbilityTargetType ally, AbilityTargetType enemy) : base(ally, enemy) {
+	public FastTroll () : base() {
         init();
     }
 

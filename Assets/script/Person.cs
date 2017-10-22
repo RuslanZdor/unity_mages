@@ -3,43 +3,62 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Person : Named, ICloneable {
+public class Person : MonoBehaviour, ICloneable {
 
-	public int level;
+    public int id;
+    public string name;
+    public int level;
 
-	public double health;
-	public double maxHealth;
+    public float health;
+    public float maxHealth;
 
-	public double healthPerLevel;
-	public double manaPerLevel;
+    public float healthPerLevel;
+    public float manaPerLevel;
 
-	public double mana;
-	public double maxMana;
+    public float mana;
+    public float maxMana;
 
-	public int numberParrallelCasts = 1;
+    public int numberParrallelCasts = 1;
 
-	public AbilityTargetType enemy;
-	public AbilityTargetType ally;
+    public AbilityTargetType enemy;
+    public AbilityTargetType ally;
 
-	public List<Ability> abilityList = new List<Ability>();
-	public List<Buff> effectList = new List<Buff>();
-	public  List<Item> itemList = new List<Item>();
+    public List<Ability> abilityList = new List<Ability>();
+    public List<Buff> effectList = new List<Buff>();
+    public List<Item> itemList = new List<Item>();
 
-	public List<Ability> usedAbilites = new List<Ability>();
+    public List<Ability> usedAbilites = new List<Ability>();
 
-	public Person summoner = null;
+    public Person summoner = null;
 
-	public int agro;
+    public int agro;
 
-	public bool hasAttribute(Buff b) {
-		if (effectList.FindAll((Buff buff) => buff.name.Equals(buff.name)).Count > 0) {
+    public bool isAlive;
+    public bool updateBuffs = false;
+
+    public String personImage = "";
+
+    void Update() {
+        if (health <= 0) {
+            isAlive = false;
+        }
+    }
+
+    public bool hasEffect(Buff b) {
+        if (effectList.FindAll((Buff buff) => buff.name.Equals(b.name)).Count > 0) {
             return true;
         }
         return false;
     }
 
-    public bool isAlive() {
-        return health > 0 ? true : false;
+    public void addEffect(Buff b) {
+        effectList.Add(b);
+        updateBuffs = true;
+    }
+
+    public void removeEffect(Buff b) {
+        effectList.Remove(b);
+        updateBuffs = true;
     }
 
     public bool isDamaged() {
@@ -47,29 +66,36 @@ public class Person : Named, ICloneable {
     }
 
     public double damage(Ability ability) {
-        double resultValue = 0;
-		for (int i = 0; i < ability.effectList.Count; i++) {
-			health -= ability.effectList[i].value;
-			resultValue += ability.effectList[i].value;
+        double resultValue = health;
+        if (isAlive) {
+            for (int i = 0; i < ability.effectList.Count; i++) {
+                health -= ability.effectList[i].value;
+            }
+
+            if (health < 0) {
+                health = 0;
+            }
         }
-        return resultValue;
+        return resultValue - health;
     }
 
     public double heal(Ability ability) {
         double resultValue = health;
-		for (int i = 0; i < ability.effectList.Count; i++) {
-			health += ability.effectList[i].value;
-        }
-        if (health > maxHealth) {
-            health = maxHealth;
+        if (isAlive) {
+            for (int i = 0; i < ability.effectList.Count; i++) {
+                health += ability.effectList[i].value;
+            }
+            if (health > maxHealth) {
+                health = maxHealth;
+            }
         }
         return health - resultValue;
     }
 
     public void eventStart(Ability ability) {
-        if (isAlive()) {
+        if (isAlive) {
             ability.eventStart();
-			if (!(ability.GetType() == typeof(ActiveBuff))) {
+            if (!(ability.GetType() == typeof(ActiveBuff))) {
                 usedAbilites.Remove(ability);
                 generateNextActiveEvent();
             }
@@ -80,40 +106,38 @@ public class Person : Named, ICloneable {
         GenerateAbilityEvent e = new GenerateAbilityEvent();
         e.eventTime = EventQueueSingleton.queue.currentTime;
         e.owner = this;
-        EventQueueSingleton.queue.events.Add(e);
+        EventQueueSingleton.queue.add(e);
     }
 
-	public void generateEvents() {
+    public void generateEvents() {
         for (int i = 0; i < numberParrallelCasts; i++) {
             generateNextActiveEvent();
         }
-		foreach (Buff buff in effectList) {
+        foreach (Buff buff in effectList) {
             buff.generateEvents(this);
         }
     }
 
-	public Person (AbilityTargetType pAlly, AbilityTargetType pEnemy) {
-        ally = pAlly;
-        enemy = pEnemy;
-
+    public Person() : base() {
         maxHealth = Constants.PERSON_BASE_HEALTH;
         maxMana = Constants.PERSON_BASE_MANA;
         healthPerLevel = Constants.PERSON_HEALTH_PER_LEVEL;
         manaPerLevel = Constants.PERSON_MANA_PER_LEVEL;
+        isAlive = true;
 
         agro = Constants.PERSON_AGRO;
     }
 
-	public object Clone() {
+    public object Clone() {
         try {
-			return this.MemberwiseClone();
-		} catch (Exception e) {
-			Debug.Log(e);
-		}
+            return this.MemberwiseClone();
+        } catch (Exception e) {
+            Debug.Log(e);
+        }
         return null;
     }
 
-	protected virtual void init() {
+    protected virtual void init() {
         maxMana = maxMana + level * manaPerLevel;
         mana = maxMana;
 
@@ -122,19 +146,19 @@ public class Person : Named, ICloneable {
 
         abilityList.Add(new MeleeAttack(this, "Melee Attack"));
 
-		for (int i = 0; i < itemList.Count; i++) {
-			Buff b = new Buff(this, new DamageSpellCastTactic(1));
-			foreach (AbstractModificator modificator in itemList[i].modificatorList) {
+        for (int i = 0; i < itemList.Count; i++) {
+            Buff b = new Buff(this, new DamageSpellCastTactic(1));
+            foreach (AbstractModificator modificator in itemList[i].modificatorList) {
                 b.modificator = modificator;
-				b.name = itemList.GetType().FullName + ":" + modificator.GetType().FullName;
+                b.name = itemList.GetType().FullName + ":" + modificator.GetType().FullName;
                 effectList.Add(b);
             }
 
-			abilityList.AddRange(itemList[i].abilityList);
+            abilityList.AddRange(itemList[i].abilityList);
         }
     }
 
-	public void updateAgro(int value) {
+    public void updateAgro(int value) {
         if (value > agro && value <= agro * 3) {
             agro = value;
         }

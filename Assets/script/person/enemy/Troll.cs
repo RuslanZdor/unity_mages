@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public abstract class Troll : Person {
 
-	public Troll(AbilityTargetType ally, AbilityTargetType enemy) : base(ally, enemy) {
+	public Troll() : base() {
     }
 
 	protected override void init() {
@@ -18,6 +18,8 @@ public abstract class Troll : Person {
 
         itemList.Add(new TrollMace(this));
 
-		base.init();
+        personImage = "texture/troll";
+
+        base.init();
     }
 }

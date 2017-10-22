@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class HeavyTroll : Troll {
-	public HeavyTroll(AbilityTargetType ally, AbilityTargetType enemy) : base(ally, enemy) {
+	public HeavyTroll() : base() {
         init();
     }
 

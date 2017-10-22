@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Golem : Person{
-	public Golem(AbilityTargetType ally, AbilityTargetType enemy) : base(ally, enemy) {
+	public Golem() : base() {
         init();
     }
 
@@ -17,7 +17,10 @@ public class Golem : Person{
 
         agro = Constants.GOLEM_AGRO;
 
-		base.init();
+        personImage = "texture/troll";
+
+
+        base.init();
 
     }
 }

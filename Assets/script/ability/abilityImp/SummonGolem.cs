@@ -4,10 +4,12 @@ using System.Collections;
 public class SummonGolem : SummonAbility {
 
 	public SummonGolem(Person person) : base(person, new SummonCastTactic(3)) {
-		Person summon = new Golem(person.ally, person.enemy);
+
+        Person summon = new Golem();
+        summon.ally = person.ally;
+        summon.enemy = AbilityTargetType.FRIEND;
 		getAbilityTactic().summon = summon;
-		name = "Summon Golem";
-		timeCast = 1.0;
+		timeCast = 1.0f;
 		targetType = person.ally;
 		manaCost = 1;
 

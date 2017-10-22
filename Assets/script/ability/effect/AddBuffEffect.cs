@@ -17,13 +17,13 @@ public class AddBuffEffect : AbstractAbilityEffect{
         e.target = target;
         e.buff= ability;
         e.eventTime = EventQueueSingleton.queue.currentTime;
-        EventQueueSingleton.queue.events.Add(e);
+        EventQueueSingleton.queue.add(e);
 
         RemoveBuffEvent removeEvent = new RemoveBuffEvent();
         removeEvent.owner = owner;
         removeEvent.target = target;
         removeEvent.buff = ability;
         removeEvent.eventTime = EventQueueSingleton.queue.currentTime + ability.duration;
-        EventQueueSingleton.queue.events.Add(removeEvent);
+        EventQueueSingleton.queue.add(removeEvent);
     }
 }

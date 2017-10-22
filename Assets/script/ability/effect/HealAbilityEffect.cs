@@ -15,6 +15,6 @@ public class HealAbilityEffect : AbstractAbilityEffect {
 		e.target = target;
 		e.eventTime = EventQueueSingleton.queue.currentTime;
 
-        EventQueueSingleton.queue.events.Add(e);
+        EventQueueSingleton.queue.add(e);
     }
 }

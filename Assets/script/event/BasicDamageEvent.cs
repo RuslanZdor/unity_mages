@@ -21,7 +21,7 @@ public class BasicDamageEvent : BasicTargetEvent {
         owner.updateAgro(owner.agro + 1);
         target.updateAgro(target.agro - 1);
 
-        if (!target.isAlive()) {
+        if (!target.isAlive) {
 			Debug.Log(eventTime + " : " + target.name + " is dead");
         }
     }

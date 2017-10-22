@@ -12,12 +12,12 @@ public class WithoutBuffTactic : AbstractTargetTactic {
 
 	public override List<Person> getTargets(Party party, int count) {
         List<Person> list = party.getLivePersons();
-		list.RemoveAll((Person person) => person.hasAttribute(buff));
+		list.RemoveAll((Person person) => person.hasEffect(buff));
 
 		if (count >= list.Count) {
             return list;
         }else {
- //           Collections.shuffle(list, new Random());
+            shuffle(list);
 			return list.GetRange(0, count);
         }
     }

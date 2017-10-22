@@ -15,6 +15,6 @@ public class DamageAbilityEffect : AbstractAbilityEffect {
         e.ability = ability;
         e.eventTime = EventQueueSingleton.queue.currentTime;
 
-        EventQueueSingleton.queue.events.Add(e);
+        EventQueueSingleton.queue.add(e);
     }
 }

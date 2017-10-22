@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public abstract class BaseMage : Person {
-	public BaseMage(AbilityTargetType ally, AbilityTargetType enemy) : base(ally, enemy) {
+	public BaseMage() : base() {
    }
 
 	protected override void init() {
@@ -13,6 +13,9 @@ public abstract class BaseMage : Person {
         manaPerLevel = Constants.BASE_MAGE_MANA_PER_LEVEL;
 
         itemList.Add(new MageStaff(this));
+
+        personImage = "texture/model";
+
         base.init();
     }
 }
