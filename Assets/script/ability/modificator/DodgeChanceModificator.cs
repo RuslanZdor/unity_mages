@@ -3,9 +3,9 @@ using System.Collections;
 
 public class DodgeChanceModificator : AbstractModificator{
 
-    public double chance;
+    public float chance;
 
-    public DodgeChanceModificator(double chance) {
+    public DodgeChanceModificator(float chance) {
         this.chance =  chance;
     }
 		

@@ -3,9 +3,9 @@ using System.Collections;
 
 public class CritChanceModificator : AbstractModificator{
 
-	public double critChange;
+	public float critChange;
 
-    public CritChanceModificator(double critChange) {
+    public CritChanceModificator(float critChange) {
         this.critChange =  critChange;
     }
 

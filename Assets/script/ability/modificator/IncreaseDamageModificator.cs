@@ -3,9 +3,9 @@ using System.Collections;
 
 public class IncreaseDamageModificator : AbstractModificator{
 
-    public double value;
+    public float value;
 
-    public IncreaseDamageModificator(double chance) {
+    public IncreaseDamageModificator(float chance) {
         this.value =  chance;
     }
 		

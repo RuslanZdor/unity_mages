@@ -14,10 +14,8 @@ public class HealthObjectController : MonoBehaviour {
     private GameObject healIndicator;
     private GameObject indicatorsBackground;
 
-    private ParticleSystem attackAnimation;
-
     void Start() {
-        person = transform.GetComponent<Person>();
+        person = transform.GetComponent<PersonController>().person;
 
         healthSlider = transform.Find("healthBar/slider").GetComponent<Slider>();
         if (healthSlider != null && person != null) {
@@ -28,8 +26,6 @@ public class HealthObjectController : MonoBehaviour {
         damageIndicator = transform.Find("indicators/damageIndicator").gameObject;
         damageIndicator.GetComponent<Text>().enabled = false;
         healIndicator = transform.Find("indicators/healIndicator").gameObject;
-        attackAnimation = transform.Find("model/animation/attackAnimation").GetComponent<ParticleSystem>();
-        attackAnimation.Stop();
         indicatorsBackground = transform.Find("indicators").gameObject;
         indicatorsBackground.GetComponent<Image>().color = new Color(0, 0, 0, 0);
     }
@@ -51,9 +47,6 @@ public class HealthObjectController : MonoBehaviour {
                     damageIndicator.GetComponent<Text>().enabled = true;
                     damageIndicator.GetComponent<Text>().text = (healthSlider.value - person.health).ToString();
 
-                    if (attackAnimation.isStopped) {
-                        attackAnimation.Play();
-                    }
                 } else {
                     indicatorsBackground.GetComponent<Image>().color = new Color(((float) 55 / 256), ((float) 244 / 256), ((float) 48 / 256), ((float)157 / 256));
 

@@ -8,7 +8,7 @@ public class ManaObjectController : MonoBehaviour {
     private Slider slider;
 
     void Start() {
-        person = transform.GetComponent<Person>();
+        person = transform.GetComponent<PersonController>().person;
 
         slider = transform.Find("manaBar/slider").GetComponent<Slider>();
         if (slider != null && person != null) {

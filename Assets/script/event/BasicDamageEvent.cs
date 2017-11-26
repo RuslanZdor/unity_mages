@@ -4,7 +4,7 @@ using System.Collections;
 public class BasicDamageEvent : BasicTargetEvent {
 
 
-	public override void eventStart() {
+	public override float eventStart() {
 
 		foreach (Buff buff in owner.effectList) {
             buff.modificator.updateMakingDamage(ability);
@@ -14,16 +14,25 @@ public class BasicDamageEvent : BasicTargetEvent {
             buff.modificator.updateGettingDamage(ability);
         }
 
-        double value = target.damage(ability);
-		Debug.Log(eventTime + " : " + owner.name + " make " + value +
-                " damage to " + target.name + "[" + target.health + "/" + target.maxHealth + "]");
-
+        float value = target.damage(ability);
+        owner.statistics.damageDealed += value;
         owner.updateAgro(owner.agro + 1);
         target.updateAgro(target.agro - 1);
+
+        if (value > 0) {
+            target.personController.animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISHITTEN);
+        }
 
         if (!target.isAlive) {
 			Debug.Log(eventTime + " : " + target.name + " is dead");
         }
+
+        return 0.0f;
+    }
+
+    public override string toString() {
+        return owner.name + " make " +
+                " damage to " + target.name + "[" + target.health + "/" + target.maxHealth + "]";
     }
 
 }

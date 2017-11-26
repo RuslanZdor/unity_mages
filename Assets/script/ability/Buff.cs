@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Buff : Ability {
 
 	public AbstractModificator modificator;
-	public double duration;
+	public float duration;
 
 	public int priority = 0;
 
@@ -15,13 +15,13 @@ public class Buff : Ability {
         try {
 			cl = (Buff) this.MemberwiseClone();
 		} catch (Exception e) {
-			Debug.Log(e);
+			Debug.LogError(e);
         }
 
         return cl;
     }
 
-	public override void eventStart() {
+	public override float eventStart() {
 		foreach (AbstractAbilityEffect effect in effectList) {
             for (int i = 0; i < effect.targetsNumber; i++) {
                 Party party = PartiesSingleton.getParty(targetType);
@@ -31,6 +31,7 @@ public class Buff : Ability {
                 }
             }
         }
+        return animationTIme;
     }
 
 	public bool Equals(Buff obj) {

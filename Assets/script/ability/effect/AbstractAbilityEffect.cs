@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 
 public abstract class AbstractAbilityEffect : ICloneable{
+
     public AbstractValueGenerator valueGenerator;
 	public int value;
 	public int targetsNumber;

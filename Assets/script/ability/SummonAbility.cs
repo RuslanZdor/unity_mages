@@ -5,7 +5,7 @@ using System;
 public class SummonAbility : Ability{
 
 	public Person person;
-	public double duration;
+	public float duration;
 
 	public int priority = 0;
 
@@ -14,7 +14,7 @@ public class SummonAbility : Ability{
         try {
 			clone = (SummonAbility) base.Clone();
 		} catch (Exception e) {
-			Debug.Log(e);
+			Debug.LogError(e);
         }
 
         return clone;

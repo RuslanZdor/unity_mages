@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 public abstract class BaseMage : Person {
 	public BaseMage() : base() {
-   }
+        personImage = "texture/model";
 
-	protected override void init() {
         maxHealth = Constants.BASE_MAGE_HEALTH;
         maxMana = Constants.BASE_MAGE_MANA;
         healthPerLevel = Constants.BASE_MAGE_HEALTH_PER_LEVEL;
@@ -14,8 +13,8 @@ public abstract class BaseMage : Person {
 
         itemList.Add(new MageStaff(this));
 
-        personImage = "texture/model";
-
-        base.init();
+        Shield shield = new Shield(this);
+        shield.isActive = false;
+        itemList.Add(shield);
     }
 }

@@ -8,8 +8,10 @@ public class FireBall : Ability {
 		timeCast = 1.5f;
 		manaCost = 1;
 		targetType = AbilityTargetType.ENEMY;
+        animation = "animation/meleeAttackAnimation";
 
-		AbstractAbilityEffect effect = new DamageAbilityEffect();
+
+        AbstractAbilityEffect effect = new DamageAbilityEffect();
 		effect.targetsNumber = 1;
 		effect.valueGenerator = new RangeValueGenerator(5,15);
 		effect.attribures.Add(EffectAttribures.FIRE);

@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class IncreaseMeleeDamageModificator : AbstractModificator{
-    public double value;
+    public float value;
 
-    public IncreaseMeleeDamageModificator(double value) {
+    public IncreaseMeleeDamageModificator(float value) {
         this.value =  value;
     }
 

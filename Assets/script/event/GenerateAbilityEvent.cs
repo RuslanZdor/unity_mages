@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class GenerateAbilityEvent : BasicTargetEvent {
-	public override void eventStart() {
+	public override float eventStart() {
         Ability ability = null;
         int priority = -1;
 		foreach (Ability ab in owner.abilityList) {
@@ -16,9 +16,24 @@ public class GenerateAbilityEvent : BasicTargetEvent {
             }
         }
         if (ability != null) {
-			Debug.Log(EventQueueSingleton.queue.currentTime + " : " + owner.name + " start casting " + ability.name);
             ability.generateEvents(owner);
             owner.usedAbilites.Add(ability);
+
+            if (ability.effectList.FindAll(
+                (AbstractAbilityEffect eff) =>
+                eff.attribures.FindAll(
+                    (EffectAttribures attr) => attr == EffectAttribures.MELEE_ATTACK
+                ).Count > 0
+            ).Count > 0) {
+
+            }else {
+                owner.startCastAbility();
+            }
         }
+        return 0.0f;
+    }
+
+    public override string toString() {
+        return "";  //owner.name + " generate ability";
     }
 }

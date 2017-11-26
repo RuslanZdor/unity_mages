@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MeleeAttack : Ability {
 
-	public MeleeAttack(Person person, string n) :  base(person, new MeleeAttackTactic()){
+	public MeleeAttack(Person person, string n) :  base(person, new MeleeAttackTactic(1)){
 		name = n;
 		timeCast = Constants.PERSON_MELEE_ATTACK_SPEED;
 		targetType = AbilityTargetType.ENEMY;
@@ -15,7 +15,7 @@ public class MeleeAttack : Ability {
 
 		effectList.Add(effect);
 
-		targetTactic = new RandomTargetTactic();
+        targetTactic = new RandomTargetTactic();
 	}
 }
 

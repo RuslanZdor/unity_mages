@@ -5,12 +5,14 @@ using System.Collections.Generic;
 public abstract class Item {
 	public List<AbstractModificator> modificatorList = new List<AbstractModificator>();
 	public List<Ability> abilityList = new List<Ability>();
-	public double cost;
+	public float cost;
 	public int maxDurability;
 	public int durability;
 	public Person owner;
 	public int level;
     public string name;
+
+    public bool isActive = true;
 
     public AbstractAbilityEffect getUseItem() {
         UseItemEffect useItem = new UseItemEffect();

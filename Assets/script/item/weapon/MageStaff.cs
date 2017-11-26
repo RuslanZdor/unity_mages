@@ -21,6 +21,8 @@ public class MageStaff : Item {
 
         abilityList.Add(attack);
 
-		base.init();
+        modificatorList.Add(new CritChanceModificator(100));
+        
+        base.init();
     }
 }

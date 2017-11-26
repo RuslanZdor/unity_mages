@@ -3,7 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Person : MonoBehaviour, ICloneable {
+public class Person : ICloneable {
+
+    public PersonController personController;
 
     public int id;
     public string name;
@@ -25,6 +27,8 @@ public class Person : MonoBehaviour, ICloneable {
 
     public List<Ability> abilityList = new List<Ability>();
     public List<Buff> effectList = new List<Buff>();
+
+    public List<Ability> knownAbilities = new List<Ability>();
     public List<Item> itemList = new List<Item>();
 
     public List<Ability> usedAbilites = new List<Ability>();
@@ -38,11 +42,7 @@ public class Person : MonoBehaviour, ICloneable {
 
     public String personImage = "";
 
-    void Update() {
-        if (health <= 0) {
-            isAlive = false;
-        }
-    }
+    public PersonStatistics statistics = new PersonStatistics();
 
     public bool hasEffect(Buff b) {
         if (effectList.FindAll((Buff buff) => buff.name.Equals(b.name)).Count > 0) {
@@ -65,8 +65,8 @@ public class Person : MonoBehaviour, ICloneable {
         return maxHealth > health;
     }
 
-    public double damage(Ability ability) {
-        double resultValue = health;
+    public float damage(Ability ability) {
+        float resultValue = health;
         if (isAlive) {
             for (int i = 0; i < ability.effectList.Count; i++) {
                 health -= ability.effectList[i].value;
@@ -79,8 +79,8 @@ public class Person : MonoBehaviour, ICloneable {
         return resultValue - health;
     }
 
-    public double heal(Ability ability) {
-        double resultValue = health;
+    public float heal(Ability ability) {
+        float resultValue = health;
         if (isAlive) {
             for (int i = 0; i < ability.effectList.Count; i++) {
                 health += ability.effectList[i].value;
@@ -92,14 +92,16 @@ public class Person : MonoBehaviour, ICloneable {
         return health - resultValue;
     }
 
-    public void eventStart(Ability ability) {
+    public float eventStart(Ability ability) {
+        float time = 0.0f;
         if (isAlive) {
-            ability.eventStart();
+            time = ability.eventStart();
             if (!(ability.GetType() == typeof(ActiveBuff))) {
                 usedAbilites.Remove(ability);
                 generateNextActiveEvent();
             }
         }
+        return time;
     }
 
     public void generateNextActiveEvent() {
@@ -126,41 +128,81 @@ public class Person : MonoBehaviour, ICloneable {
         isAlive = true;
 
         agro = Constants.PERSON_AGRO;
+
+        knownAbilities.Add(new MeleeAttack(this, "Melee Attack"));
     }
 
     public object Clone() {
         try {
-            return this.MemberwiseClone();
+           Person newPerson = (Person) this.MemberwiseClone();
+            foreach  (Ability ab in newPerson.abilityList) {
+                ab.abilityTactic.person = newPerson;
+                ab.personOwner = newPerson;
+            }
+            foreach (Ability ab in newPerson.knownAbilities) {
+                ab.abilityTactic.person = newPerson;
+                ab.personOwner = newPerson;
+            }
+            foreach (Buff b in newPerson.effectList) {
+                b.personOwner = newPerson;
+            }
+            foreach (Item item in newPerson.itemList) {
+                item.owner = newPerson;
+            }
+            return newPerson;
         } catch (Exception e) {
-            Debug.Log(e);
+            Debug.LogError(e);
         }
         return null;
     }
 
-    protected virtual void init() {
+    public virtual void initAbilities() {
+
         maxMana = maxMana + level * manaPerLevel;
         mana = maxMana;
-
         maxHealth = maxHealth + level * healthPerLevel;
         health = maxHealth;
 
-        abilityList.Add(new MeleeAttack(this, "Melee Attack"));
+        abilityList.Clear();
+        effectList.Clear();
 
-        for (int i = 0; i < itemList.Count; i++) {
+        foreach (Ability ability in knownAbilities) {
+            abilityList.Add(ability);
+        }
+
+        List<Item> activeItems = itemList.FindAll((Item item) => item.isActive);
+        for (int i = 0; i < activeItems.Count; i++) {
             Buff b = new Buff(this, new DamageSpellCastTactic(1));
-            foreach (AbstractModificator modificator in itemList[i].modificatorList) {
+            foreach (AbstractModificator modificator in activeItems[i].modificatorList) {
                 b.modificator = modificator;
-                b.name = itemList.GetType().FullName + ":" + modificator.GetType().FullName;
+                b.name = activeItems[i].GetType().FullName + ":" + modificator.GetType().FullName;
                 effectList.Add(b);
             }
-
             abilityList.AddRange(itemList[i].abilityList);
         }
+
+        statistics.reset();
     }
 
     public void updateAgro(int value) {
         if (value > agro && value <= agro * 3) {
             agro = value;
         }
+    }
+
+    public void startCastAbility() {
+        personController.animator.SetBool(AnimatorConstants.MODEL_ANIMATOR_ISCAST, true);
+    }
+
+    public void finishCastAbility() {
+        personController.animator.SetBool(AnimatorConstants.MODEL_ANIMATOR_ISCAST, false);
+    }
+
+    public void meleeAttackAbility() {
+        personController.animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISATTACK);
+    }
+
+    public void unSummon() {
+        health = 0;
     }
 }

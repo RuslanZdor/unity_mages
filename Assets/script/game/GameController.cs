@@ -6,36 +6,51 @@ public class GameController : MonoBehaviour {
 
     private GameScene currentScene;
 
-    public GameScene fightController;
-    public GameScene dialogController;
-
-    List<GameScene> sceneList = new List<GameScene>();
-
+    public GameScene mainMenu;
 
     // Use this for initialization
     void Start() {
-        sceneList.Add(dialogController);
-        sceneList.Add(fightController);
+        Person f = new FireMage();
+        f.name = "Fire mage";
+        f.initAbilities();
+        PartiesSingleton.activeHeroes.Add(f);
 
-        createNextScene();
+        f = new HealMage();
+        f.name = "Heal mage";
+        f.initAbilities();
+        PartiesSingleton.activeHeroes.Add(f);
+
+        currentScene = changeScene(mainMenu);
     }
 
     // Update is called once per frame
     void Update() {
-        if (currentScene.isFinished) {
-            destroyScene();
-            createNextScene();
+        GameScene next;
+        if (currentScene.isFinishedOrHidded()) {
+            next = currentScene.getNextScene();
+            if (next != null) {
+                currentScene.gameObject.SetActive(false);
+                currentScene.isHided = true;
+                next.setPreviousScene(currentScene);
+            } else {
+                next = currentScene.getPreviousScene();
+                Destroy(currentScene.gameObject);
+            }
+            currentScene = changeScene(next);
         }
     }
 
-    private void createNextScene() {
-        if (sceneList.ToArray().Length > 0) {
-            currentScene = Instantiate(sceneList.ToArray()[0]);
-            sceneList.RemoveAt(0);
-        }
+    private GameScene changeScene(GameScene next) {
+        GameScene newScene;
+        if (next.gameObject.scene.name != null) {
+            next.gameObject.SetActive(true);
+            next.setNextScene(null);
+            newScene = next;
+            newScene.isHided = false;
+         } else {
+            newScene = Instantiate(next);
+         }
+        return newScene;
     }
 
-    private void destroyScene() {
-        Destroy(currentScene.gameObject);
-    }
 }

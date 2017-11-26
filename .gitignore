@@ -2,3 +2,9 @@
 Library/metadata/
 Library/ShaderCache/
 Library/
+demo_Data/*
+mac_build/*
+Library/*
+ProjectSettings/*
+.vs/unity_mages/*
+demo.exe

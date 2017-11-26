@@ -4,13 +4,10 @@ using System.Collections.Generic;
 
 public class TrollSummoner : Troll {
 	public TrollSummoner() : base() {
-        init();
-    }
-
-	protected override void init() {
-        abilityList.Add(new SummonGolem(this));
+        knownAbilities.Add(new SummonGolem(this, new SummonCastTactic(3)));
         maxMana = 10;
-		base.init();
+
+        name = "troll summoner";
     }
 
 }

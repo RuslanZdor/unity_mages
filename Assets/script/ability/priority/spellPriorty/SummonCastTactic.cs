@@ -8,12 +8,12 @@ public class SummonCastTactic : AbstractTactic {
 	public override int getPriority() {
 
 		long summonCount = PartiesSingleton.getParty(person.ally).getLivePersons().FindAll(
-			(Person p) => person.name.Equals(summon.name)
-                        && p.Equals(person.summoner)
-                        && p.isAlive
+			(Person p) => (p.summoner != null && person.name.Equals(p.summoner.name)
+                        && p.name.Equals(summon.name)
+                        && p.isAlive)
         ).Count;
 
-        if (person.mana > ability.manaCost
+        if (person.mana >= ability.manaCost
                 && summonCount == 0) {
             return defaultPriority;
         }

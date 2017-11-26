@@ -4,10 +4,6 @@ using System.Collections.Generic;
 
 public class Golem : Person{
 	public Golem() : base() {
-        init();
-    }
-
-	protected override void init() {
         name = "Summoned Golem";
 
         maxHealth = Constants.GOLEM_HEALTH;
@@ -18,9 +14,5 @@ public class Golem : Person{
         agro = Constants.GOLEM_AGRO;
 
         personImage = "texture/troll";
-
-
-        base.init();
-
     }
 }

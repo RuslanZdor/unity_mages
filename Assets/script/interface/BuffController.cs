@@ -11,7 +11,7 @@ public class BuffController : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        person = transform.GetComponent<Person>();
+        person = transform.GetComponent<PersonController>().person;
         buffList = transform.Find("model/buff").gameObject;
     }
 
@@ -23,11 +23,12 @@ public class BuffController : MonoBehaviour {
                 Destroy(child);
             }
 
+            int number = 0;
             foreach (Buff buff in person.effectList) {
                 PersonFactory pf = GameObject.Find("GameFactory").GetComponent<PersonFactory>();
                 GameObject go = pf.createBuffIcon(buff);
                 go.transform.SetParent(gameObject.transform.Find("model/buff").transform, false);
-                go.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(1.1f, 0.5f, 0.0f);
+                go.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(1.2f, (0.5f - 0.5f * number++), 0.0f);
 
                 buffs.Add(go);
             }

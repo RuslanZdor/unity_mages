@@ -4,13 +4,8 @@ using System.Collections.Generic;
 
 public class FireMage : BaseMage {
 	public FireMage() : base() {
-        init();
+        knownAbilities.Add(new FireBall(this));
+        knownAbilities.Add(new SummonGolem(this, new SummonCastTactic(1)));
     }
 
-	protected override void init() {
-		base.init();
-        abilityList.Add(new FireBall(this));
-
-        effectList.Add(new PassiveCritChance(this, 100));
-    }
 }

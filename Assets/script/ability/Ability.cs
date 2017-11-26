@@ -8,14 +8,18 @@ public class Ability : ICloneable {
 
     public float timeCast;
 	public float manaCost;
+    
 	public List<AbstractAbilityEffect> effectList = new List<AbstractAbilityEffect>();
 	public AbilityTargetType targetType;
 	public AbstractTactic abilityTactic;
 	public AbstractTargetTactic targetTactic;
 
+    public float animationTIme = 1.0f;
+    public String animation;
+
 	public Person personOwner;
 
-    public virtual void eventStart() {
+    public virtual float eventStart() {
         if (canUse()) {
             personOwner.mana = personOwner.mana - manaCost;
 			foreach (AbstractAbilityEffect effect in effectList) {
@@ -31,7 +35,22 @@ public class Ability : ICloneable {
                     effect.applyEffect(personOwner, target);
                 }
             }
+
+            if (effectList.FindAll(
+                (AbstractAbilityEffect eff) =>
+                eff.attribures.FindAll(
+                    (EffectAttribures attr) => attr == EffectAttribures.MELEE_ATTACK
+                ).Count > 0
+            ).Count > 0) {
+                personOwner.meleeAttackAbility();
+            } else {
+                personOwner.finishCastAbility();
+            }
+
+
+            return animationTIme;
         }
+        return 0.0f;
     }
 
     public bool canUse() {

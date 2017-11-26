@@ -3,9 +3,9 @@ using System.Collections;
 
 public class BlockChanceModificator : AbstractModificator{
 
-	public double chance;
+	public float chance;
 
-    public BlockChanceModificator(double chance) {
+    public BlockChanceModificator(float chance) {
         this.chance =  chance;
     }
 

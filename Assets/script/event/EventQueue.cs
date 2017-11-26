@@ -4,15 +4,19 @@ using System.Collections.Generic;
 
 public class EventQueue {
 	public List<Event> events = new List<Event>();
-	public double currentTime;
+	public float currentTime;
 
-    public void startEvent(float time) {
-        Event e = EventQueueSingleton.queue.events[0];
-        if (e.eventTime <= time) {
-            EventQueueSingleton.queue.events.RemoveAt(0);
-            currentTime = e.eventTime;
-            e.eventStart();
+    public string startEvent(float time) {
+        if (currentTime <= time || events[0].eventTime == 0) {
+            Event e = events[0];
+            events.RemoveAt(0);
+            if (e.toString().Length > 0) {
+                Debug.Log(time + ": " + e.toString());
+            }
+            currentTime += e.eventStart();
+            return e.toString();
         }
+        return "";
     }
 
     public void add(Event ev) {
