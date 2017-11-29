@@ -16,7 +16,7 @@ public class SummonEffect : AbstractAbilityEffect{
         e.owner = owner;
         e.target = target;
         e.person = clonePerson;
-        e.eventTime = EventQueueSingleton.queue.currentTime;
+        e.eventTime = EventQueueSingleton.queue.nextEventTime;
         EventQueueSingleton.queue.add(e);
 
         if (duration > 0) {
@@ -24,7 +24,7 @@ public class SummonEffect : AbstractAbilityEffect{
             removeEvent.owner = owner;
             removeEvent.target = target;
             removeEvent.person = clonePerson;
-            removeEvent.eventTime = EventQueueSingleton.queue.currentTime + duration;
+            removeEvent.eventTime = EventQueueSingleton.queue.nextEventTime + duration;
             EventQueueSingleton.queue.add(removeEvent);
         }
     }

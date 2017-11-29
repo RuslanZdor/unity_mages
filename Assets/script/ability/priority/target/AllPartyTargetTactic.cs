@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class AllPartyTargetTactic : AbstractTargetTactic {
 
-	public override List<Person> getTargets(Party party, int count) {
+	public override List<Person> getTargets(Party party, int count, Ability ability) {
         List<Person> list = party.getLivePersons();
         return list;
     }

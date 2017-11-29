@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class DamagedTargetTactic : AbstractTargetTactic {
 
-	public override List<Person> getTargets(Party party, int count) {
+	public override List<Person> getTargets(Party party, int count, Ability ability) {
 		List<Person> resultList = new List<Person>();
         List<Person> list = party.getLivePersons();
 		resultList = list.FindAll ((Person p) => p.isDamaged());

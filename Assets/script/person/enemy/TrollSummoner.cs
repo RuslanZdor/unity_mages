@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class TrollSummoner : Troll {
 	public TrollSummoner() : base() {
-        knownAbilities.Add(new SummonGolem(this, new SummonCastTactic(3)));
+//        knownAbilities.Add(new SummonGolem(this, new SummonCastTactic(3)));
         maxMana = 10;
 
         name = "troll summoner";

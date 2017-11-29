@@ -15,7 +15,7 @@ public class UseItemEffect : AbstractAbilityEffect {
         e.owner = owner;
         e.target = target;
         e.item = item;
-        e.eventTime = EventQueueSingleton.queue.currentTime;
+        e.eventTime = EventQueueSingleton.queue.nextEventTime;
 
 		EventQueueSingleton.queue.add(e);
     }

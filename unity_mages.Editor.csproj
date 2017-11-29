@@ -5,21 +5,19 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6B4321BD-842B-7C07-44D5-908AFEAC4209}</ProjectGuid>
+    <ProjectGuid>{955E540E-F064-6C66-E352-7DD1766CA17E}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp.dll</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.2.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -189,8 +187,17 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
@@ -201,136 +208,72 @@
     <Reference Include="UnityEngine.Timeline">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Timeline">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TreeEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UIAutomation">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIAutomation">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/Editor/UnityEditor.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GoogleAudioSpatializer">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GoogleAudioSpatializer">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.HoloLens">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@1.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Analytics">
+      <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/Editor/UnityEditor.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\script\ability\Ability.cs" />
-    <Compile Include="Assets\script\ability\abilityImp\FireBall.cs" />
-    <Compile Include="Assets\script\ability\abilityImp\HealWave.cs" />
-    <Compile Include="Assets\script\ability\abilityImp\MeleeAttack.cs" />
-    <Compile Include="Assets\script\ability\abilityImp\SummonGolem.cs" />
-    <Compile Include="Assets\script\ability\AbilityTargetType.cs" />
-    <Compile Include="Assets\script\ability\ActiveBuff.cs" />
-    <Compile Include="Assets\script\ability\Buff.cs" />
-    <Compile Include="Assets\script\ability\buffImp\GiantPower.cs" />
-    <Compile Include="Assets\script\ability\buffImp\Weakness.cs" />
-    <Compile Include="Assets\script\ability\effect\AbstractAbilityEffect.cs" />
-    <Compile Include="Assets\script\ability\effect\AddBuffEffect.cs" />
-    <Compile Include="Assets\script\ability\effect\DamageAbilityEffect.cs" />
-    <Compile Include="Assets\script\ability\effect\EffectAttribures.cs" />
-    <Compile Include="Assets\script\ability\effect\ElementalMiultiplicators.cs" />
-    <Compile Include="Assets\script\ability\effect\HealAbilityEffect.cs" />
-    <Compile Include="Assets\script\ability\effect\SummonEffect.cs" />
-    <Compile Include="Assets\script\ability\effect\UseItemEffect.cs" />
-    <Compile Include="Assets\script\ability\modificator\AbstractModificator.cs" />
-    <Compile Include="Assets\script\ability\modificator\BlockChanceModificator.cs" />
-    <Compile Include="Assets\script\ability\modificator\CritChanceModificator.cs" />
-    <Compile Include="Assets\script\ability\modificator\DodgeChanceModificator.cs" />
-    <Compile Include="Assets\script\ability\modificator\ElementsDamageModificator.cs" />
-    <Compile Include="Assets\script\ability\modificator\IncreaseDamageModificator.cs" />
-    <Compile Include="Assets\script\ability\modificator\IncreaseMeleeDamageModificator.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveBlockChance.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveCritChance.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveDodgeChance.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveElementalModificator.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveMeleeDamage.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveRegeneration.cs" />
-    <Compile Include="Assets\script\ability\priority\spellPriorty\AbstractTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\spellPriorty\DamageSpellCastTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\spellPriorty\HealSpellCastTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\spellPriorty\MeleeAttackTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\spellPriorty\SummonCastTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\target\AbstractTargetTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\target\AllPartyTargetTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\target\DamagedTargetTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\target\ItselfTargetTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\target\RandomTargetTactic.cs" />
-    <Compile Include="Assets\script\ability\priority\target\WithoutBuffTactic.cs" />
-    <Compile Include="Assets\script\ability\SummonAbility.cs" />
-    <Compile Include="Assets\script\ability\value\AbstractValueGenerator.cs" />
-    <Compile Include="Assets\script\ability\value\ConstantValueGenerator.cs" />
-    <Compile Include="Assets\script\ability\value\RangeValueGenerator.cs" />
-    <Compile Include="Assets\script\AnimatorConstants.cs" />
-    <Compile Include="Assets\script\Constants.cs" />
-    <Compile Include="Assets\script\event\AddBuffEvent.cs" />
-    <Compile Include="Assets\script\event\BasicDamageEvent.cs" />
-    <Compile Include="Assets\script\event\BasicHealEvent.cs" />
-    <Compile Include="Assets\script\event\BasicTargetEvent.cs" />
-    <Compile Include="Assets\script\event\DestroyItemEvent.cs" />
-    <Compile Include="Assets\script\event\Event.cs" />
-    <Compile Include="Assets\script\event\EventQueue.cs" />
-    <Compile Include="Assets\script\event\EventQueueSingleton.cs" />
-    <Compile Include="Assets\script\event\CooldownEvent.cs" />
-    <Compile Include="Assets\script\event\GenerateAbilityEvent.cs" />
-    <Compile Include="Assets\script\event\RemoveBuffEvent.cs" />
-    <Compile Include="Assets\script\event\RemoveSummonEvent.cs" />
-    <Compile Include="Assets\script\event\SummonEvent.cs" />
-    <Compile Include="Assets\script\event\UseItemEvent.cs" />
-    <Compile Include="Assets\script\game\dialog\DialogController.cs" />
-    <Compile Include="Assets\script\game\dialog\DialogMessage.cs" />
-    <Compile Include="Assets\script\game\dialog\DialogMessagePosition.cs" />
-    <Compile Include="Assets\script\game\fight\FightResultController.cs" />
-    <Compile Include="Assets\script\game\fight\FightStartController.cs" />
-    <Compile Include="Assets\script\game\GameController.cs" />
-    <Compile Include="Assets\script\game\GameScene.cs" />
-    <Compile Include="Assets\script\game\menu\InventoryController.cs" />
-    <Compile Include="Assets\script\game\menu\MainMenuController.cs" />
-    <Compile Include="Assets\script\interface\BuffController.cs" />
-    <Compile Include="Assets\script\interface\HealthObjectController.cs" />
-    <Compile Include="Assets\script\interface\inventory\HeroImageController.cs" />
-    <Compile Include="Assets\script\interface\inventory\HeroItemController.cs" />
-    <Compile Include="Assets\script\interface\inventory\HeroTabController.cs" />
-    <Compile Include="Assets\script\interface\inventory\SkillController.cs" />
-    <Compile Include="Assets\script\interface\inventory\HeroItemsTabController.cs" />
-    <Compile Include="Assets\script\interface\inventory\SkillsTabController.cs" />
-    <Compile Include="Assets\script\interface\mainMenu\EnemyIconController.cs" />
-    <Compile Include="Assets\script\interface\mainMenu\PersonIconController.cs" />
-    <Compile Include="Assets\script\interface\ManaObjectController.cs" />
-    <Compile Include="Assets\script\item\Item.cs" />
-    <Compile Include="Assets\script\item\shield\Shield.cs" />
-    <Compile Include="Assets\script\item\weapon\MageStaff.cs" />
-    <Compile Include="Assets\script\item\weapon\TrollMace.cs" />
-    <Compile Include="Assets\script\party\PartiesSingleton.cs" />
-    <Compile Include="Assets\script\party\Party.cs" />
-    <Compile Include="Assets\script\PersonController.cs" />
-    <Compile Include="Assets\script\Person.cs" />
-    <Compile Include="Assets\script\person\AbstractFactory.cs" />
-    <Compile Include="Assets\script\person\enemy\FastTroll.cs" />
-    <Compile Include="Assets\script\person\enemy\HeavyTroll.cs" />
-    <Compile Include="Assets\script\person\enemy\Troll.cs" />
-    <Compile Include="Assets\script\person\enemy\TrollSummoner.cs" />
-    <Compile Include="Assets\script\person\hero\BaseMage.cs" />
-    <Compile Include="Assets\script\person\hero\BuffMage.cs" />
-    <Compile Include="Assets\script\person\hero\DebuffMage.cs" />
-    <Compile Include="Assets\script\person\hero\FireMage.cs" />
-    <Compile Include="Assets\script\person\hero\HealMage.cs" />
-    <Compile Include="Assets\script\person\Place.cs" />
-    <Compile Include="Assets\script\person\PersonFactory.cs" />
-    <Compile Include="Assets\script\person\summon\Golem.cs" />
-    <Compile Include="Assets\script\PersonStatistics.cs" />
+    <ProjectReference Include="unity_mages.csproj">
+      <Project>{6B4321BD-842B-7C07-44D5-908AFEAC4209}</Project>
+      <Name>unity_mages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Editor\NewEditModeTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

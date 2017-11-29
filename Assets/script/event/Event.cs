@@ -7,7 +7,7 @@ public class Event {
 	public float eventTime;
 
 	public int compareTo(Event o) {
-        if (eventTime <= o.eventTime) {
+        if (eventTime < o.eventTime) {
             return -1;
         } else {
             return 1;

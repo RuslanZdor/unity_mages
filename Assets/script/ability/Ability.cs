@@ -7,6 +7,7 @@ public class Ability : ICloneable {
     public String name;
 
     public float timeCast;
+    public float cooldown;
 	public float manaCost;
     
 	public List<AbstractAbilityEffect> effectList = new List<AbstractAbilityEffect>();
@@ -30,7 +31,7 @@ public class Ability : ICloneable {
                     targetParty = personOwner.ally;
                 }
                 Party party = PartiesSingleton.getParty(targetParty);
-                List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber);
+                List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber, this);
 				foreach (Person target in targets) {
                     effect.applyEffect(personOwner, target);
                 }
@@ -44,7 +45,7 @@ public class Ability : ICloneable {
             ).Count > 0) {
                 personOwner.meleeAttackAbility();
             } else {
-                personOwner.finishCastAbility();
+                personOwner.castAbility();
             }
 
 
@@ -64,7 +65,7 @@ public class Ability : ICloneable {
     public void generateEvents(Person person) {
         if (this.effectList.Count > 0) {
             Event e = new Event();
-            e.eventTime = EventQueueSingleton.queue.currentTime + timeCast;
+            e.eventTime = EventQueueSingleton.queue.nextEventTime + timeCast;
             e.ability = this;
             e.owner = person;
             EventQueueSingleton.queue.add(e);

@@ -17,7 +17,6 @@ public class PersonController : MonoBehaviour {
         if (person.health <= 0) {
             person.isAlive = false;
             animator.SetBool(AnimatorConstants.MODEL_ANIMATOR_ISDEAD, true);
-            person.finishCastAbility();
         }
     }
 }

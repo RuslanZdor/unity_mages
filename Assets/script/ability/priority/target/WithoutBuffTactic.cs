@@ -10,7 +10,7 @@ public class WithoutBuffTactic : AbstractTargetTactic {
         this.buff = buff;
     }
 
-	public override List<Person> getTargets(Party party, int count) {
+	public override List<Person> getTargets(Party party, int count, Ability ability) {
         List<Person> list = party.getLivePersons();
 		list.RemoveAll((Person person) => person.hasEffect(buff));
 

@@ -21,6 +21,7 @@ public class BasicDamageEvent : BasicTargetEvent {
 
         if (value > 0) {
             target.personController.animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISHITTEN);
+            return 0.5f;
         }
 
         if (!target.isAlive) {

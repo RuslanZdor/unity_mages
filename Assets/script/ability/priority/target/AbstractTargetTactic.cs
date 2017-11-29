@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class AbstractTargetTactic {
 
-    public virtual List<Person> getTargets(Party party, int count) {
+    public virtual List<Person> getTargets(Party party, int count, Ability ability) {
         return null;
     }
 
@@ -22,5 +22,14 @@ public class AbstractTargetTactic {
 
     public override string ToString() {
         return base.ToString();
+    }
+
+    public bool isMelee(Ability ability) {
+        return ability.effectList.FindAll(
+                (AbstractAbilityEffect eff) =>
+                eff.attribures.FindAll(
+                    (EffectAttribures attr) => attr == EffectAttribures.MELEE_ATTACK
+                ).Count > 0
+            ).Count > 0;
     }
 }

@@ -24,12 +24,13 @@ public class FightStartController : GameScene {
 
             PartiesSingleton.clear();
             EventQueueSingleton.queue.events.Clear();
-            EventQueueSingleton.queue.currentTime = Time.fixedTime;
+            EventQueueSingleton.queue.nextEventTime = Time.fixedTime;
 
             foreach (Person p in PartiesSingleton.activeHeroes) {
                 PartiesSingleton.heroes.addPerson(personFactory.create(p));
             }
 
+            PartiesSingleton.enemies.addPerson(personFactory.create(new TrollSummoner()));
             PartiesSingleton.enemies.addPerson(personFactory.create(new TrollSummoner()));
 
             foreach (Person hero in PartiesSingleton.heroes.getLivePersons()) {

@@ -6,7 +6,7 @@ public class ItselfTargetTactic : AbstractTargetTactic{
 
 	public List<Person> list;
 
-	public override List<Person> getTargets(Party party, int count) {
+	public override List<Person> getTargets(Party party, int count, Ability ability) {
         return list;
     }
 

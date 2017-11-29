@@ -1,10 +1,14 @@
 *.meta
 Library/metadata/
 Library/ShaderCache/
-Library/
+Library/*
 demo_Data/*
 mac_build/*
 Library/*
 ProjectSettings/*
 .vs/unity_mages/*
 demo.exe
+Temp/UnityTempFile-479d4d04475c01c48a9bf17aad11983e
+Temp/UnityLockfile
+Temp/
+ProjectSettings/

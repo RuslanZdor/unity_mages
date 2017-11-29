@@ -48,30 +48,51 @@ public class Party {
     public void addPerson(GameObject person) {
         person.GetComponent<PersonController>().person.ally = ally;
         person.GetComponent<PersonController>().person.enemy = enemy;
+        setDefaultPosition(person);
         partyList.Add(person);
-        setDefaultPosition();
     }
 
-    public void setDefaultPosition() {
-        for (int i = 0; i < partyList.Count; i++) {
-            int x = 0;
-            if (partyList[i].GetComponent<PersonController>().person.ally == AbilityTargetType.ENEMY) {
-                x = 2;
-                Vector3 theScale = partyList[i].transform.Find("model").localScale;
-                if (theScale.x > 0) {
-                    theScale.x *= -1;
-                }
-                partyList[i].transform.Find("model").localScale = theScale;
-            } else {
-                x = -2;
-            }
-            partyList[i].transform.position = new Vector2(x, (i * 2) - 2);
-            
+    public void setDefaultPosition(GameObject go) {
+        Person person = go.GetComponent<PersonController>().person;
+        if (person.place == null) {
+            person.place = generatePlace();
         }
+        int x = 0;
+        if (person.ally == AbilityTargetType.ENEMY) {
+            x = 2 * person.place.row;
+            Vector3 theScale = go.transform.Find("model").localScale;
+            if (theScale.x > 0) {
+                theScale.x *= -1;
+            }
+            go.transform.Find("model").localScale = theScale;
+        } else {
+           x = -2 * person.place.row;
+        }
+        go.transform.position = new Vector2(x, (person.place.index * 2) - 4);
     }
 
-    public void removePerson(Person person) {
-        partyList.RemoveAll((GameObject go) => go.GetComponent<PersonController>().person.id == person.id);
-        setDefaultPosition();
+    public Place generatePlace() {
+        List<Place> list = new List<Place>();
+        for (int i = 1; i < 3; i++) {
+            for (int j = 1; j < 4; j++) {
+                if (isPlaceEmpty(i, j)) {
+                    list.Add(new Place(i, j));
+                }
+            }
+        }
+        if (list.Count > 0) {
+            return list[Random.Range(0, list.Count - 1)];
+        }
+        return null;
+    }
+
+    public bool isPlaceEmpty(int row, int index) {
+        foreach (GameObject go in partyList) {
+            if (go.GetComponent<PersonController>().person.place.row == row
+                && go.GetComponent<PersonController>().person.place.index == index) {
+                return false;
+            }
+        }
+        return true;
     }
 }

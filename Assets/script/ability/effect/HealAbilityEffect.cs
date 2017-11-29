@@ -13,7 +13,7 @@ public class HealAbilityEffect : AbstractAbilityEffect {
 		e.ability = ability;
 		e.owner = owner;
 		e.target = target;
-		e.eventTime = EventQueueSingleton.queue.currentTime;
+		e.eventTime = EventQueueSingleton.queue.nextEventTime;
 
         EventQueueSingleton.queue.add(e);
     }

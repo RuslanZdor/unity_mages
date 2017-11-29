@@ -13,7 +13,7 @@ public class DamageAbilityEffect : AbstractAbilityEffect {
         e.owner = owner;
         e.target = target;
         e.ability = ability;
-        e.eventTime = EventQueueSingleton.queue.currentTime;
+        e.eventTime = EventQueueSingleton.queue.nextEventTime;
 
         EventQueueSingleton.queue.add(e);
     }

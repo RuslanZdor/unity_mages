@@ -34,6 +34,7 @@ public class Person : ICloneable {
     public List<Ability> usedAbilites = new List<Ability>();
 
     public Person summoner = null;
+    public Place place;
 
     public int agro;
 
@@ -97,16 +98,25 @@ public class Person : ICloneable {
         if (isAlive) {
             time = ability.eventStart();
             if (!(ability.GetType() == typeof(ActiveBuff))) {
-                usedAbilites.Remove(ability);
                 generateNextActiveEvent();
+                generateCooldownEvent(ability);
             }
         }
         return time;
     }
 
     public void generateNextActiveEvent() {
+
         GenerateAbilityEvent e = new GenerateAbilityEvent();
-        e.eventTime = EventQueueSingleton.queue.currentTime;
+        e.eventTime = EventQueueSingleton.queue.nextEventTime;
+        e.owner = this;
+        EventQueueSingleton.queue.add(e);
+    }
+
+    public void generateCooldownEvent(Ability ability) {
+        CooldownEvent e = new CooldownEvent();
+        e.eventTime = EventQueueSingleton.queue.nextEventTime + ability.cooldown;
+        e.ability = ability;
         e.owner = this;
         EventQueueSingleton.queue.add(e);
     }
@@ -190,12 +200,8 @@ public class Person : ICloneable {
         }
     }
 
-    public void startCastAbility() {
-        personController.animator.SetBool(AnimatorConstants.MODEL_ANIMATOR_ISCAST, true);
-    }
-
-    public void finishCastAbility() {
-        personController.animator.SetBool(AnimatorConstants.MODEL_ANIMATOR_ISCAST, false);
+    public void castAbility() {
+        personController.animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISCAST);
     }
 
     public void meleeAttackAbility() {

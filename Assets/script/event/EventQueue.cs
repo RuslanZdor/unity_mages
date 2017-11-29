@@ -4,16 +4,16 @@ using System.Collections.Generic;
 
 public class EventQueue {
 	public List<Event> events = new List<Event>();
-	public float currentTime;
+	public float nextEventTime;
 
     public string startEvent(float time) {
-        if (currentTime <= time || events[0].eventTime == 0) {
+        if (nextEventTime <= time) {
             Event e = events[0];
             events.RemoveAt(0);
-            if (e.toString().Length > 0) {
-                Debug.Log(time + ": " + e.toString());
-            }
-            currentTime += e.eventStart();
+ //           if (e.toString().Length > 0) {
+                Debug.Log(nextEventTime + ": " + e.GetType().Name + ":" + e.toString());
+ //           }
+            nextEventTime += e.eventStart();
             return e.toString();
         }
         return "";

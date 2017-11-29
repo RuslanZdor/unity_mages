@@ -25,7 +25,7 @@ public class Buff : Ability {
 		foreach (AbstractAbilityEffect effect in effectList) {
             for (int i = 0; i < effect.targetsNumber; i++) {
                 Party party = PartiesSingleton.getParty(targetType);
-                List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber);
+                List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber, this);
 				foreach (Person person in targets) {
                     effect.applyEffect(personOwner, person);
                 }
