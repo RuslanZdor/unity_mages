@@ -7,11 +7,7 @@ public class DestroyItemEvent : BasicTargetEvent {
 
 	public override float eventStart() {
         owner.itemList.Remove(item);
-
+        logEvent(" item was destroied " + item.name);
         return 0.0f;
-    }
-
-    public override string toString() {
-        return "Item " + item.name + " was destroyed";
     }
 }

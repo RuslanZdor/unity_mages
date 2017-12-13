@@ -15,6 +15,6 @@ public abstract class AbstractAbilityEffect : ICloneable{
 		return this.MemberwiseClone();
 	}
 
-    public abstract void applyEffect(Person owner, Person target);
+    public abstract void applyEffect(Person owner, Person target, float startTime);
 
 }

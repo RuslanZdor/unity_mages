@@ -32,16 +32,16 @@ public class Constants {
     public static  string ITEM_MAGE_STAFF_NAME = "Mage Staff";
     public static  int ITEM_MAGE_STAFF_COST = 100;
     public static  int ITEM_MAGE_STAFF_DURABILITY = 100;
-    public static  int ITEM_MAGE_STAFF_DAMAGE = 3;
+    public static  int ITEM_MAGE_STAFF_DAMAGE = 4;
     public static  int ITEM_MAGE_STUFF_ATTACK_SPEED = 1;
-    public static  int ITEM_MAGE_STAFF_LEVEL = 1;
+    public static  int ITEM_MAGE_STAFF_LEVEL = 2;
 
     public static  string ITEM_TROLL_MACE_NAME = "Troll Mace";
     public static  int ITEM_TROLL_MACE_COST = 100;
     public static  int ITEM_TROLL_MACE_DURABILITY = 100;
     public static  int ITEM_TROLL_MACE_DAMAGE = 5;
     public static  int ITEM_TROLL_MACE_ATTACK_SPEED = 1;
-    public static  int ITEM_TROLL_MACE_LEVEL = 1;
+    public static  int ITEM_TROLL_MACE_LEVEL = 2;
 
     public static  string ITEM_SHIELD_NAME = "Shield";
     public static  int ITEM_SHIELD_COST = 100;

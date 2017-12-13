@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HealAbilityEffect : AbstractAbilityEffect {
 
-	public override void applyEffect(Person owner, Person target) {
+	public override void applyEffect(Person owner, Person target, float startTime) {
         BasicTargetEvent e = new BasicHealEvent();
 
         base.value = valueGenerator.getValue();
@@ -13,7 +13,7 @@ public class HealAbilityEffect : AbstractAbilityEffect {
 		e.ability = ability;
 		e.owner = owner;
 		e.target = target;
-		e.eventTime = EventQueueSingleton.queue.nextEventTime;
+		e.eventTime = startTime;
 
         EventQueueSingleton.queue.add(e);
     }

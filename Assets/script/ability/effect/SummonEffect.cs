@@ -6,7 +6,7 @@ public class SummonEffect : AbstractAbilityEffect{
 	public Person person;
 	public float duration;
 
-	public override void applyEffect(Person owner, Person target) {
+	public override void applyEffect(Person owner, Person target, float startTime) {
 
 		Person clonePerson = (Person) person.Clone();
         clonePerson.summoner = owner;
@@ -16,7 +16,7 @@ public class SummonEffect : AbstractAbilityEffect{
         e.owner = owner;
         e.target = target;
         e.person = clonePerson;
-        e.eventTime = EventQueueSingleton.queue.nextEventTime;
+        e.eventTime = startTime;
         EventQueueSingleton.queue.add(e);
 
         if (duration > 0) {
@@ -24,7 +24,7 @@ public class SummonEffect : AbstractAbilityEffect{
             removeEvent.owner = owner;
             removeEvent.target = target;
             removeEvent.person = clonePerson;
-            removeEvent.eventTime = EventQueueSingleton.queue.nextEventTime + duration;
+            removeEvent.eventTime = startTime + duration;
             EventQueueSingleton.queue.add(removeEvent);
         }
     }

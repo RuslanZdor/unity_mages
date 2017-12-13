@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DamageAbilityEffect : AbstractAbilityEffect {
 
-	public override void applyEffect(Person owner, Person target) {
+	public override void applyEffect(Person owner, Person target, float startTime) {
         BasicDamageEvent e = new BasicDamageEvent();
 
 		base.value = valueGenerator.getValue();
@@ -13,7 +13,7 @@ public class DamageAbilityEffect : AbstractAbilityEffect {
         e.owner = owner;
         e.target = target;
         e.ability = ability;
-        e.eventTime = EventQueueSingleton.queue.nextEventTime;
+        e.eventTime = startTime;
 
         EventQueueSingleton.queue.add(e);
     }

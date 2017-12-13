@@ -5,12 +5,9 @@ public class BasicHealEvent : BasicTargetEvent {
 	public override float eventStart() {
         float value = target.heal(ability);
         owner.statistics.heal += value;
-
+        logEvent(" heal " + value + " to "
+            + target.name + "[" + target.health + "/" + target.maxHealth + "]");
         return 0.0f;
     }
 
-    public override string toString() {
-        return owner.name + " make " + " heal to " +
-                target.name + "[" + target.health + "/" + target.maxHealth + "]";
-    }
 }

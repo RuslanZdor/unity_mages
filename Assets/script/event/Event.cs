@@ -5,6 +5,7 @@ public class Event {
 	public Person owner;
 	public Ability ability;
 	public float eventTime;
+    public float eventDuration = 0.0f;
 
 	public int compareTo(Event o) {
         if (eventTime < o.eventTime) {
@@ -15,14 +16,11 @@ public class Event {
     }
 
     public virtual float eventStart() {
-        return owner.eventStart(ability);
+        logEvent("Casting ability " + ability.name);
+        return owner.eventStart(ability, eventTime);
     }
 
-    public virtual string toString() {
-        if (ability != null) {
-            return owner.name + " casting " + ability.name;
-        }else {
-            return "";
-        }
+    public void logEvent(string message) {
+        CSVLogger.log(eventTime, owner.name, GetType().ToString(), message);
     }
 }

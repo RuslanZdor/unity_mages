@@ -61,6 +61,10 @@ public class FightResultController : GameScene {
         }
     }
 
+    private void saveHeroes() {
+
+    }
+
     private void closeResults() {
         Destroy(result.gameObject);
     }

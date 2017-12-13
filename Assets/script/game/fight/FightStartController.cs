@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class FightStartController : GameScene {
 
@@ -13,7 +14,7 @@ public class FightStartController : GameScene {
     // Use this for initialization
     void Start() {
         if (!isFinished) {
-            background = "texture/main_scene";
+            background = "texture/fight_scene";
             Sprite image = Resources.Load<Sprite>(background) as Sprite;
             transform.Find("background").GetComponent<SpriteRenderer>().sprite = image;
             eventLog = transform.Find("CurrentEventLog").gameObject;
@@ -24,21 +25,23 @@ public class FightStartController : GameScene {
 
             PartiesSingleton.clear();
             EventQueueSingleton.queue.events.Clear();
-            EventQueueSingleton.queue.nextEventTime = Time.fixedTime;
+            EventQueueSingleton.queue.nextEventTime = 0.0f;
+            EventQueueSingleton.queue.realTime = Time.fixedTime;
+            EventQueueSingleton.queue.fastFight = false;
 
             foreach (Person p in PartiesSingleton.activeHeroes) {
                 PartiesSingleton.heroes.addPerson(personFactory.create(p));
             }
 
-            PartiesSingleton.enemies.addPerson(personFactory.create(new TrollSummoner()));
-            PartiesSingleton.enemies.addPerson(personFactory.create(new TrollSummoner()));
+            PartiesSingleton.enemies.addPerson(personFactory.create(new TrollSummoner("troll summoner 1")));
+            PartiesSingleton.enemies.addPerson(personFactory.create(new TrollSummoner("troll summoner 2")));
 
             foreach (Person hero in PartiesSingleton.heroes.getLivePersons()) {
-                hero.generateEvents();
+                hero.generateEvents(0.0f);
             }
 
             foreach (Person enemy in PartiesSingleton.enemies.getLivePersons()) {
-                enemy.generateEvents();
+                enemy.generateEvents(0.0f);
             }
 
             setNextScene(fightResultTable);
@@ -49,21 +52,25 @@ public class FightStartController : GameScene {
     void Update() {
         if (!isFinished) {
             if (PartiesSingleton.hasWinner()) {
-                Debug.Log("Result");
+                CSVLogger.log(EventQueueSingleton.queue.nextEventTime, "FightController", "FightController", "Result");
                 foreach (Person hero in PartiesSingleton.heroes.getLivePersons()) {
-                    Debug.Log(hero.name + "has " + hero.health);
+                    CSVLogger.log(EventQueueSingleton.queue.nextEventTime, "FightController", "FightController", hero.name + "has " + hero.health);
                 }
 
                 foreach (Person hero in PartiesSingleton.enemies.getLivePersons()) {
-                    Debug.Log(hero.name + "has " + hero.health);
+                    CSVLogger.log(EventQueueSingleton.queue.nextEventTime, "FightController", "FightController", hero.name + "has " + hero.health);
                 }
                 isFinished = true;
             } else {
-                string log = EventQueueSingleton.queue.startEvent(Time.fixedTime);
-                if (log.Length > 0) {
-                    eventLog.transform.GetComponent<Text>().text = log;
+                if (!EventQueueSingleton.queue.fastFight) {
+                    EventQueueSingleton.queue.startEvent(Time.fixedTime);
                 }
             }
         }
+    }
+
+    public void skipFight() {
+        Debug.Log("SKIP!");
+        EventQueueSingleton.queue.startFastFight();
     }
 }

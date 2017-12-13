@@ -3,8 +3,11 @@ using System.Collections;
 
 public class BasicDamageEvent : BasicTargetEvent {
 
+    public BasicDamageEvent() {
+        eventDuration = 0.5f;
+    } 
 
-	public override float eventStart() {
+    public override float eventStart() {
 
 		foreach (Buff buff in owner.effectList) {
             buff.modificator.updateMakingDamage(ability);
@@ -19,21 +22,19 @@ public class BasicDamageEvent : BasicTargetEvent {
         owner.updateAgro(owner.agro + 1);
         target.updateAgro(target.agro - 1);
 
+        logEvent(" deal " + value + " to " + target.name + "[" + target.health + "/" + target.maxHealth + "]");
+ 
         if (value > 0) {
-            target.personController.animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISHITTEN);
-            return 0.5f;
+            target.personController.hittenTrigger();
+            return eventDuration;
         }
 
         if (!target.isAlive) {
-			Debug.Log(eventTime + " : " + target.name + " is dead");
+            logEvent(" kill " + target.name);
+            CSVLogger.log(eventTime, owner.name, GetType().ToString(), owner.name + " kill " + target.name);
         }
 
         return 0.0f;
-    }
-
-    public override string toString() {
-        return owner.name + " make " +
-                " damage to " + target.name + "[" + target.health + "/" + target.maxHealth + "]";
     }
 
 }

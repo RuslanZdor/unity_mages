@@ -7,10 +7,7 @@ public class UseItemEvent : BasicTargetEvent {
 
 	public override float eventStart() {
         item.durability = item.durability - 1;
+        logEvent("Item " + item.name + " has durability [" + item.durability + "]");
         return 0.0f;
-    }
-
-    public override string toString() {
-        return "Item " + item.name + " has durability [" + item.durability + "]";
     }
 }

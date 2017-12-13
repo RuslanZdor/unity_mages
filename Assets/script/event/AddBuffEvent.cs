@@ -17,11 +17,7 @@ public class AddBuffEvent : BasicTargetEvent{
             owner.updateAgro(owner.agro + 1);
         }
 
+        logEvent("add buff " + buff.name + " on " + target.name);
         return 0.0f;
-    }
-
-    public override string toString() {
-        return owner.name + " cast " + buff.name + " to " +
-                target.name + "[" + target.health + "/" + target.maxHealth + "]";
     }
 }

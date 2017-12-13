@@ -9,13 +9,13 @@ public class UseItemEffect : AbstractAbilityEffect {
         this.targetsNumber = 1;
     }
 		
-	public override void applyEffect(Person owner, Person target) {
+	public override void applyEffect(Person owner, Person target, float startTime) {
         UseItemEvent e = new UseItemEvent();
 
         e.owner = owner;
         e.target = target;
         e.item = item;
-        e.eventTime = EventQueueSingleton.queue.nextEventTime;
+        e.eventTime = startTime;
 
 		EventQueueSingleton.queue.add(e);
     }

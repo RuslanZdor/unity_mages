@@ -9,7 +9,9 @@ public class Person : ICloneable {
 
     public int id;
     public string name;
+
     public int level;
+    public int experience;
 
     public float health;
     public float maxHealth;
@@ -39,7 +41,7 @@ public class Person : ICloneable {
     public int agro;
 
     public bool isAlive;
-    public bool updateBuffs = false;
+    public bool updateBuffs = true;
 
     public String personImage = "";
 
@@ -75,6 +77,7 @@ public class Person : ICloneable {
 
             if (health < 0) {
                 health = 0;
+                isAlive = false;
             }
         }
         return resultValue - health;
@@ -93,40 +96,40 @@ public class Person : ICloneable {
         return health - resultValue;
     }
 
-    public float eventStart(Ability ability) {
+    public float eventStart(Ability ability, float eventStartTime) {
         float time = 0.0f;
         if (isAlive) {
-            time = ability.eventStart();
             if (!(ability.GetType() == typeof(ActiveBuff))) {
-                generateNextActiveEvent();
-                generateCooldownEvent(ability);
+                generateNextActiveEvent(eventStartTime);
+                generateCooldownEvent(ability, eventStartTime);
             }
+            time = ability.eventStart(eventStartTime);
         }
         return time;
     }
 
-    public void generateNextActiveEvent() {
+    public void generateNextActiveEvent(float eventStartTime) {
 
         GenerateAbilityEvent e = new GenerateAbilityEvent();
-        e.eventTime = EventQueueSingleton.queue.nextEventTime;
+        e.eventTime = eventStartTime;
         e.owner = this;
         EventQueueSingleton.queue.add(e);
     }
 
-    public void generateCooldownEvent(Ability ability) {
+    public void generateCooldownEvent(Ability ability, float eventStartTime) {
         CooldownEvent e = new CooldownEvent();
-        e.eventTime = EventQueueSingleton.queue.nextEventTime + ability.cooldown;
+        e.eventTime = eventStartTime + ability.cooldown;
         e.ability = ability;
         e.owner = this;
         EventQueueSingleton.queue.add(e);
     }
 
-    public void generateEvents() {
+    public void generateEvents(float eventTime) {
         for (int i = 0; i < numberParrallelCasts; i++) {
-            generateNextActiveEvent();
+            generateNextActiveEvent(eventTime);
         }
         foreach (Buff buff in effectList) {
-            buff.generateEvents(this);
+            buff.generateEvents(this, eventTime);
         }
     }
 
@@ -158,6 +161,10 @@ public class Person : ICloneable {
             }
             foreach (Item item in newPerson.itemList) {
                 item.owner = newPerson;
+                foreach(Ability ability in item.abilityList) {
+                    ability.abilityTactic.person = newPerson;
+                    ability.personOwner = newPerson;
+                }
             }
             return newPerson;
         } catch (Exception e) {
@@ -175,6 +182,7 @@ public class Person : ICloneable {
 
         abilityList.Clear();
         effectList.Clear();
+        usedAbilites.Clear();
 
         foreach (Ability ability in knownAbilities) {
             abilityList.Add(ability);
@@ -200,15 +208,9 @@ public class Person : ICloneable {
         }
     }
 
-    public void castAbility() {
-        personController.animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISCAST);
-    }
-
-    public void meleeAttackAbility() {
-        personController.animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISATTACK);
-    }
-
     public void unSummon() {
         health = 0;
     }
+
+
 }

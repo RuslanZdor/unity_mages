@@ -21,13 +21,13 @@ public class Buff : Ability {
         return cl;
     }
 
-	public override float eventStart() {
+	public override float eventStart(float startTime) {
 		foreach (AbstractAbilityEffect effect in effectList) {
             for (int i = 0; i < effect.targetsNumber; i++) {
                 Party party = PartiesSingleton.getParty(targetType);
                 List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber, this);
 				foreach (Person person in targets) {
-                    effect.applyEffect(personOwner, person);
+                    effect.applyEffect(personOwner, person, startTime);
                 }
             }
         }

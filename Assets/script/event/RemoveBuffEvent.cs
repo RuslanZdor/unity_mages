@@ -7,11 +7,7 @@ public class RemoveBuffEvent : BasicTargetEvent{
 
 	public override float eventStart() {
         target.removeEffect(buff);
+        logEvent("remove buff " + buff.name + "from " + target.name);
         return 0.0f;
-    }
-
-    public override string toString() {
-        return " remove " + buff.name + " from " +
-                target.name + "[" + target.health + "/" + target.maxHealth + "]";
     }
 }

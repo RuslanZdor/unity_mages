@@ -5,26 +5,44 @@ using System.Collections.Generic;
 public class EventQueue {
 	public List<Event> events = new List<Event>();
 	public float nextEventTime;
+    public float realTime;
 
-    public string startEvent(float time) {
-        if (nextEventTime <= time) {
+    public bool fastFight = false;
+
+    public float startEvent(float time) {
+        if (realTime <= time || fastFight) {
             Event e = events[0];
             events.RemoveAt(0);
- //           if (e.toString().Length > 0) {
-                Debug.Log(nextEventTime + ": " + e.GetType().Name + ":" + e.toString());
- //           }
-            nextEventTime += e.eventStart();
-            return e.toString();
+            float delta = e.eventStart();
+            nextEventTime += delta;
+            realTime += delta;
+            return nextEventTime;
         }
-        return "";
+        return 0;
     }
 
     public void add(Event ev) {
-        events.Add(ev);
-        events.Sort((x, y) => x.compareTo(y));
+        int position = 0;
+        for (int i = 0; i < events.Count; i++) {
+            if (events[i].eventTime < ev.eventTime) {
+                position = i;
+            }else {
+                break;
+            }
+            position++;
+        }
+
+        events.Insert(position, ev);
     }
 
 	public void removePersonEvents(Person person) {
 		events.RemoveAll((Event e) => e.owner.id == person.id);
+    }
+
+    public void startFastFight() {
+        fastFight = true;
+        while(!PartiesSingleton.hasWinner() || nextEventTime < 10) {
+            EventQueueSingleton.queue.startEvent(nextEventTime);
+        }
     }
 }

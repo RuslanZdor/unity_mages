@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class FireBall : Ability {
-	public FireBall(Person person) : base(person, new DamageSpellCastTactic(3)) {
+public class FireWall : Ability {
+	public FireWall(Person person) : base(person, new DamageSpellCastTactic(3)) {
 		name  = "Fireball";
 		timeCast = 1.5f;
 		manaCost = 1;
@@ -12,9 +12,9 @@ public class FireBall : Ability {
         animation = "animation/meleeAttackAnimation";
 
 
-        AbstractAbilityEffect effect = new DamageAbilityEffect();
+        AbstractAbilityEffect effect = new RowDamageAbilityEffect();
 		effect.targetsNumber = 1;
-		effect.valueGenerator = new RangeValueGenerator(10,15);
+		effect.valueGenerator = new RangeValueGenerator(5,10);
 		effect.attribures.Add(EffectAttribures.FIRE);
 
 		effectList.Add(effect);

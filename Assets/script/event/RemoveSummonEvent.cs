@@ -8,12 +8,8 @@ public class RemoveSummonEvent : BasicTargetEvent {
 
 	public override float eventStart() {
         person.unSummon();
-//        PartiesSingleton.getParty(target.ally).removePerson(person);
+        logEvent("remove summon  " + person.name);
         EventQueueSingleton.queue.removePersonEvents(person);
         return 0.0f;
-    }
-
-    public override string toString() {
-        return person.name + "was removed";
     }
 }

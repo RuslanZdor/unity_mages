@@ -5,7 +5,7 @@ public class AddBuffEffect : AbstractAbilityEffect{
 
     public Buff buff;
 
-	public override void applyEffect(Person owner, Person target) {
+	public override void applyEffect(Person owner, Person target, float startTime) {
 
         Buff ability = new Buff(owner, new MeleeAttackTactic());
         ability.modificator = buff.modificator;
@@ -16,14 +16,14 @@ public class AddBuffEffect : AbstractAbilityEffect{
         e.owner = owner;
         e.target = target;
         e.buff= ability;
-        e.eventTime = EventQueueSingleton.queue.nextEventTime;
+        e.eventTime = startTime;
         EventQueueSingleton.queue.add(e);
 
         RemoveBuffEvent removeEvent = new RemoveBuffEvent();
         removeEvent.owner = owner;
         removeEvent.target = target;
         removeEvent.buff = ability;
-        removeEvent.eventTime = EventQueueSingleton.queue.nextEventTime + ability.duration;
+        removeEvent.eventTime = startTime + ability.duration;
         EventQueueSingleton.queue.add(removeEvent);
     }
 }

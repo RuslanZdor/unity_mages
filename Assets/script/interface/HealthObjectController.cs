@@ -9,7 +9,10 @@ public class HealthObjectController : MonoBehaviour {
     private float durationIndicatorShow = 1.0f;
 
     private Person person;
+
     private Slider healthSlider;
+    private Text count;
+
     private GameObject damageIndicator;
     private GameObject healIndicator;
     private GameObject indicatorsBackground;
@@ -18,9 +21,11 @@ public class HealthObjectController : MonoBehaviour {
         person = transform.GetComponent<PersonController>().person;
 
         healthSlider = transform.Find("healthBar/slider").GetComponent<Slider>();
+        count = transform.Find("healthBar/count").GetComponent<Text>();
         if (healthSlider != null && person != null) {
             healthSlider.maxValue = person.maxHealth;
             healthSlider.value = person.maxHealth;
+            count.text = person.maxHealth.ToString();
         }
 
         damageIndicator = transform.Find("indicators/damageIndicator").gameObject;
@@ -57,6 +62,7 @@ public class HealthObjectController : MonoBehaviour {
                 }
 
                 healthSlider.value = person.health;
+                count.text = person.health.ToString();
             }
 
         }

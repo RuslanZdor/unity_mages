@@ -16,13 +16,12 @@ public class GenerateAbilityEvent : BasicTargetEvent {
             }
         }
         if (ability != null) {
-            ability.generateEvents(owner);
+            ability.generateEvents(owner, eventTime);
             owner.usedAbilites.Add(ability);
+            logEvent("generated next ability " + ability.name);
+        }else {
+            logEvent("ERROR " + owner.name + " has no available ability to cast");
         }
         return 0.0f;
-    }
-
-    public override string toString() {
-        return "";  //owner.name + " generate ability";
     }
 }

@@ -20,7 +20,7 @@ public class Ability : ICloneable {
 
 	public Person personOwner;
 
-    public virtual float eventStart() {
+    public virtual float eventStart(float startTime) {
         if (canUse()) {
             personOwner.mana = personOwner.mana - manaCost;
 			foreach (AbstractAbilityEffect effect in effectList) {
@@ -33,7 +33,7 @@ public class Ability : ICloneable {
                 Party party = PartiesSingleton.getParty(targetParty);
                 List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber, this);
 				foreach (Person target in targets) {
-                    effect.applyEffect(personOwner, target);
+                    effect.applyEffect(personOwner, target, startTime);
                 }
             }
 
@@ -43,9 +43,9 @@ public class Ability : ICloneable {
                     (EffectAttribures attr) => attr == EffectAttribures.MELEE_ATTACK
                 ).Count > 0
             ).Count > 0) {
-                personOwner.meleeAttackAbility();
+                personOwner.personController.meleeAttackAbility();
             } else {
-                personOwner.castAbility();
+                personOwner.personController.castAbility();
             }
 
 
@@ -62,12 +62,13 @@ public class Ability : ICloneable {
         }
     }
 
-    public void generateEvents(Person person) {
+    public void generateEvents(Person person, float currentTime) {
         if (this.effectList.Count > 0) {
             Event e = new Event();
-            e.eventTime = EventQueueSingleton.queue.nextEventTime + timeCast;
+            e.eventTime = currentTime + timeCast;
             e.ability = this;
             e.owner = person;
+            e.eventDuration = timeCast;
             EventQueueSingleton.queue.add(e);
         }
     }

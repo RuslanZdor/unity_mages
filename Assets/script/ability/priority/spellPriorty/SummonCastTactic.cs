@@ -14,7 +14,8 @@ public class SummonCastTactic : AbstractTactic {
         ).Count;
 
         if (person.mana >= ability.manaCost
-                && summonCount == 0) {
+                && summonCount == 0
+                && PartiesSingleton.getParty(person.ally).generatePlace() != null) {
             return defaultPriority;
         }
         return 0;
