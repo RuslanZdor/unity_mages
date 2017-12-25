@@ -9,7 +9,10 @@ public class HealWave : Ability {
 		manaCost = 1;
 		targetType = AbilityTargetType.FRIEND;
 
-		AbstractAbilityEffect effect = new HealAbilityEffect();
+        image = Resources.Load<Sprite>("texture/Skills/healwave");
+
+
+        AbstractAbilityEffect effect = new HealAbilityEffect();
 		effect.targetsNumber = 1;
 		effect.valueGenerator = new ConstantValueGenerator(10);
 		effect.attribures.Add(EffectAttribures.LIGHT);

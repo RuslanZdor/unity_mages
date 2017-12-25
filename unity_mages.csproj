@@ -228,8 +228,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\ability\Ability.cs" />
-    <Compile Include="Assets\script\ability\abilityImp\FireWall.cs" />
     <Compile Include="Assets\script\ability\abilityImp\FireBall.cs" />
+    <Compile Include="Assets\script\ability\abilityImp\FireWall.cs" />
     <Compile Include="Assets\script\ability\abilityImp\HealWave.cs" />
     <Compile Include="Assets\script\ability\abilityImp\MeleeAttack.cs" />
     <Compile Include="Assets\script\ability\abilityImp\SummonGolem.cs" />
@@ -240,11 +240,11 @@
     <Compile Include="Assets\script\ability\buffImp\Weakness.cs" />
     <Compile Include="Assets\script\ability\effect\AbstractAbilityEffect.cs" />
     <Compile Include="Assets\script\ability\effect\AddBuffEffect.cs" />
-    <Compile Include="Assets\script\ability\effect\RowDamageAbilityEffect.cs" />
     <Compile Include="Assets\script\ability\effect\DamageAbilityEffect.cs" />
     <Compile Include="Assets\script\ability\effect\EffectAttribures.cs" />
     <Compile Include="Assets\script\ability\effect\ElementalMiultiplicators.cs" />
     <Compile Include="Assets\script\ability\effect\HealAbilityEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\RowDamageAbilityEffect.cs" />
     <Compile Include="Assets\script\ability\effect\SummonEffect.cs" />
     <Compile Include="Assets\script\ability\effect\UseItemEffect.cs" />
     <Compile Include="Assets\script\ability\modificator\AbstractModificator.cs" />
@@ -281,11 +281,11 @@
     <Compile Include="Assets\script\event\BasicDamageEvent.cs" />
     <Compile Include="Assets\script\event\BasicHealEvent.cs" />
     <Compile Include="Assets\script\event\BasicTargetEvent.cs" />
+    <Compile Include="Assets\script\event\CooldownEvent.cs" />
     <Compile Include="Assets\script\event\DestroyItemEvent.cs" />
     <Compile Include="Assets\script\event\Event.cs" />
     <Compile Include="Assets\script\event\EventQueue.cs" />
     <Compile Include="Assets\script\event\EventQueueSingleton.cs" />
-    <Compile Include="Assets\script\event\CooldownEvent.cs" />
     <Compile Include="Assets\script\event\GenerateAbilityEvent.cs" />
     <Compile Include="Assets\script\event\RemoveBuffEvent.cs" />
     <Compile Include="Assets\script\event\RemoveSummonEvent.cs" />
@@ -294,31 +294,37 @@
     <Compile Include="Assets\script\game\dialog\DialogController.cs" />
     <Compile Include="Assets\script\game\dialog\DialogMessage.cs" />
     <Compile Include="Assets\script\game\dialog\DialogMessagePosition.cs" />
-    <Compile Include="Assets\script\game\fight\FightSkipController.cs" />
     <Compile Include="Assets\script\game\fight\FightResultController.cs" />
+    <Compile Include="Assets\script\game\fight\FightSkipController.cs" />
     <Compile Include="Assets\script\game\fight\FightStartController.cs" />
     <Compile Include="Assets\script\game\GameController.cs" />
     <Compile Include="Assets\script\game\GameScene.cs" />
-    <Compile Include="Assets\script\game\menu\InventoryController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroImageController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroItemController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroItemsTabController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroItemsController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroListController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroTabController.cs" />
+    <Compile Include="Assets\script\game\inventory\SkillController.cs" />
+    <Compile Include="Assets\script\game\inventory\SkillsTabController.cs" />
+    <Compile Include="Assets\script\game\mainMenu\EnemyIconController.cs" />
+    <Compile Include="Assets\script\game\mainMenu\PersonIconController.cs" />
+    <Compile Include="Assets\script\game\map\ReturnFromMapController.cs" />
+    <Compile Include="Assets\script\game\map\MapController.cs" />
+    <Compile Include="Assets\script\game\map\MapPoint.cs" />
+    <Compile Include="Assets\script\game\map\MapPointController.cs" />
+    <Compile Include="Assets\script\game\inventory\InventoryController.cs" />
     <Compile Include="Assets\script\game\menu\MainMenuController.cs" />
     <Compile Include="Assets\script\interface\BuffController.cs" />
     <Compile Include="Assets\script\interface\HealthObjectController.cs" />
-    <Compile Include="Assets\script\interface\inventory\HeroImageController.cs" />
-    <Compile Include="Assets\script\interface\inventory\HeroItemController.cs" />
-    <Compile Include="Assets\script\interface\inventory\HeroTabController.cs" />
-    <Compile Include="Assets\script\interface\inventory\SkillController.cs" />
-    <Compile Include="Assets\script\interface\inventory\HeroItemsTabController.cs" />
-    <Compile Include="Assets\script\interface\inventory\SkillsTabController.cs" />
-    <Compile Include="Assets\script\interface\mainMenu\EnemyIconController.cs" />
-    <Compile Include="Assets\script\interface\mainMenu\PersonIconController.cs" />
     <Compile Include="Assets\script\interface\ManaObjectController.cs" />
     <Compile Include="Assets\script\item\Item.cs" />
+    <Compile Include="Assets\script\item\ItemType.cs" />
     <Compile Include="Assets\script\item\shield\Shield.cs" />
     <Compile Include="Assets\script\item\weapon\MageStaff.cs" />
     <Compile Include="Assets\script\item\weapon\TrollMace.cs" />
     <Compile Include="Assets\script\party\PartiesSingleton.cs" />
     <Compile Include="Assets\script\party\Party.cs" />
-    <Compile Include="Assets\script\PersonController.cs" />
     <Compile Include="Assets\script\Person.cs" />
     <Compile Include="Assets\script\person\AbstractFactory.cs" />
     <Compile Include="Assets\script\person\enemy\FastTroll.cs" />
@@ -330,11 +336,19 @@
     <Compile Include="Assets\script\person\hero\DebuffMage.cs" />
     <Compile Include="Assets\script\person\hero\FireMage.cs" />
     <Compile Include="Assets\script\person\hero\HealMage.cs" />
-    <Compile Include="Assets\script\person\Place.cs" />
     <Compile Include="Assets\script\person\PersonFactory.cs" />
+    <Compile Include="Assets\script\person\Place.cs" />
     <Compile Include="Assets\script\person\summon\Golem.cs" />
+    <Compile Include="Assets\script\PersonController.cs" />
     <Compile Include="Assets\script\PersonStatistics.cs" />
+    <Compile Include="Assets\script\system\ComunicationObject.cs" />
     <Compile Include="Assets\script\system\CSVLogger.cs" />
+    <Compile Include="Assets\script\system\GameMessage.cs" />
+    <Compile Include="Assets\script\system\MessageType.cs" />
+    <Compile Include="Assets\script\system\MessageController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Resources\configs\maps\first.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

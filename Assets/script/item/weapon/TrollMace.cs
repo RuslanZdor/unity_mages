@@ -6,7 +6,7 @@ public class TrollMace : Item{
         init();
     }
 
-	public override void init() {
+    public override void init() {
         cost = Constants.ITEM_TROLL_MACE_COST;
         maxDurability = Constants.ITEM_TROLL_MACE_DURABILITY;
         name = Constants.ITEM_TROLL_MACE_NAME;
@@ -20,7 +20,9 @@ public class TrollMace : Item{
         attack.effectList.Add(getUseItem());
 
         abilityList.Add(attack);
+        image = Resources.Load<Sprite>("texture/Items/Weapons/mace");
+        type = ItemType.WEAPON;
 
-		base.init();
+        base.init();
     }
 }

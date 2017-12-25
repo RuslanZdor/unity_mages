@@ -7,5 +7,8 @@ public class Shield : Item {
         cost = Constants.ITEM_SHIELD_COST;
         durability = Constants.ITEM_SHIELD_USABLE_COUNT;
         modificatorList.Add(new BlockChanceModificator(Constants.ITEM_SHIELD_BLOCK_CHANCE));
+
+        image = Resources.Load<Sprite>("texture/Items/Shields/shield");
+        type = ItemType.SHIELD;
     }
 }

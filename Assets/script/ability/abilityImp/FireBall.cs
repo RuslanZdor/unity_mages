@@ -10,7 +10,7 @@ public class FireBall : Ability {
         cooldown = 3.0f;
 		targetType = AbilityTargetType.ENEMY;
         animation = "animation/meleeAttackAnimation";
-
+        image = Resources.Load<Sprite>("texture/Skills/fireball");
 
         AbstractAbilityEffect effect = new DamageAbilityEffect();
 		effect.targetsNumber = 1;

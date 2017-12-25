@@ -2,11 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour, IListenerObject {
 
     private GameScene currentScene;
 
     public GameScene mainMenu;
+    public GameScene inventory;
+    public GameScene fightMap;
+    public GameScene fightScene;
+    public GameScene fightResult;
+    public GameScene dialog;
 
     // Use this for initialization
     void Start() {
@@ -20,37 +25,29 @@ public class GameController : MonoBehaviour {
         f.initAbilities();
         PartiesSingleton.activeHeroes.Add(f);
 
-        currentScene = changeScene(mainMenu);
+        f = new FireMage();
+        f.name = "Summoner mage";
+        f.initAbilities();
+        PartiesSingleton.activeHeroes.Add(f);
+
+        GameMessage gm = new GameMessage();
+        gm.type = MessageType.CLOSE_MAIN_MENU;
+        gm.message = "open main scene";
+        GameObject.Find("MessageController").GetComponent<MessageController>().addMessage(gm);
+
+        Instantiate(mainMenu);
+        Instantiate(inventory);
+        Instantiate(fightMap);
+        Instantiate(fightScene);
+        Instantiate(fightResult);
+        Instantiate(dialog);
     }
 
     // Update is called once per frame
     void Update() {
-        GameScene next;
-        if (currentScene.isFinishedOrHidded()) {
-            next = currentScene.getNextScene();
-            if (next != null) {
-                currentScene.gameObject.SetActive(false);
-                currentScene.isHided = true;
-                next.setPreviousScene(currentScene);
-            } else {
-                next = currentScene.getPreviousScene();
-                Destroy(currentScene.gameObject);
-            }
-            currentScene = changeScene(next);
-        }
+
     }
 
-    private GameScene changeScene(GameScene next) {
-        GameScene newScene;
-        if (next.gameObject.scene.name != null) {
-            next.gameObject.SetActive(true);
-            next.setNextScene(null);
-            newScene = next;
-            newScene.isHided = false;
-         } else {
-            newScene = Instantiate(next);
-         }
-        return newScene;
+    public void readMessage(GameMessage message) {
     }
-
 }

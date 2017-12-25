@@ -7,14 +7,9 @@ public class TrollSummoner : Troll {
         knownAbilities.Add(new SummonGolem(this, new SummonCastTactic(3)));
         maxMana = 10;
 
+        powerCost = 150;
+        powerCostPerLevel = 15;
+
         name = "troll summoner";
     }
-
-    public TrollSummoner(string name) : base() {
-        knownAbilities.Add(new SummonGolem(this, new SummonCastTactic(3)));
-        maxMana = 10;
-
-        this.name = name;
-    }
-
 }

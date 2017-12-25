@@ -11,6 +11,9 @@ public class Golem : Person{
         healthPerLevel = Constants.GOLEM_HEALTH_PER_LEVEL;
         maxMana = Constants.GOLEM_MANA_PER_LEVEL;
 
+        powerCost = 50;
+        powerCostPerLevel = 5;
+
         agro = Constants.GOLEM_AGRO;
 
         personImage = "texture/troll";

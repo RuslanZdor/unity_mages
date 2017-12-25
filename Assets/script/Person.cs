@@ -10,8 +10,10 @@ public class Person : ICloneable {
     public int id;
     public string name;
 
-    public int level;
+    public int level = 1;
     public int experience;
+    public int powerCost;
+    public int powerCostPerLevel;
 
     public float health;
     public float maxHealth;
@@ -166,6 +168,7 @@ public class Person : ICloneable {
                     ability.personOwner = newPerson;
                 }
             }
+
             return newPerson;
         } catch (Exception e) {
             Debug.LogError(e);
@@ -188,12 +191,11 @@ public class Person : ICloneable {
             abilityList.Add(ability);
         }
 
-        List<Item> activeItems = itemList.FindAll((Item item) => item.isActive);
-        for (int i = 0; i < activeItems.Count; i++) {
+        for (int i = 0; i < itemList.Count; i++) {
             Buff b = new Buff(this, new DamageSpellCastTactic(1));
-            foreach (AbstractModificator modificator in activeItems[i].modificatorList) {
+            foreach (AbstractModificator modificator in itemList[i].modificatorList) {
                 b.modificator = modificator;
-                b.name = activeItems[i].GetType().FullName + ":" + modificator.GetType().FullName;
+                b.name = itemList[i].GetType().FullName + ":" + modificator.GetType().FullName;
                 effectList.Add(b);
             }
             abilityList.AddRange(itemList[i].abilityList);
@@ -212,5 +214,7 @@ public class Person : ICloneable {
         health = 0;
     }
 
-
+    public int calculatePower() {
+        return powerCost + powerCostPerLevel * (level - 1);
+    }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class DialogController : GameScene {
+public class DialogController : GameScene, IListenerObject {
 
     public GameObject message;
     private GameObject currentMessage;
@@ -15,6 +15,9 @@ public class DialogController : GameScene {
             background = "texture/main_scene";
             Sprite image = Resources.Load<Sprite>(background) as Sprite;
             transform.Find("background").GetComponent<SpriteRenderer>().sprite = image;
+
+            registerListener(this);
+            gameObject.SetActive(false);
 
             DialogMessage m = new DialogMessage();
             m.message = "same message";
@@ -70,5 +73,8 @@ public class DialogController : GameScene {
         Vector2 position = currentMessage.transform.Find("PersonImage").transform.localPosition;
         position.x = -3.0f;
         currentMessage.transform.Find("PersonImage").transform.localPosition = position;
+    }
+
+    public void readMessage(GameMessage message) {
     }
 }

@@ -7,8 +7,9 @@ public class MeleeAttack : Ability {
 		name = n;
 		timeCast = Constants.PERSON_MELEE_ATTACK_SPEED;
 		targetType = AbilityTargetType.ENEMY;
+        image = Resources.Load<Sprite>("texture/Skills/handAttack");
 
-		AbstractAbilityEffect effect = new DamageAbilityEffect();
+        AbstractAbilityEffect effect = new DamageAbilityEffect();
 		effect.targetsNumber = 1;
 		effect.valueGenerator = new ConstantValueGenerator(Constants.PERSON_MELEE_ATTACK_DAMAGE);
 		effect.attribures.Add(EffectAttribures.MELEE_ATTACK);

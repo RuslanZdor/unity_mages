@@ -2,15 +2,19 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PersonController : MonoBehaviour {
 
     public Person person;
 
     public Animator animator;
+    public GameObject heroLevel;
 
     void Start() {
         animator = transform.Find("model").GetComponent<Animator>();
+        heroLevel = transform.Find("HeroLevel").gameObject;
+        heroLevel.transform.GetComponent<Text>().text = person.level.ToString();
     }
 
     void Update() {

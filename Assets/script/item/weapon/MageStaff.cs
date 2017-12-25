@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MageStaff : Item {
 	public MageStaff(Person person) : base(person) {
@@ -22,7 +23,10 @@ public class MageStaff : Item {
         abilityList.Add(attack);
 
         modificatorList.Add(new CritChanceModificator(100));
-        
+
+        image = Resources.Load<Sprite>("texture/Items/Weapons/stuff");
+        type = ItemType.WEAPON;
+
         base.init();
     }
 }

@@ -7,6 +7,7 @@ public class PartiesSingleton {
     public static Party enemies = new Party(AbilityTargetType.ENEMY, AbilityTargetType.FRIEND);
 
     public static List<Person> activeHeroes = new List<Person>();
+    public static List<Item> inventory = new List<Item>();
 
     public static bool hasWinner() {
         if (heroes.allDead() || enemies.allDead()) {

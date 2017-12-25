@@ -13,3 +13,4 @@ Temp/UnityLockfile
 Temp/
 ProjectSettings/
 .vs/*
+*.ide

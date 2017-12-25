@@ -10,6 +10,7 @@ public class FireWall : Ability {
         cooldown = 3.0f;
 		targetType = AbilityTargetType.ENEMY;
         animation = "animation/meleeAttackAnimation";
+        image = Resources.Load<Sprite>("texture/Skills/firewall");
 
 
         AbstractAbilityEffect effect = new RowDamageAbilityEffect();

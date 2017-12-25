@@ -1,164 +1,112 @@
 time,Person,Event Type,Message
-0,troll summoner 2,GenerateAbilityEvent,generated next ability Summon Golem
-0,troll summoner 1,GenerateAbilityEvent,generated next ability Summon Golem
+0,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
+0,Summoned Golem,GenerateAbilityEvent,ERROR Summoned Golem has no available ability to cast
+0,Summoner mage,GenerateAbilityEvent,generated next ability Fireball
 0,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
 0,Fire mage,GenerateAbilityEvent,generated next ability Fireball
 1,Heal mage,Event,Casting ability Melee Attack by Mage Staff
 1,Heal mage,UseItemEvent,Item Mage Staff has durability [99]
-1,Heal mage,BasicDamageEvent, deal 8 to troll summoner 1[92/100]
+1,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[52/60]
 1,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
 1,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-1,troll summoner 1,Event,Casting ability Summon Golem
-1,troll summoner 1,SummonEvent,summon  Summoned Golem
+1,Summoned Golem,Event,Casting ability Melee Attack
+1,Summoned Golem,BasicDamageEvent, deal 0 to Summoner mage[40/40]
+1,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
 1,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-1,troll summoner 1,CooldownEvent, finish cooldown for ability Summon Golem
-1,troll summoner 1,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-1,troll summoner 2,Event,Casting ability Summon Golem
-1,troll summoner 2,SummonEvent,summon  Summoned Golem
-1,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-1,troll summoner 2,CooldownEvent, finish cooldown for ability Summon Golem
-1,troll summoner 2,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
 1.5,Fire mage,Event,Casting ability Fireball
-1.5,Fire mage,BasicDamageEvent, deal 12 to Summoned Golem[38/50]
-1.5,Fire mage,BasicDamageEvent, deal 10 to Summoned Golem[40/50]
-1.5,Fire mage,BasicDamageEvent, deal 16 to troll summoner 1[76/100]
+1.5,Fire mage,BasicDamageEvent, deal 10 to Summoned Golem[42/60]
 1.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-2,troll summoner 2,Event,Casting ability Melee Attack by Troll Mace
-2,troll summoner 2,UseItemEvent,Item Troll Mace has durability [99]
-2,troll summoner 2,BasicDamageEvent, deal 5 to Fire mage[25/30]
-2,troll summoner 2,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-2,troll summoner 2,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+1.5,Summoner mage,Event,Casting ability Fireball
+1.5,Summoner mage,BasicDamageEvent, deal 16 to Summoned Golem[26/60]
+1.5,Summoner mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
 2,Summoned Golem,Event,Casting ability Melee Attack
-2,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[24/30]
-2,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-2,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-2,troll summoner 1,Event,Casting ability Melee Attack by Troll Mace
-2,troll summoner 1,UseItemEvent,Item Troll Mace has durability [99]
-2,troll summoner 1,BasicDamageEvent, deal 5 to Fire mage[19/30]
-2,troll summoner 1,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-2,troll summoner 1,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-2,Summoned Golem,Event,Casting ability Melee Attack
-2,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[18/30]
+2,Summoned Golem,BasicDamageEvent, deal 0 to Fire mage[40/40]
 2,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
 2,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
 2,Heal mage,Event,Casting ability Melee Attack by Mage Staff
 2,Heal mage,UseItemEvent,Item Mage Staff has durability [98]
-2,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[30/50]
+2,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[18/60]
 2,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-2,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+2,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+2.5,Summoner mage,Event,Casting ability Melee Attack by Mage Staff
+2.5,Summoner mage,UseItemEvent,Item Mage Staff has durability [99]
+2.5,Summoner mage,BasicDamageEvent, deal 8 to Summoned Golem[10/60]
+2.5,Summoner mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+2.5,Summoner mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
 2.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
 2.5,Fire mage,UseItemEvent,Item Mage Staff has durability [99]
-2.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[32/50]
+2.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[2/60]
 2.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
 2.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+3,Heal mage,UseItemEvent,Item Mage Staff has durability [97]
+3,Heal mage,BasicDamageEvent, deal 2 to Summoned Golem[0/60]
+3,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
 3,Summoned Golem,Event,Casting ability Melee Attack
-3,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[17/30]
+3,Summoned Golem,BasicDamageEvent, deal 0 to Summoner mage[40/40]
 3,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
 3,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-3,troll summoner 1,Event,Casting ability Melee Attack by Troll Mace
-3,troll summoner 1,UseItemEvent,Item Troll Mace has durability [98]
-3,troll summoner 1,BasicDamageEvent, deal 5 to Fire mage[12/30]
-3,troll summoner 1,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-3,troll summoner 1,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-3,Summoned Golem,Event,Casting ability Melee Attack
-3,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[11/30]
-3,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-3,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-3,troll summoner 2,Event,Casting ability Melee Attack by Troll Mace
-3,troll summoner 2,UseItemEvent,Item Troll Mace has durability [98]
-3,troll summoner 2,BasicDamageEvent, deal 5 to Fire mage[6/30]
-3,troll summoner 2,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-3,troll summoner 2,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
 3.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
 3.5,Fire mage,UseItemEvent,Item Mage Staff has durability [98]
-3.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[22/50]
+3.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[52/60]
 3.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
 3.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-4,troll summoner 2,Event,Casting ability Melee Attack by Troll Mace
-4,troll summoner 2,UseItemEvent,Item Troll Mace has durability [97]
-4,troll summoner 2,BasicDamageEvent, deal 5 to Fire mage[1/30]
-4,troll summoner 2,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-4,troll summoner 2,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+3.5,Summoner mage,Event,Casting ability Melee Attack by Mage Staff
+3.5,Summoner mage,UseItemEvent,Item Mage Staff has durability [98]
+3.5,Summoner mage,BasicDamageEvent, deal 8 to Summoned Golem[44/60]
+3.5,Summoner mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.5,Summoner mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
 4,Summoned Golem,Event,Casting ability Melee Attack
-4,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[0/30]
+4,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[39/40]
 4,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
 4,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-4,troll summoner 1,Event,Casting ability Melee Attack by Troll Mace
-4,troll summoner 1,UseItemEvent,Item Troll Mace has durability [97]
-4,troll summoner 1,BasicDamageEvent, deal 5 to Heal mage[25/30]
-4,troll summoner 1,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-4,troll summoner 1,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-4,Summoned Golem,Event,Casting ability Melee Attack
-4,Summoned Golem,BasicDamageEvent, deal 1 to Heal mage[24/30]
-4,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-4,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-4,Heal mage,Event,Casting ability Heal Wave
-4,Heal mage,BasicHealEvent, heal 6 to Heal mage[30/30]
-4,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
-4,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+4,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+4,Heal mage,UseItemEvent,Item Mage Staff has durability [96]
+4,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[36/60]
+4,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+4,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+4.5,Summoner mage,Event,Casting ability Melee Attack by Mage Staff
+4.5,Summoner mage,UseItemEvent,Item Mage Staff has durability [97]
+4.5,Summoner mage,BasicDamageEvent, deal 8 to Summoned Golem[28/60]
+4.5,Summoner mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+4.5,Summoner mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
 4.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+4.5,Fire mage,UseItemEvent,Item Mage Staff has durability [97]
+4.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[20/60]
+4.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+4.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+4.5,Summoner mage,CooldownEvent, finish cooldown for ability Fireball
 4.5,Fire mage,CooldownEvent, finish cooldown for ability Fireball
-5,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-5,Heal mage,UseItemEvent,Item Mage Staff has durability [97]
-5,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[24/50]
-5,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-5,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
 5,Summoned Golem,Event,Casting ability Melee Attack
-5,Summoned Golem,BasicDamageEvent, deal 1 to Heal mage[29/30]
+5,Summoned Golem,BasicDamageEvent, deal 1 to Summoner mage[39/40]
 5,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
 5,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-5,troll summoner 1,Event,Casting ability Melee Attack by Troll Mace
-5,troll summoner 1,UseItemEvent,Item Troll Mace has durability [96]
-5,troll summoner 1,BasicDamageEvent, deal 5 to Heal mage[24/30]
-5,troll summoner 1,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-5,troll summoner 1,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-5,Summoned Golem,Event,Casting ability Melee Attack
-5,Summoned Golem,BasicDamageEvent, deal 1 to Heal mage[23/30]
-5,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-5,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-5,troll summoner 2,Event,Casting ability Melee Attack by Troll Mace
-5,troll summoner 2,UseItemEvent,Item Troll Mace has durability [96]
-5,troll summoner 2,BasicDamageEvent, deal 5 to Heal mage[18/30]
-5,troll summoner 2,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-5,troll summoner 2,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-6,troll summoner 2,Event,Casting ability Melee Attack by Troll Mace
-6,troll summoner 2,UseItemEvent,Item Troll Mace has durability [95]
-6,troll summoner 2,BasicDamageEvent, deal 5 to Heal mage[13/30]
-6,troll summoner 2,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-6,troll summoner 2,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+5.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+5.5,Fire mage,UseItemEvent,Item Mage Staff has durability [96]
+5.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[12/60]
+5.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+5.5,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+5.5,Summoner mage,Event,Casting ability Melee Attack by Mage Staff
+5.5,Summoner mage,UseItemEvent,Item Mage Staff has durability [96]
+5.5,Summoner mage,BasicDamageEvent, deal 8 to Summoned Golem[4/60]
+5.5,Summoner mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+5.5,Summoner mage,GenerateAbilityEvent,generated next ability Fireball
 6,Summoned Golem,Event,Casting ability Melee Attack
-6,Summoned Golem,BasicDamageEvent, deal 1 to Heal mage[12/30]
+6,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[38/40]
 6,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
 6,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-6,troll summoner 1,Event,Casting ability Melee Attack by Troll Mace
-6,troll summoner 1,UseItemEvent,Item Troll Mace has durability [95]
-6,troll summoner 1,BasicDamageEvent, deal 5 to Heal mage[7/30]
-6,troll summoner 1,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-6,troll summoner 1,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-6,Summoned Golem,Event,Casting ability Melee Attack
-6,Summoned Golem,BasicDamageEvent, deal 1 to Heal mage[6/30]
-6,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-6,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-6,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-6,Heal mage,UseItemEvent,Item Mage Staff has durability [96]
-6,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[16/50]
-6,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+6,Heal mage,Event,Casting ability Heal Wave
+6,Heal mage,BasicHealEvent, heal 2 to Fire mage[40/40]
+6,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
 6,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
 7,Summoned Golem,Event,Casting ability Melee Attack
-7,Summoned Golem,BasicDamageEvent, deal 1 to Heal mage[5/30]
+7,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[39/40]
 7,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
 7,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-7,troll summoner 1,Event,Casting ability Melee Attack by Troll Mace
-7,troll summoner 1,UseItemEvent,Item Troll Mace has durability [94]
-7,troll summoner 1,BasicDamageEvent, deal 5 to Heal mage[0/30]
-7,troll summoner 1,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-7,troll summoner 1,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-7,Summoned Golem,Event,Casting ability Melee Attack
-7,Summoned Golem,BasicDamageEvent, deal 0 to Heal mage[0/30]
-7,Summoned Golem,BasicDamageEvent, kill Heal mage
-7,Summoned Golem,BasicDamageEvent,Summoned Golem kill Heal mage
-47,FightController,FightController,Result
-47,FightController,FightController,troll summoner 1has 76
-47,FightController,FightController,troll summoner 2has 100
-47,FightController,FightController,Summoned Golemhas 16
-47,FightController,FightController,Summoned Golemhas 22
+7,Summoner mage,Event,Casting ability Fireball
+7,Summoner mage,BasicDamageEvent, deal 4 to Summoned Golem[0/60]
+31,FightController,FightController,Result
+31,FightController,FightController,Fire magehas 39
+31,FightController,FightController,Heal magehas 40
+31,FightController,FightController,Summoner magehas 39

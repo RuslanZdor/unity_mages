@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public abstract class Item {
 	public List<AbstractModificator> modificatorList = new List<AbstractModificator>();
@@ -11,8 +12,9 @@ public abstract class Item {
 	public Person owner;
 	public int level;
     public string name;
-
-    public bool isActive = true;
+    public string description;
+    public Sprite image;
+    public ItemType type;
 
     public AbstractAbilityEffect getUseItem() {
         UseItemEffect useItem = new UseItemEffect();

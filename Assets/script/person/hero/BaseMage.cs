@@ -14,7 +14,6 @@ public abstract class BaseMage : Person {
         itemList.Add(new MageStaff(this));
 
         Shield shield = new Shield(this);
-        shield.isActive = false;
         itemList.Add(shield);
     }
 }

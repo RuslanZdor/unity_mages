@@ -8,6 +8,11 @@ public class FastTroll : Troll {
 
         abilityList.Add(new MeleeAttack(this, "Melee Attack 2"));
         numberParrallelCasts = 2;
+
+        powerCost = 100;
+        powerCostPerLevel = 10;
+
+        name = "fast troll";
     }
 
 }

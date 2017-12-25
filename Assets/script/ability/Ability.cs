@@ -17,6 +17,7 @@ public class Ability : ICloneable {
 
     public float animationTIme = 1.0f;
     public String animation;
+    public Sprite image;
 
 	public Person personOwner;
 

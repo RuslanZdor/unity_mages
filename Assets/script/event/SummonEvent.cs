@@ -6,7 +6,7 @@ public class SummonEvent : BasicTargetEvent {
 	public Person person;
 
 	public override float eventStart() {
-        PersonFactory pf = owner.personController.transform.parent.transform.Find("GameFactory").GetComponent<PersonFactory>();
+        PersonFactory pf = owner.personController.transform.parent.parent.transform.Find("GameFactory").GetComponent<PersonFactory>();
         GameObject go = pf.create(person);
 
         PartiesSingleton.getParty(owner.ally).addPerson(go);
