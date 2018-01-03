@@ -3,14 +3,15 @@ using System.Collections;
 
 public class GiantPower : Buff {
 
-	public GiantPower(Person person) : base(person, new DamageSpellCastTactic(3)) {
+	public GiantPower() : base(new DamageSpellCastTactic(3)) {
 		name = "Giant Power";
 		timeCast = 1.0f;
 		targetType = AbilityTargetType.FRIEND;
 		manaCost = 1;
 		duration = 5;
+        image = Constants.loadSprite("texture/Skills/buffIcons", "buffIcons_52");
 
-		AddBuffEffect effect = new AddBuffEffect();
+        AddBuffEffect effect = new AddBuffEffect();
 		effect.targetsNumber = 1;
 		effect.buff = this;
 		effectList.Add(effect);

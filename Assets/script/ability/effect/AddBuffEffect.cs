@@ -5,12 +5,15 @@ public class AddBuffEffect : AbstractAbilityEffect{
 
     public Buff buff;
 
-	public override void applyEffect(Person owner, Person target, float startTime) {
+	public override void applyEffect(Person owner, Person target, float startTime, Ability ab) {
 
-        Buff ability = new Buff(owner, new MeleeAttackTactic());
+        Buff ability = new Buff(new MeleeAttackTactic());
         ability.modificator = buff.modificator;
         ability.name = buff.name;
         ability.duration = buff.duration;
+        ability.image = buff.image;
+
+        ability.animation = ab.animation;
 
         AddBuffEvent e = new AddBuffEvent();
         e.owner = owner;

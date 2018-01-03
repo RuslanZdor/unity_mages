@@ -25,7 +25,7 @@ public class SummonAbility : Ability{
         return name.Equals(((SummonAbility) obj).name);
     }
 
-	public SummonAbility(Person person, AbstractTactic tactic) : base(person, tactic) {
+	public SummonAbility(AbstractTactic tactic) : base(tactic) {
     }
 
     public SummonCastTactic getAbilityTactic() {
@@ -34,5 +34,12 @@ public class SummonAbility : Ability{
 
     public void setAbilityTactic(SummonCastTactic abilityTactic) {
 		base.abilityTactic = abilityTactic;
+    }
+
+    public override void setPerson(Person p) {
+        personOwner = p;
+        targetType = p.ally;
+        person = p;
+        abilityTactic.person = person;
     }
 }

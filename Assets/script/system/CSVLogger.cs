@@ -11,7 +11,7 @@ public class CSVLogger {
         if (mSelfReference == null) {
             File.WriteAllText(@"mage_logs.csv", string.Empty);
             file = new StreamWriter(@"mage_logs.csv");
-            string output = "time" + "," + "Person" + "," + "Event Type" + "," + "Message";
+            string output = "real time" + "," + "time" + "," + "Person" + "," + "Event Type" + "," + "Message";
             file.WriteLine(output);
             file.Flush();
             mSelfReference = new CSVLogger();
@@ -19,7 +19,7 @@ public class CSVLogger {
     }
 
     private static void trPostMessage(float time, string person, string channel, string message) {
-        string output = time.ToString() + "," + person + "," + channel + "," + message;
+        string output = Time.fixedTime + "," + time.ToString() + "," + person + "," + channel + "," + message;
         file.WriteLine(output);
         file.Flush();
     }

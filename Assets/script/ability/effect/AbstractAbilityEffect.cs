@@ -6,15 +6,18 @@ using System;
 public abstract class AbstractAbilityEffect : ICloneable{
 
     public AbstractValueGenerator valueGenerator;
-	public int value;
+	public float value;
 	public int targetsNumber;
 
 	public List<EffectAttribures> attribures = new List<EffectAttribures>();
 
 	public object Clone() {
-		return this.MemberwiseClone();
+        AbstractAbilityEffect ae = (AbstractAbilityEffect) this.MemberwiseClone();
+        ae.attribures = new List<EffectAttribures>();
+        ae.attribures.AddRange(attribures);
+        return ae;
 	}
 
-    public abstract void applyEffect(Person owner, Person target, float startTime);
+    public abstract void applyEffect(Person owner, Person target, float startTime, Ability ability);
 
 }

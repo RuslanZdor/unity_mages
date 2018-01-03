@@ -9,13 +9,15 @@ public class Ability : ICloneable {
     public float timeCast;
     public float cooldown;
 	public float manaCost;
+    public int level;
+    public int priority = 1;
     
 	public List<AbstractAbilityEffect> effectList = new List<AbstractAbilityEffect>();
 	public AbilityTargetType targetType;
 	public AbstractTactic abilityTactic;
 	public AbstractTargetTactic targetTactic;
 
-    public float animationTIme = 1.0f;
+    public float animationTime = 0.5f;
     public String animation;
     public Sprite image;
 
@@ -34,23 +36,25 @@ public class Ability : ICloneable {
                 Party party = PartiesSingleton.getParty(targetParty);
                 List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber, this);
 				foreach (Person target in targets) {
-                    effect.applyEffect(personOwner, target, startTime);
+                    effect.applyEffect(personOwner, target, startTime, this);
                 }
             }
 
-            if (effectList.FindAll(
-                (AbstractAbilityEffect eff) =>
-                eff.attribures.FindAll(
-                    (EffectAttribures attr) => attr == EffectAttribures.MELEE_ATTACK
-                ).Count > 0
-            ).Count > 0) {
-                personOwner.personController.meleeAttackAbility();
-            } else {
-                personOwner.personController.castAbility();
+            if (animationTime > 0) {
+                if (effectList.FindAll(
+                    (AbstractAbilityEffect eff) =>
+                    eff.attribures.FindAll(
+                        (EffectAttribures attr) => attr == EffectAttribures.MELEE_ATTACK
+                    ).Count > 0
+                ).Count > 0) {
+                    personOwner.personController.meleeAttackAbility();
+                } else {
+                    personOwner.personController.castAbility();
+                }
             }
 
 
-            return animationTIme;
+            return animationTime;
         }
         return 0.0f;
     }
@@ -67,22 +71,39 @@ public class Ability : ICloneable {
         if (this.effectList.Count > 0) {
             Event e = new Event();
             e.eventTime = currentTime + timeCast;
-            e.ability = this;
+            e.ability = (Ability) this.Clone();
             e.owner = person;
-            e.eventDuration = timeCast;
+            e.eventDuration = animationTime;
             EventQueueSingleton.queue.add(e);
         }
     }
 
-    public Ability(Person person, AbstractTactic tactic) {
+    public Ability(AbstractTactic tactic) {
         abilityTactic = tactic;
-        abilityTactic.person = person;
         abilityTactic.ability = this;
-        personOwner = person;
     }
 
 	public object Clone() {
-		return this.MemberwiseClone();
+        Ability ab = (Ability) this.MemberwiseClone();
+        List<AbstractAbilityEffect> newList = new List<AbstractAbilityEffect>();
+        foreach (AbstractAbilityEffect aae in ab.effectList) {
+            newList.Add((AbstractAbilityEffect) aae.Clone());
+        }
+        ab.effectList = newList;
+        return ab;
 	}
 		
+    public virtual void setPerson(Person person) {
+        personOwner = person;
+        abilityTactic.person = person;
+    }
+
+    public virtual void initAbility() {
+
+    }
+
+    public bool hasAttribute(EffectAttribures attribute) {
+        return effectList.FindAll((AbstractAbilityEffect effect) =>
+                effect.attribures.Contains(attribute)).Count > 0;
+    }
 }

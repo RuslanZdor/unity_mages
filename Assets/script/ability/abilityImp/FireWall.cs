@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class FireWall : Ability {
-	public FireWall(Person person) : base(person, new DamageSpellCastTactic(3)) {
+	public FireWall() : base(new DamageSpellCastTactic(3)) {
 		name  = "Fireball";
 		timeCast = 1.5f;
 		manaCost = 1;
         cooldown = 3.0f;
 		targetType = AbilityTargetType.ENEMY;
         animation = "animation/meleeAttackAnimation";
-        image = Resources.Load<Sprite>("texture/Skills/firewall");
+        image = Constants.loadSprite("texture/Skills/buffIcons", "buffIcons_12");
 
 
         AbstractAbilityEffect effect = new RowDamageAbilityEffect();

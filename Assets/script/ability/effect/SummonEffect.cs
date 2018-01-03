@@ -6,7 +6,7 @@ public class SummonEffect : AbstractAbilityEffect{
 	public Person person;
 	public float duration;
 
-	public override void applyEffect(Person owner, Person target, float startTime) {
+	public override void applyEffect(Person owner, Person target, float startTime, Ability ab) {
 
 		Person clonePerson = (Person) person.Clone();
         clonePerson.summoner = owner;

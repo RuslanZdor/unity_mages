@@ -3,14 +3,14 @@ using System.Collections;
 
 public class RangeValueGenerator : AbstractValueGenerator {
 
-	public int minValue;
-	public int maxValue;
+	public float minValue;
+	public float maxValue;
 
-	public override int getValue() {
+	public override float getValue() {
 		return  Random.Range(minValue, maxValue);
     }
 
-    public RangeValueGenerator(int minValue, int maxValue) {
+    public RangeValueGenerator(float minValue, float maxValue) {
         this.minValue = minValue;
         this.maxValue = maxValue;
     }

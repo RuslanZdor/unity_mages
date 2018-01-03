@@ -1,0 +1,21 @@
+<item>
+	<type>WEAPON</type>
+	<sprite>texture/Items/weapons/weapons</sprite>
+	<image>weapons_5</image>
+	<name>Mage Staff</name>
+	<level>2</level>
+	<cost>100</cost>
+	<durability>100</durability>
+	<cast_time>1</cast_time>
+	<damage>4</damage>
+	<damagePerLevel>0.5</damagePerLevel>
+	<powerCost>20</powerCost>
+	<powerCostPerLevel>2</powerCostPerLevel>
+	<buffs>
+		<buff>
+			<type>PassiveCritChance</type>
+			<value>100</value>
+		</buff>
+	</buffs>
+</item>
+

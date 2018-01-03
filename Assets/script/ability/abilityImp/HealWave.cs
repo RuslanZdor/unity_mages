@@ -3,14 +3,13 @@ using System.Collections;
 
 public class HealWave : Ability {
 
-	public HealWave(Person person) : base(person, new DamageSpellCastTactic(3)) {
+	public HealWave() : base(new DamageSpellCastTactic(3)) {
 		name = "Heal Wave";
 		timeCast = 2.0f;
 		manaCost = 1;
 		targetType = AbilityTargetType.FRIEND;
 
-        image = Resources.Load<Sprite>("texture/Skills/healwave");
-
+        image = Constants.loadSprite("texture/Skills/buffIcons", "buffIcons_64");
 
         AbstractAbilityEffect effect = new HealAbilityEffect();
 		effect.targetsNumber = 1;

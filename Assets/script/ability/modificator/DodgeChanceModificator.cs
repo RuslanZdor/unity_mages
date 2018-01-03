@@ -12,9 +12,12 @@ public class DodgeChanceModificator : AbstractModificator{
 	public override void updateGettingDamage(Ability ability) {
         if (chance > 0)  {
 			if (Random.Range(0,100) <= chance) {
-				ability.effectList.ForEach((AbstractAbilityEffect effect) => {
-					effect.value = 0;
-                    effect.attribures.Add(EffectAttribures.DODGE);
+                ability.effectList.FindAll(
+                        (AbstractAbilityEffect effect) =>
+                        !effect.attribures.Contains(EffectAttribures.DODGE))
+                    .ForEach((AbstractAbilityEffect effect) => {
+					    effect.value = 0;
+                        effect.attribures.Add(EffectAttribures.DODGE);
                 });
             }
         }

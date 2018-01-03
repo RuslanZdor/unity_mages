@@ -1,22 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MeleeAttack : Ability {
+public class MeleeAttack : DamageAbility {
 
-	public MeleeAttack(Person person, string n) :  base(person, new MeleeAttackTactic(1)){
+	public MeleeAttack(string n) :  base(new MeleeAttackTactic(1)){
 		name = n;
 		timeCast = Constants.PERSON_MELEE_ATTACK_SPEED;
 		targetType = AbilityTargetType.ENEMY;
-        image = Resources.Load<Sprite>("texture/Skills/handAttack");
+        image = Constants.loadSprite("texture/Skills/buffIcons", "buffIcons_2");
 
-        AbstractAbilityEffect effect = new DamageAbilityEffect();
-		effect.targetsNumber = 1;
-		effect.valueGenerator = new ConstantValueGenerator(Constants.PERSON_MELEE_ATTACK_DAMAGE);
-		effect.attribures.Add(EffectAttribures.MELEE_ATTACK);
-
-		effectList.Add(effect);
+        minDamage = 1;
+        maxDamage = 1;
 
         targetTactic = new RandomTargetTactic();
-	}
+    }
 }
 

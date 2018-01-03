@@ -5,15 +5,15 @@ using System.Collections.Generic;
 public abstract class BaseMage : Person {
 	public BaseMage() : base() {
         personImage = "texture/model";
+        personModel = "models/persons/BasicMageModel";
 
-        maxHealth = Constants.BASE_MAGE_HEALTH;
-        maxMana = Constants.BASE_MAGE_MANA;
+        basicHealth = Constants.BASE_MAGE_HEALTH;
+        basicMana = Constants.BASE_MAGE_MANA;
         healthPerLevel = Constants.BASE_MAGE_HEALTH_PER_LEVEL;
         manaPerLevel = Constants.BASE_MAGE_MANA_PER_LEVEL;
 
-        itemList.Add(new MageStaff(this));
+        itemList.Add(XMLFactory.loadItem("configs/items/weapons/mage_stuff"));
 
-        Shield shield = new Shield(this);
-        itemList.Add(shield);
+        itemList.Add(XMLFactory.loadItem("configs/items/shields/shield"));
     }
 }

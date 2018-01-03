@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class FireMage : BaseMage {
 	public FireMage() : base() {
-        knownAbilities.Add(new FireWall(this));
-        knownAbilities.Add(new SummonGolem(this, new SummonCastTactic(1)));
+        knownAbilities.Add(new FireWall());
+        knownAbilities.Add(new SummonGolem(new SummonCastTactic(1)));
     }
 
 }

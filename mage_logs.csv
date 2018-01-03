@@ -1,112 +1,1360 @@
-time,Person,Event Type,Message
-0,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-0,Summoned Golem,GenerateAbilityEvent,ERROR Summoned Golem has no available ability to cast
-0,Summoner mage,GenerateAbilityEvent,generated next ability Fireball
-0,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-0,Fire mage,GenerateAbilityEvent,generated next ability Fireball
-1,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-1,Heal mage,UseItemEvent,Item Mage Staff has durability [99]
-1,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[52/60]
-1,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-1,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-1,Summoned Golem,Event,Casting ability Melee Attack
-1,Summoned Golem,BasicDamageEvent, deal 0 to Summoner mage[40/40]
-1,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-1,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-1.5,Fire mage,Event,Casting ability Fireball
-1.5,Fire mage,BasicDamageEvent, deal 10 to Summoned Golem[42/60]
-1.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-1.5,Summoner mage,Event,Casting ability Fireball
-1.5,Summoner mage,BasicDamageEvent, deal 16 to Summoned Golem[26/60]
-1.5,Summoner mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-2,Summoned Golem,Event,Casting ability Melee Attack
-2,Summoned Golem,BasicDamageEvent, deal 0 to Fire mage[40/40]
-2,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-2,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-2,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-2,Heal mage,UseItemEvent,Item Mage Staff has durability [98]
-2,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[18/60]
-2,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-2,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-2.5,Summoner mage,Event,Casting ability Melee Attack by Mage Staff
-2.5,Summoner mage,UseItemEvent,Item Mage Staff has durability [99]
-2.5,Summoner mage,BasicDamageEvent, deal 8 to Summoned Golem[10/60]
-2.5,Summoner mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-2.5,Summoner mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-2.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
-2.5,Fire mage,UseItemEvent,Item Mage Staff has durability [99]
-2.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[2/60]
-2.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-2.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-3,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-3,Heal mage,UseItemEvent,Item Mage Staff has durability [97]
-3,Heal mage,BasicDamageEvent, deal 2 to Summoned Golem[0/60]
-3,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-3,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-3,Summoned Golem,Event,Casting ability Melee Attack
-3,Summoned Golem,BasicDamageEvent, deal 0 to Summoner mage[40/40]
-3,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-3,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-3.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
-3.5,Fire mage,UseItemEvent,Item Mage Staff has durability [98]
-3.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[52/60]
-3.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-3.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-3.5,Summoner mage,Event,Casting ability Melee Attack by Mage Staff
-3.5,Summoner mage,UseItemEvent,Item Mage Staff has durability [98]
-3.5,Summoner mage,BasicDamageEvent, deal 8 to Summoned Golem[44/60]
-3.5,Summoner mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-3.5,Summoner mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-4,Summoned Golem,Event,Casting ability Melee Attack
-4,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[39/40]
-4,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-4,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-4,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-4,Heal mage,UseItemEvent,Item Mage Staff has durability [96]
-4,Heal mage,BasicDamageEvent, deal 8 to Summoned Golem[36/60]
-4,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-4,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
-4.5,Summoner mage,Event,Casting ability Melee Attack by Mage Staff
-4.5,Summoner mage,UseItemEvent,Item Mage Staff has durability [97]
-4.5,Summoner mage,BasicDamageEvent, deal 8 to Summoned Golem[28/60]
-4.5,Summoner mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-4.5,Summoner mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-4.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
-4.5,Fire mage,UseItemEvent,Item Mage Staff has durability [97]
-4.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[20/60]
-4.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-4.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-4.5,Summoner mage,CooldownEvent, finish cooldown for ability Fireball
-4.5,Fire mage,CooldownEvent, finish cooldown for ability Fireball
-5,Summoned Golem,Event,Casting ability Melee Attack
-5,Summoned Golem,BasicDamageEvent, deal 1 to Summoner mage[39/40]
-5,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-5,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-5.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
-5.5,Fire mage,UseItemEvent,Item Mage Staff has durability [96]
-5.5,Fire mage,BasicDamageEvent, deal 8 to Summoned Golem[12/60]
-5.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-5.5,Fire mage,GenerateAbilityEvent,generated next ability Fireball
-5.5,Summoner mage,Event,Casting ability Melee Attack by Mage Staff
-5.5,Summoner mage,UseItemEvent,Item Mage Staff has durability [96]
-5.5,Summoner mage,BasicDamageEvent, deal 8 to Summoned Golem[4/60]
-5.5,Summoner mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-5.5,Summoner mage,GenerateAbilityEvent,generated next ability Fireball
-6,Summoned Golem,Event,Casting ability Melee Attack
-6,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[38/40]
-6,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-6,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-6,Heal mage,Event,Casting ability Heal Wave
-6,Heal mage,BasicHealEvent, heal 2 to Fire mage[40/40]
-6,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
-6,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
-7,Summoned Golem,Event,Casting ability Melee Attack
-7,Summoned Golem,BasicDamageEvent, deal 1 to Fire mage[39/40]
-7,Summoned Golem,CooldownEvent, finish cooldown for ability Melee Attack
-7,Summoned Golem,GenerateAbilityEvent,generated next ability Melee Attack
-7,Summoner mage,Event,Casting ability Fireball
-7,Summoner mage,BasicDamageEvent, deal 4 to Summoned Golem[0/60]
-31,FightController,FightController,Result
-31,FightController,FightController,Fire magehas 39
-31,FightController,FightController,Heal magehas 40
-31,FightController,FightController,Summoner magehas 39
+real time,time,Person,Event Type,Message
+2.98,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3,0,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+3.02,0,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.04,0,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+3.06,1,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+3.56,1,Heal mage,BasicDamageEvent, deal 4.5 to heavy troll[165.5/170]
+4.06,1,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+4.06,1,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+4.08,1,buff mage,Event,Casting ability Giant Power
+4.58,1,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+4.58,1,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+4.6,1,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+4.6,1,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+5.1,1,heavy troll,BasicDamageEvent, deal 7 to Fire mage[98/105]
+5.6,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+5.62,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+5.64,1,heavy troll,Event,Casting ability Passive Regeneration
+5.64,1,heavy troll,BasicHealEvent, heal 1 to heavy troll[166.5/170]
+5.66,1.5,Fire mage,Event,Casting ability Fireball
+6.16,1.5,Fire mage,BasicDamageEvent, deal 22 to heavy troll[144.5/170]
+6.66,1.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+6.68,2,heavy troll,Event,Casting ability Passive Regeneration
+6.68,2,heavy troll,BasicHealEvent, heal 1 to heavy troll[145.5/170]
+6.7,2,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+7.2,2,heavy troll,BasicDamageEvent, deal 14 to Fire mage[84/105]
+7.7,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+7.7,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+7.72,2,buff mage,Event,Casting ability Giant Power
+8.22,2,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+8.22,2,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+8.24,2,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+8.26,2,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+8.76,2,Heal mage,BasicDamageEvent, deal 4.5 to heavy troll[141/170]
+9.26,2,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+9.26,2,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+9.28,2.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+9.78,2.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[128/170]
+10.28,2.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+10.28,2.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+10.3,3,buff mage,Event,Casting ability Giant Power
+10.8,3,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+10.8,3,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+10.82,3,buff mage,GenerateAbilityEvent,generated next ability Weakness
+10.82,3,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+11.32,3,heavy troll,BasicDamageEvent, deal 7 to Fire mage[77/105]
+11.82,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11.84,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11.84,3,heavy troll,Event,Casting ability Passive Regeneration
+11.86,3,heavy troll,BasicHealEvent, heal 1 to heavy troll[129/170]
+11.88,3.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+12.38,3.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[116/170]
+12.88,3.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+12.9,3.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+12.9,4,heavy troll,Event,Casting ability Passive Regeneration
+12.92,4,heavy troll,BasicHealEvent, heal 1 to heavy troll[117/170]
+12.92,4,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+13.42,4,heavy troll,BasicDamageEvent, deal 14 to Fire mage[63/105]
+13.92,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+13.92,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+13.94,4,buff mage,Event,Casting ability Weakness
+14.44,4,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+14.46,4,buff mage,CooldownEvent, finish cooldown for ability Weakness
+14.48,4,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+14.48,4,Heal mage,Event,Casting ability Heal Wave
+14.98,4,Heal mage,BasicHealEvent, heal 10 to Fire mage[73/105]
+14.98,4,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+15,4,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+15,4.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+15.5,4.5,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[110.5/170]
+16,4.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+16,4.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+16.02,4.5,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+16.04,5,buff mage,Event,Casting ability Melee Attack by Mage Staff
+16.54,5,buff mage,BasicDamageEvent, deal 6.5 to heavy troll[104/170]
+17.04,5,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+17.04,5,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+17.06,5,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+17.56,5,heavy troll,BasicDamageEvent, deal 4.5 to Fire mage[68.5/105]
+18.06,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.08,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.1,5,heavy troll,Event,Casting ability Passive Regeneration
+18.12,5,heavy troll,BasicHealEvent, heal 1 to heavy troll[105/170]
+18.12,5.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+18.12,5.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[92/170]
+18.12,5.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,5.5,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+18.12,6,heavy troll,Event,Casting ability Passive Regeneration
+18.12,6,heavy troll,BasicHealEvent, heal 1 to heavy troll[93/170]
+18.12,6,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+18.12,6,heavy troll,BasicDamageEvent, deal 4.5 to Fire mage[64/105]
+18.12,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,6,buff mage,Event,Casting ability Melee Attack by Mage Staff
+18.12,6,buff mage,BasicDamageEvent, deal 6.5 to heavy troll[86.5/170]
+18.12,6,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,6,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,6,Heal mage,Event,Casting ability Heal Wave
+18.12,6,Heal mage,BasicHealEvent, heal 10 to Fire mage[74/105]
+18.12,6,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+18.12,6,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+18.12,6,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Fire mage
+18.12,7,buff mage,Event,Casting ability Melee Attack by Mage Staff
+18.12,7,buff mage,BasicDamageEvent, deal 13 to heavy troll[73.5/170]
+18.12,7,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,7,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+18.12,7,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+18.12,7,heavy troll,BasicDamageEvent, deal 4.5 to Fire mage[69.5/105]
+18.12,7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,7,heavy troll,Event,Casting ability Passive Regeneration
+18.12,7,heavy troll,BasicHealEvent, heal 1 to heavy troll[74.5/170]
+18.12,7,Fire mage,Event,Casting ability Fireball
+18.12,7,Fire mage,BasicDamageEvent, deal 14 to heavy troll[60.5/170]
+18.12,7,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,7,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom buff mage
+18.12,8,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+18.12,8,Fire mage,BasicDamageEvent, deal 4.5 to heavy troll[56/170]
+18.12,8,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,8,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,8,heavy troll,Event,Casting ability Passive Regeneration
+18.12,8,heavy troll,BasicHealEvent, heal 1 to heavy troll[57/170]
+18.12,8,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+18.12,8,heavy troll,BasicDamageEvent, deal 4.5 to Fire mage[65/105]
+18.12,8,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,8,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,8,buff mage,Event,Casting ability Giant Power
+18.12,8,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+18.12,8,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+18.12,8,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+18.12,8,Heal mage,Event,Casting ability Heal Wave
+18.12,8,Heal mage,BasicHealEvent, heal 10 to Fire mage[75/105]
+18.12,8,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+18.12,8,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+18.12,8,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Heal mage
+18.12,9,buff mage,Event,Casting ability Giant Power
+18.12,9,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+18.12,9,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+18.12,9,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+18.12,9,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+18.12,9,heavy troll,BasicDamageEvent, deal 9 to Fire mage[66/105]
+18.12,9,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,9,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,9,heavy troll,Event,Casting ability Passive Regeneration
+18.12,9,heavy troll,BasicHealEvent, heal 1 to heavy troll[58/170]
+18.12,9,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+18.12,9,Fire mage,BasicDamageEvent, deal 9 to heavy troll[49/170]
+18.12,9,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,9,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,9,buff mage,RemoveBuffEvent,remove buff Weaknessfrom heavy troll
+18.12,10,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+18.12,10,Fire mage,BasicDamageEvent, deal 9 to heavy troll[40/170]
+18.12,10,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,10,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,10,heavy troll,Event,Casting ability Passive Regeneration
+18.12,10,heavy troll,BasicHealEvent, heal 1 to heavy troll[41/170]
+18.12,10,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+18.12,10,heavy troll,BasicDamageEvent, deal 14 to Fire mage[52/105]
+18.12,10,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,10,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,10,buff mage,Event,Casting ability Giant Power
+18.12,10,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+18.12,10,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+18.12,10,buff mage,GenerateAbilityEvent,generated next ability Weakness
+18.12,10,Heal mage,Event,Casting ability Heal Wave
+18.12,10,Heal mage,BasicHealEvent, heal 10 to Fire mage[62/105]
+18.12,10,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+18.12,10,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+18.12,10,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+18.12,11,buff mage,Event,Casting ability Weakness
+18.12,11,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+18.12,11,buff mage,CooldownEvent, finish cooldown for ability Weakness
+18.12,11,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,11,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+18.12,11,heavy troll,BasicDamageEvent, deal 4.5 to Fire mage[57.5/105]
+18.12,11,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,11,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,11,heavy troll,Event,Casting ability Passive Regeneration
+18.12,11,heavy troll,BasicHealEvent, heal 1 to heavy troll[42/170]
+18.12,11,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+18.12,11,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[35.5/170]
+18.12,11,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,11,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+18.12,12,heavy troll,Event,Casting ability Passive Regeneration
+18.12,12,heavy troll,BasicHealEvent, heal 1 to heavy troll[36.5/170]
+18.12,12,heavy troll,Event,Casting ability Melee Attack by Mage Staff
+18.12,12,heavy troll,BasicDamageEvent, deal 4.5 to Fire mage[53/105]
+18.12,12,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,12,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,12,buff mage,Event,Casting ability Melee Attack by Mage Staff
+18.12,12,buff mage,BasicDamageEvent, deal 13 to heavy troll[23.5/170]
+18.12,12,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+18.12,12,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+18.12,12,Heal mage,Event,Casting ability Heal Wave
+18.12,12,Heal mage,BasicHealEvent, heal 10 to Fire mage[63/105]
+18.12,12,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+18.12,12,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+18.12,12.5,Fire mage,Event,Casting ability Fireball
+18.12,12.5,Fire mage,BasicDamageEvent, deal 23.5 to heavy troll[0/170]
+18.12,35.5,FightController,FightController,Result
+18.12,35.5,FightController,FightController,Fire magehas 63
+18.12,35.5,FightController,FightController,Heal magehas 105
+18.12,35.5,FightController,FightController,buff magehas 105
+19.48,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+19.48,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+19.5,0,heavy troll,GenerateAbilityEvent,ERROR heavy troll has no available ability to cast
+19.5,0,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+19.52,0,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+19.52,0,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+19.54,1,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+20.04,1,Heal mage,BasicDamageEvent, deal 4.5 to heavy troll[115.5/120]
+20.54,1,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+20.56,1,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+20.56,1,buff mage,Event,Casting ability Giant Power
+21.06,1,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+21.08,1,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+21.08,1,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+21.1,1,heavy troll,Event,Casting ability Melee Attack
+21.6,1,heavy troll,BasicDamageEvent, deal 0.5 to Heal mage[104.5/105]
+22.1,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+22.1,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+22.12,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+22.62,1,heavy troll,BasicDamageEvent, deal 6 to buff mage[99/105]
+23.12,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+23.14,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+23.16,1,heavy troll,Event,Casting ability Passive Regeneration
+23.18,1,heavy troll,BasicHealEvent, heal 1 to heavy troll[116.5/120]
+23.18,1,heavy troll,Event,Casting ability Passive Regeneration
+23.2,1,heavy troll,BasicHealEvent, heal 1 to heavy troll[117.5/120]
+23.22,1,heavy troll,Event,Casting ability Passive Regeneration
+23.22,1,heavy troll,BasicHealEvent, heal 1 to heavy troll[118.5/120]
+23.24,1.5,Fire mage,Event,Casting ability Fireball
+23.74,1.5,Fire mage,BasicDamageEvent, deal 17 to heavy troll[103/120]
+23.76,1.5,Fire mage,BasicDamageEvent, deal 39 to heavy troll[91/130]
+24.26,1.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+24.26,2,heavy troll,Event,Casting ability Passive Regeneration
+24.28,2,heavy troll,BasicHealEvent, heal 1 to heavy troll[119.5/120]
+24.28,2,heavy troll,Event,Casting ability Passive Regeneration
+24.3,2,heavy troll,BasicHealEvent, heal 0.5 to heavy troll[120/120]
+24.32,2,heavy troll,Event,Casting ability Passive Regeneration
+24.34,2,heavy troll,BasicHealEvent, heal 0 to heavy troll[120/120]
+24.36,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+24.86,2,heavy troll,BasicDamageEvent, deal 6 to Heal mage[98.5/105]
+25.06,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,2,heavy troll,Event,Casting ability Melee Attack
+25.06,2,heavy troll,BasicDamageEvent, deal 0.5 to buff mage[98.5/105]
+25.06,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,2,buff mage,Event,Casting ability Giant Power
+25.06,2,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+25.06,2,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+25.06,2,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+25.06,2,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,2,Heal mage,BasicDamageEvent, deal 9 to heavy troll[111/120]
+25.06,2,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,2,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+25.06,2.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,2.5,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[104.5/120]
+25.06,2.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,2.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,3,buff mage,Event,Casting ability Giant Power
+25.06,3,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+25.06,3,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+25.06,3,buff mage,GenerateAbilityEvent,generated next ability Weakness
+25.06,3,heavy troll,Event,Casting ability Melee Attack
+25.06,3,heavy troll,BasicDamageEvent, deal 0.5 to Heal mage[98/105]
+25.06,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,3,heavy troll,BasicDamageEvent, deal 6 to buff mage[92.5/105]
+25.06,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,3,heavy troll,Event,Casting ability Passive Regeneration
+25.06,3,heavy troll,BasicHealEvent, heal 1 to heavy troll[105.5/120]
+25.06,3,heavy troll,Event,Casting ability Passive Regeneration
+25.06,3,heavy troll,BasicHealEvent, heal 1 to heavy troll[106.5/120]
+25.06,3,heavy troll,Event,Casting ability Passive Regeneration
+25.06,3,heavy troll,BasicHealEvent, heal 1 to heavy troll[107.5/120]
+25.06,3.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,3.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[94.5/120]
+25.06,3.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,3.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,4,heavy troll,Event,Casting ability Passive Regeneration
+25.06,4,heavy troll,BasicHealEvent, heal 1 to heavy troll[95.5/120]
+25.06,4,heavy troll,Event,Casting ability Passive Regeneration
+25.06,4,heavy troll,BasicHealEvent, heal 1 to heavy troll[96.5/120]
+25.06,4,heavy troll,Event,Casting ability Passive Regeneration
+25.06,4,heavy troll,BasicHealEvent, heal 1 to heavy troll[97.5/120]
+25.06,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,4,heavy troll,BasicDamageEvent, deal 3 to Heal mage[95/105]
+25.06,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,4,heavy troll,Event,Casting ability Melee Attack
+25.06,4,heavy troll,BasicDamageEvent, deal 0.5 to Heal mage[94.5/105]
+25.06,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,4,buff mage,Event,Casting ability Weakness
+25.06,4,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+25.06,4,buff mage,CooldownEvent, finish cooldown for ability Weakness
+25.06,4,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,4,Heal mage,Event,Casting ability Heal Wave
+25.06,4,Heal mage,BasicHealEvent, heal 10 to buff mage[102.5/105]
+25.06,4,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+25.06,4,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+25.06,4.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,4.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[84.5/120]
+25.06,4.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,4.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,4.5,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+25.06,5,buff mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,5,buff mage,BasicDamageEvent, deal 13 to heavy troll[71.5/120]
+25.06,5,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,5,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,5,heavy troll,Event,Casting ability Melee Attack
+25.06,5,heavy troll,BasicDamageEvent, deal 0 to buff mage[102.5/105]
+25.06,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,5,heavy troll,BasicDamageEvent, deal 4 to Heal mage[90.5/105]
+25.06,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,5,heavy troll,Event,Casting ability Passive Regeneration
+25.06,5,heavy troll,BasicHealEvent, heal 1 to heavy troll[72.5/120]
+25.06,5,heavy troll,Event,Casting ability Passive Regeneration
+25.06,5,heavy troll,BasicHealEvent, heal 1 to heavy troll[73.5/120]
+25.06,5,heavy troll,Event,Casting ability Passive Regeneration
+25.06,5,heavy troll,BasicHealEvent, heal 1 to heavy troll[74.5/120]
+25.06,5.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,5.5,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[68/120]
+25.06,5.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,5.5,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+25.06,6,heavy troll,Event,Casting ability Passive Regeneration
+25.06,6,heavy troll,BasicHealEvent, heal 1 to heavy troll[69/120]
+25.06,6,heavy troll,Event,Casting ability Passive Regeneration
+25.06,6,heavy troll,BasicHealEvent, heal 1 to heavy troll[70/120]
+25.06,6,heavy troll,Event,Casting ability Passive Regeneration
+25.06,6,heavy troll,BasicHealEvent, heal 1 to heavy troll[71/120]
+25.06,6,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,6,heavy troll,BasicDamageEvent, deal 4 to Heal mage[86.5/105]
+25.06,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,6,heavy troll,Event,Casting ability Melee Attack
+25.06,6,heavy troll,BasicDamageEvent, deal 0 to buff mage[102.5/105]
+25.06,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,6,buff mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,6,buff mage,BasicDamageEvent, deal 13 to heavy troll[58/120]
+25.06,6,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,6,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,6,Heal mage,Event,Casting ability Heal Wave
+25.06,6,Heal mage,BasicHealEvent, heal 10 to Heal mage[96.5/105]
+25.06,6,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+25.06,6,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+25.06,6,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom buff mage
+25.06,7,buff mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,7,buff mage,BasicDamageEvent, deal 9 to heavy troll[49/120]
+25.06,7,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,7,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+25.06,7,heavy troll,Event,Casting ability Melee Attack
+25.06,7,heavy troll,BasicDamageEvent, deal 0 to Heal mage[96.5/105]
+25.06,7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,7,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,7,heavy troll,BasicDamageEvent, deal 2 to buff mage[100.5/105]
+25.06,7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,7,heavy troll,Event,Casting ability Passive Regeneration
+25.06,7,heavy troll,BasicHealEvent, heal 1 to heavy troll[50/120]
+25.06,7,heavy troll,Event,Casting ability Passive Regeneration
+25.06,7,heavy troll,BasicHealEvent, heal 1 to heavy troll[51/120]
+25.06,7,heavy troll,Event,Casting ability Passive Regeneration
+25.06,7,heavy troll,BasicHealEvent, heal 1 to heavy troll[52/120]
+25.06,7,Fire mage,Event,Casting ability Fireball
+25.06,7,Fire mage,BasicDamageEvent, deal 27 to heavy troll[25/120]
+25.06,7,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,7,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Fire mage
+25.06,8,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,8,Fire mage,BasicDamageEvent, deal 9 to heavy troll[16/120]
+25.06,8,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,8,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,8,heavy troll,Event,Casting ability Passive Regeneration
+25.06,8,heavy troll,BasicHealEvent, heal 1 to heavy troll[17/120]
+25.06,8,heavy troll,Event,Casting ability Passive Regeneration
+25.06,8,heavy troll,BasicHealEvent, heal 1 to heavy troll[18/120]
+25.06,8,heavy troll,Event,Casting ability Passive Regeneration
+25.06,8,heavy troll,BasicHealEvent, heal 1 to heavy troll[19/120]
+25.06,8,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,8,heavy troll,BasicDamageEvent, deal 2 to buff mage[98.5/105]
+25.06,8,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,8,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,8,heavy troll,Event,Casting ability Melee Attack
+25.06,8,heavy troll,BasicDamageEvent, deal 0 to Heal mage[96.5/105]
+25.06,8,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,8,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,8,buff mage,Event,Casting ability Giant Power
+25.06,8,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+25.06,8,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+25.06,8,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+25.06,8,Heal mage,Event,Casting ability Heal Wave
+25.06,8,Heal mage,BasicHealEvent, heal 8.5 to Heal mage[105/105]
+25.06,8,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+25.06,8,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+25.06,8,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Heal mage
+25.06,9,buff mage,Event,Casting ability Giant Power
+25.06,9,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+25.06,9,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+25.06,9,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+25.06,9,heavy troll,Event,Casting ability Melee Attack
+25.06,9,heavy troll,BasicDamageEvent, deal 0 to Heal mage[105/105]
+25.06,9,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,9,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,9,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,9,heavy troll,BasicDamageEvent, deal 2 to buff mage[96.5/105]
+25.06,9,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,9,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,9,heavy troll,Event,Casting ability Passive Regeneration
+25.06,9,heavy troll,BasicHealEvent, heal 1 to heavy troll[20/120]
+25.06,9,heavy troll,Event,Casting ability Passive Regeneration
+25.06,9,heavy troll,BasicHealEvent, heal 1 to heavy troll[21/120]
+25.06,9,heavy troll,Event,Casting ability Passive Regeneration
+25.06,9,heavy troll,BasicHealEvent, heal 1 to heavy troll[22/120]
+25.06,9,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,9,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[15.5/120]
+25.06,9,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,9,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,9,buff mage,RemoveBuffEvent,remove buff Weaknessfrom heavy troll
+25.06,10,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,10,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[9/120]
+25.06,10,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,10,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,10,heavy troll,Event,Casting ability Passive Regeneration
+25.06,10,heavy troll,BasicHealEvent, heal 1 to heavy troll[10/120]
+25.06,10,heavy troll,Event,Casting ability Passive Regeneration
+25.06,10,heavy troll,BasicHealEvent, heal 1 to heavy troll[11/120]
+25.06,10,heavy troll,Event,Casting ability Passive Regeneration
+25.06,10,heavy troll,BasicHealEvent, heal 1 to heavy troll[12/120]
+25.06,10,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,10,heavy troll,BasicDamageEvent, deal 6 to Heal mage[99/105]
+25.06,10,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,10,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,10,heavy troll,Event,Casting ability Melee Attack
+25.06,10,heavy troll,BasicDamageEvent, deal 0.5 to buff mage[96/105]
+25.06,10,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,10,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,10,buff mage,Event,Casting ability Giant Power
+25.06,10,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+25.06,10,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+25.06,10,buff mage,GenerateAbilityEvent,generated next ability Weakness
+25.06,10,Heal mage,Event,Casting ability Heal Wave
+25.06,10,Heal mage,BasicHealEvent, heal 9 to buff mage[105/105]
+25.06,10,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+25.06,10,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+25.06,10,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+25.06,11,buff mage,Event,Casting ability Weakness
+25.06,11,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+25.06,11,buff mage,CooldownEvent, finish cooldown for ability Weakness
+25.06,11,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,11,heavy troll,Event,Casting ability Melee Attack
+25.06,11,heavy troll,BasicDamageEvent, deal 0 to Heal mage[99/105]
+25.06,11,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,11,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,11,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,11,heavy troll,BasicDamageEvent, deal 2 to buff mage[103/105]
+25.06,11,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,11,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,11,heavy troll,Event,Casting ability Passive Regeneration
+25.06,11,heavy troll,BasicHealEvent, heal 1 to heavy troll[13/120]
+25.06,11,heavy troll,Event,Casting ability Passive Regeneration
+25.06,11,heavy troll,BasicHealEvent, heal 1 to heavy troll[14/120]
+25.06,11,heavy troll,Event,Casting ability Passive Regeneration
+25.06,11,heavy troll,BasicHealEvent, heal 1 to heavy troll[15/120]
+25.06,11,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,11,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[8.5/120]
+25.06,11,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,11,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+25.06,12,heavy troll,Event,Casting ability Passive Regeneration
+25.06,12,heavy troll,BasicHealEvent, heal 1 to heavy troll[9.5/120]
+25.06,12,heavy troll,Event,Casting ability Passive Regeneration
+25.06,12,heavy troll,BasicHealEvent, heal 1 to heavy troll[10.5/120]
+25.06,12,heavy troll,Event,Casting ability Passive Regeneration
+25.06,12,heavy troll,BasicHealEvent, heal 1 to heavy troll[11.5/120]
+25.06,12,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,12,heavy troll,BasicDamageEvent, deal 2 to Heal mage[97/105]
+25.06,12,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+25.06,12,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+25.06,12,heavy troll,Event,Casting ability Melee Attack
+25.06,12,heavy troll,BasicDamageEvent, deal 0 to Heal mage[97/105]
+25.06,12,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,12,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,12,buff mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,12,buff mage,BasicDamageEvent, deal 11.5 to heavy troll[0/120]
+25.06,12,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,12,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,12,Heal mage,Event,Casting ability Heal Wave
+25.06,12,Heal mage,BasicHealEvent, heal 8 to Heal mage[105/105]
+25.06,12,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+25.06,12,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+25.06,12.5,Fire mage,Event,Casting ability Fireball
+25.06,12.5,Fire mage,BasicDamageEvent, deal 24 to heavy troll[79/120]
+25.06,12.5,Fire mage,BasicDamageEvent, deal 42 to heavy troll[49/130]
+25.06,12.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,13,buff mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,13,buff mage,BasicDamageEvent, deal 6.5 to heavy troll[42.5/130]
+25.06,13,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,13,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,13,heavy troll,Event,Casting ability Melee Attack
+25.06,13,heavy troll,BasicDamageEvent, deal 0 to Heal mage[105/105]
+25.06,13,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,13,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,13,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+25.06,13,heavy troll,Event,Casting ability Passive Regeneration
+25.06,13,heavy troll,Event,Casting ability Passive Regeneration
+25.06,13,heavy troll,Event,Casting ability Passive Regeneration
+25.06,13,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Fire mage
+25.06,13.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,13.5,Fire mage,BasicDamageEvent, deal 4.5 to heavy troll[38/130]
+25.06,13.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,13.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,14,heavy troll,Event,Casting ability Melee Attack
+25.06,14,heavy troll,BasicDamageEvent, deal 0 to buff mage[103/105]
+25.06,14,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,14,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,14,buff mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,14,buff mage,BasicDamageEvent, deal 13 to heavy troll[25/130]
+25.06,14,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,14,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+25.06,14,Heal mage,Event,Casting ability Heal Wave
+25.06,14,Heal mage,BasicHealEvent, heal 2 to buff mage[105/105]
+25.06,14,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+25.06,14,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,14,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Heal mage
+25.06,14.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,14.5,Fire mage,BasicDamageEvent, deal 9 to heavy troll[70/120]
+25.06,14.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,14.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,15,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,15,Heal mage,BasicDamageEvent, deal 4.5 to heavy troll[20.5/130]
+25.06,15,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,15,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,15,buff mage,Event,Casting ability Giant Power
+25.06,15,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+25.06,15,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+25.06,15,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+25.06,15,heavy troll,Event,Casting ability Melee Attack
+25.06,15,heavy troll,BasicDamageEvent, deal 0 to buff mage[105/105]
+25.06,15,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,15,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,15,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom buff mage
+25.06,15.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,15.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[57/120]
+25.06,15.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,15.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,15.5,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+25.06,16,heavy troll,Event,Casting ability Melee Attack
+25.06,16,heavy troll,BasicDamageEvent, deal 0 to Heal mage[105/105]
+25.06,16,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,16,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,16,buff mage,Event,Casting ability Giant Power
+25.06,16,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+25.06,16,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+25.06,16,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+25.06,16,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,16,Heal mage,BasicDamageEvent, deal 6.5 to heavy troll[14/130]
+25.06,16,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,16,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,16,buff mage,RemoveBuffEvent,remove buff Weaknessfrom heavy troll
+25.06,16.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,16.5,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[7.5/130]
+25.06,16.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,16.5,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+25.06,17,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,17,Heal mage,BasicDamageEvent, deal 6.5 to heavy troll[1/130]
+25.06,17,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,17,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,17,buff mage,Event,Casting ability Giant Power
+25.06,17,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+25.06,17,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+25.06,17,buff mage,GenerateAbilityEvent,generated next ability Weakness
+25.06,17,heavy troll,Event,Casting ability Melee Attack
+25.06,17,heavy troll,BasicDamageEvent, deal 1 to buff mage[104/105]
+25.06,17,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,17,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,18,heavy troll,Event,Casting ability Melee Attack
+25.06,18,heavy troll,BasicDamageEvent, deal 0.5 to buff mage[103.5/105]
+25.06,18,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+25.06,18,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+25.06,18,buff mage,Event,Casting ability Weakness
+25.06,18,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+25.06,18,buff mage,CooldownEvent, finish cooldown for ability Weakness
+25.06,18,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+25.06,18,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+25.06,18,Heal mage,BasicDamageEvent, deal 13 to heavy troll[44/120]
+25.06,18,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+25.06,18,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+25.06,18,Fire mage,Event,Casting ability Fireball
+25.06,18,Fire mage,BasicDamageEvent, deal 44 to heavy troll[0/120]
+25.06,18,Fire mage,BasicDamageEvent, deal 1 to heavy troll[0/130]
+25.06,61.5,FightController,FightController,Result
+25.06,61.5,FightController,FightController,Fire magehas 105
+25.06,61.5,FightController,FightController,Heal magehas 105
+25.06,61.5,FightController,FightController,buff magehas 103.5
+26.84,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+26.86,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+26.88,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+26.9,0,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+26.9,0,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+26.92,0,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+26.92,0.9,fast troll,Event,Casting ability Melee Attack by Sword
+27.42,0.9,fast troll,BasicDamageEvent, deal 4.25 to Fire mage[100.75/105]
+27.92,0.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+27.94,0.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+27.94,0.9,fast troll,Event,Casting ability Melee Attack by Sword
+28.44,0.9,fast troll,BasicDamageEvent, deal 8.5 to Fire mage[92.25/105]
+28.94,0.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+28.94,0.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+28.96,1,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+29.46,1,Heal mage,BasicDamageEvent, deal 4.5 to heavy troll[175.5/180]
+29.96,1,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+29.96,1,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+29.98,1,buff mage,Event,Casting ability Giant Power
+30.48,1,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+30.48,1,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+30.5,1,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+30.52,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+31.02,1,heavy troll,BasicDamageEvent, deal 8.5 to Fire mage[83.75/105]
+31.52,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+31.52,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+31.54,1,heavy troll,Event,Casting ability Passive Regeneration
+31.56,1,heavy troll,BasicHealEvent, heal 1 to heavy troll[176.5/180]
+31.56,1,fast troll,Event,Casting ability Passive Regeneration
+31.58,1,fast troll,BasicHealEvent, heal 0 to fast troll[180/180]
+31.6,1.5,Fire mage,Event,Casting ability Fireball
+32.1,1.5,Fire mage,BasicDamageEvent, deal 37 to heavy troll[139.5/180]
+32.1,1.5,Fire mage,BasicDamageEvent, deal 38 to fast troll[142/180]
+32.6,1.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+32.6,1.8,fast troll,Event,Casting ability Melee Attack by Sword
+33.1,1.8,fast troll,BasicDamageEvent, deal 4.25 to buff mage[100.75/105]
+33.6,1.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+33.6,1.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+33.62,1.8,fast troll,Event,Casting ability Melee Attack by Sword
+34.12,1.8,fast troll,BasicDamageEvent, deal 4.25 to buff mage[96.5/105]
+34.62,1.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+34.64,1.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+34.64,2,fast troll,Event,Casting ability Passive Regeneration
+34.66,2,fast troll,BasicHealEvent, heal 1 to fast troll[143/180]
+34.66,2,heavy troll,Event,Casting ability Passive Regeneration
+34.68,2,heavy troll,BasicHealEvent, heal 1 to heavy troll[140.5/180]
+34.7,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+35.2,2,heavy troll,BasicDamageEvent, deal 8.5 to Fire mage[75.25/105]
+35.7,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+35.7,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+35.72,2,buff mage,Event,Casting ability Giant Power
+36.22,2,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+36.22,2,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+36.24,2,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+36.24,2.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+36.74,2.5,Fire mage,BasicDamageEvent, deal 9 to fast troll[134/180]
+37.24,2.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.24,2.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.26,2.7,fast troll,Event,Casting ability Melee Attack by Sword
+37.76,2.7,fast troll,BasicDamageEvent, deal 4.25 to Fire mage[71/105]
+38.26,2.7,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+38.26,2.7,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+38.28,2.7,fast troll,Event,Casting ability Melee Attack by Sword
+38.78,2.7,fast troll,BasicDamageEvent, deal 4.25 to Fire mage[66.75/105]
+39.28,2.7,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+39.3,2.7,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+39.32,3,buff mage,Event,Casting ability Giant Power
+39.82,3,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+39.84,3,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+39.86,3,buff mage,GenerateAbilityEvent,generated next ability Weakness
+39.88,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+40.38,3,heavy troll,BasicDamageEvent, deal 8.5 to buff mage[88/105]
+40.88,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+40.88,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+40.9,3,heavy troll,Event,Casting ability Passive Regeneration
+40.92,3,heavy troll,BasicHealEvent, heal 1 to heavy troll[141.5/180]
+40.92,3,fast troll,Event,Casting ability Passive Regeneration
+40.94,3,fast troll,BasicHealEvent, heal 1 to fast troll[135/180]
+40.94,3,Heal mage,Event,Casting ability Heal Wave
+41.44,3,Heal mage,BasicHealEvent, heal 10 to Fire mage[76.75/105]
+41.46,3,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+41.46,3,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+41.48,3.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+41.98,3.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[128.5/180]
+42.48,3.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+42.5,3.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+42.5,3.6,fast troll,Event,Casting ability Melee Attack by Sword
+43,3.6,fast troll,BasicDamageEvent, deal 8.5 to Fire mage[68.25/105]
+43.5,3.6,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+43.5,3.6,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+43.52,3.6,fast troll,Event,Casting ability Melee Attack by Sword
+44.02,3.6,fast troll,BasicDamageEvent, deal 4.25 to Fire mage[64/105]
+44.52,3.6,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+44.52,3.6,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+44.54,4,fast troll,Event,Casting ability Passive Regeneration
+44.56,4,fast troll,BasicHealEvent, heal 1 to fast troll[136/180]
+44.56,4,heavy troll,Event,Casting ability Passive Regeneration
+44.58,4,heavy troll,BasicHealEvent, heal 1 to heavy troll[129.5/180]
+44.58,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+45.08,4,heavy troll,BasicDamageEvent, deal 8.5 to Fire mage[55.5/105]
+45.58,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+45.6,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+45.62,4,buff mage,Event,Casting ability Weakness
+46.12,4,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+46.14,4,buff mage,CooldownEvent, finish cooldown for ability Weakness
+46.16,4,buff mage,GenerateAbilityEvent,generated next ability Weakness
+46.16,4.5,fast troll,Event,Casting ability Melee Attack by Sword
+46.66,4.5,fast troll,BasicDamageEvent, deal 4.25 to buff mage[83.75/105]
+47.16,4.5,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+47.16,4.5,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+47.18,4.5,fast troll,Event,Casting ability Melee Attack by Sword
+47.68,4.5,fast troll,BasicDamageEvent, deal 8.5 to buff mage[75.25/105]
+48.18,4.5,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+48.18,4.5,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+48.2,4.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+48.7,4.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[116.5/180]
+49.2,4.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+49.2,4.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+49.22,4.5,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+49.22,5,buff mage,Event,Casting ability Weakness
+49.72,5,buff mage,AddBuffEvent,add buff Weakness on fast troll
+49.74,5,buff mage,CooldownEvent, finish cooldown for ability Weakness
+49.74,5,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+49.76,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+50.26,5,heavy troll,BasicDamageEvent, deal 5 to buff mage[70.25/105]
+50.76,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+50.78,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+50.78,5,heavy troll,Event,Casting ability Passive Regeneration
+50.8,5,heavy troll,BasicHealEvent, heal 1 to heavy troll[117.5/180]
+50.82,5,fast troll,Event,Casting ability Passive Regeneration
+50.84,5,fast troll,BasicHealEvent, heal 1 to fast troll[137/180]
+50.84,5,Heal mage,Event,Casting ability Heal Wave
+51.34,5,Heal mage,BasicHealEvent, heal 10 to Fire mage[65.5/105]
+51.34,5,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+51.36,5,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+51.38,5.4,fast troll,Event,Casting ability Melee Attack by Sword
+51.88,5.4,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[63/105]
+52.38,5.4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+52.4,5.4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+52.42,5.4,fast troll,Event,Casting ability Melee Attack by Sword
+52.92,5.4,fast troll,BasicDamageEvent, deal 2.5 to buff mage[67.75/105]
+53.42,5.4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+53.42,5.4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+53.44,5.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+53.94,5.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[104.5/180]
+54.44,5.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+54.44,5.5,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+54.46,6,fast troll,Event,Casting ability Passive Regeneration
+54.48,6,fast troll,BasicHealEvent, heal 1 to fast troll[138/180]
+54.5,6,heavy troll,Event,Casting ability Passive Regeneration
+54.52,6,heavy troll,BasicHealEvent, heal 1 to heavy troll[105.5/180]
+54.52,6,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+55.02,6,heavy troll,BasicDamageEvent, deal 5 to Fire mage[58/105]
+55.52,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+55.54,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+55.56,6,buff mage,Event,Casting ability Melee Attack by Mage Staff
+56.06,6,buff mage,BasicDamageEvent, deal 6.5 to heavy troll[99/180]
+56.56,6,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+56.58,6,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+56.6,6,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom buff mage
+56.6,6.3,fast troll,Event,Casting ability Melee Attack by Sword
+57.1,6.3,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[55.5/105]
+57.6,6.3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+57.6,6.3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+57.62,6.3,fast troll,Event,Casting ability Melee Attack by Sword
+58.12,6.3,fast troll,BasicDamageEvent, deal 2.5 to buff mage[65.25/105]
+58.62,6.3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+58.64,6.3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+58.64,7,buff mage,Event,Casting ability Melee Attack by Mage Staff
+59.14,7,buff mage,BasicDamageEvent, deal 4.5 to heavy troll[94.5/180]
+59.64,7,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+59.64,7,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+59.66,7,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+60.16,7,heavy troll,BasicDamageEvent, deal 2.5 to Fire mage[53/105]
+60.66,7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+60.66,7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+60.68,7,heavy troll,Event,Casting ability Passive Regeneration
+60.68,7,heavy troll,BasicHealEvent, heal 1 to heavy troll[95.5/180]
+60.68,7,fast troll,Event,Casting ability Passive Regeneration
+60.7,7,fast troll,BasicHealEvent, heal 1 to fast troll[139/180]
+60.72,7,Fire mage,Event,Casting ability Fireball
+61.22,7,Fire mage,BasicDamageEvent, deal 28 to heavy troll[67.5/180]
+61.24,7,Fire mage,BasicDamageEvent, deal 40 to fast troll[99/180]
+61.74,7,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+61.76,7,Heal mage,Event,Casting ability Heal Wave
+62.26,7,Heal mage,BasicHealEvent, heal 10 to Fire mage[63/105]
+62.26,7,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+62.26,7,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+62.28,7,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Heal mage
+62.28,7.2,fast troll,Event,Casting ability Melee Attack by Sword
+62.78,7.2,fast troll,BasicDamageEvent, deal 2.5 to buff mage[62.75/105]
+63.28,7.2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+63.3,7.2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+63.32,7.2,fast troll,Event,Casting ability Melee Attack by Sword
+63.82,7.2,fast troll,BasicDamageEvent, deal 5 to Fire mage[58/105]
+64.32,7.2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+64.34,7.2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+64.34,8,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+64.84,8,Fire mage,BasicDamageEvent, deal 13 to fast troll[86/180]
+65.34,8,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+65.36,8,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+65.36,8,fast troll,Event,Casting ability Passive Regeneration
+65.38,8,fast troll,BasicHealEvent, heal 1 to fast troll[87/180]
+65.38,8,heavy troll,Event,Casting ability Passive Regeneration
+65.4,8,heavy troll,BasicHealEvent, heal 1 to heavy troll[68.5/180]
+65.4,8,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+65.9,8,heavy troll,BasicDamageEvent, deal 5 to Fire mage[53/105]
+66.4,8,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+66.4,8,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+66.42,8,buff mage,Event,Casting ability Giant Power
+66.92,8,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+66.92,8,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+66.93999,8,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+66.93999,8,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Fire mage
+66.96,8.1,fast troll,Event,Casting ability Melee Attack by Sword
+67.46,8.1,fast troll,BasicDamageEvent, deal 5 to Fire mage[48/105]
+67.96,8.1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+67.96,8.1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+67.98,8.1,fast troll,Event,Casting ability Melee Attack by Sword
+68.48,8.1,fast troll,BasicDamageEvent, deal 5 to Fire mage[43/105]
+68.98,8.1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+68.98,8.1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+69,9,fast troll,Event,Casting ability Melee Attack by Sword
+69.5,9,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[40.5/105]
+70,9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+70.02,9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+70.04,9,fast troll,Event,Casting ability Melee Attack by Sword
+70.54,9,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[38/105]
+71.04,9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+71.06,9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+71.08,9,buff mage,Event,Casting ability Giant Power
+71.58,9,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+71.6,9,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+71.6,9,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+71.62,9,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+72.12,9,heavy troll,BasicDamageEvent, deal 2.5 to buff mage[60.25/105]
+72.62,9,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+72.64,9,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+72.64,9,heavy troll,Event,Casting ability Passive Regeneration
+72.66,9,heavy troll,BasicHealEvent, heal 1 to heavy troll[69.5/180]
+72.66,9,fast troll,Event,Casting ability Passive Regeneration
+72.68,9,fast troll,BasicHealEvent, heal 1 to fast troll[88/180]
+72.68,9,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+73.18,9,Fire mage,BasicDamageEvent, deal 4.5 to heavy troll[65/180]
+73.68,9,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+73.68,9,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+73.7,9,Heal mage,Event,Casting ability Heal Wave
+74.2,9,Heal mage,BasicHealEvent, heal 10 to Fire mage[48/105]
+74.22,9,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+74.24,9,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+74.24,9,buff mage,RemoveBuffEvent,remove buff Weaknessfrom heavy troll
+74.26,9.9,fast troll,Event,Casting ability Melee Attack by Sword
+74.76,9.9,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[45.5/105]
+75.28,9.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+75.28,9.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+75.3,9.9,fast troll,Event,Casting ability Melee Attack by Sword
+75.8,9.9,fast troll,BasicDamageEvent, deal 2.5 to buff mage[57.75/105]
+76.3,9.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+76.3,9.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+76.3,10,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+76.8,10,Fire mage,BasicDamageEvent, deal 4.5 to heavy troll[60.5/180]
+77.3,10,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+77.32,10,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+77.32,10,fast troll,Event,Casting ability Passive Regeneration
+77.34,10,fast troll,BasicHealEvent, heal 1 to fast troll[89/180]
+77.36,10,heavy troll,Event,Casting ability Passive Regeneration
+77.38,10,heavy troll,BasicHealEvent, heal 1 to heavy troll[61.5/180]
+77.38,10,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+77.88,10,heavy troll,BasicDamageEvent, deal 4.25 to buff mage[53.5/105]
+78.38,10,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+78.4,10,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+78.42,10,buff mage,Event,Casting ability Giant Power
+78.92,10,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+78.93999,10,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+78.96,10,buff mage,GenerateAbilityEvent,generated next ability Weakness
+78.98,10,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+79,10,buff mage,RemoveBuffEvent,remove buff Weaknessfrom fast troll
+79,10.8,fast troll,Event,Casting ability Melee Attack by Sword
+79.5,10.8,fast troll,BasicDamageEvent, deal 4.25 to buff mage[49.25/105]
+80,10.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+80.02,10.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+80.02,10.8,fast troll,Event,Casting ability Melee Attack by Sword
+80.52,10.8,fast troll,BasicDamageEvent, deal 4.25 to buff mage[45/105]
+81.02,10.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+81.02,10.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+81.04,11,buff mage,Event,Casting ability Weakness
+81.54,11,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+81.56,11,buff mage,CooldownEvent, finish cooldown for ability Weakness
+81.56,11,buff mage,GenerateAbilityEvent,generated next ability Weakness
+81.56,11,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+82.06,11,heavy troll,BasicDamageEvent, deal 5 to Fire mage[40.5/105]
+82.56,11,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+82.56,11,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+82.58,11,heavy troll,Event,Casting ability Passive Regeneration
+82.6,11,heavy troll,BasicHealEvent, heal 1 to heavy troll[62.5/180]
+82.6,11,fast troll,Event,Casting ability Passive Regeneration
+82.62,11,fast troll,BasicHealEvent, heal 1 to fast troll[90/180]
+82.64,11,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+83.14,11,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[56/180]
+83.64,11,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+83.66,11,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+83.68,11,Heal mage,Event,Casting ability Heal Wave
+84.18,11,Heal mage,BasicHealEvent, heal 10 to Fire mage[50.5/105]
+84.18,11,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+84.2,11,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+84.2,11.7,fast troll,Event,Casting ability Melee Attack by Sword
+84.7,11.7,fast troll,BasicDamageEvent, deal 4.25 to Fire mage[46.25/105]
+85.2,11.7,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+85.2,11.7,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+85.22,11.7,fast troll,Event,Casting ability Melee Attack by Sword
+85.72,11.7,fast troll,BasicDamageEvent, deal 8.5 to Fire mage[37.75/105]
+86.22,11.7,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+86.24,11.7,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+86.24,12,fast troll,Event,Casting ability Passive Regeneration
+86.25999,12,fast troll,BasicHealEvent, heal 1 to fast troll[91/180]
+86.25999,12,heavy troll,Event,Casting ability Passive Regeneration
+86.28,12,heavy troll,BasicHealEvent, heal 1 to heavy troll[57/180]
+86.28,12,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+86.78,12,heavy troll,BasicDamageEvent, deal 2.5 to buff mage[42.5/105]
+87.28,12,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+87.28,12,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+87.3,12,buff mage,Event,Casting ability Weakness
+87.8,12,buff mage,AddBuffEvent,add buff Weakness on fast troll
+87.8,12,buff mage,CooldownEvent, finish cooldown for ability Weakness
+87.82,12,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+87.84,12.5,Fire mage,Event,Casting ability Fireball
+88.34,12.5,Fire mage,BasicDamageEvent, deal 21 to heavy troll[36/180]
+88.34,12.5,Fire mage,BasicDamageEvent, deal 52 to fast troll[39/180]
+88.84,12.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+88.86,12.6,fast troll,Event,Casting ability Melee Attack by Sword
+89.36,12.6,fast troll,BasicDamageEvent, deal 2.5 to buff mage[40/105]
+89.86,12.6,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+89.88,12.6,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+89.9,12.6,fast troll,Event,Casting ability Melee Attack by Sword
+90.4,12.6,fast troll,BasicDamageEvent, deal 5 to Fire mage[32.75/105]
+90.9,12.6,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+90.9,12.6,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+90.92,13,buff mage,Event,Casting ability Melee Attack by Mage Staff
+91.42,13,buff mage,BasicDamageEvent, deal 13 to fast troll[26/180]
+91.92,13,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+91.93999,13,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+91.93999,13,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+92.43999,13,heavy troll,BasicDamageEvent, deal 5 to buff mage[35/105]
+92.93999,13,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+92.93999,13,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+92.96,13,heavy troll,Event,Casting ability Passive Regeneration
+92.96,13,heavy troll,BasicHealEvent, heal 1 to heavy troll[37/180]
+92.98,13,fast troll,Event,Casting ability Passive Regeneration
+92.98,13,fast troll,BasicHealEvent, heal 1 to fast troll[27/180]
+93,13,Heal mage,Event,Casting ability Heal Wave
+93.5,13,Heal mage,BasicHealEvent, heal 10 to Fire mage[42.75/105]
+93.5,13,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+93.52,13,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+93.54,13,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Heal mage
+93.56,13.5,fast troll,Event,Casting ability Melee Attack by Sword
+94.06,13.5,fast troll,BasicDamageEvent, deal 2.5 to buff mage[32.5/105]
+94.56,13.5,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+94.57999,13.5,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+94.57999,13.5,fast troll,Event,Casting ability Melee Attack by Sword
+95.07999,13.5,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[40.25/105]
+95.57999,13.5,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+95.57999,13.5,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+95.6,13.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+96.1,13.5,Fire mage,BasicDamageEvent, deal 13 to fast troll[14/180]
+96.6,13.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+96.62,13.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+96.64,14,fast troll,Event,Casting ability Passive Regeneration
+96.64,14,fast troll,BasicHealEvent, heal 1 to fast troll[15/180]
+96.66,14,heavy troll,Event,Casting ability Passive Regeneration
+96.66,14,heavy troll,BasicHealEvent, heal 1 to heavy troll[38/180]
+96.68,14,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+97.18,14,heavy troll,BasicDamageEvent, deal 5 to Fire mage[35.25/105]
+97.68,14,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+97.68,14,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+97.7,14,buff mage,Event,Casting ability Melee Attack by Mage Staff
+98.2,14,buff mage,BasicDamageEvent, deal 13 to fast troll[2/180]
+98.28,14,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+98.28,14,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+98.28,14,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom buff mage
+98.28,14.4,fast troll,Event,Casting ability Melee Attack by Sword
+98.28,14.4,fast troll,BasicDamageEvent, deal 2.5 to buff mage[30/105]
+98.28,14.4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+98.28,14.4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+98.28,14.4,fast troll,Event,Casting ability Melee Attack by Sword
+98.28,14.4,fast troll,BasicDamageEvent, deal 5 to Fire mage[30.25/105]
+98.28,14.4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+98.28,14.4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+98.28,14.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+98.28,14.5,Fire mage,BasicDamageEvent, deal 2 to fast troll[0/180]
+98.28,14.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+98.28,14.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+98.28,15,buff mage,Event,Casting ability Giant Power
+98.28,15,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+98.28,15,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+98.28,15,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+98.28,15,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+98.28,15,heavy troll,BasicDamageEvent, deal 5 to Fire mage[25.25/105]
+98.28,15,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+98.28,15,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+98.28,15,heavy troll,Event,Casting ability Passive Regeneration
+98.28,15,heavy troll,BasicHealEvent, heal 1 to heavy troll[39/180]
+98.28,15,fast troll,Event,Casting ability Passive Regeneration
+98.28,15,Heal mage,Event,Casting ability Heal Wave
+98.28,15,Heal mage,BasicHealEvent, heal 10 to Fire mage[35.25/105]
+98.28,15,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+98.28,15,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+98.28,15,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Fire mage
+98.28,15.3,fast troll,Event,Casting ability Melee Attack by Sword
+98.28,15.3,fast troll,Event,Casting ability Melee Attack by Sword
+98.28,15.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+98.28,15.5,Fire mage,BasicDamageEvent, deal 9 to heavy troll[30/180]
+98.28,15.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+98.28,15.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+98.28,15.5,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+98.28,16,heavy troll,Event,Casting ability Passive Regeneration
+98.28,16,heavy troll,BasicHealEvent, heal 1 to heavy troll[31/180]
+98.28,16,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+98.28,16,heavy troll,BasicDamageEvent, deal 2.5 to buff mage[27.5/105]
+98.28,16,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+98.28,16,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+98.28,16,buff mage,Event,Casting ability Giant Power
+98.28,16,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+98.28,16,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+98.28,16,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+98.28,16,buff mage,RemoveBuffEvent,remove buff Weaknessfrom heavy troll
+98.28,16.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+98.28,16.5,Fire mage,BasicDamageEvent, deal 13 to heavy troll[18/180]
+98.28,16.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+98.28,16.5,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+98.28,17,buff mage,Event,Casting ability Giant Power
+98.28,17,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+98.28,17,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+98.28,17,buff mage,GenerateAbilityEvent,generated next ability Weakness
+98.28,17,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+98.28,17,heavy troll,BasicDamageEvent, deal 4.25 to Fire mage[31/105]
+98.28,17,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+98.28,17,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+98.28,17,heavy troll,Event,Casting ability Passive Regeneration
+98.28,17,heavy troll,BasicHealEvent, heal 1 to heavy troll[19/180]
+98.28,17,Heal mage,Event,Casting ability Heal Wave
+98.28,17,Heal mage,BasicHealEvent, heal 10 to buff mage[37.5/105]
+98.28,17,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+98.28,17,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+98.28,17,buff mage,RemoveBuffEvent,remove buff Weaknessfrom fast troll
+98.28,18,heavy troll,Event,Casting ability Passive Regeneration
+98.28,18,heavy troll,BasicHealEvent, heal 1 to heavy troll[20/180]
+98.28,18,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+98.28,18,heavy troll,BasicDamageEvent, deal 4.25 to Fire mage[26.75/105]
+98.28,18,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+98.28,18,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+98.28,18,buff mage,Event,Casting ability Weakness
+98.28,18,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+98.28,18,buff mage,CooldownEvent, finish cooldown for ability Weakness
+98.28,18,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+98.28,18,Fire mage,Event,Casting ability Fireball
+98.28,18,Fire mage,BasicDamageEvent, deal 20 to heavy troll[0/180]
+98.28,82,FightController,FightController,Result
+98.28,82,FightController,FightController,Fire magehas 26.75
+98.28,82,FightController,FightController,Heal magehas 105
+98.28,82,FightController,FightController,buff magehas 37.5
+156.54,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+156.56,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+156.56,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+156.58,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+156.6,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+156.6,0,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+156.62,0,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+156.62,0,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+156.64,0.9,fast troll,Event,Casting ability Melee Attack by Sword
+157.14,0.9,fast troll,BasicDamageEvent, deal 3.25 to Fire mage[101.75/105]
+157.64,0.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+157.64,0.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+157.66,0.9,fast troll,Event,Casting ability Melee Attack by Sword
+158.16,0.9,fast troll,BasicDamageEvent, deal 6.5 to Fire mage[95.25/105]
+158.66,0.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+158.68,0.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+158.7,1,Heal mage,Event,Casting ability Melee Attack by Mage Staff
+159.2,1,Heal mage,BasicDamageEvent, deal 4.5 to heavy troll[125.5/130]
+159.7,1,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+159.7,1,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+159.72,1,buff mage,Event,Casting ability Giant Power
+160.22,1,buff mage,AddBuffEvent,add buff Giant Power on Heal mage
+160.24,1,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+160.26,1,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+160.28,1,heavy troll,Event,Casting ability Melee Attack
+160.78,1,heavy troll,BasicDamageEvent, deal 0.5 to Fire mage[94.75/105]
+161.28,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+161.28,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+161.3,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+161.8,1,heavy troll,BasicDamageEvent, deal 6.5 to Fire mage[88.25/105]
+162.3,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+162.3,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+162.32,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+162.82,1,heavy troll,BasicDamageEvent, deal 6 to Fire mage[82.25/105]
+163.32,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+163.34,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+163.36,1,heavy troll,Event,Casting ability Passive Regeneration
+163.36,1,heavy troll,BasicHealEvent, heal 0 to heavy troll[130/130]
+163.38,1,heavy troll,Event,Casting ability Passive Regeneration
+163.38,1,heavy troll,BasicHealEvent, heal 1 to heavy troll[126.5/130]
+163.4,1,fast troll,Event,Casting ability Passive Regeneration
+163.42,1,fast troll,BasicHealEvent, heal 0 to fast troll[140/140]
+163.42,1,heavy troll,Event,Casting ability Passive Regeneration
+163.44,1,heavy troll,BasicHealEvent, heal 1 to heavy troll[127.5/130]
+163.44,1.5,Fire mage,Event,Casting ability Fireball
+163.94,1.5,Fire mage,BasicDamageEvent, deal 16 to heavy troll[114/130]
+163.96,1.5,Fire mage,BasicDamageEvent, deal 32 to heavy troll[95.5/130]
+163.98,1.5,Fire mage,BasicDamageEvent, deal 22 to heavy troll[118/140]
+164.48,1.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+164.5,1.8,fast troll,Event,Casting ability Melee Attack by Sword
+165,1.8,fast troll,BasicDamageEvent, deal 3.25 to Fire mage[79/105]
+165.5,1.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+165.5,1.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+165.52,1.8,fast troll,Event,Casting ability Melee Attack by Sword
+166.02,1.8,fast troll,BasicDamageEvent, deal 6.5 to Fire mage[72.5/105]
+166.52,1.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+166.52,1.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+166.54,2,heavy troll,Event,Casting ability Passive Regeneration
+166.56,2,heavy troll,BasicHealEvent, heal 1 to heavy troll[96.5/130]
+166.56,2,fast troll,Event,Casting ability Passive Regeneration
+166.58,2,fast troll,BasicHealEvent, heal 0 to fast troll[140/140]
+166.6,2,heavy troll,Event,Casting ability Passive Regeneration
+166.62,2,heavy troll,BasicHealEvent, heal 1 to heavy troll[97.5/130]
+166.62,2,heavy troll,Event,Casting ability Passive Regeneration
+166.64,2,heavy troll,BasicHealEvent, heal 1 to heavy troll[115/130]
+166.66,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+167.16,2,heavy troll,BasicDamageEvent, deal 6 to Fire mage[66.5/105]
+167.66,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+167.68,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+167.68,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+168.18,2,heavy troll,BasicDamageEvent, deal 3.25 to Fire mage[63.25/105]
+168.68,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+168.68,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+168.7,2,heavy troll,Event,Casting ability Melee Attack
+169.2,2,heavy troll,BasicDamageEvent, deal 1 to Fire mage[62.25/105]
+169.7,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+169.7,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+169.72,2,buff mage,Event,Casting ability Giant Power
+170.22,2,buff mage,AddBuffEvent,add buff Giant Power on Fire mage
+170.24,2,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+170.24,2,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+170.24,2.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+170.74,2.5,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[91/130]
+171.24,2.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+171.24,2.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+171.26,2.7,fast troll,Event,Casting ability Melee Attack by Sword
+171.76,2.7,fast troll,BasicDamageEvent, deal 3.25 to Fire mage[59/105]
+172.26,2.7,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+172.28,2.7,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+172.3,2.7,fast troll,Event,Casting ability Melee Attack by Sword
+172.8,2.7,fast troll,BasicDamageEvent, deal 3.25 to Fire mage[55.75/105]
+173.3,2.7,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+173.32,2.7,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+173.32,3,buff mage,Event,Casting ability Giant Power
+173.82,3,buff mage,AddBuffEvent,add buff Giant Power on buff mage
+173.84,3,buff mage,CooldownEvent, finish cooldown for ability Giant Power
+173.84,3,buff mage,GenerateAbilityEvent,generated next ability Weakness
+173.86,3,heavy troll,Event,Casting ability Melee Attack
+174.36,3,heavy troll,BasicDamageEvent, deal 1 to Fire mage[54.75/105]
+174.86,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+174.88,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+174.9,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+175.4,3,heavy troll,BasicDamageEvent, deal 6.5 to Fire mage[48.25/105]
+175.9,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+175.92,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+175.92,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+176.42,3,heavy troll,BasicDamageEvent, deal 6 to Fire mage[42.25/105]
+176.92,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+176.92,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+176.94,3,heavy troll,Event,Casting ability Passive Regeneration
+176.94,3,heavy troll,BasicHealEvent, heal 1 to heavy troll[116/130]
+176.96,3,heavy troll,Event,Casting ability Passive Regeneration
+176.96,3,heavy troll,BasicHealEvent, heal 1 to heavy troll[92/130]
+176.98,3,fast troll,Event,Casting ability Passive Regeneration
+176.98,3,fast troll,BasicHealEvent, heal 0 to fast troll[140/140]
+177,3,heavy troll,Event,Casting ability Passive Regeneration
+177,3,heavy troll,BasicHealEvent, heal 1 to heavy troll[93/130]
+177.02,3,Heal mage,Event,Casting ability Heal Wave
+177.52,3,Heal mage,BasicHealEvent, heal 10 to Fire mage[52.25/105]
+177.52,3,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+177.54,3,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+177.56,3.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+178.06,3.5,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[86.5/130]
+178.56,3.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+178.58,3.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+178.6,3.6,fast troll,Event,Casting ability Melee Attack by Sword
+179.1,3.6,fast troll,BasicDamageEvent, deal 6.5 to Fire mage[45.75/105]
+179.6,3.6,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+179.62,3.6,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+179.62,3.6,fast troll,Event,Casting ability Melee Attack by Sword
+180.12,3.6,fast troll,BasicDamageEvent, deal 3.25 to Fire mage[42.5/105]
+180.62,3.6,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+180.62,3.6,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+180.64,4,heavy troll,Event,Casting ability Passive Regeneration
+180.66,4,heavy troll,BasicHealEvent, heal 1 to heavy troll[87.5/130]
+180.68,4,fast troll,Event,Casting ability Passive Regeneration
+180.68,4,fast troll,BasicHealEvent, heal 0 to fast troll[140/140]
+180.7,4,heavy troll,Event,Casting ability Passive Regeneration
+180.7,4,heavy troll,BasicHealEvent, heal 1 to heavy troll[88.5/130]
+180.72,4,heavy troll,Event,Casting ability Passive Regeneration
+180.74,4,heavy troll,BasicHealEvent, heal 1 to heavy troll[117/130]
+180.74,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+181.24,4,heavy troll,BasicDamageEvent, deal 3 to Fire mage[39.5/105]
+181.74,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+181.76,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+181.76,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+182.26,4,heavy troll,BasicDamageEvent, deal 3.25 to Fire mage[36.25/105]
+182.76,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+182.76,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+182.78,4,heavy troll,Event,Casting ability Melee Attack
+183.28,4,heavy troll,BasicDamageEvent, deal 1 to Fire mage[35.25/105]
+183.78,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+183.78,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+183.8,4,buff mage,Event,Casting ability Weakness
+184.3,4,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+184.3,4,buff mage,CooldownEvent, finish cooldown for ability Weakness
+184.32,4,buff mage,GenerateAbilityEvent,generated next ability Weakness
+184.32,4.5,fast troll,Event,Casting ability Melee Attack by Sword
+184.82,4.5,fast troll,BasicDamageEvent, deal 3.25 to Fire mage[32/105]
+185.32,4.5,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+185.34,4.5,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+185.36,4.5,fast troll,Event,Casting ability Melee Attack by Sword
+185.86,4.5,fast troll,BasicDamageEvent, deal 3.25 to Fire mage[28.75/105]
+186.36,4.5,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+186.38,4.5,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+186.4,4.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+186.9,4.5,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[110.5/130]
+187.4,4.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+187.4,4.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+187.42,4.5,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+187.42,5,buff mage,Event,Casting ability Weakness
+187.92,5,buff mage,AddBuffEvent,add buff Weakness on heavy troll
+187.94,5,buff mage,CooldownEvent, finish cooldown for ability Weakness
+187.96,5,buff mage,GenerateAbilityEvent,generated next ability Weakness
+187.96,5,heavy troll,Event,Casting ability Melee Attack
+188.46,5,heavy troll,BasicDamageEvent, deal 0 to Fire mage[28.75/105]
+188.46,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+188.48,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+188.5,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+189,5,heavy troll,BasicDamageEvent, deal 4 to Fire mage[24.75/105]
+189.5,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+189.5,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+189.52,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+190.02,5,heavy troll,BasicDamageEvent, deal 4 to Fire mage[20.75/105]
+190.52,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+190.52,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+190.54,5,heavy troll,Event,Casting ability Passive Regeneration
+190.56,5,heavy troll,BasicHealEvent, heal 1 to heavy troll[111.5/130]
+190.58,5,heavy troll,Event,Casting ability Passive Regeneration
+190.58,5,heavy troll,BasicHealEvent, heal 1 to heavy troll[89.5/130]
+190.6,5,fast troll,Event,Casting ability Passive Regeneration
+190.62,5,fast troll,BasicHealEvent, heal 0 to fast troll[140/140]
+190.62,5,heavy troll,Event,Casting ability Passive Regeneration
+190.64,5,heavy troll,BasicHealEvent, heal 1 to heavy troll[90.5/130]
+190.66,5,Heal mage,Event,Casting ability Heal Wave
+191.16,5,Heal mage,BasicHealEvent, heal 10 to Fire mage[30.75/105]
+191.18,5,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+191.18,5,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+191.2,5.4,fast troll,Event,Casting ability Melee Attack by Sword
+191.7,5.4,fast troll,BasicDamageEvent, deal 6.5 to Fire mage[24.25/105]
+192.2,5.4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+192.22,5.4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+192.22,5.4,fast troll,Event,Casting ability Melee Attack by Sword
+192.72,5.4,fast troll,BasicDamageEvent, deal 3.25 to Fire mage[21/105]
+193.22,5.4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+193.22,5.4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+193.24,5.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+193.74,5.5,Fire mage,BasicDamageEvent, deal 6.5 to heavy troll[84/130]
+194.24,5.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+194.26,5.5,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+194.28,6,heavy troll,Event,Casting ability Passive Regeneration
+194.28,6,heavy troll,BasicHealEvent, heal 1 to heavy troll[85/130]
+194.3,6,fast troll,Event,Casting ability Passive Regeneration
+194.3,6,fast troll,BasicHealEvent, heal 0 to fast troll[140/140]
+194.32,6,heavy troll,Event,Casting ability Passive Regeneration
+194.34,6,heavy troll,BasicHealEvent, heal 1 to heavy troll[86/130]
+194.36,6,heavy troll,Event,Casting ability Passive Regeneration
+194.38,6,heavy troll,BasicHealEvent, heal 1 to heavy troll[112.5/130]
+194.4,6,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+194.9,6,heavy troll,BasicDamageEvent, deal 4 to Fire mage[17/105]
+195.4,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+195.42,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+195.42,6,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+195.92,6,heavy troll,BasicDamageEvent, deal 2 to Fire mage[15/105]
+196.42,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+196.44,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+196.46,6,heavy troll,Event,Casting ability Melee Attack
+196.96,6,heavy troll,BasicDamageEvent, deal 0 to Fire mage[15/105]
+196.98,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+196.98,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+197,6,buff mage,Event,Casting ability Weakness
+197.5,6,buff mage,AddBuffEvent,add buff Weakness on fast troll
+197.5,6,buff mage,CooldownEvent, finish cooldown for ability Weakness
+197.52,6,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+197.52,6,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Heal mage
+197.54,6.3,fast troll,Event,Casting ability Melee Attack by Sword
+198.04,6.3,fast troll,BasicDamageEvent, deal 4 to Fire mage[11/105]
+198.54,6.3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+198.54,6.3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+198.54,6.3,fast troll,Event,Casting ability Melee Attack by Sword
+199.04,6.3,fast troll,BasicDamageEvent, deal 4 to Fire mage[7/105]
+199.54,6.3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+199.54,6.3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+199.56,7,buff mage,Event,Casting ability Melee Attack by Mage Staff
+200.06,7,buff mage,BasicDamageEvent, deal 6.5 to heavy troll[106/130]
+200.56,7,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+200.56,7,buff mage,GenerateAbilityEvent,generated next ability Giant Power
+200.58,7,heavy troll,Event,Casting ability Melee Attack
+201.08,7,heavy troll,BasicDamageEvent, deal 0 to Fire mage[7/105]
+201.1,7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack
+201.12,7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack
+201.14,7,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+201.64,7,heavy troll,BasicDamageEvent, deal 4 to Fire mage[3/105]
+202.14,7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+202.14,7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+202.16,7,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+202.66,7,heavy troll,BasicDamageEvent, deal 2 to Fire mage[1/105]
+203.16,7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+203.18,7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+203.18,7,heavy troll,Event,Casting ability Passive Regeneration
+203.2,7,heavy troll,BasicHealEvent, heal 1 to heavy troll[107/130]
+203.2,7,heavy troll,Event,Casting ability Passive Regeneration
+203.22,7,heavy troll,BasicHealEvent, heal 1 to heavy troll[87/130]
+203.24,7,fast troll,Event,Casting ability Passive Regeneration
+203.26,7,fast troll,BasicHealEvent, heal 0 to fast troll[140/140]
+203.28,7,heavy troll,Event,Casting ability Passive Regeneration
+203.28,7,heavy troll,BasicHealEvent, heal 1 to heavy troll[88/130]
+203.3,7,Fire mage,Event,Casting ability Fireball
+203.8,7,Fire mage,BasicDamageEvent, deal 24 to heavy troll[83/130]
+203.8,7,Fire mage,BasicDamageEvent, deal 17 to heavy troll[71/130]
+203.82,7,Fire mage,BasicDamageEvent, deal 48 to heavy troll[70/140]
+204.32,7,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+204.34,7,Heal mage,Event,Casting ability Heal Wave
+204.84,7,Heal mage,BasicHealEvent, heal 10 to Fire mage[11/105]
+204.86,7,Heal mage,CooldownEvent, finish cooldown for ability Heal Wave
+204.86,7,Heal mage,GenerateAbilityEvent,generated next ability Heal Wave
+204.88,7,buff mage,RemoveBuffEvent,remove buff Giant Powerfrom Fire mage
+204.88,7.2,fast troll,Event,Casting ability Melee Attack by Sword
+205.38,7.2,fast troll,BasicDamageEvent, deal 2 to Fire mage[9/105]
+205.88,7.2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+205.88,7.2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+205.9,7.2,fast troll,Event,Casting ability Melee Attack by Sword
+206.4,7.2,fast troll,BasicDamageEvent, deal 4 to Fire mage[5/105]
+206.9,7.2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+206.92,7.2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+206.94,8,Fire mage,Event,Casting ability Melee Attack by Mage Staff
+207.44,8,Fire mage,BasicDamageEvent, deal 4.5 to heavy troll[65.5/140]
+207.94,8,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+207.94,8,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+207.96,8,heavy troll,Event,Casting ability Passive Regeneration
+207.98,8,heavy troll,BasicHealEvent, heal 1 to heavy troll[72/130]
+208,8,fast troll,Event,Casting ability Passive Regeneration
+208,8,fast troll,BasicHealEvent, heal 0 to fast troll[140/140]
+208.02,8,heavy troll,Event,Casting ability Passive Regeneration
+208.04,8,heavy troll,BasicHealEvent, heal 1 to heavy troll[73/130]
+208.04,8,heavy troll,Event,Casting ability Passive Regeneration
+208.06,8,heavy troll,BasicHealEvent, heal 1 to heavy troll[84/130]
+208.06,8,heavy troll,Event,Casting ability Melee Attack by Troll Mace

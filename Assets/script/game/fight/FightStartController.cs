@@ -73,10 +73,9 @@ public class FightStartController : GameScene, IListenerObject {
 
         PersonFactory personFactory = factory.GetComponent<PersonFactory>();
 
-        personFactory.availableEnemy.Add(new Golem());
-        personFactory.availableEnemy.Add(new HeavyTroll());
-        personFactory.availableEnemy.Add(new FastTroll());
-        personFactory.availableEnemy.Add(new TrollSummoner());
+        personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/heavyTroll"));
+        personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/fastTroll"));
+ //       personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/trollSummoner"));
 
         personFactory.setController(personTable);
 

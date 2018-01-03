@@ -12,8 +12,10 @@ public class CritChanceModificator : AbstractModificator{
 	public override void updateMakingDamage(Ability ability) {
         if (critChange > 0)  {
 			if (Random.Range(0, 100) <= critChange) {
-                ability.effectList.ForEach(
-					(AbstractAbilityEffect effect) => {
+                ability.effectList.FindAll(
+                        (AbstractAbilityEffect effect) => 
+                        !effect.attribures.Contains(EffectAttribures.CRIT))
+                    .ForEach((AbstractAbilityEffect effect) => {
 							effect.value = effect.value * 2;
                             effect.attribures.Add(EffectAttribures.CRIT);
                         }

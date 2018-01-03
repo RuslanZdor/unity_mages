@@ -3,13 +3,13 @@ using System.Collections;
 
 public class ConstantValueGenerator : AbstractValueGenerator {
 
-	public int value;
+	public float value;
 
-    public ConstantValueGenerator(int value) {
+    public ConstantValueGenerator(float value) {
         this.value = value;
     }
 
-	public override int getValue() {
+	public override float getValue() {
         return value;
     }
 }

@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PersonFactory : MonoBehaviour, AbstractFactory{
 
     private GameObject controller;
 
     public static int currentID = 0;
-    public GameObject basicPerson;
     public GameObject buffIcon;
 
     public List<Person> availableEnemy = new List<Person>();
@@ -22,13 +22,13 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
             Person p = generatePersonByPower((powerCost - generated) / (count - i));
             if (p != null) {
                 generated += p.calculatePower();
-                list.Add(p);
+                list.Add((Person) p.Clone());
             }
         }
 
         while(generated < powerCost) {
             foreach (Person p in list) {
-                p.level++;
+                p.setLevel(p.level + 1);
 
                 generated = 0;
                 foreach (Person p2 in list) {
@@ -55,7 +55,8 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
     }
 
     public GameObject create(Person person, string name) {
-        GameObject go = Instantiate(basicPerson);
+        GameObject personModel = Resources.Load<GameObject>(person.personModel);
+        GameObject go = Instantiate(personModel);
         go.AddComponent<PersonController>();
         GameObject goClone = Instantiate(go, controller.transform, false);
         Destroy(go);
@@ -72,7 +73,8 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
     }
 
     public GameObject create(Person person) {
-        GameObject go = Instantiate(basicPerson);
+        GameObject personModel = Resources.Load<GameObject>(person.personModel);
+        GameObject go = Instantiate(personModel);
         go.AddComponent<PersonController>();
         GameObject goClone = Instantiate(go, controller.transform, false);
         Destroy(go);
@@ -89,6 +91,7 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
 
     public GameObject createBuffIcon(Buff buff) {
         GameObject go = Instantiate(buffIcon);
+        go.GetComponent<Image>().sprite = buff.image;
         return go;
     }
 

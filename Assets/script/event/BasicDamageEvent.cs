@@ -25,7 +25,11 @@ public class BasicDamageEvent : BasicTargetEvent {
         logEvent(" deal " + value + " to " + target.name + "[" + target.health + "/" + target.maxHealth + "]");
  
         if (value > 0) {
-            target.personController.hittenTrigger();
+            if (ability.hasAttribute(EffectAttribures.BLOCK)) {
+                target.personController.blockTrigger();
+            } else {
+                target.personController.hittenTrigger();
+            }
             return eventDuration;
         }
 

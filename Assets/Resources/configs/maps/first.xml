@@ -1,48 +1,57 @@
 <map>
 	<mapPoint>
 		<id>1</id>
-		<fightPower>100</fightPower>
+		<fightPower>200</fightPower>
 		<position>
 			<x>0</x>
-			<y>0</y>
+			<y>1</y>
 		</position>
 		<dependList></dependList>
 	</mapPoint>
 	<mapPoint>
 		<id>2</id>
-		<fightPower>100</fightPower>
+		<fightPower>400</fightPower>
 		<position>
 			<x>1</x>
-			<y>1</y>
+			<y>0</y>
 		</position>
 		<dependList>1</dependList>
 	</mapPoint>
 	<mapPoint>
 		<id>3</id>
-		<fightPower>100</fightPower>
+		<fightPower>400</fightPower>
+		<position>
+			<x>1</x>
+			<y>2</y>
+		</position>
+		<dependList>1</dependList>
+	</mapPoint>
+	<mapPoint>
+		<id>4</id>
+		<fightPower>400</fightPower>
 		<position>
 			<x>2</x>
-			<y>2</y>
+			<y>0</y>
 		</position>
 		<dependList>2</dependList>
 	</mapPoint>
 	<mapPoint>
-		<id>4</id>
-		<fightPower>100</fightPower>
+		<id>5</id>
+		<fightPower>400</fightPower>
 		<position>
-			<x>3</x>
-			<y>0</y>
+			<x>2</x>
+			<y>2</y>
 		</position>
 		<dependList>3</dependList>
 	</mapPoint>
 	<mapPoint>
-		<id>5</id>
-		<fightPower>100</fightPower>
+		<id>6</id>
+		<fightPower>600</fightPower>
 		<position>
-			<x>4</x>
+			<x>3</x>
 			<y>1</y>
 		</position>
-		<dependList>4</dependList>
+		<dependList>4,5</dependList>
 		<final>true</final>
 	</mapPoint>
 </map>

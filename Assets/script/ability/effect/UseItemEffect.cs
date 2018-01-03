@@ -9,7 +9,7 @@ public class UseItemEffect : AbstractAbilityEffect {
         this.targetsNumber = 1;
     }
 		
-	public override void applyEffect(Person owner, Person target, float startTime) {
+	public override void applyEffect(Person owner, Person target, float startTime, Ability ab) {
         UseItemEvent e = new UseItemEvent();
 
         e.owner = owner;

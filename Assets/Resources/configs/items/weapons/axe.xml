@@ -1,0 +1,18 @@
+<item>
+	<type>WEAPON</type>
+	<sprite>texture/Items/weapons/weapons</sprite>
+	<image>weapons_4</image>
+	<name>Axe</name>
+	<level>2</level>
+	<cost>100</cost>
+	<durability>100</durability>
+	<cast_time>1.1</cast_time>
+	<damage>6</damage>
+	<damagePerLevel>0.6</damagePerLevel>
+	<powerCost>10</powerCost>
+	<powerCostPerLevel>1</powerCostPerLevel>
+	<buffs>
+	</buffs>
+</item>
+
+

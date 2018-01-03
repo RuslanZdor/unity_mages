@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class  BuffMage : BaseMage {
 	public BuffMage() : base() {
-        abilityList.Add(new GiantPower(this));
+        knownAbilities.Add(new GiantPower());
+        knownAbilities.Add(new Weakness());
     }
 }

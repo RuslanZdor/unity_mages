@@ -15,7 +15,7 @@ public class EventQueue {
             events.RemoveAt(0);
             float delta = e.eventStart();
             nextEventTime += delta;
-            realTime += delta;
+            realTime = time + delta;
             return nextEventTime;
         }
         return 0;

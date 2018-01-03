@@ -9,7 +9,6 @@ public class Person : ICloneable {
 
     public int id;
     public string name;
-
     public int level = 1;
     public int experience;
     public int powerCost;
@@ -17,14 +16,18 @@ public class Person : ICloneable {
 
     public float health;
     public float maxHealth;
-
+    public float basicHealth;
     public float healthPerLevel;
-    public float manaPerLevel;
 
+    public float manaPerLevel;
     public float mana;
     public float maxMana;
+    public float basicMana;
 
     public int numberParrallelCasts = 1;
+
+    public String personImage = "";
+    public String personModel = "";
 
     public AbilityTargetType enemy;
     public AbilityTargetType ally;
@@ -33,6 +36,7 @@ public class Person : ICloneable {
     public List<Buff> effectList = new List<Buff>();
 
     public List<Ability> knownAbilities = new List<Ability>();
+    public List<Buff> buffList = new List<Buff>();
     public List<Item> itemList = new List<Item>();
 
     public List<Ability> usedAbilites = new List<Ability>();
@@ -44,8 +48,6 @@ public class Person : ICloneable {
 
     public bool isAlive;
     public bool updateBuffs = true;
-
-    public String personImage = "";
 
     public PersonStatistics statistics = new PersonStatistics();
 
@@ -82,6 +84,11 @@ public class Person : ICloneable {
                 isAlive = false;
             }
         }
+
+        if (ability.animation != null) {
+            personController.applyEffect();
+        }
+
         return resultValue - health;
     }
 
@@ -101,7 +108,7 @@ public class Person : ICloneable {
     public float eventStart(Ability ability, float eventStartTime) {
         float time = 0.0f;
         if (isAlive) {
-            if (!(ability.GetType() == typeof(ActiveBuff))) {
+            if (!(ability.GetType().IsSubclassOf(typeof (ActiveBuff)))) {
                 generateNextActiveEvent(eventStartTime);
                 generateCooldownEvent(ability, eventStartTime);
             }
@@ -144,22 +151,24 @@ public class Person : ICloneable {
 
         agro = Constants.PERSON_AGRO;
 
-        knownAbilities.Add(new MeleeAttack(this, "Melee Attack"));
+        knownAbilities.Add(new MeleeAttack("Melee Attack"));
     }
 
     public object Clone() {
         try {
            Person newPerson = (Person) this.MemberwiseClone();
             foreach  (Ability ab in newPerson.abilityList) {
-                ab.abilityTactic.person = newPerson;
-                ab.personOwner = newPerson;
+                ab.setPerson(newPerson);
+                ab.initAbility();
             }
             foreach (Ability ab in newPerson.knownAbilities) {
-                ab.abilityTactic.person = newPerson;
-                ab.personOwner = newPerson;
+                ab.setPerson(newPerson);
             }
             foreach (Buff b in newPerson.effectList) {
-                b.personOwner = newPerson;
+                b.setPerson(newPerson);
+            }
+            foreach (Buff b in newPerson.buffList) {
+                b.setPerson(newPerson);
             }
             foreach (Item item in newPerson.itemList) {
                 item.owner = newPerson;
@@ -178,9 +187,9 @@ public class Person : ICloneable {
 
     public virtual void initAbilities() {
 
-        maxMana = maxMana + level * manaPerLevel;
+        maxMana = basicMana + level * manaPerLevel;
         mana = maxMana;
-        maxHealth = maxHealth + level * healthPerLevel;
+        maxHealth = basicHealth + level * healthPerLevel;
         health = maxHealth;
 
         abilityList.Clear();
@@ -191,14 +200,17 @@ public class Person : ICloneable {
             abilityList.Add(ability);
         }
 
+        effectList.AddRange(buffList);
+
         for (int i = 0; i < itemList.Count; i++) {
-            Buff b = new Buff(this, new DamageSpellCastTactic(1));
-            foreach (AbstractModificator modificator in itemList[i].modificatorList) {
-                b.modificator = modificator;
-                b.name = itemList[i].GetType().FullName + ":" + modificator.GetType().FullName;
-                effectList.Add(b);
+            foreach (Buff modificator in itemList[i].modificatorList) {
+                effectList.Add(modificator);
             }
             abilityList.AddRange(itemList[i].abilityList);
+
+            foreach (Ability ab in abilityList) {
+                ab.initAbility();
+            }
         }
 
         statistics.reset();
@@ -215,6 +227,21 @@ public class Person : ICloneable {
     }
 
     public int calculatePower() {
-        return powerCost + powerCostPerLevel * (level - 1);
+        int total = powerCost + powerCostPerLevel * (level - 1);
+        foreach (Item item in itemList) {
+            total += item.powerCost + item.powerCostPerLevel * (level - 1);
+        }
+        return total;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+        foreach (Item item in itemList) {
+            item.level = level;
+        }
+        foreach (Ability ability in abilityList) {
+            ability.level = level;
+        }
+        initAbilities();
     }
 }

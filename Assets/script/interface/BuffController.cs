@@ -25,7 +25,7 @@ public class BuffController : MonoBehaviour {
 
             int number = 0;
             foreach (Buff buff in person.effectList) {
-                PersonFactory pf = transform.parent.parent.Find("GameFactory").GetComponent<PersonFactory>();
+                PersonFactory pf = transform.root.Find("GameFactory").GetComponent<PersonFactory>();
                 GameObject go = pf.createBuffIcon(buff);
                 go.transform.SetParent(gameObject.transform.Find("model/buff").transform, false);
                 go.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(0.0f, (0.0f - 0.5f * number++), 0.0f);

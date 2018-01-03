@@ -4,14 +4,9 @@ using System.Collections.Generic;
 
 public class ItselfTargetTactic : AbstractTargetTactic{
 
-	public List<Person> list;
-
 	public override List<Person> getTargets(Party party, int count, Ability ability) {
-        return list;
-    }
-
-    public ItselfTargetTactic (Person person) {
-		list = new List<Person>();
-        list.Add(person);
+        List<Person> result = new List<Person>();
+        result.Add(ability.personOwner);
+        return result;
     }
 }

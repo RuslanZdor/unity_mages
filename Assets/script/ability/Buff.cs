@@ -20,7 +20,7 @@ public class Buff : Ability {
 
         return cl;
     }
-
+    /*
 	public override float eventStart(float startTime) {
 		foreach (AbstractAbilityEffect effect in effectList) {
             for (int i = 0; i < effect.targetsNumber; i++) {
@@ -31,9 +31,12 @@ public class Buff : Ability {
                 }
             }
         }
-        return animationTIme;
+        if (animationTime > 0) {
+            personOwner.personController.castAbility();
+        }
+        return animationTime;
     }
-
+    */
 	public bool Equals(Buff obj) {
         return name.Equals(((Buff) obj).name);
     }
@@ -46,6 +49,6 @@ public class Buff : Ability {
         }
     }
 
-	public Buff(Person person, AbstractTactic tactic) : base(person, tactic){
+	public Buff(AbstractTactic tactic) : base(tactic){
     }
 }

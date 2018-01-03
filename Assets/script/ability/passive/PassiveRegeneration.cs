@@ -2,13 +2,15 @@ using UnityEngine;
 using System.Collections;
 
 public class PassiveRegeneration : ActiveBuff {
-	public PassiveRegeneration(Person person, int value) : base(person, new MeleeAttackTactic()) {
+	public PassiveRegeneration(int value) : base(new MeleeAttackTactic()) {
         name = "Passive Regeneration";
-
+        
         modificator = new AbstractModificator();
-        targetType = person.ally;
-        targetTactic = new ItselfTargetTactic(person);
+        targetType = AbilityTargetType.FRIEND;
+        targetTactic = new ItselfTargetTactic();
         timeCast = 1;
+
+        image = Constants.loadSprite("texture/Skills/buffIcons", "buffIcons_0");
 
         AbstractAbilityEffect effect = new HealAbilityEffect();
         effect.targetsNumber = 1;

@@ -25,10 +25,12 @@ public class GameController : MonoBehaviour, IListenerObject {
         f.initAbilities();
         PartiesSingleton.activeHeroes.Add(f);
 
-        f = new FireMage();
-        f.name = "Summoner mage";
+        f = new BuffMage();
+        f.name = "buff mage";
         f.initAbilities();
         PartiesSingleton.activeHeroes.Add(f);
+
+        PartiesSingleton.inventory.Add(XMLFactory.loadItem("configs/items/weapons/troll_mace"));
 
         GameMessage gm = new GameMessage();
         gm.type = MessageType.CLOSE_MAIN_MENU;
