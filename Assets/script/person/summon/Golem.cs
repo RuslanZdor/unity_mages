@@ -17,5 +17,6 @@ public class Golem : Person{
         agro = Constants.GOLEM_AGRO;
 
         personImage = "texture/troll";
+        personModel = "models/persons/troll";
     }
 }

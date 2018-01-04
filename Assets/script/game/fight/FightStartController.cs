@@ -75,7 +75,7 @@ public class FightStartController : GameScene, IListenerObject {
 
         personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/heavyTroll"));
         personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/fastTroll"));
- //       personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/trollSummoner"));
+        personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/trollSummoner"));
 
         personFactory.setController(personTable);
 

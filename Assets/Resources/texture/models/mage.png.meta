@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: bdbfe7285d9b0cc44a7562f337450df5
+timeCreated: 1514508283
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mage_0
+    21300002: mage_1
+    21300004: mage_2
+    21300006: mage_3
+    21300008: mage_4
+    21300010: mage_5
+    21300012: mage_6
+    21300014: mage_7
+    21300016: mage_8
+    21300018: mage_9
+    21300020: mage_10
+    21300022: mage_11
+    21300024: mage_12
+    21300026: mage_13
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mage_0
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 358
+        width: 69
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5083083, y: 0.13964805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 285
+        width: 23
+        height: 30
+      alignment: 9
+      pivot: {x: 0.8365777, y: 0.9085673}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_2
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 252
+        width: 45
+        height: 61
+      alignment: 9
+      pivot: {x: 0.49999967, y: 0.13205206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_3
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 289
+        width: 23
+        height: 29
+      alignment: 9
+      pivot: {x: 0.18034828, y: 0.9469889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 244
+        width: 28
+        height: 18
+      alignment: 9
+      pivot: {x: 0.08528764, y: 0.78671265}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 254
+        width: 26
+        height: 19
+      alignment: 9
+      pivot: {x: 0.12049513, y: 0.82584906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 219
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.15728664, y: 0.7419157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_7
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 207
+        width: 15
+        height: 32
+      alignment: 9
+      pivot: {x: 0.50775045, y: 0.9673047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 209
+        width: 15
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5086283, y: 0.95732725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_9
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 222
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5362778, y: 0.8869457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_10
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 150
+        width: 18
+        height: 36
+      alignment: 9
+      pivot: {x: 0.510749, y: 0.95681083}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_11
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 161
+        width: 19
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5203649, y: 0.9495401}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_12
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 140
+        width: 22
+        height: 13
+      alignment: 9
+      pivot: {x: 0.21858492, y: 0.6637057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_13
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 120
+        width: 23
+        height: 13
+      alignment: 9
+      pivot: {x: 0.18876117, y: 0.66370803}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

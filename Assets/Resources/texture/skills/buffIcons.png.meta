@@ -1,0 +1,1309 @@
+fileFormatVersion: 2
+guid: eb15f2ad53d25304eb9e2997120064b4
+timeCreated: 1514240192
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: buffIcons_0
+    21300002: buffIcons_1
+    21300004: buffIcons_2
+    21300006: buffIcons_3
+    21300008: buffIcons_4
+    21300010: buffIcons_5
+    21300012: buffIcons_6
+    21300014: buffIcons_7
+    21300016: buffIcons_8
+    21300018: buffIcons_9
+    21300020: buffIcons_10
+    21300022: buffIcons_11
+    21300024: buffIcons_12
+    21300026: buffIcons_13
+    21300028: buffIcons_14
+    21300030: buffIcons_15
+    21300032: buffIcons_16
+    21300034: buffIcons_17
+    21300036: buffIcons_18
+    21300038: buffIcons_19
+    21300040: buffIcons_20
+    21300042: buffIcons_21
+    21300044: buffIcons_22
+    21300046: buffIcons_23
+    21300048: buffIcons_24
+    21300050: buffIcons_25
+    21300052: buffIcons_26
+    21300054: buffIcons_27
+    21300056: buffIcons_28
+    21300058: buffIcons_29
+    21300060: buffIcons_30
+    21300062: buffIcons_31
+    21300064: buffIcons_32
+    21300066: buffIcons_33
+    21300068: buffIcons_34
+    21300070: buffIcons_35
+    21300072: buffIcons_36
+    21300074: buffIcons_37
+    21300076: buffIcons_38
+    21300078: buffIcons_39
+    21300080: buffIcons_40
+    21300082: buffIcons_41
+    21300084: buffIcons_42
+    21300086: buffIcons_43
+    21300088: buffIcons_44
+    21300090: buffIcons_45
+    21300092: buffIcons_46
+    21300094: buffIcons_47
+    21300096: buffIcons_48
+    21300098: buffIcons_49
+    21300100: buffIcons_50
+    21300102: buffIcons_51
+    21300104: buffIcons_52
+    21300106: buffIcons_53
+    21300108: buffIcons_54
+    21300110: buffIcons_55
+    21300112: buffIcons_56
+    21300114: buffIcons_57
+    21300116: buffIcons_58
+    21300118: buffIcons_59
+    21300120: buffIcons_60
+    21300122: buffIcons_61
+    21300124: buffIcons_62
+    21300126: buffIcons_63
+    21300128: buffIcons_64
+    21300130: buffIcons_65
+    21300132: buffIcons_66
+    21300134: buffIcons_67
+    21300136: buffIcons_68
+    21300138: buffIcons_69
+    21300140: buffIcons_70
+    21300142: buffIcons_71
+    21300144: buffIcons_72
+    21300146: buffIcons_73
+    21300148: buffIcons_74
+    21300150: buffIcons_75
+    21300152: buffIcons_76
+    21300154: buffIcons_77
+    21300156: buffIcons_78
+    21300158: buffIcons_79
+    21300160: buffIcons_80
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buffIcons_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 415
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 413
+        width: 64
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_5
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_7
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_8
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_9
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_10
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 415
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_11
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_12
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 415
+        width: 61
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_13
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_14
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 415
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_15
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 393.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_17
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_18
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_19
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_20
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_21
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_22
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_23
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_24
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_25
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_26
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 306
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_27
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_28
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_29
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_30
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_31
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 295.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_33
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_34
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_35
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_36
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_37
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_38
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_39
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_40
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 211
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_41
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_42
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 211
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_43
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_44
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_45
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_46
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_47
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 197.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_49
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_50
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_51
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_52
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 118
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_53
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_54
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 116
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_55
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_56
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_57
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_58
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 118
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_59
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_60
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 117
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_61
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_62
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_63
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 99.6
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_64
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 28
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_65
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_66
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_67
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_68
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_69
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_70
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_71
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_72
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_73
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_74
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_75
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_76
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 26
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_77
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_78
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_79
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1.5999985
+        width: 88.5
+        height: 98.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buffIcons_80
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 392
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
