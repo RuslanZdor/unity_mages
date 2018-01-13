@@ -7,8 +7,6 @@ public class SummonAbility : Ability{
 	public Person person;
 	public float duration;
 
-	public int priority = 0;
-
     public SummonAbility clone() {
         SummonAbility clone = null;
         try {
@@ -25,7 +23,7 @@ public class SummonAbility : Ability{
         return name.Equals(((SummonAbility) obj).name);
     }
 
-	public SummonAbility(AbstractTactic tactic) : base(tactic) {
+	public SummonAbility() : base() {
     }
 
     public SummonCastTactic getAbilityTactic() {

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class HeroTabController : MonoBehaviour {
@@ -14,25 +11,21 @@ public class HeroTabController : MonoBehaviour {
     public GameObject heroItems;
     public GameObject heroItem;
 
+    public bool isItem = false;
+    public bool isSkills = false;
+
     public void reload() {
+        if (isItem) {
+            reloadItems();
+        }
+        if (isSkills) {
+            reloadSkills();
+        }
+    }
+
+    public void reloadItems() {
         foreach (Transform child in transform) {
             GameObject.Destroy(child.gameObject);
-        }
-
-        GameObject hiskills = Instantiate(heroSkills, transform, false);
-        hiskills.transform.localPosition = new Vector2(0.0f, 3.0f);
-        hiskills.GetComponent<SkillsTabController>().person = person;
-
-        for (int s = 0; s < person.knownAbilities.Count; s++) {
-            Ability ab = person.knownAbilities[s];
-            GameObject hskill = Instantiate(heroSkill, hiskills.transform, false);
-            hskill.GetComponent<SkillController>().ability = ab;
-            hskill.transform.localPosition = new Vector2(-3.5f + (s * 2.2f), 0.0f);
-            hskill.transform.GetComponent<Image>().sprite = ab.image;
-
-            if (ab.abilityTactic.defaultPriority == 3) {
-                hskill.GetComponent<Image>().color = new Color(((float)245 / 256), ((float)48 / 256), ((float)48 / 256), ((float)157 / 256));
-            }
         }
 
         GameObject hitems = Instantiate(heroItems, transform, false);
@@ -41,9 +34,39 @@ public class HeroTabController : MonoBehaviour {
         for (int s = 0; s < PartiesSingleton.inventory.Count; s++) {
             Item item = PartiesSingleton.inventory[s];
             GameObject hitem = Instantiate(heroItem, hitems.transform, false);
-            hitem.transform.localPosition = new Vector2(-3.5f + (s * 2.2f), 0.0f);
+            hitem.transform.localPosition = new Vector2(-3.5f + (s * 2.2f), 2.2f);
             hitem.transform.GetComponent<Image>().sprite = item.image;
             hitem.GetComponent<HeroItemController>().item = item;
+        }
+    }
+
+    public void reloadSkills() {
+        foreach (Transform child in transform) {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        GameObject hiskills = Instantiate(heroSkills, transform, false);
+        hiskills.transform.localPosition = new Vector2(0.0f, 3.0f);
+        hiskills.GetComponent<SkillsTabController>().person = person;
+
+        foreach (Ability ab in person.knownAbilities) {
+            if (ab.position.x > 0
+                && ab.position.y > 0) {
+                GameObject hskill = Instantiate(heroSkill, hiskills.transform, false);
+                hskill.GetComponent<SkillController>().ability = ab;
+                hskill.GetComponent<SkillController>().person = person;
+                hskill.transform.localPosition = new Vector2(-1.3f + (ab.position.x - 2) * 2.2f, 2.2f * (ab.position.y - 2));
+                hskill.transform.GetComponent<Image>().sprite = ab.image;
+                if (ab.requiredLevel > person.level) {
+                    hskill.GetComponent<SkillController>().blocked();
+                }else {
+                    if (ab.isActive) {
+                        hskill.GetComponent<SkillController>().enable();
+                    } else {
+                        hskill.GetComponent<SkillController>().disable();
+                    }
+                }
+            }
         }
     }
 }

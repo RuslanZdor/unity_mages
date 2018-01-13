@@ -12,8 +12,9 @@ public class HeroImageController : MonoBehaviour, IPointerClickHandler {
 
         transform.root.Find("HeroTab").transform.GetComponent<HeroTabController>().person = person;
         transform.root.Find("HeroTab").transform.GetComponent<HeroTabController>().reload();
-
-        transform.root.Find("Inventory").transform.GetComponent<HeroItemsController>().person = person;
-        transform.root.Find("Inventory").transform.GetComponent<HeroItemsController>().reload();
+        /*
+                transform.root.Find("Inventory").transform.GetComponent<HeroItemsController>().person = person;
+                transform.root.Find("Inventory").transform.GetComponent<HeroItemsController>().reload();
+        */
     }
 }

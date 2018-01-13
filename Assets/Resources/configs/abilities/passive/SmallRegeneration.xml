@@ -1,0 +1,28 @@
+<ability>
+	<type>activeBuff</type>
+	<name>Small Regeneration</name>
+	<timeCast>1</timeCast>
+	<manaCost>0</manaCost>
+	<cooldown>0</cooldown>
+	<duration>0</duration>
+	<targetType>FRIEND</targetType>
+	<targetTactic>ItselfTargetTactic</targetTactic>
+	<animation></animation>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_0</image>
+	<effects>
+		<effect>
+			<type>HealAbilityEffect</type>
+			<targetsNumber>1</targetsNumber>
+			<valueGenerator>
+				<type>ConstantValueGenerator</type>
+				<value>1</value>
+			</valueGenerator>
+			<attributes>
+				<attribute>LIGHT</attribute>
+			</attributes>
+		</effect>		
+	</effects>
+	<modificators>
+	</modificators>
+</ability>

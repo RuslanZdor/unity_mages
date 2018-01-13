@@ -10,11 +10,15 @@ public class BasicDamageEvent : BasicTargetEvent {
     public override float eventStart() {
 
 		foreach (Buff buff in owner.effectList) {
-            buff.modificator.updateMakingDamage(ability);
+            if (buff.modificator != null) {
+                buff.modificator.updateMakingDamage(ability);
+            }
         }
 
 		foreach (Buff buff in target.effectList) {
-            buff.modificator.updateGettingDamage(ability);
+            if (buff.modificator != null) {
+                buff.modificator.updateGettingDamage(ability);
+            }
         }
 
         float value = target.damage(ability);

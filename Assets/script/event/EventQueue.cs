@@ -9,16 +9,16 @@ public class EventQueue {
 
     public bool fastFight = false;
 
-    public float startEvent(float time) {
+    public string startEvent(float time) {
         if (realTime <= time || fastFight) {
             Event e = events[0];
             events.RemoveAt(0);
             float delta = e.eventStart();
             nextEventTime += delta;
             realTime = time + delta;
-            return nextEventTime;
+            return e.ToString();
         }
-        return 0;
+        return "";
     }
 
     public void add(Event ev) {

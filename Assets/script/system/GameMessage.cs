@@ -8,4 +8,8 @@ public class GameMessage {
 
     public List<Object> parameters = new List<Object>();
 
+    public GameMessage(MessageType mt) {
+        type = mt;
+    }
+
 }

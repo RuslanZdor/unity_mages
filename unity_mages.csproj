@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.2.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -228,17 +226,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\ability\Ability.cs" />
-    <Compile Include="Assets\script\ability\abilityImp\FireBall.cs" />
-    <Compile Include="Assets\script\ability\abilityImp\FireWall.cs" />
-    <Compile Include="Assets\script\ability\abilityImp\HealWave.cs" />
     <Compile Include="Assets\script\ability\abilityImp\MeleeAttack.cs" />
     <Compile Include="Assets\script\ability\abilityImp\SummonGolem.cs" />
     <Compile Include="Assets\script\ability\AbilityTargetType.cs" />
     <Compile Include="Assets\script\ability\ActiveBuff.cs" />
     <Compile Include="Assets\script\ability\Buff.cs" />
-    <Compile Include="Assets\script\ability\buffImp\GiantPower.cs" />
-    <Compile Include="Assets\script\ability\buffImp\Weakness.cs" />
-    <Compile Include="Assets\script\ability\DamageAbility.cs" />
     <Compile Include="Assets\script\ability\effect\AbstractAbilityEffect.cs" />
     <Compile Include="Assets\script\ability\effect\AddBuffEffect.cs" />
     <Compile Include="Assets\script\ability\effect\DamageAbilityEffect.cs" />
@@ -255,12 +247,6 @@
     <Compile Include="Assets\script\ability\modificator\ElementsDamageModificator.cs" />
     <Compile Include="Assets\script\ability\modificator\IncreaseDamageModificator.cs" />
     <Compile Include="Assets\script\ability\modificator\IncreaseMeleeDamageModificator.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveBlockChance.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveCritChance.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveDodgeChance.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveElementalModificator.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveMeleeDamage.cs" />
-    <Compile Include="Assets\script\ability\passive\PassiveRegeneration.cs" />
     <Compile Include="Assets\script\ability\priority\spellPriorty\AbstractTactic.cs" />
     <Compile Include="Assets\script\ability\priority\spellPriorty\DamageSpellCastTactic.cs" />
     <Compile Include="Assets\script\ability\priority\spellPriorty\HealSpellCastTactic.cs" />
@@ -308,6 +294,7 @@
     <Compile Include="Assets\script\game\inventory\HeroTabController.cs" />
     <Compile Include="Assets\script\game\inventory\InventoryController.cs" />
     <Compile Include="Assets\script\game\inventory\SkillController.cs" />
+    <Compile Include="Assets\script\game\inventory\SkillsController.cs" />
     <Compile Include="Assets\script\game\inventory\SkillsTabController.cs" />
     <Compile Include="Assets\script\game\mainMenu\EnemyIconController.cs" />
     <Compile Include="Assets\script\game\mainMenu\PersonIconController.cs" />
@@ -316,9 +303,9 @@
     <Compile Include="Assets\script\game\map\MapPointController.cs" />
     <Compile Include="Assets\script\game\map\ReturnFromMapController.cs" />
     <Compile Include="Assets\script\game\menu\MainMenuController.cs" />
-    <Compile Include="Assets\script\interface\IndicatorController.cs" />
     <Compile Include="Assets\script\interface\BuffController.cs" />
     <Compile Include="Assets\script\interface\HealthObjectController.cs" />
+    <Compile Include="Assets\script\interface\IndicatorController.cs" />
     <Compile Include="Assets\script\interface\ManaObjectController.cs" />
     <Compile Include="Assets\script\item\Item.cs" />
     <Compile Include="Assets\script\item\ItemType.cs" />
@@ -333,7 +320,6 @@
     <Compile Include="Assets\script\person\hero\HealMage.cs" />
     <Compile Include="Assets\script\person\PersonFactory.cs" />
     <Compile Include="Assets\script\person\Place.cs" />
-    <Compile Include="Assets\script\person\summon\Golem.cs" />
     <Compile Include="Assets\script\PersonController.cs" />
     <Compile Include="Assets\script\PersonStatistics.cs" />
     <Compile Include="Assets\script\system\ComunicationObject.cs" />
@@ -344,6 +330,26 @@
     <Compile Include="Assets\script\system\XMLFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Resources\configs\abilities\buff\giantPower.xml" />
+    <None Include="Assets\Resources\configs\abilities\buff\weekness.xml" />
+    <None Include="Assets\Resources\configs\abilities\damage\fire_ball.xml" />
+    <None Include="Assets\Resources\configs\abilities\damage\fire_lash.xml" />
+    <None Include="Assets\Resources\configs\abilities\damage\fire_wall.xml" />
+    <None Include="Assets\Resources\configs\abilities\heal\healwave.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\SmallRegeneration.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\AirElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\ColdElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\DarkElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\EarthElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\ElectricityElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\FireElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\LightElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\PhysicElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\PoisonElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\WaterElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\fire\fire_shield.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\fire\inner_fire.xml" />
+    <None Include="Assets\Resources\configs\abilities\summon\summon_golem.xml" />
     <None Include="Assets\Resources\configs\items\shields\shield.xml" />
     <None Include="Assets\Resources\configs\items\shields\wood_shield.xml" />
     <None Include="Assets\Resources\configs\items\weapons\axe.xml" />
@@ -351,9 +357,13 @@
     <None Include="Assets\Resources\configs\items\weapons\sword.xml" />
     <None Include="Assets\Resources\configs\items\weapons\troll_mace.xml" />
     <None Include="Assets\Resources\configs\maps\first.xml" />
+    <None Include="Assets\Resources\configs\monsters\golems\golem.xml" />
     <None Include="Assets\Resources\configs\monsters\trolls\fastTroll.xml" />
     <None Include="Assets\Resources\configs\monsters\trolls\heavyTroll.xml" />
     <None Include="Assets\Resources\configs\monsters\trolls\trollSummoner.xml" />
+    <None Include="Assets\Resources\configs\skillSet\heroes\fire_mage.xml" />
+    <None Include="Assets\Resources\configs\skillSet\heroes\heal_mage.xml" />
+    <None Include="Assets\Resources\configs\skillSet\monster\fire_mage.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

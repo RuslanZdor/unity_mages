@@ -41,26 +41,14 @@ public class MapController : GameScene, IListenerObject {
     }
 
     public void closeFightMap() {
-        GameMessage gm = new GameMessage();
-        gm.type = MessageType.CLOSE_FIGHT_MAP;
-        gm.message = "close fight map";
-        generateMessage(gm);
-
-        GameMessage gm2 = new GameMessage();
-        gm2.type = MessageType.OPEN_MAIN_MENU;
-        gm2.message = "open main menu";
-        generateMessage(gm2);
+        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_MAP));
+        generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
     }
 
     public void openFightScene() {
-        GameMessage gm = new GameMessage();
-        gm.type = MessageType.CLOSE_FIGHT_MAP;
-        gm.message = "close fight map";
-        generateMessage(gm);
+        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_MAP));
 
-        GameMessage gm2 = new GameMessage();
-        gm2.type = MessageType.OPEN_FIGHT_SCENE;
-        gm2.message = "open fight scene";
+        GameMessage gm2 = new GameMessage(MessageType.OPEN_FIGHT_SCENE);
         gm2.parameters.Add(currentMapPoint);
         generateMessage(gm2);
     }

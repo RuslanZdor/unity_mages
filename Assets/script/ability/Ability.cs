@@ -5,12 +5,17 @@ using System;
 
 public class Ability : ICloneable {
     public String name;
+    public String type;
 
     public float timeCast;
     public float cooldown;
 	public float manaCost;
     public int level;
     public int priority = 1;
+
+    public int requiredLevel = 1;
+    public Vector2 position;
+    public Boolean isActive = false;
     
 	public List<AbstractAbilityEffect> effectList = new List<AbstractAbilityEffect>();
 	public AbilityTargetType targetType;
@@ -78,7 +83,7 @@ public class Ability : ICloneable {
         }
     }
 
-    public Ability(AbstractTactic tactic) {
+    public void setAbstractTactic(AbstractTactic tactic) {
         abilityTactic = tactic;
         abilityTactic.ability = this;
     }
@@ -99,11 +104,22 @@ public class Ability : ICloneable {
     }
 
     public virtual void initAbility() {
-
+        foreach (AbstractAbilityEffect effect in effectList) {
+            effect.updateLevel(level);
+        }
     }
 
     public bool hasAttribute(EffectAttribures attribute) {
         return effectList.FindAll((AbstractAbilityEffect effect) =>
                 effect.attribures.Contains(attribute)).Count > 0;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setRequiredLevel(int level) {
+        requiredLevel = level;
+        abilityTactic.defaultPriority = 10 + requiredLevel;
     }
 }

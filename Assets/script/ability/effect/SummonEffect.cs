@@ -28,4 +28,7 @@ public class SummonEffect : AbstractAbilityEffect{
             EventQueueSingleton.queue.add(removeEvent);
         }
     }
+
+    public override void updateLevel(int level) {
+    }
 }

@@ -19,7 +19,8 @@ public class RowDamageAbilityEffect : AbstractAbilityEffect {
             }
 
             base.value = valueGenerator.getValue();
-            Ability ability = new Ability(new MeleeAttackTactic());
+            Ability ability = new Ability();
+            ability.setAbstractTactic(new MeleeAttackTactic());
             ability.effectList.Add((AbstractAbilityEffect)base.Clone());
 
             ability.animation = ab.animation;
@@ -31,5 +32,9 @@ public class RowDamageAbilityEffect : AbstractAbilityEffect {
 
             EventQueueSingleton.queue.add(e);
         }
+    }
+
+    public override void updateLevel(int level) {
+        valueGenerator.updateLevel(level);
     }
 }

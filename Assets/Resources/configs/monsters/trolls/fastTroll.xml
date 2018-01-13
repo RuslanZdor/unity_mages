@@ -5,9 +5,7 @@
 	<powerCost>100</powerCost>
 	<powerCostPerLevel>10</powerCostPerLevel>
 	<maxHealth>100</maxHealth>
-	<healthPerLevel>10</healthPerLevel>
 	<maxMana>10</maxMana>
-	<manaPerLevel>1</manaPerLevel>
 	<numberParrallelCasts>2</numberParrallelCasts>
 	<personImage>texture/troll</personImage>
 	<personModel>models/persons/troll</personModel>
@@ -15,16 +13,8 @@
 		<item>configs/items/weapons</item>
 		<item>configs/items/weapons</item>
 	</items>
-	<buffs>
-		<buff>
-			<type>PassiveElementalModificator</type>
-			<value>PHYSICS</value>
-		</buff>
-		<buff>
-			<type>PassiveRegeneration</type>
-			<value>1</value>
-		</buff>
-	</buffs>
 	<abilities>
+		<ability>configs/abilities/passive/SmallRegeneration</ability>
+		<ability>configs/abilities/passive/elemental/physicElemental</ability>
 	</abilities>
 </person>

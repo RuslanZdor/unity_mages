@@ -7,7 +7,8 @@ public class DamageAbilityEffect : AbstractAbilityEffect {
         BasicDamageEvent e = new BasicDamageEvent();
 
 		base.value = valueGenerator.getValue();
-        Ability ability = new Ability(new MeleeAttackTactic());
+        Ability ability = new Ability();
+        ability.setAbstractTactic(new MeleeAttackTactic());
 		ability.effectList.Add((AbstractAbilityEffect) base.Clone());
 
         ability.animation = ab.animation;
@@ -18,5 +19,9 @@ public class DamageAbilityEffect : AbstractAbilityEffect {
         e.eventTime = startTime;
 
         EventQueueSingleton.queue.add(e);
+    }
+
+    public override void updateLevel(int level) {
+        valueGenerator.updateLevel(level);
     }
 }

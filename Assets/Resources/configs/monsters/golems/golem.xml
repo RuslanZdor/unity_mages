@@ -1,0 +1,22 @@
+<person>
+	<name>Rock Golem</name>
+	<level>1</level>
+	<experience>100</experience>
+	<powerCost>50</powerCost>
+	<powerCostPerLevel>5</powerCostPerLevel>
+	<maxHealth>50</maxHealth>
+	<maxMana>0</maxMana>
+	<numberParrallelCasts>1</numberParrallelCasts>
+	<personImage>texture/troll</personImage>
+	<personModel>models/persons/troll</personModel>
+	<items>
+	</items>
+	<buffs>
+		<buff>
+			<type>PassiveElementalModificator</type>
+			<value>PHYSICS</value>
+		</buff>
+	</buffs>
+	<abilities>
+	</abilities>
+</person>

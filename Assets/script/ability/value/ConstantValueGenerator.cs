@@ -12,4 +12,9 @@ public class ConstantValueGenerator : AbstractValueGenerator {
 	public override float getValue() {
         return value;
     }
+
+    public override void updateLevel(int level) {
+        value = value * Constants.getMultiplayer(level) / Constants.getMultiplayer(this.level);
+        this.level = level;
+    }
 }

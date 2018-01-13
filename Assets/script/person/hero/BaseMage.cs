@@ -7,10 +7,10 @@ public abstract class BaseMage : Person {
         personImage = "texture/model";
         personModel = "models/persons/BasicMageModel";
 
+        level = 2;
+
         basicHealth = Constants.BASE_MAGE_HEALTH;
         basicMana = Constants.BASE_MAGE_MANA;
-        healthPerLevel = Constants.BASE_MAGE_HEALTH_PER_LEVEL;
-        manaPerLevel = Constants.BASE_MAGE_MANA_PER_LEVEL;
 
         itemList.Add(XMLFactory.loadItem("configs/items/weapons/mage_stuff"));
 

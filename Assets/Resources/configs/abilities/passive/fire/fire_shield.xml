@@ -1,0 +1,21 @@
+<ability>
+	<type>passiveAbility</type>
+	<name>Air Elemental</name>
+	<timeCast>0</timeCast>
+	<manaCost>0</manaCost>
+	<cooldown>0</cooldown>
+	<duration>0</duration>
+	<targetType></targetType>
+	<targetTactic></targetTactic>
+	<animation></animation>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_76</image>
+	<effects>
+	</effects>
+	<modificators>
+		<modificator>
+			<type>BlockChanceModificator</type>
+			<value>20</value>
+		</modificator>
+	</modificators>
+</ability>

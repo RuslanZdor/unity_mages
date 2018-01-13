@@ -26,17 +26,11 @@ public class FightResultController : GameScene, IListenerObject {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isFinished) {
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
             closeResults();
-
             if (PartiesSingleton.isHeroesWinner()) {
-                GameMessage gm = new GameMessage();
-                gm.type = MessageType.FIGHT_FINISH_HERO_WINS;
-                gm.message = "Heroes Wins";
-                generateMessage(gm);
+                generateMessage(new GameMessage(MessageType.FIGHT_FINISH_HERO_WINS));
             }
-
-            isFinished = true;
         }
     }
 
@@ -45,15 +39,8 @@ public class FightResultController : GameScene, IListenerObject {
     }
 
     private void closeResults() {
-         GameMessage gm = new GameMessage();
-         gm.type = MessageType.CLOSE_FIGHT_RESULT;
-         gm.message = "close fight result";
-         generateMessage(gm);
-
-         GameMessage gm2 = new GameMessage();
-         gm2.type = MessageType.OPEN_FIGHT_MAP;
-         gm2.message = "open fight map";
-         generateMessage(gm2);
+         generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_RESULT));
+         generateMessage(new GameMessage(MessageType.OPEN_FIGHT_MAP));
     }
 
     private void reload() {
@@ -98,11 +85,9 @@ public class FightResultController : GameScene, IListenerObject {
         if (message.type == MessageType.OPEN_FIGHT_RESULT) {
             gameObject.SetActive(true);
             reload();
-            isFinished = false;
         }
         if (message.type == MessageType.CLOSE_FIGHT_RESULT) {
             gameObject.SetActive(false);
-            isFinished = true;
         }
     }
 }

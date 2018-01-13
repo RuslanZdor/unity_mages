@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ActiveBuff : Buff {
 
-	public ActiveBuff(AbstractTactic tactic) : base(tactic) {
+	public ActiveBuff() : base() {
         animationTime = 0.0f;
     }
 
@@ -11,14 +11,5 @@ public class ActiveBuff : Buff {
 		float time = base.eventStart(startTime);
         generateEvents(personOwner, startTime);
         return time;
-    }
-
-    public virtual void setPerson(Person person) {
-        personOwner = person;
-        if (targetType == AbilityTargetType.FRIEND) {
-            targetType = person.ally;
-        }else {
-            targetType = person.enemy;
-        }
     }
 }

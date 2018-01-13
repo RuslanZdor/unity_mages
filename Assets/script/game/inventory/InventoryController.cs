@@ -9,8 +9,6 @@ public class InventoryController : GameScene, IListenerObject {
 
     public GameObject heroImage;
 
-    private GameObject dragObject;
-
     void Start() {
         heroTab = transform.Find("HeroTab").gameObject;
         heroList = transform.Find("HeroList").gameObject;
@@ -34,6 +32,7 @@ public class InventoryController : GameScene, IListenerObject {
         heroList.GetComponent<HeroListController>().reload();
 
         heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.activeHeroes[0];
+        heroTab.GetComponent<HeroTabController>().isItem = true;
         heroTab.GetComponent<HeroTabController>().reload();
 
         heroItems.GetComponent<HeroItemsController>().person = PartiesSingleton.activeHeroes[0];
@@ -41,15 +40,8 @@ public class InventoryController : GameScene, IListenerObject {
     }
 
     public void closeInventory() {
-        GameMessage gm = new GameMessage();
-        gm.type = MessageType.CLOSE_INVENTORY;
-        gm.message = "close inventory";
-        generateMessage(gm);
-
-        GameMessage gm2 = new GameMessage();
-        gm2.type = MessageType.OPEN_MAIN_MENU;
-        gm2.message = "open main menu";
-        generateMessage(gm2);
+        generateMessage(new GameMessage(MessageType.CLOSE_INVENTORY));
+        generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
     }
 
     public void readMessage(GameMessage message) {

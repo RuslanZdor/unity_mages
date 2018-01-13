@@ -4,8 +4,7 @@ using System.Collections.Generic;
 
 public class FireMage : BaseMage {
 	public FireMage() : base() {
-        knownAbilities.Add(new FireWall());
-        knownAbilities.Add(new SummonGolem(new SummonCastTactic(1)));
+        knownAbilities.AddRange(XMLFactory.loadSkillSet("configs/skillSet/heroes/fire_mage"));
     }
 
 }

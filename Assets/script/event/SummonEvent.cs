@@ -11,6 +11,8 @@ public class SummonEvent : BasicTargetEvent {
 
         PartiesSingleton.getParty(owner.ally).addPerson(go);
         go.GetComponent<PersonController>().person.summoner = owner;
+
+        go.GetComponent<PersonController>().person.setLevel(owner.level);
         go.GetComponent<PersonController>().person.generateEvents(eventTime);
 
         owner.statistics.summonCount++;

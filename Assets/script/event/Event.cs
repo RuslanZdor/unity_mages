@@ -23,4 +23,12 @@ public class Event {
     public void logEvent(string message) {
         CSVLogger.log(eventTime, owner.name, GetType().ToString(), message);
     }
+
+    public override string ToString() {
+        if (ability != null) {
+            return "Casting ability " + ability.name;
+        }else {
+            return "";
+        }
+    }
 }

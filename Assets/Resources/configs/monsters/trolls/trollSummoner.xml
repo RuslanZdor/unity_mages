@@ -5,26 +5,16 @@
 	<powerCost>150</powerCost>
 	<powerCostPerLevel>10</powerCostPerLevel>
 	<maxHealth>100</maxHealth>
-	<healthPerLevel>10</healthPerLevel>
 	<maxMana>10</maxMana>
-	<manaPerLevel>1</manaPerLevel>
 	<numberParrallelCasts>1</numberParrallelCasts>
 	<personImage>texture/troll</personImage>
 	<personModel>models/persons/troll</personModel>
 	<items>
 		<item>configs/items/weapons</item>
 	</items>
-	<buffs>
-		<buff>
-			<type>PassiveElementalModificator</type>
-			<value>PHYSICS</value>
-		</buff>
-		<buff>
-			<type>PassiveRegeneration</type>
-			<value>1</value>
-		</buff>
-	</buffs>
 	<abilities>
-		<ability>SummonGolem</ability>
+		<ability>configs/abilities/passive/SmallRegeneration</ability>
+		<ability>configs/abilities/passive/elemental/PhysicElemental</ability>
+		<ability>configs/abilities/summon/summon_golem</ability>
 	</abilities>
 </person>

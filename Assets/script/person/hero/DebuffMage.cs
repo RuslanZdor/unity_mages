@@ -4,6 +4,6 @@ using System.Collections.Generic;
 
 public class DebuffMage : BaseMage {
 	public DebuffMage() : base()  {
-        knownAbilities.Add(new Weakness());
+        knownAbilities.Add(XMLFactory.loadAbility("configs/abilities/buff/weekness"));
     }
 }

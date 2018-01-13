@@ -17,15 +17,14 @@ public class Person : ICloneable {
     public float health;
     public float maxHealth;
     public float basicHealth;
-    public float healthPerLevel;
 
-    public float manaPerLevel;
     public float mana;
     public float maxMana;
     public float basicMana;
 
     public int numberParrallelCasts = 1;
 
+    public String skillSet;
     public String personImage = "";
     public String personModel = "";
 
@@ -36,7 +35,6 @@ public class Person : ICloneable {
     public List<Buff> effectList = new List<Buff>();
 
     public List<Ability> knownAbilities = new List<Ability>();
-    public List<Buff> buffList = new List<Buff>();
     public List<Item> itemList = new List<Item>();
 
     public List<Ability> usedAbilites = new List<Ability>();
@@ -108,7 +106,7 @@ public class Person : ICloneable {
     public float eventStart(Ability ability, float eventStartTime) {
         float time = 0.0f;
         if (isAlive) {
-            if (!(ability.GetType().IsSubclassOf(typeof (ActiveBuff)))) {
+            if (ability.GetType() != typeof (ActiveBuff)) {
                 generateNextActiveEvent(eventStartTime);
                 generateCooldownEvent(ability, eventStartTime);
             }
@@ -145,8 +143,6 @@ public class Person : ICloneable {
     public Person() : base() {
         maxHealth = Constants.PERSON_BASE_HEALTH;
         maxMana = Constants.PERSON_BASE_MANA;
-        healthPerLevel = Constants.PERSON_HEALTH_PER_LEVEL;
-        manaPerLevel = Constants.PERSON_MANA_PER_LEVEL;
         isAlive = true;
 
         agro = Constants.PERSON_AGRO;
@@ -167,9 +163,6 @@ public class Person : ICloneable {
             foreach (Buff b in newPerson.effectList) {
                 b.setPerson(newPerson);
             }
-            foreach (Buff b in newPerson.buffList) {
-                b.setPerson(newPerson);
-            }
             foreach (Item item in newPerson.itemList) {
                 item.owner = newPerson;
                 foreach(Ability ability in item.abilityList) {
@@ -187,9 +180,9 @@ public class Person : ICloneable {
 
     public virtual void initAbilities() {
 
-        maxMana = basicMana + level * manaPerLevel;
+        maxMana = basicMana * Constants.getMultiplayer(level);
         mana = maxMana;
-        maxHealth = basicHealth + level * healthPerLevel;
+        maxHealth = basicHealth * Constants.getMultiplayer(level);
         health = maxHealth;
 
         abilityList.Clear();
@@ -197,18 +190,30 @@ public class Person : ICloneable {
         usedAbilites.Clear();
 
         foreach (Ability ability in knownAbilities) {
-            abilityList.Add(ability);
+            if (ability.isActive
+                && ability.requiredLevel <= level) {
+                if (ability.type.Equals("passiveAbility")
+                    || ability.type.Equals("activeBuff")) {
+                    effectList.Add((Buff)ability);
+                } else {
+                    abilityList.Add(ability);
+                }
+            }
         }
 
-        effectList.AddRange(buffList);
-
         for (int i = 0; i < itemList.Count; i++) {
-            foreach (Buff modificator in itemList[i].modificatorList) {
-                effectList.Add(modificator);
+            if (itemList[i].modificatorList.Count > 0) {
+                Buff itemBuff = new Buff();
+                itemBuff.setAbstractTactic(new MeleeAttackTactic());
+                itemBuff.name = itemList[i].name;
+                itemBuff.modificator = itemList[i].modificatorList[0];
+                itemBuff.image = itemList[i].image;
+                effectList.Add(itemBuff);
             }
             abilityList.AddRange(itemList[i].abilityList);
 
             foreach (Ability ab in abilityList) {
+                ab.level = level;
                 ab.initAbility();
             }
         }
@@ -237,11 +242,10 @@ public class Person : ICloneable {
     public void setLevel(int level) {
         this.level = level;
         foreach (Item item in itemList) {
-            item.level = level;
+            item.setLevel(level);
         }
-        foreach (Ability ability in abilityList) {
-            ability.level = level;
+        foreach (Ability ability in knownAbilities) {
+            ability.setLevel(level);
         }
-        initAbilities();
     }
 }

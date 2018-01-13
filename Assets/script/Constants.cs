@@ -12,6 +12,16 @@ public class Constants {
         return image;
     }
 
+    public static float LEVEL_MULTIPLAYER = 1.1f;
+
+    public static float getMultiplayer(int level) {
+        float result = 1;
+        for (int i = 1; i < level; i++) {
+            result *= LEVEL_MULTIPLAYER;
+        }
+        return result;
+    }
+
     /*Person parameters*/
     public static int PERSON_BASE_HEALTH = 11;
     public static  int PERSON_BASE_MANA = 0;
@@ -26,9 +36,4 @@ public class Constants {
     public static  int BASE_MAGE_HEALTH_PER_LEVEL = 5;
     public static  int BASE_MAGE_MANA_PER_LEVEL = 1;
 
-    public static  int GOLEM_HEALTH = 50;
-    public static  int GOLEM_MANA = 0;
-    public static  int GOLEM_HEALTH_PER_LEVEL = 10;
-    public static  int GOLEM_MANA_PER_LEVEL = 0;
-    public static  int GOLEM_AGRO = 50;
-}
+ }

@@ -8,8 +8,6 @@ public class Buff : Ability {
 	public AbstractModificator modificator;
 	public float duration;
 
-	public int priority = 0;
-
     public Buff clone() {
         Buff cl = null;
         try {
@@ -20,24 +18,8 @@ public class Buff : Ability {
 
         return cl;
     }
-    /*
-	public override float eventStart(float startTime) {
-		foreach (AbstractAbilityEffect effect in effectList) {
-            for (int i = 0; i < effect.targetsNumber; i++) {
-                Party party = PartiesSingleton.getParty(targetType);
-                List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber, this);
-				foreach (Person person in targets) {
-                    effect.applyEffect(personOwner, person, startTime);
-                }
-            }
-        }
-        if (animationTime > 0) {
-            personOwner.personController.castAbility();
-        }
-        return animationTime;
-    }
-    */
-	public bool Equals(Buff obj) {
+
+    public bool Equals(Buff obj) {
         return name.Equals(((Buff) obj).name);
     }
 
@@ -49,6 +31,6 @@ public class Buff : Ability {
         }
     }
 
-	public Buff(AbstractTactic tactic) : base(tactic){
+	public Buff() : base(){
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class Item {
-	public List<Buff> modificatorList = new List<Buff>();
+	public List<AbstractModificator> modificatorList = new List<AbstractModificator>();
 	public List<Ability> abilityList = new List<Ability>();
 	public float cost;
     public int maxDurability;
@@ -25,10 +25,11 @@ public class Item {
         return useItem;
     }
 
-    public Item() {
-    }
-
 	public virtual void init() {
         durability = maxDurability;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }

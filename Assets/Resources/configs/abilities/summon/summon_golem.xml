@@ -1,0 +1,21 @@
+<ability>
+	<type>summonAbility</type>
+	<name>Summon Golem</name>
+	<timeCast>2.0</timeCast>
+	<manaCost>1</manaCost>
+	<cooldown>0.0</cooldown>
+	<targetType>FRIEND</targetType>
+	<targetTactic>ItselfTargetTactic</targetTactic>
+	<animation>animation/meleeAttackAnimation</animation>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_60</image>
+	<summon>configs/monsters/golems/golem</summon>
+	<effects>
+		<effect>
+			<type>SummonEffect</type>
+			<targetsNumber>1</targetsNumber>
+			<attributes>
+			</attributes>
+		</effect>
+	</effects>
+</ability>

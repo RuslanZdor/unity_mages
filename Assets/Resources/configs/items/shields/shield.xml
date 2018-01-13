@@ -8,11 +8,11 @@
 	<durability>100</durability>
 	<powerCost>10</powerCost>
 	<powerCostPerLevel>1</powerCostPerLevel>
-	<buffs>
-		<buff>
-			<type>PassiveBlockChance</type>
+	<modificators>
+		<modificator>
+			<type>BlockChanceModificator</type>
 			<value>50</value>
-		</buff>
-	</buffs>
+		</modificator>
+	</modificators>
 </item>
 

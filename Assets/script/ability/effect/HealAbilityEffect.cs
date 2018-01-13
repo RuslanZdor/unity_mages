@@ -7,7 +7,8 @@ public class HealAbilityEffect : AbstractAbilityEffect {
         BasicTargetEvent e = new BasicHealEvent();
 
         base.value = valueGenerator.getValue();
-        Ability ability = new Ability(new MeleeAttackTactic());
+        Ability ability = new Ability();
+        ability.setAbstractTactic(new MeleeAttackTactic());
 		ability.effectList.Add(this);
 
         ability.animation = ab.animation;
@@ -18,5 +19,8 @@ public class HealAbilityEffect : AbstractAbilityEffect {
 		e.eventTime = startTime;
 
         EventQueueSingleton.queue.add(e);
+    }
+
+    public override void updateLevel(int level) {
     }
 }

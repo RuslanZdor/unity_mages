@@ -48,22 +48,18 @@ public class FightStartController : GameScene, IListenerObject {
                 openFightResult();
             } else {
                 if (!EventQueueSingleton.queue.fastFight) {
-                    EventQueueSingleton.queue.startEvent(Time.fixedTime);
+                    string result = EventQueueSingleton.queue.startEvent(Time.fixedTime).ToString();
+                    if (result.Length > 0) {
+                        eventLog.GetComponent<Text>().text = result;
+                    }
                 }
             }
         }
     }
 
     public void openFightResult() {
-        GameMessage gm = new GameMessage();
-        gm.type = MessageType.CLOSE_FIGHT_SCENE;
-        gm.message = "close fight scene";
-        generateMessage(gm);
-
-        GameMessage gm2 = new GameMessage();
-        gm2.type = MessageType.OPEN_FIGHT_RESULT;
-        gm2.message = "open fight result";
-        generateMessage(gm2);
+        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_SCENE));
+        generateMessage(new GameMessage(MessageType.OPEN_FIGHT_RESULT));
     }
 
     private void reload() {

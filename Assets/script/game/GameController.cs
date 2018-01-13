@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour, IListenerObject {
 
-    private GameScene currentScene;
-
     public GameScene mainMenu;
     public GameScene inventory;
     public GameScene fightMap;
     public GameScene fightScene;
     public GameScene fightResult;
     public GameScene dialog;
+    public GameScene skills;
+    public GameScene positions;
 
     // Use this for initialization
     void Start() {
@@ -32,10 +32,8 @@ public class GameController : MonoBehaviour, IListenerObject {
 
         PartiesSingleton.inventory.Add(XMLFactory.loadItem("configs/items/weapons/troll_mace"));
 
-        GameMessage gm = new GameMessage();
-        gm.type = MessageType.CLOSE_MAIN_MENU;
-        gm.message = "open main scene";
-        GameObject.Find("MessageController").GetComponent<MessageController>().addMessage(gm);
+        GameObject.Find("MessageController").GetComponent<MessageController>()
+            .addMessage(new GameMessage(MessageType.CLOSE_MAIN_MENU));
 
         Instantiate(mainMenu);
         Instantiate(inventory);
@@ -43,6 +41,8 @@ public class GameController : MonoBehaviour, IListenerObject {
         Instantiate(fightScene);
         Instantiate(fightResult);
         Instantiate(dialog);
+        Instantiate(skills);
+        Instantiate(positions);
     }
 
     // Update is called once per frame

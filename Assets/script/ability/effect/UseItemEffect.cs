@@ -19,4 +19,7 @@ public class UseItemEffect : AbstractAbilityEffect {
 
 		EventQueueSingleton.queue.add(e);
     }
+
+    public override void updateLevel(int level) {
+    }
 }

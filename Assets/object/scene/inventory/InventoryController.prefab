@@ -157,8 +157,6 @@ MonoBehaviour:
   isHided: 0
   needUpdate: 0
   background: 
-  previousScene: {fileID: 0}
-  nextScene: {fileID: 0}
   heroImage: {fileID: 1343165174280160, guid: a11df4825631f8340bbe8a3d9273623f, type: 2}
 --- !u!114 &114169749957404706
 MonoBehaviour:
@@ -191,6 +189,8 @@ MonoBehaviour:
   heroSkill: {fileID: 1835902653281998, guid: 6791929692d9a4647ae2a1d01b74032a, type: 2}
   heroItems: {fileID: 1717135184064304, guid: 734636e5d87150348a6a44ce1bf8ebac, type: 2}
   heroItem: {fileID: 1253806380804976, guid: 40a0cd702a6da8e478d3f2a9e4edb446, type: 2}
+  isItem: 0
+  isSkills: 0
 --- !u!114 &114448469384918994
 MonoBehaviour:
   m_ObjectHideFlags: 1

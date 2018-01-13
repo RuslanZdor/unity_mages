@@ -8,11 +8,10 @@
 	<durability>100</durability>
 	<cast_time>0.9</cast_time>
 	<damage>5</damage>
-	<damagePerLevel>0.5</damagePerLevel>
 	<powerCost>10</powerCost>
 	<powerCostPerLevel>1</powerCostPerLevel>
-	<buffs>
-	</buffs>
+	<modificators>
+	</modificators>
 </item>
 
 

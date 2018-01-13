@@ -23,54 +23,28 @@ public class XMLFactory {
         item.powerCost = System.Int32.Parse(xmlItem["powerCost"].InnerText);
         item.powerCostPerLevel = System.Int32.Parse(xmlItem["powerCostPerLevel"].InnerText);
 
-        item.modificatorList.AddRange(getModificators(xmlItem["buffs"]));
+        item.modificatorList.AddRange(getModificators(xmlItem["modificators"]));
 
         if (ItemType.WEAPON == item.type) {
-            DamageAbility attack = new MeleeAttack("Melee Attack by " + item.name);
+            Ability attack = new Ability();
+            attack.setAbstractTactic(new DamageSpellCastTactic(2));
+            attack.name = "Melee Attack by " + item.name;
             attack.abilityTactic.defaultPriority = 2;
             attack.level = item.level;
             attack.timeCast = float.Parse(xmlItem["cast_time"].InnerText);
-            attack.minDamage = float.Parse(xmlItem["damage"].InnerText);
-            attack.minDamagePerLevel = float.Parse(xmlItem["damagePerLevel"].InnerText);
-            attack.maxDamage = float.Parse(xmlItem["damage"].InnerText);
-            attack.maxDamagePerLevel = float.Parse(xmlItem["damagePerLevel"].InnerText);
+            attack.targetTactic = new RandomTargetTactic();
+            attack.targetType = AbilityTargetType.ENEMY;
+
+            DamageAbilityEffect effect = new DamageAbilityEffect();
+            effect.valueGenerator = new ConstantValueGenerator(float.Parse(xmlItem["damage"].InnerText));
+            effect.attribures.Add(EffectAttribures.MELEE_ATTACK);
+            effect.targetsNumber = 1;
+
+            attack.effectList.Add(effect);
             item.abilityList.Add(attack);
         }
 
         return item;
-    }
-
-    public static List<Item> getItems(XmlNode items) {
-        List<Item> list = new List<Item>();
-        foreach (XmlNode item in items) {
-            list.Add(loadItem(item.InnerText));
-        }
-        return list;
-    }
-
-    public static List<Buff> getModificators(XmlNode modificators) {
-        List<Buff> list = new List<Buff>();
-        foreach (XmlNode modificator in modificators) {
-            if ("PassiveCritChance".Equals(modificator["type"].InnerText)) {
-                list.Add(new PassiveCritChance(float.Parse(modificator["value"].InnerText)));
-            }
-            if ("PassiveBlockChance".Equals(modificator["type"].InnerText)) {
-                list.Add(new PassiveBlockChance(float.Parse(modificator["value"].InnerText)));
-            }
-            if ("PassiveDodgeChance".Equals(modificator["type"].InnerText)) {
-                list.Add(new PassiveDodgeChance(float.Parse(modificator["value"].InnerText)));
-            }
-            if ("PassiveElementalModificator".Equals(modificator["type"].InnerText)) {
-                list.Add(new PassiveElementalModificator(getEffectAttribures(modificator["value"].InnerText)));
-            }
-            if ("PassiveMeleeDamage".Equals(modificator["type"].InnerText)) {
-                list.Add(new PassiveMeleeDamage(float.Parse(modificator["value"].InnerText)));
-            }
-            if ("PassiveRegeneration".Equals(modificator["type"].InnerText)) {
-                list.Add(new PassiveRegeneration(int.Parse(modificator["value"].InnerText)));
-            }
-        }
-        return list;
     }
 
     private static ItemType getItemType(string name) {
@@ -133,27 +107,201 @@ public class XMLFactory {
         person.powerCost = System.Int32.Parse(xmlPerson["powerCost"].InnerText);
         person.powerCostPerLevel = System.Int32.Parse(xmlPerson["powerCostPerLevel"].InnerText);
         person.basicHealth = System.Int32.Parse(xmlPerson["maxHealth"].InnerText);
-        person.healthPerLevel = System.Int32.Parse(xmlPerson["healthPerLevel"].InnerText);
-        person.manaPerLevel = System.Int32.Parse(xmlPerson["manaPerLevel"].InnerText);
         person.basicMana = System.Int32.Parse(xmlPerson["maxMana"].InnerText);
         person.numberParrallelCasts = System.Int32.Parse(xmlPerson["numberParrallelCasts"].InnerText);
         person.personImage = xmlPerson["personImage"].InnerText;
         person.personModel = xmlPerson["personModel"].InnerText;
 
-        person.itemList.AddRange(getItems(xmlPerson["items"]));
-        person.buffList.AddRange(getModificators(xmlPerson["buffs"]));
-        person.knownAbilities.AddRange(getAbilities(xmlPerson["abilities"]));
+        foreach (XmlNode item in xmlPerson["items"]) {
+            person.itemList.Add(loadItem(item.InnerText));
+        }
+
+        foreach(XmlNode node in xmlPerson["abilities"]) {
+            person.knownAbilities.Add(loadAbility(node.InnerText));
+        }
+
+        if (xmlPerson["skillSet"] != null) {
+            person.knownAbilities.AddRange(loadSkillSet(xmlPerson["skillSet"].InnerText));
+        }
 
         return person;
     }
 
-    public static List<Ability> getAbilities(XmlNode modificators) {
-        List<Ability> list = new List<Ability>();
-        foreach (XmlNode modificator in modificators) {
-            if ("SummonGolem".Equals(modificator.InnerText)) {
-                list.Add(new SummonGolem(new SummonCastTactic(3)));
+    public static Ability loadAbility(string abilityLink) {
+        TextAsset textAsset = (TextAsset)Resources.Load(abilityLink);
+        XmlDocument xmldoc = new XmlDocument();
+        xmldoc.LoadXml(textAsset.text);
+        XmlNode xmlAbility = xmldoc.GetElementsByTagName("ability").Item(0);
+
+        Ability ability = null;
+        if ("basicAbility".Equals(xmlAbility["type"].InnerText)) {
+            ability = new Ability();
+            ability.setAbstractTactic(new DamageSpellCastTactic(3));
+        }
+        if ("summonAbility".Equals(xmlAbility["type"].InnerText)) {
+            Person summon = loadPerson(xmlAbility["summon"].InnerText);
+            SummonAbility summonAbility = new SummonAbility();
+
+            SummonCastTactic tactic = new SummonCastTactic(3);
+            tactic.summon = summon;
+
+            summonAbility.setAbstractTactic(tactic);
+            summonAbility.person = summon;
+            ability = summonAbility;
+        }
+        if ("buffAbility".Equals(xmlAbility["type"].InnerText)
+            || "passiveAbility".Equals(xmlAbility["type"].InnerText)) {
+            Buff buff = new Buff();
+            buff.setAbstractTactic(new DamageSpellCastTactic(3));
+            buff.modificator = getModificators(xmlAbility["modificators"])[0];
+            buff.duration = float.Parse(xmlAbility["duration"].InnerText);
+            ability = buff;
+        }
+        if ("activeBuff".Equals(xmlAbility["type"].InnerText)) {
+            ability = new ActiveBuff();
+            ability.setAbstractTactic(new DamageSpellCastTactic(3));
+        }
+
+        ability.name = xmlAbility["name"].InnerText;
+        ability.type = xmlAbility["type"].InnerText;
+        ability.timeCast = float.Parse(xmlAbility["timeCast"].InnerText);
+        ability.manaCost = float.Parse(xmlAbility["manaCost"].InnerText);
+        ability.cooldown = float.Parse(xmlAbility["cooldown"].InnerText);
+        ability.targetType = getTargetType(xmlAbility["targetType"].InnerText);
+        ability.targetTactic = getTargetTactic(xmlAbility["targetTactic"].InnerText, ability);
+        ability.animation = xmlAbility["animation"].InnerText;
+        ability.image = Constants.loadSprite(xmlAbility["sprite"].InnerText, xmlAbility["image"].InnerText);
+        ability.effectList.AddRange(getEffects(xmlAbility["effects"], ability));
+
+        return ability;
+    }
+
+    public static List<AbstractAbilityEffect> getEffects(XmlNode xmlEffects, object obj) {
+        List<AbstractAbilityEffect> effects = new List<AbstractAbilityEffect>();
+        foreach (XmlNode xmlEffect in xmlEffects) {
+            AbstractAbilityEffect effect = null;
+            if ("RowDamageAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
+                effect = new RowDamageAbilityEffect();
+            }
+            if ("DamageAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
+                effect = new DamageAbilityEffect();
+            }
+            if ("AddBuffEffect".Equals(xmlEffect["type"].InnerText)) {
+                AddBuffEffect buffEffect = new AddBuffEffect();
+                buffEffect.buff = (Buff) obj;
+                effect = buffEffect;
+            }
+            if ("HealAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
+                effect = new HealAbilityEffect();
+            }
+            if ("SummonEffect".Equals(xmlEffect["type"].InnerText)) {
+                SummonEffect sumEffect = new SummonEffect();
+                sumEffect.person = ((SummonAbility)obj).person;
+                effect = sumEffect;
+            }
+            if ("UseItemEffect".Equals(xmlEffect["type"].InnerText)) {
+                effect = new UseItemEffect();
+            }
+
+            effect.targetsNumber = int.Parse(xmlEffect["targetsNumber"].InnerText);
+
+            foreach (XmlNode attribute in xmlEffect["attributes"]) {
+                effect.attribures.Add(getEffectAttribures(attribute.InnerText));
+            }
+
+            effect.valueGenerator = getValueGenerator(xmlEffect["valueGenerator"]);
+            effects.Add(effect);
+        }
+        return effects;
+    }
+
+    public static AbstractValueGenerator getValueGenerator(XmlNode generator) {
+        AbstractValueGenerator gen = null;
+        if (generator != null) {
+            if ("RangeValueGenerator".Equals(generator["type"].InnerText)) {
+                gen = new RangeValueGenerator(float.Parse(generator["min"].InnerText), float.Parse(generator["max"].InnerText));
+            }
+            if ("ConstantValueGenerator".Equals(generator["type"].InnerText)) {
+                gen = new ConstantValueGenerator(float.Parse(generator["value"].InnerText));
+            }
+        }
+        return gen;
+    }
+
+    public static AbilityTargetType getTargetType(string name) {
+        AbilityTargetType att = AbilityTargetType.FRIEND;
+        if ("FRIEND".Equals(name)) {
+            att = AbilityTargetType.FRIEND;
+        }
+        if ("ENEMY".Equals(name)) {
+            att = AbilityTargetType.ENEMY;
+        }
+        return att;
+    }
+
+    public static AbstractTargetTactic getTargetTactic(string name, object ab) {
+        AbstractTargetTactic att = null;
+        if ("RandomTargetTactic".Equals(name)) {
+            att = new RandomTargetTactic();
+        }
+        if ("AllPartyTargetTactic".Equals(name)) {
+            att = new AllPartyTargetTactic();
+        }
+        if ("DamagedTargetTactic".Equals(name)) {
+            att = new DamagedTargetTactic();
+        }
+        if ("ItselfTargetTactic".Equals(name)) {
+            att = new ItselfTargetTactic();
+        }
+        if ("WithoutBuffTactic".Equals(name)) {
+            att = new WithoutBuffTactic((Buff) ab);
+        }
+        return att;
+    }
+
+    public static List<AbstractModificator> getModificators(XmlNode modificators) {
+        List<AbstractModificator> list = new List<AbstractModificator>();
+        foreach (XmlNode buff in modificators) {
+            if ("CritChanceModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new CritChanceModificator(float.Parse(buff["value"].InnerText)));
+            }
+            if ("BlockChanceModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new BlockChanceModificator(float.Parse(buff["value"].InnerText)));
+            }
+            if ("DodgeChanceModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new DodgeChanceModificator(float.Parse(buff["value"].InnerText)));
+            }
+            if ("ElementsDamageModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new ElementsDamageModificator(getEffectAttribures(buff["value"].InnerText)));
+            }
+            if ("IncreaseDamageModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new IncreaseDamageModificator(float.Parse(buff["value"].InnerText)));
+            }
+            if ("IncreaseMeleeDamageModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new IncreaseMeleeDamageModificator(int.Parse(buff["value"].InnerText)));
             }
         }
         return list;
+    }
+
+    public static List<Ability> loadSkillSet(string link) {
+        List<Ability> result = new List<Ability>();
+        TextAsset textAsset = (TextAsset)Resources.Load(link);
+        XmlDocument xmldoc = new XmlDocument();
+        xmldoc.LoadXml(textAsset.text);
+        XmlNode xmlAbility = xmldoc.GetElementsByTagName("skillSet").Item(0);
+
+        foreach (XmlNode skill in xmlAbility) {
+            Ability ability = loadAbility(skill["ability"].InnerText);
+            ability.setRequiredLevel(int.Parse(skill["requiredLevel"].InnerText));
+            ability.position = new Vector2();
+            ability.position.x = System.Int32.Parse(skill["position"]["x"].InnerText);
+            ability.position.y = System.Int32.Parse(skill["position"]["y"].InnerText);
+            ability.isActive = true;
+
+            result.Add(ability);
+        }
+
+        return result;
     }
 }

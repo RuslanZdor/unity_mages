@@ -20,4 +20,6 @@ public abstract class AbstractAbilityEffect : ICloneable{
 
     public abstract void applyEffect(Person owner, Person target, float startTime, Ability ability);
 
+    public abstract void updateLevel(int level);
+
 }
