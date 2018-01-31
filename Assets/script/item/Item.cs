@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Item {
 	public List<AbstractModificator> modificatorList = new List<AbstractModificator>();
 	public List<Ability> abilityList = new List<Ability>();
-	public float cost;
+    public List<Ability> userAbilityList = new List<Ability>();
+    public float cost;
     public int maxDurability;
 	public int durability;
 	public Person owner;

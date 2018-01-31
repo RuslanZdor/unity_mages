@@ -18,4 +18,12 @@ public class GameScene : MonoBehaviour{
     public void registerListener(IListenerObject listener) {
         GameObject.Find("MessageController").GetComponent<MessageController>().addListener(listener);
     }
+
+    public void enable() {
+        gameObject.SetActive(true);
+    }
+
+    public void disable() {
+        gameObject.SetActive(false);
+    }
 }

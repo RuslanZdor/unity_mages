@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventoryController : GameScene, IListenerObject {
+public class InventoryController : GameScene, IListenerObject, CanReload {
 
     private GameObject heroTab;
     private GameObject heroList;
@@ -14,28 +14,26 @@ public class InventoryController : GameScene, IListenerObject {
         heroList = transform.Find("HeroList").gameObject;
         heroItems = transform.Find("Inventory").gameObject;
 
+        heroList.GetComponent<HeroListController>().person = PartiesSingleton.activeHeroes[0];
+        heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.activeHeroes[0];
+        heroItems.GetComponent<HeroItemsController>().person = PartiesSingleton.activeHeroes[0];
+        heroTab.GetComponent<HeroTabController>().isItem = true;
         reload();
 
-        gameObject.SetActive(false);
+        disable();
 
         registerListener(this);
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.I) && !isFinished) {
+        if (Input.GetKeyDown(KeyCode.I)) {
             closeInventory();
         }
     }
 
     public void reload() {
-        heroList.GetComponent<HeroListController>().person = PartiesSingleton.activeHeroes[0];
         heroList.GetComponent<HeroListController>().reload();
-
-        heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.activeHeroes[0];
-        heroTab.GetComponent<HeroTabController>().isItem = true;
         heroTab.GetComponent<HeroTabController>().reload();
-
-        heroItems.GetComponent<HeroItemsController>().person = PartiesSingleton.activeHeroes[0];
         heroItems.GetComponent<HeroItemsController>().reload();
     }
 
@@ -46,12 +44,10 @@ public class InventoryController : GameScene, IListenerObject {
 
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_INVENTORY) {
-            gameObject.SetActive(true);
-            isFinished = false;
+            enable();
         }
         if (message.type == MessageType.CLOSE_INVENTORY) {
-            gameObject.SetActive(false);
-            isFinished = true;
+            disable();
         }
     }
 }

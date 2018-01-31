@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986368888175330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1.2, y: -2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4235760998024330}
@@ -150,6 +150,8 @@ MonoBehaviour:
   heroSkill: {fileID: 1835902653281998, guid: 6791929692d9a4647ae2a1d01b74032a, type: 2}
   heroItems: {fileID: 1717135184064304, guid: 734636e5d87150348a6a44ce1bf8ebac, type: 2}
   heroItem: {fileID: 1253806380804976, guid: 40a0cd702a6da8e478d3f2a9e4edb446, type: 2}
+  isItem: 0
+  isSkills: 0
 --- !u!114 &114725214498370742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,7 +167,7 @@ MonoBehaviour:
   isHided: 0
   needUpdate: 0
   background: 
-  heroImage: {fileID: 1343165174280160, guid: a11df4825631f8340bbe8a3d9273623f, type: 2}
+  heroImage: {fileID: 1866274882534162, guid: c3533c0602e01f94186cd25d7b66993c, type: 2}
 --- !u!114 &114840152207987254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdf5f6bad671674599ef8a72d2e7d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroImage: {fileID: 1343165174280160, guid: a11df4825631f8340bbe8a3d9273623f, type: 2}
+  heroImage: {fileID: 1866274882534162, guid: c3533c0602e01f94186cd25d7b66993c, type: 2}
 --- !u!222 &222094163608243352
 CanvasRenderer:
   m_ObjectHideFlags: 1

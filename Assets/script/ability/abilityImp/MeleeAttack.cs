@@ -10,6 +10,7 @@ public class MeleeAttack : Ability {
         image = Constants.loadSprite("texture/Skills/buffIcons", "buffIcons_2");
         type = "activeAbility";
         setAbstractTactic(new MeleeAttackTactic(1));
+        isActive = true;
 
         AbstractAbilityEffect effect = new DamageAbilityEffect();
         effect.targetsNumber = 1;

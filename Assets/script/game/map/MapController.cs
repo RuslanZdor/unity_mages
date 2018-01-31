@@ -14,7 +14,7 @@ public class MapController : GameScene, IListenerObject {
 
     void Start() {
         registerListener(this);
-        gameObject.SetActive(false);
+        disable();
     }
 
     void Update() {
@@ -114,7 +114,7 @@ public class MapController : GameScene, IListenerObject {
 
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_FIGHT_MAP) {
-            gameObject.SetActive(true);
+            enable();
             if (currentMapPoint != null && currentMapPoint.isFinal) {
                 closeFightMap();
             }
@@ -124,7 +124,7 @@ public class MapController : GameScene, IListenerObject {
         }
 
         if (message.type == MessageType.CLOSE_FIGHT_MAP) {
-            gameObject.SetActive(false);
+            disable();
         }
         if (message.type == MessageType.FIGHT_FINISH_HERO_WINS) {
             foreach (MapPoint mp in fights) {

@@ -1,0 +1,27 @@
+<ability>
+	<type>basicAbility</type>
+	<name>Firewall</name>
+	<timeCast>1</timeCast>
+	<manaCost>2</manaCost>
+	<cooldown>3.0</cooldown>
+	<targetType>ENEMY</targetType>
+	<targetTactic>RandomTargetTactic</targetTactic>
+	<animation>animation/meleeAttackAnimation</animation>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_14</image>
+	<effects>
+		<effect>
+			<type>DamageAbilityEffect</type>
+			<targetsNumber>1</targetsNumber>
+			<valueGenerator>
+				<type>RangeValueGenerator</type>
+				<min>10</min>
+				<max>10</max>
+			</valueGenerator>
+			<attributes>
+				<attribute>FIRE</attribute>
+        <attribute>ROW_DAMAGE</attribute>
+      </attributes>
+		</effect>
+	</effects>
+</ability>

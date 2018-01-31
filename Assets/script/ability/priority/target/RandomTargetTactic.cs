@@ -7,10 +7,10 @@ public class RandomTargetTactic : AbstractTargetTactic{
 	public override List<Person> getTargets(Party party, int count, Ability ability) {
         List<Person> list = party.getLivePersons();
         if (isMelee(ability)) {
-            if (list.FindAll((Person person) => person.place.row == 1).Count > 0) {
-                return getTargets(list.FindAll((Person person) => person.place.row == 1), count);
+            if (list.FindAll((Person person) => person.place.x == 1).Count > 0) {
+                return getTargets(list.FindAll((Person person) => person.place.x == 1), count);
             }else {
-                return getTargets(list.FindAll((Person person) => person.place.row == 2), count);
+                return getTargets(list.FindAll((Person person) => person.place.x == 2), count);
             }
         } else {
             return getTargets(list, count);

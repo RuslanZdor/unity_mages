@@ -61,3 +61,5 @@ MonoBehaviour:
     type: 2}
   dialog: {fileID: 114830137718166736, guid: f3371cfd1185ec247a366ec7d4780d72, type: 2}
   skills: {fileID: 114725214498370742, guid: 7eec15d436b554d41ba3d54bf8631bc9, type: 2}
+  positions: {fileID: 114044372981078250, guid: 9c4e44c462f716545ab03114921dc3c3,
+    type: 2}

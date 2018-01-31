@@ -69,8 +69,15 @@ public class PersonController : MonoBehaviour {
 
     public void blockTrigger() {
         if (!EventQueueSingleton.queue.fastFight) {
-            Debug.Log(Time.fixedTime + ":" + person.name + " been hitten, person name blocked attack");
+            Debug.Log(Time.fixedTime + ":" + person.name + " been hitten, blocked attack");
             animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISBLOCK);
+        }
+    }
+
+    public void magicShieldTrigger() {
+        if (!EventQueueSingleton.queue.fastFight) {
+            Debug.Log(Time.fixedTime + ":" + person.name + " been hitten, magic shield");
+            animator.SetTrigger(AnimatorConstants.MODEL_ANIMATOR_ISMAGIC_SHIELD);
         }
     }
 

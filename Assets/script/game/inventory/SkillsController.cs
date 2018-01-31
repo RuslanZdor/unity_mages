@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SkillsController : GameScene, IListenerObject {
+public class SkillsController : GameScene, IListenerObject, CanReload {
 
     private GameObject heroTab;
     private GameObject heroList;
@@ -12,9 +12,12 @@ public class SkillsController : GameScene, IListenerObject {
         heroTab = transform.Find("HeroTab").gameObject;
         heroList = transform.Find("HeroList").gameObject;
 
+        heroList.GetComponent<HeroListController>().person = PartiesSingleton.activeHeroes[0];
+        heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.activeHeroes[0];
+        heroTab.GetComponent<HeroTabController>().isSkills = true;
         reload();
 
-        gameObject.SetActive(false);
+        disable();
 
         registerListener(this);
     }
@@ -26,11 +29,7 @@ public class SkillsController : GameScene, IListenerObject {
     }
 
     public void reload() {
-        heroList.GetComponent<HeroListController>().person = PartiesSingleton.activeHeroes[0];
         heroList.GetComponent<HeroListController>().reload();
-
-        heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.activeHeroes[0];
-        heroTab.GetComponent<HeroTabController>().isSkills = true;
         heroTab.GetComponent<HeroTabController>().reload();
     }
 
@@ -41,11 +40,11 @@ public class SkillsController : GameScene, IListenerObject {
 
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_SKILLS) {
-            gameObject.SetActive(true);
+            enable();
             isFinished = false;
         }
         if (message.type == MessageType.CLOSE_SKILLS) {
-            gameObject.SetActive(false);
+            disable();
             isFinished = true;
         }
     }

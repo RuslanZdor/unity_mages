@@ -1,5 +1,6 @@
 ﻿public enum ItemType {
     WEAPON,
     SHIELD,
-    ITEM
+    ARMOR,
+    ACTIVE_ITEM
 }

@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SkillController : MonoBehaviour, IPointerClickHandler {
+public class SkillController : PersonBehavior, IPointerClickHandler {
 
 	public Ability ability;
-    public Person person;
 
     private bool isBlocked;
     private bool isActive;

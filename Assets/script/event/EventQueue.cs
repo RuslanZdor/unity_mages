@@ -1,5 +1,3 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class EventQueue {
@@ -31,7 +29,6 @@ public class EventQueue {
             }
             position++;
         }
-
         events.Insert(position, ev);
     }
 

@@ -12,6 +12,7 @@ public class Ability : ICloneable {
 	public float manaCost;
     public int level;
     public int priority = 1;
+    public int playerCastCount = 0;
 
     public int requiredLevel = 1;
     public Vector2 position;

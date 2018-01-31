@@ -54,42 +54,42 @@ public class Party {
 
     public void setDefaultPosition(GameObject go) {
         Person person = go.GetComponent<PersonController>().person;
-        if (person.place == null) {
+        if (person.place.x < 1 || person.place.y < 1) {
             person.place = generatePlace();
         }
-        int x = 0;
+        float x = 0;
         if (person.ally == AbilityTargetType.ENEMY) {
-            x = 2 * person.place.row;
+            x = 2 * person.place.x;
             Vector3 theScale = go.transform.Find("model").localScale;
             if (theScale.x > 0) {
                 theScale.x *= -1;
             }
             go.transform.Find("model").localScale = theScale;
         } else {
-           x = -2 * person.place.row;
+           x = -2 * person.place.x;
         }
-        go.transform.position = new Vector2(x, (person.place.index * 2) - 4);
+        go.transform.position = new Vector2(x, (person.place.y * 2) - 4);
     }
 
-    public Place generatePlace() {
-        List<Place> list = new List<Place>();
+    public Vector2 generatePlace() {
+        List<Vector2> list = new List<Vector2>();
         for (int i = 1; i < 3; i++) {
             for (int j = 1; j < 4; j++) {
                 if (isPlaceEmpty(i, j)) {
-                    list.Add(new Place(i, j));
+                    list.Add(new Vector2(i, j));
                 }
             }
         }
         if (list.Count > 0) {
-            return list[Random.Range(0, list.Count - 1)];
+            return list[Random.Range(0, list.Count)];
         }
-        return null;
+        return new Vector2();
     }
 
     public bool isPlaceEmpty(int row, int index) {
         foreach (GameObject go in partyList) {
-            if (go.GetComponent<PersonController>().person.place.row == row
-                && go.GetComponent<PersonController>().person.place.index == index) {
+            if (go.GetComponent<PersonController>().person.place.x == row
+                && go.GetComponent<PersonController>().person.place.y == index) {
                 return false;
             }
         }

@@ -16,12 +16,20 @@ public class Event {
     }
 
     public virtual float eventStart() {
-        logEvent("Casting ability " + ability.name);
-        return owner.eventStart(ability, eventTime);
+        if (owner != null) {
+            logEvent("Casting ability " + ability.name);
+            return owner.eventStart(ability, eventTime);
+        } else {
+            userLogEvent("Casting ability " + ability.name);
+            return ability.eventStart(eventTime);
+        }
     }
 
     public void logEvent(string message) {
         CSVLogger.log(eventTime, owner.name, GetType().ToString(), message);
+    }
+    public void userLogEvent(string message) {
+        CSVLogger.log(eventTime, "user", GetType().ToString(), message);
     }
 
     public override string ToString() {

@@ -1,0 +1,37 @@
+<ability>
+	<type>buffAbility</type>
+	<name>Saint Weapon</name>
+	<timeCast>1</timeCast>
+	<manaCost>1</manaCost>
+	<cooldown>0.0</cooldown>
+	<duration>10.0</duration>
+	<targetType>FRIEND</targetType>
+	<targetTactic>WithoutBuffTactic</targetTactic>
+	<animation>animation/meleeAttackAnimation</animation>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_52</image>
+	<effects>
+		<effect>
+			<type>AddBuffEffect</type>
+			<targetsNumber>1</targetsNumber>
+			<attributes>
+			</attributes>
+		</effect>
+	</effects>
+	<modificators>
+		<modificator>
+			<type>AddDamageModificator</type>
+			<effect>
+				<type>DamageAbilityEffect</type>
+				<targetsNumber>1</targetsNumber>
+				<valueGenerator>
+					<type>ConstantValueGenerator</type>
+					<value>4</value>
+				</valueGenerator>
+				<attributes>
+					<attribute>LIGHT</attribute>
+				</attributes>
+			</effect>
+		</modificator>
+	</modificators>
+</ability>

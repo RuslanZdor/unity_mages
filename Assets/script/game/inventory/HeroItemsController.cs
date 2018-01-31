@@ -4,26 +4,55 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HeroItemsController : MonoBehaviour, IPointerClickHandler {
-
-	public Person person;
+public class HeroItemsController : PersonBehavior, IListenerObject {
 
     public GameObject heroItem;
 
-    public void OnPointerClick(PointerEventData eventData) {
+    public void Start() {
+        GameObject.Find("MessageController").GetComponent<MessageController>().addListener(this);
     }
 
     public void reload() {
         foreach (Transform child in transform) {
-            GameObject.Destroy(child.gameObject);
+            foreach (Transform i in child) {
+                GameObject.Destroy(i.gameObject);
+            }
         }
 
-        for (int i = 0; i < person.itemList.Count; i++) {
-            GameObject item = Instantiate(heroItem, transform, false);
-            item.transform.localPosition = new Vector2(0.0f, 2.2f - (2.2f * i));
-            item.transform.GetComponent<Image>().sprite = person.itemList[i].image;
-            item.GetComponent<HeroItemController>().item = person.itemList[i];
-            item.GetComponent<HeroItemController>().person = person;
+        Item item = person.findItem(ItemType.WEAPON);
+        if (item != null) {
+            GameObject itemObject = Instantiate(heroItem, transform.Find("LeftHand"), false);
+            itemObject.GetComponent<Image>().sprite = item.image;
+            itemObject.GetComponent<HeroItemController>().item = item;
+            itemObject.GetComponent<HeroItemController>().person = person;
+        }
+        item = person.findItem(ItemType.SHIELD);
+        if (item != null) {
+            GameObject itemObject = Instantiate(heroItem, transform.Find("RightHand"), false);
+            itemObject.GetComponent<Image>().sprite = item.image;
+            itemObject.GetComponent<HeroItemController>().item = item;
+            itemObject.GetComponent<HeroItemController>().person = person;
+        }
+        item = person.findItem(ItemType.ARMOR);
+        if (item != null) {
+            GameObject itemObject = Instantiate(heroItem, transform.Find("Armor"), false);
+            itemObject.GetComponent<Image>().sprite = item.image;
+            itemObject.GetComponent<HeroItemController>().item = item;
+            itemObject.GetComponent<HeroItemController>().person = person;
+        }
+        item = person.findItem(ItemType.ACTIVE_ITEM);
+        if (item != null) {
+            GameObject itemObject = Instantiate(heroItem, transform.Find("ActiveItem"), false);
+            itemObject.GetComponent<Image>().sprite = item.image;
+            itemObject.GetComponent<HeroItemController>().item = item;
+            itemObject.GetComponent<HeroItemController>().person = person;
+        }
+    }
+
+    public void readMessage(GameMessage message) {
+        if (message.type == MessageType.SELECT_HERO
+            && message.parameters.Count > 0) {
+            person = (Person)message.parameters[0];
         }
     }
 }

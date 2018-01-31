@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class HeroTabController : MonoBehaviour {
-
-	public Person person;
+public class HeroTabController : PersonBehavior, IListenerObject {
 
     public GameObject heroSkills;
     public GameObject heroSkill;
@@ -13,6 +11,10 @@ public class HeroTabController : MonoBehaviour {
 
     public bool isItem = false;
     public bool isSkills = false;
+
+    public void Start() {
+        GameObject.Find("MessageController").GetComponent<MessageController>().addListener(this);
+    }
 
     public void reload() {
         if (isItem) {
@@ -29,8 +31,6 @@ public class HeroTabController : MonoBehaviour {
         }
 
         GameObject hitems = Instantiate(heroItems, transform, false);
-        hitems.transform.localPosition = new Vector2(0.0f, 0.8f);
-        hitems.GetComponent<HeroItemsTabController>().person = person;
         for (int s = 0; s < PartiesSingleton.inventory.Count; s++) {
             Item item = PartiesSingleton.inventory[s];
             GameObject hitem = Instantiate(heroItem, hitems.transform, false);
@@ -47,7 +47,6 @@ public class HeroTabController : MonoBehaviour {
 
         GameObject hiskills = Instantiate(heroSkills, transform, false);
         hiskills.transform.localPosition = new Vector2(0.0f, 3.0f);
-        hiskills.GetComponent<SkillsTabController>().person = person;
 
         foreach (Ability ab in person.knownAbilities) {
             if (ab.position.x > 0
@@ -67,6 +66,13 @@ public class HeroTabController : MonoBehaviour {
                     }
                 }
             }
+        }
+    }
+
+    public void readMessage(GameMessage message) {
+        if (message.type == MessageType.SELECT_HERO
+            && message.parameters.Count > 0) {
+            person = (Person)message.parameters[0];
         }
     }
 }

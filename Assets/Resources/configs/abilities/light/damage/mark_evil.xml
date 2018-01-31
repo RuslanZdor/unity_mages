@@ -1,0 +1,27 @@
+<ability>
+	<type>buffAbility</type>
+	<name>Mark Evil</name>
+	<timeCast>1</timeCast>
+	<manaCost>2</manaCost>
+	<cooldown>5.0</cooldown>
+	<duration>5.0</duration>
+	<targetType>ENEMY</targetType>
+	<targetTactic>WithoutBuffTactic</targetTactic>
+	<animation>animation/meleeAttackAnimation</animation>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_52</image>
+	<effects>
+		<effect>
+			<type>AddBuffEffect</type>
+			<targetsNumber>1</targetsNumber>
+			<attributes>
+			</attributes>
+		</effect>
+	</effects>
+	<modificators>
+    <modificator>
+      <type>ElementsDamageModificator</type>
+      <value>EVIL</value>
+    </modificator>
+  </modificators>
+</ability>

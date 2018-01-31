@@ -10,6 +10,8 @@ public class IndicatorController : MonoBehaviour {
 
     public Color damageColor;
     public Color healColor;
+    public Color plusShield;
+    public Color minusShield;
     public Color manaColor;
 
     private float startedTime;
@@ -45,6 +47,16 @@ public class IndicatorController : MonoBehaviour {
 
     public void mana(float value) {
         transform.GetComponent<Text>().color = manaColor;
+        transform.GetComponent<Text>().text = value.ToString();
+    }
+
+    public void loseShield(float value) {
+        transform.GetComponent<Text>().color = minusShield;
+        transform.GetComponent<Text>().text = value.ToString();
+    }
+
+    public void addShield(float value) {
+        transform.GetComponent<Text>().color = plusShield;
         transform.GetComponent<Text>().text = value.ToString();
     }
 }

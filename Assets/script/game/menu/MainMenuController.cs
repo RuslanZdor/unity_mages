@@ -51,16 +51,16 @@ public class MainMenuController : GameScene, IListenerObject {
     }
 
     public void openPositions() {
-        generateMessage(new GameMessage(MessageType.OPEN_SKILLS));
+        generateMessage(new GameMessage(MessageType.OPEN_POSITIONS));
         generateMessage(new GameMessage(MessageType.CLOSE_MAIN_MENU));
     }
 
     public void readMessage(GameMessage message) {
        if (message.type == MessageType.OPEN_MAIN_MENU) {
-            gameObject.SetActive(true);
+            enable();
         }
         if (message.type == MessageType.CLOSE_MAIN_MENU) {
-            gameObject.SetActive(false);
+            disable();
         }
     }
 }

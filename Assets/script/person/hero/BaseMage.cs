@@ -7,7 +7,9 @@ public abstract class BaseMage : Person {
         personImage = "texture/model";
         personModel = "models/persons/BasicMageModel";
 
-        level = 2;
+        shield = 20;
+
+        setLevel(10);
 
         basicHealth = Constants.BASE_MAGE_HEALTH;
         basicMana = Constants.BASE_MAGE_MANA;
@@ -15,5 +17,7 @@ public abstract class BaseMage : Person {
         itemList.Add(XMLFactory.loadItem("configs/items/weapons/mage_stuff"));
 
         itemList.Add(XMLFactory.loadItem("configs/items/shields/shield"));
+
+        isActive = true;
     }
 }

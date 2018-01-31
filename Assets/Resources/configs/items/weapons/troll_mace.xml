@@ -10,8 +10,23 @@
 	<damage>5</damage>
 	<powerCost>10</powerCost>
 	<powerCostPerLevel>1</powerCostPerLevel>
-	<modificators>
-	</modificators>
+	<modificators></modificators>
+	<abilities></abilities>
+	<userAbilities></userAbilities>
+	<effects>
+		<effect>
+		<type>DamageAbilityEffect</type>
+		<targetsNumber>1</targetsNumber>
+		<valueGenerator>
+			<type>RangeValueGenerator</type>
+			<min>5</min>
+			<max>5</max>
+		</valueGenerator>
+		<attributes>
+			<attribute>MELEE_ATTACK</attribute>
+		</attributes>
+		</effect>
+	</effects>
 </item>
 
 

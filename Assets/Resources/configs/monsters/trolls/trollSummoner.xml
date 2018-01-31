@@ -13,7 +13,7 @@
 		<item>configs/items/weapons</item>
 	</items>
 	<abilities>
-		<ability>configs/abilities/passive/SmallRegeneration</ability>
+		<ability>configs/abilities/passive/small_regeneration</ability>
 		<ability>configs/abilities/passive/elemental/PhysicElemental</ability>
 		<ability>configs/abilities/summon/summon_golem</ability>
 	</abilities>

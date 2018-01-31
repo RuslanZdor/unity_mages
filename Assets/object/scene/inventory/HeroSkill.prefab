@@ -24,8 +24,6 @@ GameObject:
   - component: {fileID: 223816930120271962}
   - component: {fileID: 114198329538943322}
   - component: {fileID: 114763232096065722}
-  - component: {fileID: 114786701296288148}
-  - component: {fileID: 114207131523215470}
   m_Layer: 0
   m_Name: HeroSkill
   m_TagString: Untagged
@@ -49,24 +47,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114207131523215470
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1835902653281998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &114317721815760310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,20 +85,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068d1f21d76e7b64391289d47bfa3377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114786701296288148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1835902653281998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
 --- !u!222 &222462216006293246
 CanvasRenderer:
   m_ObjectHideFlags: 1

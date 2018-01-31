@@ -25,6 +25,13 @@ public class XMLFactory {
 
         item.modificatorList.AddRange(getModificators(xmlItem["modificators"]));
 
+        foreach (XmlNode node in xmlItem["abilities"]) {
+            item.abilityList.Add(loadAbility(node.InnerText));
+        }
+        foreach (XmlNode node in xmlItem["userAbilities"]) {
+            item.userAbilityList.Add(loadAbility(node.InnerText));
+        }
+
         if (ItemType.WEAPON == item.type) {
             Ability attack = new Ability();
             attack.setAbstractTactic(new DamageSpellCastTactic(2));
@@ -34,13 +41,11 @@ public class XMLFactory {
             attack.timeCast = float.Parse(xmlItem["cast_time"].InnerText);
             attack.targetTactic = new RandomTargetTactic();
             attack.targetType = AbilityTargetType.ENEMY;
+            attack.image = item.image;
 
-            DamageAbilityEffect effect = new DamageAbilityEffect();
-            effect.valueGenerator = new ConstantValueGenerator(float.Parse(xmlItem["damage"].InnerText));
-            effect.attribures.Add(EffectAttribures.MELEE_ATTACK);
-            effect.targetsNumber = 1;
-
-            attack.effectList.Add(effect);
+            foreach (XmlNode node in xmlItem["effects"]) {
+                attack.effectList.Add(getEffect(node, attack));
+            }
             item.abilityList.Add(attack);
         }
 
@@ -54,10 +59,10 @@ public class XMLFactory {
         if ("SHIELD".Equals(name)) {
             return ItemType.SHIELD;
         }
-        if ("ITEM".Equals(name)) {
-            return ItemType.ITEM;
+        if ("ACTIVE_ITEM".Equals(name)) {
+            return ItemType.ACTIVE_ITEM;
         }
-        return ItemType.ITEM;
+        return ItemType.ACTIVE_ITEM;
     }
 
     private static EffectAttribures getEffectAttribures(string name) {
@@ -90,6 +95,15 @@ public class XMLFactory {
         }
         if ("PHYSICS".Equals(name)) {
             return EffectAttribures.PHYSICS;
+        }
+        if ("MELEE_ATTACK".Equals(name)) {
+            return EffectAttribures.MELEE_ATTACK;
+        }
+        if ("ROW_DAMAGE".Equals(name)) {
+            return EffectAttribures.ROW_DAMAGE;
+        }
+        if ("PIRCING_DAMAGE".Equals(name)) {
+            return EffectAttribures.PIRCING_DAMAGE;
         }
         return EffectAttribures.PHYSICS;
     }
@@ -171,48 +185,53 @@ public class XMLFactory {
         ability.targetTactic = getTargetTactic(xmlAbility["targetTactic"].InnerText, ability);
         ability.animation = xmlAbility["animation"].InnerText;
         ability.image = Constants.loadSprite(xmlAbility["sprite"].InnerText, xmlAbility["image"].InnerText);
-        ability.effectList.AddRange(getEffects(xmlAbility["effects"], ability));
+        foreach (XmlNode node in xmlAbility["effects"]) {
+            ability.effectList.Add(getEffect(node, ability));
+        }
 
         return ability;
     }
 
-    public static List<AbstractAbilityEffect> getEffects(XmlNode xmlEffects, object obj) {
-        List<AbstractAbilityEffect> effects = new List<AbstractAbilityEffect>();
-        foreach (XmlNode xmlEffect in xmlEffects) {
-            AbstractAbilityEffect effect = null;
-            if ("RowDamageAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
-                effect = new RowDamageAbilityEffect();
-            }
-            if ("DamageAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
-                effect = new DamageAbilityEffect();
-            }
-            if ("AddBuffEffect".Equals(xmlEffect["type"].InnerText)) {
-                AddBuffEffect buffEffect = new AddBuffEffect();
-                buffEffect.buff = (Buff) obj;
-                effect = buffEffect;
-            }
-            if ("HealAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
-                effect = new HealAbilityEffect();
-            }
-            if ("SummonEffect".Equals(xmlEffect["type"].InnerText)) {
-                SummonEffect sumEffect = new SummonEffect();
-                sumEffect.person = ((SummonAbility)obj).person;
-                effect = sumEffect;
-            }
-            if ("UseItemEffect".Equals(xmlEffect["type"].InnerText)) {
-                effect = new UseItemEffect();
-            }
-
-            effect.targetsNumber = int.Parse(xmlEffect["targetsNumber"].InnerText);
-
-            foreach (XmlNode attribute in xmlEffect["attributes"]) {
-                effect.attribures.Add(getEffectAttribures(attribute.InnerText));
-            }
-
-            effect.valueGenerator = getValueGenerator(xmlEffect["valueGenerator"]);
-            effects.Add(effect);
+    public static AbstractAbilityEffect getEffect(XmlNode xmlEffect, object obj) {
+        AbstractAbilityEffect effect = null;
+        if ("DamageAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
+            effect = new DamageAbilityEffect();
         }
-        return effects;
+        if ("AddBuffEffect".Equals(xmlEffect["type"].InnerText)) {
+            AddBuffEffect buffEffect = new AddBuffEffect();
+            buffEffect.buff = (Buff) obj;
+            effect = buffEffect;
+        }
+        if ("RowAddBuffEffect".Equals(xmlEffect["type"].InnerText)) {
+            AddBuffEffect buffEffect = new RowAddBuffEffect();
+            buffEffect.buff = (Buff)obj;
+            effect = buffEffect;
+        }
+        if ("HealAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
+            effect = new HealAbilityEffect();
+        }
+        if ("SummonEffect".Equals(xmlEffect["type"].InnerText)) {
+            SummonEffect sumEffect = new SummonEffect();
+            sumEffect.person = ((SummonAbility)obj).person;
+            effect = sumEffect;
+        }
+        if ("UseItemEffect".Equals(xmlEffect["type"].InnerText)) {
+            effect = new UseItemEffect();
+        }
+        if ("AddShieldAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
+            effect = new AddShieldAbilityEffect();
+        }
+        if ("RowAddShieldAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
+            effect = new RowAddShieldAbilityEffect();
+        }
+        effect.targetsNumber = int.Parse(xmlEffect["targetsNumber"].InnerText);
+        foreach (XmlNode attribute in xmlEffect["attributes"]) {
+            effect.attribures.Add(getEffectAttribures(attribute.InnerText));
+        }
+
+        effect.valueGenerator = getValueGenerator(xmlEffect["valueGenerator"]);
+        
+        return effect;
     }
 
     public static AbstractValueGenerator getValueGenerator(XmlNode generator) {
@@ -280,6 +299,30 @@ public class XMLFactory {
             if ("IncreaseMeleeDamageModificator".Equals(buff["type"].InnerText)) {
                 list.Add(new IncreaseMeleeDamageModificator(int.Parse(buff["value"].InnerText)));
             }
+            if ("BuffDurationModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new BuffDurationModificator(int.Parse(buff["value"].InnerText)));
+            }
+            if ("ReturnDamageModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new ReturnDamageModificator(getEffect(buff["effect"], null)));
+            }
+            if ("IncreaseMakingShieldModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new IncreaseMakingShieldModificator(int.Parse(buff["value"].InnerText)));
+            }
+            if ("IncreaseGettingShieldModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new IncreaseGettingShieldModificator(int.Parse(buff["value"].InnerText)));
+            }
+            if ("GettingDamageModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new GettingDamageModificator(float.Parse(buff["value"].InnerText)));
+            }
+            if ("IncreaseMakingHealModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new IncreaseMakingHealModificator(float.Parse(buff["value"].InnerText)));
+            }
+            if ("IncreaseGettingHealModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new IncreaseGettingHealModificator(float.Parse(buff["value"].InnerText)));
+            }
+            if ("AddDamageModificator".Equals(buff["type"].InnerText)) {
+                list.Add(new AddDamageModificator(getEffect(buff["effect"], null)));
+            }
         }
         return list;
     }
@@ -295,9 +338,9 @@ public class XMLFactory {
             Ability ability = loadAbility(skill["ability"].InnerText);
             ability.setRequiredLevel(int.Parse(skill["requiredLevel"].InnerText));
             ability.position = new Vector2();
-            ability.position.x = System.Int32.Parse(skill["position"]["x"].InnerText);
-            ability.position.y = System.Int32.Parse(skill["position"]["y"].InnerText);
-            ability.isActive = true;
+            ability.position.x = int.Parse(skill["position"]["x"].InnerText);
+            ability.position.y = int.Parse(skill["position"]["y"].InnerText);
+            ability.isActive = bool.Parse(skill["active"].InnerText);
 
             result.Add(ability);
         }

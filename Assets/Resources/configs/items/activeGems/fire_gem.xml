@@ -1,0 +1,18 @@
+<item>
+	<type>ACTIVE ITEM</type>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_52</image>
+	<name>Heal Gem</name>
+	<level>1</level>
+	<cost>100</cost>
+	<durability>2</durability>
+	<cast_time>0</cast_time>
+	<powerCost>20</powerCost>
+	<powerCostPerLevel>2</powerCostPerLevel>
+	<modificators></modificators>
+	<abilities></abilities>
+	<userAbilities>
+		<ability>configs/abilities/fire/damage/fire_wall</ability>
+	</userAbilities>
+</item>
+

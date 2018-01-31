@@ -45,6 +45,8 @@ MonoBehaviour:
   liveTime: 3
   damageColor: {r: 0.9852941, g: 0.072448105, b: 0.072448105, a: 1}
   healColor: {r: 0.06812285, g: 0.9264706, b: 0.32266733, a: 1}
+  plusShield: {r: 0, g: 0.043252494, b: 0.58823526, a: 1}
+  minusShield: {r: 0, g: 0.9338235, b: 0.7278331, a: 1}
   manaColor: {r: 0.22297439, g: 0.19679932, b: 0.9558824, a: 1}
 --- !u!114 &114856568957575452
 MonoBehaviour:

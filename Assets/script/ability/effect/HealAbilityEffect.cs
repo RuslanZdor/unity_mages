@@ -22,5 +22,6 @@ public class HealAbilityEffect : AbstractAbilityEffect {
     }
 
     public override void updateLevel(int level) {
+        valueGenerator.updateLevel(level);
     }
 }

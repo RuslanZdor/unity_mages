@@ -17,7 +17,7 @@ public class DialogController : GameScene, IListenerObject {
             transform.Find("background").GetComponent<SpriteRenderer>().sprite = image;
 
             registerListener(this);
-            gameObject.SetActive(false);
+            disable();
 
             DialogMessage m = new DialogMessage();
             m.message = "same message";

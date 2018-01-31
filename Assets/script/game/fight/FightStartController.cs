@@ -2,16 +2,20 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class FightStartController : GameScene, IListenerObject {
 
     private GameObject factory;
 
     public GameScene fightResultTable;
+    public GameObject userAbility;
+    public GameObject abilityEvent;
 
     private GameObject eventLog;
     private GameObject enemyPowerCost;
     private GameObject personTable;
+    private GameObject eventLine;
 
     public int fightPower = 50;
 
@@ -24,10 +28,11 @@ public class FightStartController : GameScene, IListenerObject {
             eventLog = transform.Find("CurrentEventLog").gameObject;
             enemyPowerCost = transform.Find("EnemyPowerCost").gameObject;
             personTable = transform.Find("PersonTable").gameObject;
+            eventLine = transform.Find("EventLine").gameObject;
 
             factory = transform.Find("GameFactory").gameObject;
             registerListener(this);
-            gameObject.SetActive(false);
+            disable();
         }
     }
 
@@ -51,6 +56,7 @@ public class FightStartController : GameScene, IListenerObject {
                     string result = EventQueueSingleton.queue.startEvent(Time.fixedTime).ToString();
                     if (result.Length > 0) {
                         eventLog.GetComponent<Text>().text = result;
+                        displayEvents(EventQueueSingleton.queue.events);
                     }
                 }
             }
@@ -81,8 +87,15 @@ public class FightStartController : GameScene, IListenerObject {
         EventQueueSingleton.queue.realTime = Time.fixedTime;
         EventQueueSingleton.queue.fastFight = false;
 
-        foreach (Person p in PartiesSingleton.activeHeroes) {
+        foreach (Person p in PartiesSingleton.activeHeroes.FindAll((Person p) => p.isActive)) {
             PartiesSingleton.heroes.addPerson(personFactory.create(p));
+        }
+
+        int count = 0;
+        foreach (Ability ability in PartiesSingleton.player.abilityList) {
+            GameObject uAbility = Instantiate(userAbility, transform.Find("UserAbility"), false);
+            uAbility.GetComponent<UserAbilityController>().ability = ability;
+            uAbility.transform.localPosition = new Vector2(0.0f, 0.0f + 1.2f * count++); ;
         }
 
         int powerCalculated = 0;
@@ -110,14 +123,32 @@ public class FightStartController : GameScene, IListenerObject {
 
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_FIGHT_SCENE) {
-            gameObject.SetActive(true);
+            enable();
             fightPower = ((MapPoint)message.parameters[0]).fightPower;
             reload();
             isHided = false;
         }
         if (message.type == MessageType.CLOSE_FIGHT_SCENE) {
-            gameObject.SetActive(false);
+            disable();
             isHided = true;
+        }
+    }
+
+    public void displayEvents(List<Event> events) {
+        foreach (Transform child in eventLine.transform) {
+            Destroy(child.gameObject);
+        }
+
+        int count = 0;
+        foreach (Event ev in events) {
+            if (ev.ability != null
+                && ev.ability.name != null
+                && ev.owner != null
+                && ev.eventDuration > 0) {
+                GameObject abEvent = Instantiate(abilityEvent, eventLine.transform, false);
+                abEvent.GetComponent<AbilityEventController>().setEvent(ev);
+                abEvent.transform.localPosition = new Vector2(0.0f + (1.2f * count++), 0.0f);
+            }
         }
     }
 }

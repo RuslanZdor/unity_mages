@@ -1,93 +1,617 @@
 real time,time,Person,Event Type,Message
-1.18,0,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-1.2,0,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-1.22,0,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-1.22,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
-1.22,1,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-1.74,1,Heal mage,BasicDamageEvent, deal 8.800003 to troll Summoner[137.61/146.41]
-2.24,1,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-2.24,1,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-2.24,1,buff mage,Event,Casting ability Melee Attack by Mage Staff
-2.74,1,buff mage,BasicDamageEvent, deal 8.800003 to troll Summoner[128.81/146.41]
-3.24,1,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-3.26,1,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-3.26,1,troll Summoner,Event,Casting ability Melee Attack by Troll Mace
-3.76,1,troll Summoner,BasicDamageEvent, deal 7.320503 to Heal mage[102.6795/110]
-4.28,1,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-4.28,1,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-4.28,1.5,Fire mage,Event,Casting ability Firewall
-4.78,1.5,Fire mage,BasicDamageEvent, deal 38 to troll Summoner[90.81001/146.41]
-5.28,1.5,Fire mage,GenerateAbilityEvent,generated next ability Summon Golem
-5.28,2,troll Summoner,Event,Casting ability Melee Attack by Troll Mace
-5.78,2,troll Summoner,BasicDamageEvent, deal 3.660248 to Heal mage[99.01925/110]
-6.28,2,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-6.28,2,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-6.28,2,buff mage,Event,Casting ability Melee Attack by Mage Staff
-6.78,2,buff mage,BasicDamageEvent, deal 8.800003 to troll Summoner[82.01001/146.41]
-7.28,2,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-7.28,2,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-7.3,2,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-7.8,2,Heal mage,BasicDamageEvent, deal 8.800003 to troll Summoner[73.21001/146.41]
-8.3,2,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-8.3,2,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-8.32,3,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-8.82,3,Heal mage,BasicDamageEvent, deal 8.800003 to troll Summoner[64.41/146.41]
-9.32,3,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-9.32,3,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-9.32,3,buff mage,Event,Casting ability Melee Attack by Mage Staff
-9.82,3,buff mage,BasicDamageEvent, deal 8.799999 to troll Summoner[55.61/146.41]
-10.32,3,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-10.32,3,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-10.32,3,troll Summoner,Event,Casting ability Melee Attack by Troll Mace
-10.82,3,troll Summoner,BasicDamageEvent, deal 3.660248 to Heal mage[95.359/110]
-11.32,3,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-11.32,3,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-11.32,3.5,Fire mage,Event,Casting ability Summon Golem
-11.82,3.5,Fire mage,SummonEvent,summon  Rock Golem
-11.82,3.5,Rock Golem,GenerateAbilityEvent,ERROR Rock Golem has no available ability to cast
-11.82,3.5,Fire mage,CooldownEvent, finish cooldown for ability Summon Golem
-11.84,3.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-11.84,4,troll Summoner,Event,Casting ability Melee Attack by Troll Mace
-12.34,4,troll Summoner,BasicDamageEvent, deal 3.660248 to Heal mage[91.69875/110]
-12.84,4,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-12.84,4,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-12.86,4,buff mage,Event,Casting ability Melee Attack by Mage Staff
-13.36,4,buff mage,BasicDamageEvent, deal 8.799999 to troll Summoner[46.81001/146.41]
-13.86,4,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-13.86,4,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-13.88,4,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-14.38,4,Heal mage,BasicDamageEvent, deal 8.799999 to troll Summoner[38.01001/146.41]
-14.88,4,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-14.88,4,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-14.88,4.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
-15.38,4.5,Fire mage,BasicDamageEvent, deal 10 to troll Summoner[28.01001/146.41]
-15.88,4.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-15.88,4.5,Fire mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-15.88,4.5,Fire mage,CooldownEvent, finish cooldown for ability Firewall
-15.9,5,Heal mage,Event,Casting ability Melee Attack by Mage Staff
-16.4,5,Heal mage,BasicDamageEvent, deal 8.799999 to troll Summoner[19.21001/146.41]
-16.9,5,Heal mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-16.9,5,Heal mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-16.92,5,buff mage,Event,Casting ability Melee Attack by Mage Staff
-17.42,5,buff mage,BasicDamageEvent, deal 8.8 to troll Summoner[10.41001/146.41]
-17.92,5,buff mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-17.92,5,buff mage,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
-17.94,5,troll Summoner,Event,Casting ability Melee Attack by Troll Mace
-18.44,5,troll Summoner,BasicDamageEvent, deal 3.660248 to Heal mage[88.03851/110]
-18.96,5,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-18.96,5,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-18.98,5.5,Fire mage,Event,Casting ability Melee Attack by Mage Staff
-19.48,5.5,Fire mage,BasicDamageEvent, deal 10 to troll Summoner[0.4100065/146.41]
-19.98,5.5,Fire mage,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
-20,5.5,Fire mage,GenerateAbilityEvent,generated next ability Firewall
-20,6,troll Summoner,Event,Casting ability Melee Attack by Troll Mace
-20.5,6,troll Summoner,BasicDamageEvent, deal 3.660248 to Heal mage[84.37826/110]
-21,6,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
-21,6,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
-21,6,buff mage,Event,Casting ability Melee Attack by Mage Staff
-21.5,6,buff mage,BasicDamageEvent, deal 0.4100065 to troll Summoner[0/146.41]
-21.5,20.5,FightController,FightController,Result
-21.5,20.5,FightController,FightController,Fire magehas 110
-21.5,20.5,FightController,FightController,Heal magehas 84.37826
-21.5,20.5,FightController,FightController,buff magehas 110
-21.5,20.5,FightController,FightController,Rock Golemhas 50
+1.56,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+1.58,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+1.6,1,Fire mage,Event,Casting ability Firewall
+2.1,1,Fire mage,BasicDamageEvent, deal 56 to heavy troll[138.8717/194.8717]
+2.1,1,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+2.1,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+2.1,1,heavy troll,BasicDamageEvent, deal 9.743587 to Fire mage[235.7948/235.7948]
+2.1,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+2.1,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+2.1,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+2.1,2,heavy troll,BasicDamageEvent, deal 4.871793 to Fire mage[235.7948/235.7948]
+2.1,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+2.1,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+2.1,2.2,Fire mage,Event,Casting ability Fireball
+2.1,2.2,Fire mage,BasicDamageEvent, deal 66 to heavy troll[72.87173/194.8717]
+2.1,2.2,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+2.1,2.2,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+2.1,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+2.1,3,heavy troll,BasicDamageEvent, deal 4.871793 to Fire mage[235.7948/235.7948]
+2.1,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+2.1,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+2.1,3.4,Fire mage,Event,Casting ability Fireball
+2.1,3.4,Fire mage,BasicDamageEvent, deal 66 to heavy troll[6.871735/194.8717]
+2.1,3.4,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+2.1,3.4,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+2.1,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+2.1,4,heavy troll,BasicDamageEvent, deal 4.871793 to Fire mage[231.4358/235.7948]
+2.1,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+2.1,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+2.1,4,Fire mage,CooldownEvent, finish cooldown for ability Firewall
+2.1,4.6,Fire mage,Event,Casting ability Fireball
+2.1,4.6,Fire mage,BasicDamageEvent, deal 66 to heavy troll[0/194.8717]
+2.1,4.6,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+2.1,4.6,Fire mage,GenerateAbilityEvent,ERROR Fire mage has no available ability to cast
+2.1,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+2.1,8,FightController,FightController,Result
+2.1,8,FightController,FightController,Fire magehas 231.4358
+2.92,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+2.94,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+2.94,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+2.96,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+2.98,1,Fire mage,Event,Casting ability Firewall
+3.48,1,Fire mage,BasicDamageEvent, deal 56 to heavy troll[105.051/161.051]
+3.66,1,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+3.66,1,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,1,fast troll,BasicDamageEvent, deal 7.086245 to Fire mage[235.7948/235.7948]
+3.66,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.66,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.66,1,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,1,fast troll,BasicDamageEvent, deal 14.17249 to Fire mage[234.5361/235.7948]
+3.66,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.66,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.66,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+3.66,1,heavy troll,BasicDamageEvent, deal 8.05255 to Fire mage[226.4835/235.7948]
+3.66,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+3.66,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+3.66,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+3.66,2,heavy troll,BasicDamageEvent, deal 8.05255 to Fire mage[218.431/235.7948]
+3.66,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+3.66,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+3.66,2,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,2,fast troll,BasicDamageEvent, deal 14.17249 to Fire mage[204.2585/235.7948]
+3.66,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.66,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.66,2,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,2,fast troll,BasicDamageEvent, deal 7.086245 to Fire mage[197.1722/235.7948]
+3.66,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.66,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.66,2.2,Fire mage,Event,Casting ability Fireball
+3.66,2.2,Fire mage,BasicDamageEvent, deal 66 to fast troll[111.1561/177.1561]
+3.66,2.2,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+3.66,2.2,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+3.66,3,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,3,fast troll,BasicDamageEvent, deal 14.17249 to Fire mage[182.9998/235.7948]
+3.66,3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.66,3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.66,3,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,3,fast troll,BasicDamageEvent, deal 14.17249 to Fire mage[168.8273/235.7948]
+3.66,3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.66,3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.66,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+3.66,3,heavy troll,BasicDamageEvent, deal 4.026275 to Fire mage[164.801/235.7948]
+3.66,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+3.66,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+3.66,3.4,Fire mage,Event,Casting ability Fireball
+3.66,3.4,Fire mage,BasicDamageEvent, deal 66 to fast troll[45.15611/177.1561]
+3.66,3.4,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+3.66,3.4,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+3.66,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+3.66,4,heavy troll,BasicDamageEvent, deal 8.05255 to Fire mage[156.7484/235.7948]
+3.66,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+3.66,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+3.66,4,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,4,fast troll,BasicDamageEvent, deal 14.17249 to Fire mage[142.576/235.7948]
+3.66,4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.66,4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.66,4,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,4,fast troll,BasicDamageEvent, deal 14.17249 to Fire mage[128.4035/235.7948]
+3.66,4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+3.66,4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+3.66,4,Fire mage,CooldownEvent, finish cooldown for ability Firewall
+3.66,4.6,Fire mage,Event,Casting ability Fireball
+3.66,4.6,Fire mage,BasicDamageEvent, deal 66 to fast troll[0/177.1561]
+3.66,4.6,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+3.66,4.6,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+3.66,5,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,5,fast troll,Event,Casting ability Melee Attack by Mage Staff
+3.66,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+3.66,5,heavy troll,BasicDamageEvent, deal 4.026275 to Fire mage[124.3772/235.7948]
+3.66,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+3.66,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+3.66,5.6,Fire mage,Event,Casting ability Firewall
+3.66,5.6,Fire mage,BasicDamageEvent, deal 56 to heavy troll[49.05101/161.051]
+3.66,5.6,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+3.66,6,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+3.66,6,heavy troll,BasicDamageEvent, deal 8.05255 to Fire mage[116.3246/235.7948]
+3.66,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+3.66,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+3.66,6.8,Fire mage,Event,Casting ability Fireball
+3.66,6.8,Fire mage,BasicDamageEvent, deal 66 to heavy troll[0/161.051]
+3.66,20,FightController,FightController,Result
+3.66,20,FightController,FightController,Fire magehas 116.3246
+4.44,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+4.46,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+4.46,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+4.48,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack
+4.5,0,fast troll,GenerateAbilityEvent,ERROR fast troll has no available ability to cast
+4.52,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+4.54,0.9,fast troll,Event,Casting ability Melee Attack by Sword
+5.04,0.9,fast troll,BasicDamageEvent, deal 5.5 to Fire mage[235.7948/235.7948]
+5.54,0.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+5.56,0.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+5.58,1,Fire mage,Event,Casting ability Firewall
+6.08,1,Fire mage,BasicDamageEvent, deal 56 to heavy troll[54/110]
+6.58,1,Fire mage,BasicDamageEvent, deal 56 to fast troll[54/110]
+7.08,1,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+7.1,1,fast troll,Event,Casting ability Melee Attack
+7.6,1,fast troll,BasicDamageEvent, deal 1.1 to Fire mage[235.7948/235.7948]
+7.94,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack
+7.94,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack
+7.94,1,fast troll,Event,Casting ability Melee Attack by Troll Mace
+7.94,1,fast troll,BasicDamageEvent, deal 5.5 to Fire mage[235.7948/235.7948]
+7.94,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+7.94,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+7.94,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+7.94,1,heavy troll,BasicDamageEvent, deal 2.75 to Fire mage[235.7948/235.7948]
+7.94,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+7.94,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+7.94,1.8,fast troll,Event,Casting ability Melee Attack by Sword
+7.94,1.8,fast troll,BasicDamageEvent, deal 2.75 to Fire mage[235.7948/235.7948]
+7.94,1.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+7.94,1.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+7.94,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+7.94,2,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[232.6948/235.7948]
+7.94,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+7.94,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+7.94,2,fast troll,Event,Casting ability Melee Attack by Troll Mace
+7.94,2,fast troll,BasicDamageEvent, deal 2.75 to Fire mage[229.9448/235.7948]
+7.94,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+7.94,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+7.94,2,fast troll,Event,Casting ability Melee Attack
+7.94,2,fast troll,BasicDamageEvent, deal 0.55 to Fire mage[229.3948/235.7948]
+7.94,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack
+7.94,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack
+7.94,2.2,Fire mage,Event,Casting ability Fireball
+7.94,2.2,Fire mage,BasicDamageEvent, deal 66 to fast troll[0/110]
+7.94,2.2,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+7.94,2.2,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+7.94,2.7,fast troll,Event,Casting ability Melee Attack by Sword
+7.94,3,fast troll,Event,Casting ability Melee Attack
+7.94,3,fast troll,BasicDamageEvent, deal 0.55 to Fire mage[228.8448/235.7948]
+7.94,3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack
+7.94,3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack
+7.94,3,fast troll,Event,Casting ability Melee Attack by Troll Mace
+7.94,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+7.94,3,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[223.3448/235.7948]
+7.94,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+7.94,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+7.94,3.4,Fire mage,Event,Casting ability Fireball
+7.94,3.4,Fire mage,BasicDamageEvent, deal 66 to heavy troll[0/110]
+7.94,3.4,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+7.94,3.4,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+7.94,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+7.94,4,fast troll,Event,Casting ability Melee Attack
+7.94,4,fast troll,BasicDamageEvent, deal 1.1 to Fire mage[222.2448/235.7948]
+7.94,4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack
+7.94,4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack
+7.94,4,Fire mage,CooldownEvent, finish cooldown for ability Firewall
+7.94,4.6,Fire mage,Event,Casting ability Fireball
+7.94,4.6,Fire mage,BasicDamageEvent, deal 66 to fast troll[55/121]
+7.94,4.6,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+7.94,4.6,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+7.94,5,fast troll,Event,Casting ability Melee Attack
+7.94,5,fast troll,BasicDamageEvent, deal 0.55 to Fire mage[221.6948/235.7948]
+7.94,5,fast troll,CooldownEvent, finish cooldown for ability Melee Attack
+7.94,5,fast troll,GenerateAbilityEvent,generated next ability Melee Attack
+7.94,5.6,Fire mage,Event,Casting ability Firewall
+7.94,5.6,Fire mage,BasicDamageEvent, deal 56 to fast troll[0/121]
+7.94,17.5,FightController,FightController,Result
+7.94,17.5,FightController,FightController,Fire magehas 221.6948
+8.9,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+8.92,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+8.92,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+8.94,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+8.96,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+8.98,0.9,fast troll,Event,Casting ability Melee Attack by Sword
+9.48,0.9,fast troll,BasicDamageEvent, deal 18.9875 to Fire mage[235.7948/235.7948]
+9.98,0.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+9.98,0.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+10,1,Fire mage,Event,Casting ability Firewall
+10.5,1,Fire mage,BasicDamageEvent, deal 56 to fast troll[289.2272/345.2272]
+11,1,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+11,1,fast troll,Event,Casting ability Melee Attack by Troll Mace
+11,1,fast troll,BasicDamageEvent, deal 9.493748 to Fire mage[227.3136/235.7948]
+11,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+11,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+11,1,fast troll,Event,Casting ability Melee Attack by Mage Staff
+11,1,fast troll,BasicDamageEvent, deal 27.61818 to Fire mage[199.6954/235.7948]
+11,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11,1,fast troll,Event,Casting ability Melee Attack by Mage Staff
+11,1,fast troll,BasicDamageEvent, deal 13.80909 to Fire mage[185.8863/235.7948]
+11,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11,1.8,fast troll,Event,Casting ability Melee Attack by Sword
+11,1.8,fast troll,BasicDamageEvent, deal 18.9875 to Fire mage[166.8988/235.7948]
+11,1.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+11,1.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+11,2,fast troll,Event,Casting ability Melee Attack by Mage Staff
+11,2,fast troll,BasicDamageEvent, deal 27.61818 to Fire mage[139.2806/235.7948]
+11,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11,2,fast troll,Event,Casting ability Melee Attack by Mage Staff
+11,2,fast troll,BasicDamageEvent, deal 13.80909 to Fire mage[125.4715/235.7948]
+11,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11,2,fast troll,Event,Casting ability Melee Attack by Troll Mace
+11,2,fast troll,BasicDamageEvent, deal 9.493748 to Fire mage[115.9778/235.7948]
+11,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+11,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+11,2.2,Fire mage,Event,Casting ability Fireball
+11,2.2,Fire mage,BasicDamageEvent, deal 66 to fast troll[313.7499/379.7499]
+11,2.2,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+11,2.2,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+11,2.7,fast troll,Event,Casting ability Melee Attack by Sword
+11,2.7,fast troll,BasicDamageEvent, deal 9.493748 to Fire mage[106.484/235.7948]
+11,2.7,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+11,2.7,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+11,3,fast troll,Event,Casting ability Melee Attack by Troll Mace
+11,3,fast troll,BasicDamageEvent, deal 9.493748 to Fire mage[96.9903/235.7948]
+11,3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+11,3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+11,3,fast troll,Event,Casting ability Melee Attack by Mage Staff
+11,3,fast troll,BasicDamageEvent, deal 27.61818 to Fire mage[69.37212/235.7948]
+11,3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11,3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11,3,fast troll,Event,Casting ability Melee Attack by Mage Staff
+11,3,fast troll,BasicDamageEvent, deal 13.80909 to Fire mage[55.56303/235.7948]
+11,3,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11,3,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11,3.4,Fire mage,Event,Casting ability Fireball
+11,3.4,Fire mage,BasicDamageEvent, deal 66 to fast troll[247.7499/379.7499]
+11,3.4,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+11,3.4,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+11,3.6,fast troll,Event,Casting ability Melee Attack by Sword
+11,3.6,fast troll,BasicDamageEvent, deal 9.493748 to Fire mage[46.06928/235.7948]
+11,3.6,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+11,3.6,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+11,4,fast troll,Event,Casting ability Melee Attack by Mage Staff
+11,4,fast troll,BasicDamageEvent, deal 27.61818 to Fire mage[18.4511/235.7948]
+11,4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11,4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11,4,fast troll,Event,Casting ability Melee Attack by Mage Staff
+11,4,fast troll,BasicDamageEvent, deal 13.80909 to Fire mage[4.642015/235.7948]
+11,4,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+11,4,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+11,4,fast troll,Event,Casting ability Melee Attack by Troll Mace
+11,4,fast troll,BasicDamageEvent, deal 18.9875 to Fire mage[0/235.7948]
+11,19,FightController,FightController,Result
+11,19,FightController,FightController,fast trollhas 247.7499
+11,19,FightController,FightController,fast trollhas 289.2272
+26.18,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+26.2,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+26.22,1,Fire mage,Event,Casting ability Firewall
+26.72,1,Fire mage,BasicDamageEvent, deal 56 to heavy troll[138.8717/194.8717]
+27.22,1,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+27.24,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+27.32,1,heavy troll,BasicDamageEvent, deal 9.743587 to Fire mage[235.7948/235.7948]
+27.32,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+27.32,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+27.32,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+27.32,2,heavy troll,BasicDamageEvent, deal 4.871794 to Fire mage[235.7948/235.7948]
+27.32,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+27.32,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+27.32,2.2,Fire mage,Event,Casting ability Fireball
+27.32,2.2,Fire mage,BasicDamageEvent, deal 66 to heavy troll[72.87173/194.8717]
+27.32,2.2,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+27.32,2.2,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+27.32,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+27.32,3,heavy troll,BasicDamageEvent, deal 4.871793 to Fire mage[235.7948/235.7948]
+27.32,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+27.32,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+27.32,3.4,Fire mage,Event,Casting ability Fireball
+27.32,3.4,Fire mage,BasicDamageEvent, deal 66 to heavy troll[6.871735/194.8717]
+27.32,3.4,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+27.32,3.4,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+27.32,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+27.32,4,heavy troll,BasicDamageEvent, deal 9.743587 to Fire mage[226.564/235.7948]
+27.32,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+27.32,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+27.32,4,Fire mage,CooldownEvent, finish cooldown for ability Firewall
+27.32,4.6,Fire mage,Event,Casting ability Fireball
+27.32,4.6,Fire mage,BasicDamageEvent, deal 33 to heavy troll[0/194.8717]
+27.32,4.6,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+27.32,4.6,Fire mage,GenerateAbilityEvent,ERROR Fire mage has no available ability to cast
+27.32,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+27.32,8,FightController,FightController,Result
+27.32,8,FightController,FightController,Fire magehas 226.564
+28.18,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+28.18,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+28.2,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+28.22,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+28.24,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+28.26,1,Fire mage,Event,Casting ability Firewall
+28.76,1,Fire mage,BasicDamageEvent, deal 56 to heavy troll[54/110]
+29.26,1,Fire mage,BasicDamageEvent, deal 56 to fast troll[65/121]
+29.76,1,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+29.78,1,fast troll,Event,Casting ability Melee Attack by Troll Mace
+30.28,1,fast troll,BasicDamageEvent, deal 3.025 to Fire mage[235.7948/235.7948]
+30.78,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+30.78,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+30.8,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+31.3,1,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[235.7948/235.7948]
+31.8,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+31.82,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+31.84,1,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,1,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[235.7948/235.7948]
+32.12,1,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,1,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,1.1,fast troll,Event,Casting ability Melee Attack by Axe
+32.12,1.1,fast troll,BasicDamageEvent, deal 3.63 to Fire mage[235.7948/235.7948]
+32.12,1.1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Axe
+32.12,1.1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+32.12,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,2,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[232.6398/235.7948]
+32.12,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,2,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,2,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[227.1398/235.7948]
+32.12,2,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,2,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,2,fast troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,2,fast troll,BasicDamageEvent, deal 6.05 to Fire mage[221.0898/235.7948]
+32.12,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,2.2,fast troll,Event,Casting ability Melee Attack by Axe
+32.12,2.2,fast troll,BasicDamageEvent, deal 3.63 to Fire mage[217.4598/235.7948]
+32.12,2.2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Axe
+32.12,2.2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+32.12,2.2,Fire mage,Event,Casting ability Fireball
+32.12,2.2,Fire mage,BasicDamageEvent, deal 66 to fast troll[0/121]
+32.12,2.2,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+32.12,2.2,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+32.12,3,fast troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,3,heavy troll,BasicDamageEvent, deal 2.75 to Fire mage[214.7098/235.7948]
+32.12,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,3,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,3,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[209.2098/235.7948]
+32.12,3,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,3,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,3.3,fast troll,Event,Casting ability Melee Attack by Axe
+32.12,3.4,Fire mage,Event,Casting ability Fireball
+32.12,3.4,Fire mage,BasicDamageEvent, deal 33 to heavy troll[21/110]
+32.12,3.4,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+32.12,3.4,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+32.12,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,4,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[203.7098/235.7948]
+32.12,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,4,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,4,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[198.2098/235.7948]
+32.12,4,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,4,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,4,Fire mage,CooldownEvent, finish cooldown for ability Firewall
+32.12,4.6,Fire mage,Event,Casting ability Fireball
+32.12,4.6,Fire mage,BasicDamageEvent, deal 66 to heavy troll[44/110]
+32.12,4.6,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+32.12,4.6,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+32.12,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,5,heavy troll,BasicDamageEvent, deal 2.75 to Fire mage[195.4598/235.7948]
+32.12,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,5,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,5,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[189.9598/235.7948]
+32.12,5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,5.6,Fire mage,Event,Casting ability Firewall
+32.12,5.6,Fire mage,BasicDamageEvent, deal 28 to heavy troll[0/110]
+32.12,5.6,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+32.12,6,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,6,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,6,heavy troll,BasicDamageEvent, deal 5.5 to Fire mage[184.4598/235.7948]
+32.12,6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,6.8,Fire mage,Event,Casting ability Fireball
+32.12,6.8,Fire mage,BasicDamageEvent, deal 33 to heavy troll[11/110]
+32.12,6.8,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+32.12,6.8,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+32.12,7,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,7,heavy troll,BasicDamageEvent, deal 2.75 to Fire mage[181.7098/235.7948]
+32.12,7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,8,heavy troll,Event,Casting ability Melee Attack by Troll Mace
+32.12,8,heavy troll,BasicDamageEvent, deal 2.75 to Fire mage[178.9598/235.7948]
+32.12,8,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+32.12,8,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+32.12,8,Fire mage,Event,Casting ability Fireball
+32.12,8,Fire mage,BasicDamageEvent, deal 66 to heavy troll[0/110]
+32.12,24.5,FightController,FightController,Result
+32.12,24.5,FightController,FightController,Fire magehas 178.9598
+33.42,0,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+33.44,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+33.46,0,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+33.48,0,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+33.5,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+33.5,0.9,heavy troll,Event,Casting ability Melee Attack by Sword
+34,0.9,heavy troll,BasicDamageEvent, deal 5 to Fire mage[235.7948/235.7948]
+34.36,0.9,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+34.36,0.9,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+34.36,0.9,fast troll,Event,Casting ability Melee Attack by Sword
+34.36,0.9,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[235.7948/235.7948]
+34.36,0.9,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+34.36,0.9,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+34.36,1,Fire mage,Event,Casting ability Firewall
+34.36,1,Fire mage,BasicDamageEvent, deal 56 to fast troll[44/100]
+34.36,1,Fire mage,BasicDamageEvent, deal 28 to heavy troll[72/100]
+34.36,1,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+34.36,1,fast troll,Event,Casting ability Melee Attack by Troll Mace
+34.36,1,fast troll,BasicDamageEvent, deal 5 to Fire mage[235.7948/235.7948]
+34.36,1,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+34.36,1,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+34.36,1.1,troll Summoner,Event,Casting ability Melee Attack by Axe
+34.36,1.1,troll Summoner,BasicDamageEvent, deal 3 to Fire mage[235.7948/235.7948]
+34.36,1.1,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Axe
+34.36,1.1,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+34.36,1.8,fast troll,Event,Casting ability Melee Attack by Sword
+34.36,1.8,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[235.7948/235.7948]
+34.36,1.8,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+34.36,1.8,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+34.36,1.8,heavy troll,Event,Casting ability Melee Attack by Sword
+34.36,1.8,heavy troll,BasicDamageEvent, deal 2.5 to Fire mage[235.2948/235.7948]
+34.36,1.8,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+34.36,1.8,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+34.36,2,fast troll,Event,Casting ability Melee Attack by Troll Mace
+34.36,2,fast troll,BasicDamageEvent, deal 2.5 to Fire mage[232.7948/235.7948]
+34.36,2,fast troll,CooldownEvent, finish cooldown for ability Melee Attack by Troll Mace
+34.36,2,fast troll,GenerateAbilityEvent,generated next ability Melee Attack by Troll Mace
+34.36,2.2,troll Summoner,Event,Casting ability Melee Attack by Axe
+34.36,2.2,troll Summoner,BasicDamageEvent, deal 6 to Fire mage[226.7948/235.7948]
+34.36,2.2,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Axe
+34.36,2.2,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+34.36,2.2,Fire mage,Event,Casting ability Fireball
+34.36,2.2,Fire mage,BasicDamageEvent, deal 66 to fast troll[0/100]
+34.36,2.2,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+34.36,2.2,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+34.36,2.7,heavy troll,Event,Casting ability Melee Attack by Sword
+34.36,2.7,heavy troll,BasicDamageEvent, deal 5 to Fire mage[221.7948/235.7948]
+34.36,2.7,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+34.36,2.7,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+34.36,2.7,fast troll,Event,Casting ability Melee Attack by Sword
+34.36,3,fast troll,Event,Casting ability Melee Attack by Troll Mace
+34.36,3.3,troll Summoner,Event,Casting ability Melee Attack by Axe
+34.36,3.3,troll Summoner,BasicDamageEvent, deal 3 to Fire mage[218.7948/235.7948]
+34.36,3.3,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Axe
+34.36,3.3,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+34.36,3.4,Fire mage,Event,Casting ability Fireball
+34.36,3.4,Fire mage,BasicDamageEvent, deal 33 to heavy troll[39/100]
+34.36,3.4,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+34.36,3.4,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+34.36,3.6,heavy troll,Event,Casting ability Melee Attack by Sword
+34.36,3.6,heavy troll,BasicDamageEvent, deal 2.5 to Fire mage[216.2948/235.7948]
+34.36,3.6,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+34.36,3.6,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+34.36,4,Fire mage,CooldownEvent, finish cooldown for ability Firewall
+34.36,4.4,troll Summoner,Event,Casting ability Melee Attack by Axe
+34.36,4.4,troll Summoner,BasicDamageEvent, deal 3 to Fire mage[213.2948/235.7948]
+34.36,4.4,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Axe
+34.36,4.4,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+34.36,4.5,heavy troll,Event,Casting ability Melee Attack by Sword
+34.36,4.5,heavy troll,BasicDamageEvent, deal 5 to Fire mage[208.2948/235.7948]
+34.36,4.5,heavy troll,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+34.36,4.5,heavy troll,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+34.36,4.6,Fire mage,Event,Casting ability Fireball
+34.36,4.6,Fire mage,BasicDamageEvent, deal 66 to heavy troll[0/100]
+34.36,4.6,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+34.36,4.6,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+34.36,5.4,heavy troll,Event,Casting ability Melee Attack by Sword
+34.36,5.5,troll Summoner,Event,Casting ability Melee Attack by Axe
+34.36,5.5,troll Summoner,BasicDamageEvent, deal 6 to Fire mage[202.2948/235.7948]
+34.36,5.5,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Axe
+34.36,5.5,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+34.36,5.6,Fire mage,Event,Casting ability Firewall
+34.36,5.6,Fire mage,BasicDamageEvent, deal 56 to troll Summoner[44/100]
+34.36,5.6,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+34.36,6.6,troll Summoner,Event,Casting ability Melee Attack by Axe
+34.36,6.6,troll Summoner,BasicDamageEvent, deal 6 to Fire mage[196.2948/235.7948]
+34.36,6.6,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Axe
+34.36,6.6,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Axe
+34.36,6.8,Fire mage,Event,Casting ability Fireball
+34.36,6.8,Fire mage,BasicDamageEvent, deal 66 to troll Summoner[0/100]
+34.36,21.5,FightController,FightController,Result
+34.36,21.5,FightController,FightController,Fire magehas 196.2948
+35.5,0,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+35.52,0,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+35.54,0,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+35.56,0.9,troll Summoner,Event,Casting ability Melee Attack by Sword
+36.06,0.9,troll Summoner,BasicDamageEvent, deal 7.846072 to Fire mage[235.7948/235.7948]
+36.56,0.9,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+36.56,0.9,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+36.58,1,Fire mage,Event,Casting ability Firewall
+37.08,1,Fire mage,BasicDamageEvent, deal 56 to troll Summoner[257.8429/313.8429]
+37.44,1,Fire mage,BasicDamageEvent, deal 56 to troll Summoner[257.8429/313.8429]
+37.44,1,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+37.44,1,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,1,troll Summoner,BasicDamageEvent, deal 12.55372 to Fire mage[235.395/235.7948]
+37.44,1,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.44,1,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.44,1.8,troll Summoner,Event,Casting ability Melee Attack by Sword
+37.44,1.8,troll Summoner,BasicDamageEvent, deal 15.69214 to Fire mage[219.7029/235.7948]
+37.44,1.8,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+37.44,1.8,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+37.44,2,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,2,troll Summoner,BasicDamageEvent, deal 25.10743 to Fire mage[194.5954/235.7948]
+37.44,2,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.44,2,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.44,2.2,Fire mage,Event,Casting ability Fireball
+37.44,2.2,Fire mage,BasicDamageEvent, deal 66 to troll Summoner[191.8429/313.8429]
+37.44,2.2,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+37.44,2.2,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+37.44,2.7,troll Summoner,Event,Casting ability Melee Attack by Sword
+37.44,2.7,troll Summoner,BasicDamageEvent, deal 15.69214 to Fire mage[178.9033/235.7948]
+37.44,2.7,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+37.44,2.7,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+37.44,3,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,3,troll Summoner,BasicDamageEvent, deal 25.10743 to Fire mage[153.7959/235.7948]
+37.44,3,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.44,3,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.44,3.4,Fire mage,Event,Casting ability Fireball
+37.44,3.4,Fire mage,BasicDamageEvent, deal 66 to troll Summoner[125.8429/313.8429]
+37.44,3.4,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+37.44,3.4,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+37.44,3.6,troll Summoner,Event,Casting ability Melee Attack by Sword
+37.44,3.6,troll Summoner,BasicDamageEvent, deal 7.846072 to Fire mage[145.9498/235.7948]
+37.44,3.6,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+37.44,3.6,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+37.44,4,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,4,troll Summoner,BasicDamageEvent, deal 12.55372 to Fire mage[133.3961/235.7948]
+37.44,4,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.44,4,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.44,4,Fire mage,CooldownEvent, finish cooldown for ability Firewall
+37.44,4.5,troll Summoner,Event,Casting ability Melee Attack by Sword
+37.44,4.5,troll Summoner,BasicDamageEvent, deal 7.846072 to Fire mage[125.55/235.7948]
+37.44,4.5,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+37.44,4.5,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+37.44,4.6,Fire mage,Event,Casting ability Fireball
+37.44,4.6,Fire mage,BasicDamageEvent, deal 66 to troll Summoner[59.8429/313.8429]
+37.44,4.6,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+37.44,4.6,Fire mage,GenerateAbilityEvent,generated next ability Firewall
+37.44,5,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,5,troll Summoner,BasicDamageEvent, deal 25.10743 to Fire mage[100.4426/235.7948]
+37.44,5,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.44,5,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.44,5.4,troll Summoner,Event,Casting ability Melee Attack by Sword
+37.44,5.4,troll Summoner,BasicDamageEvent, deal 15.69214 to Fire mage[84.75044/235.7948]
+37.44,5.4,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+37.44,5.4,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+37.44,5.6,Fire mage,Event,Casting ability Firewall
+37.44,5.6,Fire mage,BasicDamageEvent, deal 56 to troll Summoner[3.842896/313.8429]
+37.44,5.6,Fire mage,BasicDamageEvent, deal 56 to troll Summoner[201.8429/313.8429]
+37.44,5.6,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+37.44,6,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,6,troll Summoner,BasicDamageEvent, deal 12.55372 to Fire mage[72.19672/235.7948]
+37.44,6,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.44,6,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.44,6.3,troll Summoner,Event,Casting ability Melee Attack by Sword
+37.44,6.3,troll Summoner,BasicDamageEvent, deal 15.69214 to Fire mage[56.50458/235.7948]
+37.44,6.3,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+37.44,6.3,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+37.44,6.8,Fire mage,Event,Casting ability Fireball
+37.44,6.8,Fire mage,BasicDamageEvent, deal 66 to troll Summoner[135.8429/313.8429]
+37.44,6.8,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+37.44,6.8,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+37.44,7,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,7,troll Summoner,BasicDamageEvent, deal 12.55371 to Fire mage[43.95086/235.7948]
+37.44,7,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.44,7,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.44,7.2,troll Summoner,Event,Casting ability Melee Attack by Sword
+37.44,7.2,troll Summoner,BasicDamageEvent, deal 7.846072 to Fire mage[36.10479/235.7948]
+37.44,7.2,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Sword
+37.44,7.2,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Sword
+37.44,8,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,8,troll Summoner,BasicDamageEvent, deal 12.55372 to Fire mage[23.55107/235.7948]
+37.44,8,troll Summoner,CooldownEvent, finish cooldown for ability Melee Attack by Mage Staff
+37.44,8,troll Summoner,GenerateAbilityEvent,generated next ability Melee Attack by Mage Staff
+37.44,8,Fire mage,Event,Casting ability Fireball
+37.44,8,Fire mage,BasicDamageEvent, deal 66 to troll Summoner[0/313.8429]
+37.44,8,Fire mage,CooldownEvent, finish cooldown for ability Fireball
+37.44,8,Fire mage,GenerateAbilityEvent,generated next ability Fireball
+37.44,8.1,troll Summoner,Event,Casting ability Melee Attack by Sword
+37.44,8.6,Fire mage,CooldownEvent, finish cooldown for ability Firewall
+37.44,9,troll Summoner,Event,Casting ability Melee Attack by Mage Staff
+37.44,9,troll Summoner,BasicDamageEvent, deal 25.10743 to Fire mage[0/235.7948]
+37.44,25,FightController,FightController,Result
+37.44,25,FightController,FightController,troll Summonerhas 135.8429

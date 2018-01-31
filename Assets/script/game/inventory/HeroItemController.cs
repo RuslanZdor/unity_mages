@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HeroItemController : MonoBehaviour, IPointerClickHandler {
+public class HeroItemController : PersonBehavior, IPointerClickHandler {
 
 	public Item item;
-    public Person person;
 
     public void OnPointerClick(PointerEventData eventData) {
         Person currentPerson = transform.root.Find("Inventory").transform.GetComponent<HeroItemsController>().person;

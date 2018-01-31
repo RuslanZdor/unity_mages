@@ -22,7 +22,7 @@ public class FightResultController : GameScene, IListenerObject {
         resultHeader = transform.Find("ResultTable/Header").gameObject;
 
         registerListener(this);
-        gameObject.SetActive(false);
+        disable();
     }
 
     void Update() {
@@ -83,11 +83,11 @@ public class FightResultController : GameScene, IListenerObject {
 
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_FIGHT_RESULT) {
-            gameObject.SetActive(true);
+            enable();
             reload();
         }
         if (message.type == MessageType.CLOSE_FIGHT_RESULT) {
-            gameObject.SetActive(false);
+            disable();
         }
     }
 }

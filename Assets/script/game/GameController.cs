@@ -17,18 +17,11 @@ public class GameController : MonoBehaviour, IListenerObject {
     void Start() {
         Person f = new FireMage();
         f.name = "Fire mage";
-        f.initAbilities();
         PartiesSingleton.activeHeroes.Add(f);
 
         f = new HealMage();
         f.name = "Heal mage";
-        f.initAbilities();
-        PartiesSingleton.activeHeroes.Add(f);
-
-        f = new BuffMage();
-        f.name = "buff mage";
-        f.initAbilities();
-        PartiesSingleton.activeHeroes.Add(f);
+//        PartiesSingleton.activeHeroes.Add(f);
 
         PartiesSingleton.inventory.Add(XMLFactory.loadItem("configs/items/weapons/troll_mace"));
 

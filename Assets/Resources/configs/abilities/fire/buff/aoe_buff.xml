@@ -1,0 +1,27 @@
+<ability>
+	<type>buffAbility</type>
+	<name>Aoe Buff</name>
+	<timeCast>1</timeCast>
+	<manaCost>1</manaCost>
+	<cooldown>0.0</cooldown>
+	<duration>10.0</duration>
+	<targetType>FRIEND</targetType>
+	<targetTactic>WithoutBuffTactic</targetTactic>
+	<animation>animation/meleeAttackAnimation</animation>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_52</image>
+	<effects>
+		<effect>
+			<type>RowAddBuffEffect</type>
+			<targetsNumber>1</targetsNumber>
+			<attributes>
+			</attributes>
+		</effect>
+	</effects>
+	<modificators>
+		<modificator>
+			<type>IncreaseDamageModificator</type>
+			<value>20</value>
+		</modificator>
+	</modificators>
+</ability>

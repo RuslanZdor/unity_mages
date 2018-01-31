@@ -1,0 +1,31 @@
+<ability>
+	<type>passiveAbility</type>
+	<name>Long Fire</name>
+	<timeCast>0</timeCast>
+	<manaCost>0</manaCost>
+	<cooldown>0</cooldown>
+	<duration>0</duration>
+	<targetType></targetType>
+	<targetTactic></targetTactic>
+	<animation></animation>
+	<sprite>texture/Skills/buffIcons</sprite>
+	<image>buffIcons_76</image>
+	<effects>
+	</effects>
+	<modificators>
+		<modificator>
+			<type>ReturnDamageModificator</type>
+			<effect>
+				<type>DamageAbilityEffect</type>
+				<targetsNumber>1</targetsNumber>
+				<valueGenerator>
+					<type>ConstantValueGenerator</type>
+					<value>2</value>
+				</valueGenerator>
+				<attributes>
+					<attribute>FIRE</attribute>
+				</attributes>
+			</effect>
+		</modificator>
+	</modificators>
+</ability>

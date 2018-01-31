@@ -31,6 +31,10 @@ public class Buff : Ability {
         }
     }
 
-	public Buff() : base(){
+    public override void initAbility() {
+        if (modificator != null) {
+            modificator.updateLevel(level);
+        }
+        base.initAbility();
     }
 }

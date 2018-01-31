@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1835931532000758}
   m_IsPrefabParent: 1
+--- !u!1 &1264606433912538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224857486583567390}
+  m_Layer: 9
+  m_Name: EventLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1300155176975936
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,16 +78,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1769974334919928
+--- !u!1 &1736576625306600
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224546641888574560}
+  - component: {fileID: 4906163439594984}
   m_Layer: 9
-  m_Name: EventLine
+  m_Name: UserAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,6 +183,19 @@ Transform:
   m_Father: {fileID: 224684066429346878}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4906163439594984
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1736576625306600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.6, y: -3.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224684066429346878}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114145646146949550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,9 +259,11 @@ MonoBehaviour:
   isHided: 0
   needUpdate: 0
   background: 
-  previousScene: {fileID: 0}
-  nextScene: {fileID: 0}
   fightResultTable: {fileID: 114179755153123790, guid: 41e4657e6aa076346bb329887e8dfc88,
+    type: 2}
+  userAbility: {fileID: 1239295731950858, guid: 9e0c93d0ea19f864d8107119edf8fe98,
+    type: 2}
+  abilityEvent: {fileID: 1187576719749482, guid: f1aff3b88c1f5c0489c215ca6cf3f86a,
     type: 2}
   fightPower: 100
 --- !u!114 &114349969911973670
@@ -681,24 +711,6 @@ RectTransform:
   m_AnchoredPosition: {x: -3.5, y: 4}
   m_SizeDelta: {x: 500, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224546641888574560
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1769974334919928}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224684066429346878}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224684066429346878
 RectTransform:
   m_ObjectHideFlags: 1
@@ -712,10 +724,11 @@ RectTransform:
   - {fileID: 224389708671841802}
   - {fileID: 4712790237791946}
   - {fileID: 224313919410491744}
-  - {fileID: 224546641888574560}
+  - {fileID: 224857486583567390}
   - {fileID: 224849741885751438}
   - {fileID: 224058836668065470}
   - {fileID: 224019654406136690}
+  - {fileID: 4906163439594984}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -741,4 +754,22 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 7, y: -3}
   m_SizeDelta: {x: 2, y: 2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224857486583567390
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264606433912538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20000076, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224684066429346878}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.2, y: -4}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
