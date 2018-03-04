@@ -2,6 +2,8 @@
 	<mapPoint>
 		<id>1</id>
 		<fightPower>200</fightPower>
+		<minPerson>3</minPerson>
+		<maxPerson>4</maxPerson>
 		<position>
 			<x>0</x>
 			<y>1</y>
@@ -15,6 +17,8 @@
 			<x>1</x>
 			<y>0</y>
 		</position>
+		<minPerson>3</minPerson>
+		<maxPerson>4</maxPerson>
 		<dependList>1</dependList>
 	</mapPoint>
 	<mapPoint>
@@ -24,6 +28,8 @@
 			<x>1</x>
 			<y>2</y>
 		</position>
+		<minPerson>3</minPerson>
+		<maxPerson>4</maxPerson>
 		<dependList>1</dependList>
 	</mapPoint>
 	<mapPoint>
@@ -33,6 +39,8 @@
 			<x>2</x>
 			<y>0</y>
 		</position>
+		<minPerson>3</minPerson>
+		<maxPerson>4</maxPerson>
 		<dependList>2</dependList>
 	</mapPoint>
 	<mapPoint>
@@ -42,6 +50,8 @@
 			<x>2</x>
 			<y>2</y>
 		</position>
+		<minPerson>3</minPerson>
+		<maxPerson>4</maxPerson>
 		<dependList>3</dependList>
 	</mapPoint>
 	<mapPoint>
@@ -51,6 +61,8 @@
 			<x>3</x>
 			<y>1</y>
 		</position>
+		<minPerson>3</minPerson>
+		<maxPerson>4</maxPerson>
 		<dependList>4,5</dependList>
 		<final>true</final>
 	</mapPoint>

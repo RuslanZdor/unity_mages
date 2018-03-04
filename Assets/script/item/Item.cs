@@ -20,6 +20,8 @@ public class Item {
     public int level;
     public int powerCostPerLevel;
 
+    public string resource;
+
     public AbstractAbilityEffect getUseItem() {
         UseItemEffect useItem = new UseItemEffect();
 		useItem.item = this;

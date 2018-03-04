@@ -27,6 +27,7 @@ public class PositionsController : GameScene, IListenerObject, CanReload {
     }
 
     public void close() {
+        generateMessage(new GameMessage(MessageType.SAVE_GAME));
         generateMessage(new GameMessage(MessageType.CLOSE_POSITIONS));
         generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
     }

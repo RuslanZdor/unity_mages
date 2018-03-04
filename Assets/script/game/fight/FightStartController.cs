@@ -17,7 +17,7 @@ public class FightStartController : GameScene, IListenerObject {
     private GameObject personTable;
     private GameObject eventLine;
 
-    public int fightPower = 50;
+    public MapPoint mapPoint;
 
     // Use this for initialization
     void Start() {
@@ -30,7 +30,7 @@ public class FightStartController : GameScene, IListenerObject {
             personTable = transform.Find("PersonTable").gameObject;
             eventLine = transform.Find("EventLine").gameObject;
 
-            factory = transform.Find("GameFactory").gameObject;
+            factory = GameObject.Find("GameFactory").gameObject;
             registerListener(this);
             disable();
         }
@@ -100,9 +100,12 @@ public class FightStartController : GameScene, IListenerObject {
 
         int powerCalculated = 0;
 
-        foreach (Person p in personFactory.generatePersonList(fightPower)) {
+        foreach (Person p in personFactory.generatePersonList(mapPoint)) {
             powerCalculated += p.calculatePower();
             PartiesSingleton.enemies.addPerson(personFactory.create(p));
+        }
+        foreach (GameObject go in PartiesSingleton.enemies.getPartyList()) {
+            go.GetComponent<PersonController>().person.initHealthMana();
         }
         enemyPowerCost.GetComponent<Text>().text = powerCalculated.ToString();
 
@@ -124,7 +127,7 @@ public class FightStartController : GameScene, IListenerObject {
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_FIGHT_SCENE) {
             enable();
-            fightPower = ((MapPoint)message.parameters[0]).fightPower;
+            mapPoint = ((MapPoint) message.parameters[0]);
             reload();
             isHided = false;
         }

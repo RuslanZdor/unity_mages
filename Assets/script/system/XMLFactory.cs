@@ -14,6 +14,7 @@ public class XMLFactory {
         XmlNode xmlItem = xmldoc.GetElementsByTagName("item").Item(0);
 
         Item item = new Item();
+        item.resource = name;
         item.cost = System.Int32.Parse(xmlItem["cost"].InnerText);
         item.maxDurability = System.Int32.Parse(xmlItem["durability"].InnerText);
         item.name = xmlItem["name"].InnerText;
@@ -115,9 +116,10 @@ public class XMLFactory {
         XmlNode xmlPerson = xmldoc.GetElementsByTagName("person").Item(0);
 
         Person person = new Person();
+        person.resource = name;
         person.name = xmlPerson["name"].InnerText;
         person.level = System.Int32.Parse(xmlPerson["level"].InnerText);
-        person.experience = System.Int32.Parse(xmlPerson["experience"].InnerText);
+        person.setExpirience(int.Parse(xmlPerson["experience"].InnerText));
         person.powerCost = System.Int32.Parse(xmlPerson["powerCost"].InnerText);
         person.powerCostPerLevel = System.Int32.Parse(xmlPerson["powerCostPerLevel"].InnerText);
         person.basicHealth = System.Int32.Parse(xmlPerson["maxHealth"].InnerText);
@@ -128,10 +130,6 @@ public class XMLFactory {
 
         foreach (XmlNode item in xmlPerson["items"]) {
             person.itemList.Add(loadItem(item.InnerText));
-        }
-
-        foreach(XmlNode node in xmlPerson["abilities"]) {
-            person.knownAbilities.Add(loadAbility(node.InnerText));
         }
 
         if (xmlPerson["skillSet"] != null) {
@@ -178,6 +176,7 @@ public class XMLFactory {
 
         ability.name = xmlAbility["name"].InnerText;
         ability.type = xmlAbility["type"].InnerText;
+        ability.resource = abilityLink;
         ability.timeCast = float.Parse(xmlAbility["timeCast"].InnerText);
         ability.manaCost = float.Parse(xmlAbility["manaCost"].InnerText);
         ability.cooldown = float.Parse(xmlAbility["cooldown"].InnerText);
@@ -337,14 +336,19 @@ public class XMLFactory {
         foreach (XmlNode skill in xmlAbility) {
             Ability ability = loadAbility(skill["ability"].InnerText);
             ability.setRequiredLevel(int.Parse(skill["requiredLevel"].InnerText));
-            ability.position = new Vector2();
-            ability.position.x = int.Parse(skill["position"]["x"].InnerText);
-            ability.position.y = int.Parse(skill["position"]["y"].InnerText);
+            ability.position = laodPosition(skill["position"]);
             ability.isActive = bool.Parse(skill["active"].InnerText);
 
             result.Add(ability);
         }
 
         return result;
+    }
+
+    public static Vector2 laodPosition(XmlNode xmlPosition) {
+        Vector2 position = new Vector2();
+        position.x = int.Parse(xmlPosition["x"].InnerText);
+        position.y = int.Parse(xmlPosition["y"].InnerText);
+        return position;
     }
 }

@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System;
 
 public class Ability : ICloneable {
-    public String name;
-    public String type;
+    public string name;
+    public string type;
+    public string resource;
 
     public float timeCast;
     public float cooldown;

@@ -79,6 +79,17 @@ public class FightResultController : GameScene, IListenerObject {
             go.transform.GetComponent<RectTransform>().position = new Vector2(1, ((float)(4 - i * 0.5)));
 
         }
+
+        foreach (GameObject go in PartiesSingleton.heroes.getPartyList()) {
+            Person person = go.GetComponent<PersonController>().person;
+            PartiesSingleton.activeHeroes.FindAll((Person p) => p.name.Equals(person.name))
+                .ForEach((Person p) => {
+                    p.health = person.health;
+                    p.mana = person.mana;
+                    p.shield = person.shield;
+                    p.isAlive = person.isAlive;
+                });
+        }
     }
 
     public void readMessage(GameMessage message) {

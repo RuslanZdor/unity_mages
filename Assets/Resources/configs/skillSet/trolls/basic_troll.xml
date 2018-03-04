@@ -1,0 +1,20 @@
+<skillSet>
+	<skill>
+		<ability>configs/abilities/fire/passive/small_regeneration</ability>
+		<position>
+			<x>1</x>
+			<y>1</y>
+		</position>
+		<requiredLevel>1</requiredLevel>
+		<active>true</active>
+	</skill>
+	<skill>
+		<ability>configs/abilities/fire/passive/incandescent_armor</ability>
+		<position>
+			<x>2</x>
+			<y>1</y>
+		</position>
+		<requiredLevel>5</requiredLevel>
+		<active>true</active>
+	</skill>
+</skillSet>

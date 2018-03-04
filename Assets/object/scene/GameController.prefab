@@ -63,3 +63,7 @@ MonoBehaviour:
   skills: {fileID: 114725214498370742, guid: 7eec15d436b554d41ba3d54bf8631bc9, type: 2}
   positions: {fileID: 114044372981078250, guid: 9c4e44c462f716545ab03114921dc3c3,
     type: 2}
+  loadGame: {fileID: 114465874570369208, guid: e00466b02d9925249943c4d6df41a205, type: 2}
+  missionResult: {fileID: 114724203295053288, guid: cf46243bc30709c4ba2aa700c978060a,
+    type: 2}
+  shop: {fileID: 114209950036784100, guid: 569cb2ff94bb956468d63ced199cb237, type: 2}

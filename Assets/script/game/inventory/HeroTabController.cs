@@ -6,7 +6,6 @@ public class HeroTabController : PersonBehavior, IListenerObject {
     public GameObject heroSkills;
     public GameObject heroSkill;
 
-    public GameObject heroItems;
     public GameObject heroItem;
 
     public bool isItem = false;
@@ -26,15 +25,14 @@ public class HeroTabController : PersonBehavior, IListenerObject {
     }
 
     public void reloadItems() {
-        foreach (Transform child in transform) {
+        foreach (Transform child in transform.Find("Items")) {
             GameObject.Destroy(child.gameObject);
         }
 
-        GameObject hitems = Instantiate(heroItems, transform, false);
         for (int s = 0; s < PartiesSingleton.inventory.Count; s++) {
             Item item = PartiesSingleton.inventory[s];
-            GameObject hitem = Instantiate(heroItem, hitems.transform, false);
-            hitem.transform.localPosition = new Vector2(-3.5f + (s * 2.2f), 2.2f);
+            GameObject hitem = Instantiate(heroItem, transform.Find("Items").transform, false);
+            hitem.transform.localPosition = new Vector2(-3.3f + ((s % 4) * 2.2f), 2.2f - ((s / 4) * 2.2f));
             hitem.transform.GetComponent<Image>().sprite = item.image;
             hitem.GetComponent<HeroItemController>().item = item;
         }

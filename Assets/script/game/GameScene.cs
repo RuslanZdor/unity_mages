@@ -15,8 +15,13 @@ public class GameScene : MonoBehaviour{
     public void generateMessage(GameMessage gm) {
         GameObject.Find("MessageController").GetComponent<MessageController>().addMessage(gm);
     }
+
     public void registerListener(IListenerObject listener) {
         GameObject.Find("MessageController").GetComponent<MessageController>().addListener(listener);
+    }
+
+    public NavigationController navigation() {
+        return GameObject.Find("Navigation").GetComponent<NavigationController>();
     }
 
     public void enable() {

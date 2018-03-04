@@ -9,5 +9,8 @@ public class MapPoint {
     public bool isEnable;
     public bool isFinal;
 
+    public int minPerson;
+    public int maxPerson;
+
     public List<string> dependList = new List<string>();
 }

@@ -38,11 +38,22 @@ public class MapController : GameScene, IListenerObject {
         transform.Find("background").GetComponent<SpriteRenderer>().sprite = image;
 
         printFightPoints();
+
+        PartiesSingleton.activeHeroes.Clear();
+        PartiesSingleton.activeHeroes.AddRange(PartiesSingleton.selectedHeroes);
+        foreach (Person p in PartiesSingleton.activeHeroes) {
+            p.initHealthMana();
+        }
     }
 
     public void closeFightMap() {
         generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_MAP));
         generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
+    }
+
+    public void openMissionResult() {
+        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_MAP));
+        generateMessage(new GameMessage(MessageType.OPEN_MISSION_RESULT));
     }
 
     public void openFightScene() {
@@ -89,8 +100,12 @@ public class MapController : GameScene, IListenerObject {
         XmlNode map = xmldoc.GetElementsByTagName("map").Item(0);
         foreach (XmlNode xmlMapPoint in map) {
             MapPoint mapPoint = new MapPoint();
-            mapPoint.id = System.Int32.Parse(xmlMapPoint["id"].InnerText);
-            mapPoint.fightPower = System.Int32.Parse(xmlMapPoint["fightPower"].InnerText);
+            mapPoint.id = int.Parse(xmlMapPoint["id"].InnerText);
+            mapPoint.fightPower = int.Parse(xmlMapPoint["fightPower"].InnerText);
+
+            mapPoint.minPerson = int.Parse(xmlMapPoint["minPerson"].InnerText);
+            mapPoint.maxPerson = int.Parse(xmlMapPoint["maxPerson"].InnerText);
+
             if (xmlMapPoint["final"] != null 
                 && (xmlMapPoint["final"].InnerText == "true")) {
                 mapPoint.isFinal = true;
@@ -101,10 +116,7 @@ public class MapController : GameScene, IListenerObject {
                 mapPoint.dependList.AddRange(xmlMapPoint["dependList"].InnerText.Split(','));
             }
 
-            mapPoint.position = new Vector2();
-            mapPoint.position.x = System.Int32.Parse(xmlMapPoint["position"]["x"].InnerText);
-            mapPoint.position.y = System.Int32.Parse(xmlMapPoint["position"]["y"].InnerText);
-
+            mapPoint.position = XMLFactory.laodPosition(xmlMapPoint["position"]);
             if (mapPoint.dependList.Count == 0) {
                 mapPoint.isEnable = true;
             }
@@ -116,7 +128,7 @@ public class MapController : GameScene, IListenerObject {
         if (message.type == MessageType.OPEN_FIGHT_MAP) {
             enable();
             if (currentMapPoint != null && currentMapPoint.isFinal) {
-                closeFightMap();
+                openMissionResult();
             }
         }
         if (message.type == MessageType.INIT_FIGHT_MAP) {

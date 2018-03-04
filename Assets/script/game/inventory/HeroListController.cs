@@ -17,8 +17,8 @@ public class HeroListController : PersonBehavior, IListenerObject {
             GameObject.Destroy(child.gameObject);
         }
 
-        for (int i = 0; i < PartiesSingleton.activeHeroes.Count; i++) {
-            Person p = PartiesSingleton.activeHeroes[i];
+        for (int i = 0; i < PartiesSingleton.selectedHeroes.Count; i++) {
+            Person p = PartiesSingleton.selectedHeroes[i];
             GameObject himage = Instantiate(heroImage, transform, false);
             himage.transform.localPosition = new Vector2(0.0f, 2.2f - (2.2f * i));
             himage.transform.Find("HeroImage").gameObject.GetComponent<HeroImageController>().person = p;

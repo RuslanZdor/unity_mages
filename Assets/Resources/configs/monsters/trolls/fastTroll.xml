@@ -13,8 +13,5 @@
 		<item>configs/items/weapons</item>
 		<item>configs/items/weapons</item>
 	</items>
-	<abilities>
-		<ability>configs/abilities/passive/small_regeneration</ability>
-		<ability>configs/abilities/passive/elemental/physicElemental</ability>
-	</abilities>
+	<skillSet>configs/skillSet/trolls/basic_troll</skillSet>
 </person>

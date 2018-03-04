@@ -12,21 +12,21 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
 
     public List<Person> availableEnemy = new List<Person>();
 
-    public List<Person> generatePersonList(int powerCost) {
+    public List<Person> generatePersonList(MapPoint mapPoint) {
         List<Person> list = new List<Person>();
 
-        int count = Random.Range(2, 6);
+        int count = Random.Range(mapPoint.minPerson, mapPoint.maxPerson);
         
         int generated = 0;
         for (int i = 0; i < count; i++) {
-            Person p = generatePersonByPower((powerCost - generated) / (count - i));
+            Person p = generatePersonByPower((mapPoint.fightPower - generated) / (count - i));
             if (p != null) {
                 generated += p.calculatePower();
                 list.Add((Person) p.Clone());
             }
         }
 
-        while(generated < powerCost) {
+        while(generated < mapPoint.fightPower) {
             foreach (Person p in list) {
                 p.setLevel(p.level + 1);
 
@@ -35,7 +35,7 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
                     generated += p2.calculatePower();
                 }
 
-                if (generated >= powerCost) {
+                if (generated >= mapPoint.fightPower) {
                     break;
                 }
             }

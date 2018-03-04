@@ -3,10 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PartiesSingleton {
+
+    public static Shop currentShop;
+
+    public static float gold;
+
     public static Party heroes = new Party(AbilityTargetType.FRIEND, AbilityTargetType.ENEMY);
     public static Party enemies = new Party(AbilityTargetType.ENEMY, AbilityTargetType.FRIEND);
 
     public static List<Person> activeHeroes = new List<Person>();
+    public static List<Person> selectedHeroes = new List<Person>();
+
     public static List<Item> inventory = new List<Item>();
     public static Player player = new Player();
 

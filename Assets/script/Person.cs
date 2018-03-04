@@ -29,6 +29,8 @@ public class Person : ICloneable {
     public String personImage = "";
     public String personModel = "";
 
+    public String resource;
+
     public AbilityTargetType enemy;
     public AbilityTargetType ally;
 
@@ -192,13 +194,15 @@ public class Person : ICloneable {
         return newPerson;
     }
 
-    public virtual void initAbilities() {
-
+    public void initHealthMana() {
         maxMana = basicMana * Constants.getMultiplayer(level);
-        mana = maxMana;
         maxHealth = basicHealth * Constants.getMultiplayer(level);
-        health = maxHealth;
 
+        mana = maxMana;
+        health = maxHealth;
+    }
+
+    public virtual void initAbilities() {
         abilityList.Clear();
         effectList.Clear();
         usedAbilites.Clear();
@@ -279,5 +283,31 @@ public class Person : ICloneable {
             }
         }
         return null;
+    }
+
+    public Ability findAbility(string resource) {
+        return knownAbilities.Find((Ability ability) => resource.Equals(ability.resource));
+    }
+
+    public void setExpirience(int exp) {
+        this.experience = exp;
+
+        int currentLevel = 100;
+        int prevLevel = 0;
+
+        for (int i = 1; i < level; i++) {
+            int tempLevel = currentLevel;
+            currentLevel += prevLevel;
+            prevLevel = tempLevel;
+        }
+
+        while (experience >= currentLevel) {
+            experience -= currentLevel;
+            level++;
+
+            int tempLevel = currentLevel;
+            currentLevel += prevLevel;
+            prevLevel = tempLevel;
+        }
     }
 }

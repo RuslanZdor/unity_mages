@@ -12,10 +12,7 @@ public class SkillsController : GameScene, IListenerObject, CanReload {
         heroTab = transform.Find("HeroTab").gameObject;
         heroList = transform.Find("HeroList").gameObject;
 
-        heroList.GetComponent<HeroListController>().person = PartiesSingleton.activeHeroes[0];
-        heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.activeHeroes[0];
         heroTab.GetComponent<HeroTabController>().isSkills = true;
-        reload();
 
         disable();
 
@@ -34,6 +31,7 @@ public class SkillsController : GameScene, IListenerObject, CanReload {
     }
 
     public void closeSkills() {
+        generateMessage(new GameMessage(MessageType.SAVE_GAME));
         generateMessage(new GameMessage(MessageType.CLOSE_SKILLS));
         generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
     }
@@ -41,11 +39,13 @@ public class SkillsController : GameScene, IListenerObject, CanReload {
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_SKILLS) {
             enable();
-            isFinished = false;
+
+            heroList.GetComponent<HeroListController>().person = PartiesSingleton.selectedHeroes[0];
+            heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.selectedHeroes[0];
+            reload();
         }
         if (message.type == MessageType.CLOSE_SKILLS) {
             disable();
-            isFinished = true;
         }
     }
 }

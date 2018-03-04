@@ -4,19 +4,7 @@ using UnityEngine.EventSystems;
 
 public class PersonIconController : MonoBehaviour, IPointerClickHandler {
 
-    private MainMenuController mmController;
-
-    // Use this for initialization
-    void Start() {
-        mmController = transform.parent.GetComponent<MainMenuController>();
-    }
-
-    // Update is called once per frame
-    void Update() {
-
-    }
-
     public void OnPointerClick(PointerEventData eventData) {
-        mmController.openInventory();
+        GameObject.Find("Navigation").GetComponent<NavigationController>().openInventory();
     }
 }

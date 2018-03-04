@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 114705808923920122}
   - component: {fileID: 223664546186186078}
   - component: {fileID: 114308311954102576}
-  - component: {fileID: 114918307828818842}
   - component: {fileID: 114389573728196000}
   - component: {fileID: 114704847361866964}
   - component: {fileID: 114501006938701604}
@@ -234,24 +233,8 @@ MonoBehaviour:
   isHided: 0
   needUpdate: 0
   background: 
-  previousScene: {fileID: 0}
-  nextScene: {fileID: 0}
   fightPoint: {fileID: 1291659800321248, guid: 60d80fc51d80f5b4b8c77a4e794522ba, type: 2}
   fight: {fileID: 114336063190021082, guid: ce78cabd48e7d114e8b3bd8c9b326f5c, type: 2}
---- !u!114 &114918307828818842
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1697511745829564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
 --- !u!212 &212589490388078480
 SpriteRenderer:
   m_ObjectHideFlags: 1
