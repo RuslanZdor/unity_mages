@@ -10,7 +10,7 @@ public class ShopSideController : AbstractSideController {
         for (int s = 0; s < getItemList().Count; s++) {
             Item currentItem = getItemList()[s];
             GameObject hitem = Instantiate(heroItem, transform.Find("Items").transform, false);
-            hitem.transform.localPosition = new Vector2(-3.3f + ((s % 4) * 2.2f), 2.2f - ((s / 4) * 2.2f));
+            hitem.transform.localPosition = new Vector2(-2.7f + ((s % 4) * 1.8f), 1.8f - ((s / 4) * 1.8f));
             hitem.GetComponent<ShopItemController>().setItem(currentItem);
             if (currentItem.Equals(item)) {
                 hitem.GetComponent<ShopItemController>().makeActive();
@@ -20,7 +20,7 @@ public class ShopSideController : AbstractSideController {
             }
         }
 
-        transform.Find("Gold").GetComponent<Text>().text = "Gold : " + getGold();
+        transform.Find("Gold/Text").GetComponent<Text>().text = "Gold : " + getGold();
     }
 
     public override List<Item> getItemList() {

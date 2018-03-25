@@ -1,0 +1,22 @@
+<map>
+	<mapPoint>
+		<type>SKIRMISH</type>
+		<power>2</power>
+	</mapPoint>
+	<mapPoint>
+		<type>SKIRMISH</type>
+		<power>2</power>
+	</mapPoint>
+	<mapPoint>
+		<type>SKIRMISH</type>
+		<power>3</power>
+	</mapPoint>
+	<mapPoint>
+		<type>ARMY</type>
+		<power>4</power>
+	</mapPoint>
+	<mapPoint>
+		<type>ARMY</type>
+		<power>4</power>
+	</mapPoint>
+</map>

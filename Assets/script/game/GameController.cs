@@ -26,8 +26,12 @@ public class GameController : MonoBehaviour, IListenerObject {
     public GameScene shop;
     public GameScene startNewGame;
 
+    public GameObject navigation;
+
     // Use this for initialization
     void Start() {
+//        Instantiate(navigation);
+
         Instantiate(mainMenu);
         Instantiate(inventory);
         Instantiate(fightMap);
@@ -65,6 +69,7 @@ public class GameController : MonoBehaviour, IListenerObject {
             person.setLevel(int.Parse(xmlPerson["level"].InnerText));
             person.setExpirience(int.Parse(xmlPerson["experience"].InnerText));
 
+            person.itemList.Clear();
             foreach (XmlNode xmlItem in xmlPerson["items"]) {
                 person.itemList.Add(XMLFactory.loadItem(xmlItem.InnerText));
             }

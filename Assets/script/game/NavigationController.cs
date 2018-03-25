@@ -3,15 +3,8 @@ using System.Collections;
 
 public class NavigationController : MonoBehaviour {
 
-    MessageController mc;
-
     public void generateMessage(GameMessage gm) {
-        mc.addMessage(gm);
-    }
-
-    // Use this for initialization
-    void Start() {
-        mc = GameObject.Find("MessageController").GetComponent<MessageController>();
+        GameObject.Find("MessageController").GetComponent<MessageController>().addMessage(gm);
     }
 
     public void openFight() {
@@ -63,4 +56,13 @@ public class NavigationController : MonoBehaviour {
     public void generateShop() {
         generateMessage(new GameMessage(MessageType.GENERATE_SHOP));
     }
+
+    public void openFightMap() {
+        generateMessage(new GameMessage(MessageType.OPEN_FIGHT_MAP));
+    }
+
+    public void closeFightMap() {
+        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_MAP));
+    }
+
 }

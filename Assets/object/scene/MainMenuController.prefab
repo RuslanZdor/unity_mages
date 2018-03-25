@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114803808520226554}
   - component: {fileID: 223113200748544708}
   - component: {fileID: 114418908228260970}
-  - component: {fileID: 114284089157542382}
+  - component: {fileID: 114208121827841880}
   m_Layer: 9
   m_Name: PersonIcon
   m_TagString: Untagged
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 114968898885276922}
   - component: {fileID: 222779750283556768}
   - component: {fileID: 114347981231379430}
-  - component: {fileID: 114468816365936646}
+  - component: {fileID: 114955096925783208}
   m_Layer: 0
   m_Name: FirstFight
   m_TagString: Untagged
@@ -96,8 +96,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224648230683821390}
   - {fileID: 224519763228958046}
+  - {fileID: 224648230683821390}
   - {fileID: 224760362636834220}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,10 +113,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2edf33b93bfd34c87e419ad81709b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFinished: 0
+  isFinished: 1
   isHided: 0
   needUpdate: 0
   background: texture/main_scene
+--- !u!114 &114208121827841880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220230489072078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114719666894113372, guid: 3a88d816a2a952443bdd331b500866d3,
+            type: 2}
+          m_MethodName: openInventory
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114219081888912738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,17 +169,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114284089157542382
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1220230489072078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a25621af15c87a646a49f3c86ba8636f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114347981231379430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,17 +212,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114468816365936646
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1287445494875306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd13d0804eb7b1b47ad735f04e41a004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114803808520226554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,6 +239,37 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114955096925783208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287445494875306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114719666894113372, guid: 3a88d816a2a952443bdd331b500866d3,
+            type: 2}
+          m_MethodName: openFight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114968898885276922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,7 +419,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4307496154308142}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -397,7 +437,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4307496154308142}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

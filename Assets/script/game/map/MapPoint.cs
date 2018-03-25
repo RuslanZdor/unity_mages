@@ -8,9 +8,8 @@ public class MapPoint {
     public Vector2 position;
     public bool isEnable;
     public bool isFinal;
-
-    public int minPerson;
-    public int maxPerson;
+    public int count;
+    public MapPointType type;
 
     public List<string> dependList = new List<string>();
 }

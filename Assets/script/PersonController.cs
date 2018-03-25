@@ -24,11 +24,17 @@ public class PersonController : MonoBehaviour {
             Item item = person.itemList.FindAll((Item i) => i.type == ItemType.WEAPON)[0];
             transform.Find("model/person/body/leftHand/topHand/middleHand/bottomHand/weapon")
                 .GetComponent<SpriteRenderer>().sprite = item.image;
+        }else {
+            transform.Find("model/person/body/leftHand/topHand/middleHand/bottomHand/weapon")
+                .GetComponent<SpriteRenderer>().sprite = null;
         }
         if (person.itemList.FindAll((Item i) => i.type == ItemType.SHIELD).Count > 0) {
             Item item = person.itemList.FindAll((Item i) => i.type == ItemType.SHIELD)[0];
             transform.Find("model/person/body/rightHand/topHand/middleHand/bottomHand/shield")
                 .GetComponent<SpriteRenderer>().sprite = item.image;
+        }else {
+            transform.Find("model/person/body/rightHand/topHand/middleHand/bottomHand/shield")
+                .GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 

@@ -14,7 +14,9 @@ public abstract class AbstractSideController : MonoBehaviour, IListenerObject {
 
     public void refresh() {
         foreach (Transform child in transform.Find("Items")) {
-            GameObject.Destroy(child.gameObject);
+            if (child.name.Contains("Item")) {
+                GameObject.Destroy(child.gameObject);
+            }
         }
         transform.Find("SellButton").GetComponent<SellButtonController>().makeNonActive();
     }

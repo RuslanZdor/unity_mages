@@ -54,8 +54,10 @@ public class ActiveHeroesController : MonoBehaviour, IListenerObject {
 
     public void preparePlaces() {
         foreach (Transform child in transform) {
-            foreach (Transform childPosition in child) {
-                GameObject.Destroy(childPosition.gameObject);
+            if (child.name.Contains("position")) {
+                foreach (Transform childPosition in child) {
+                    GameObject.Destroy(childPosition.gameObject);
+                }
             }
         }
 

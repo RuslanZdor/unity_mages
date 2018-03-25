@@ -14,7 +14,9 @@ public class HeroListController : PersonBehavior, IListenerObject {
 
     public void reload() {
         foreach (Transform child in transform) {
-            GameObject.Destroy(child.gameObject);
+            if (child.name.Contains("Hero")) {
+                GameObject.Destroy(child.gameObject);
+            }
         }
 
         for (int i = 0; i < PartiesSingleton.selectedHeroes.Count; i++) {

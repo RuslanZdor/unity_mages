@@ -26,7 +26,7 @@ public class StartNewGameController : GameScene, IListenerObject {
     }
 
     public void startNewGame() {
-        Person person = new Person();
+        Person person = XMLFactory.loadPerson("configs/monsters/heroes/mage");
         PartiesSingleton.selectedHeroes.Add(person);
 
         MessageController mc = GameObject.Find("MessageController").GetComponent<MessageController>();

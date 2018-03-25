@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1711290207904126}
+  m_IsPrefabParent: 1
+--- !u!1 &1711290207904126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4167661101942912}
+  - component: {fileID: 114091873185018360}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4167661101942912
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711290207904126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.1851108, y: 3.8976057, z: -0.11101301}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114091873185018360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711290207904126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f806ed044735b4f47b91f151e7a2d492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: {fileID: 114195071570580784, guid: d39e7d801468a2746be11d2cf27b225f, type: 2}
+  inventory: {fileID: 114155892949266144, guid: 867b40f422d5d0a4b811914df9c49e03,
+    type: 2}
+  fightMap: {fileID: 114892563770954468, guid: 8252a82d2839129449799a1c004252ab, type: 2}
+  fightScene: {fileID: 114336063190021082, guid: ce78cabd48e7d114e8b3bd8c9b326f5c,
+    type: 2}
+  fightResult: {fileID: 114179755153123790, guid: 41e4657e6aa076346bb329887e8dfc88,
+    type: 2}
+  dialog: {fileID: 114830137718166736, guid: f3371cfd1185ec247a366ec7d4780d72, type: 2}
+  skills: {fileID: 114725214498370742, guid: 7eec15d436b554d41ba3d54bf8631bc9, type: 2}
+  positions: {fileID: 114044372981078250, guid: 9c4e44c462f716545ab03114921dc3c3,
+    type: 2}
+  loadGame: {fileID: 114465874570369208, guid: e00466b02d9925249943c4d6df41a205, type: 2}
+  missionResult: {fileID: 114724203295053288, guid: cf46243bc30709c4ba2aa700c978060a,
+    type: 2}
+  shop: {fileID: 114209950036784100, guid: 569cb2ff94bb956468d63ced199cb237, type: 2}
+  startNewGame: {fileID: 0}

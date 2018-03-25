@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0.434, a: 1}
+  m_Color: {r: 1, g: 1, b: 0.434, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9485294, g: 0.9284265, b: 0.2650303, a: 1}
+  m_Color: {r: 0.9485294, g: 0.9284265, b: 0.2650303, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   place: {x: 0, y: 0}
+  heroStatus: 0
 --- !u!222 &222322879410136492
 CanvasRenderer:
   m_ObjectHideFlags: 1

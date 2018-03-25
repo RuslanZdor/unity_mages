@@ -63,7 +63,7 @@ public class FightResultController : GameScene, IListenerObject {
             go.transform.Find("heal").GetComponent<Text>().text = person.statistics.heal.ToString();
             go.transform.Find("tank").GetComponent<Text>().text = person.statistics.damageTaken.ToString();
 
-            go.transform.GetComponent<RectTransform>().position = new Vector2(-4, ((float)(4 - i * 0.5)));
+            go.transform.GetComponent<RectTransform>().position = new Vector2(-4, ((float)(1.1 - i * 0.5)));
 
         }
 
@@ -76,7 +76,7 @@ public class FightResultController : GameScene, IListenerObject {
             go.transform.Find("heal").GetComponent<Text>().text = person.statistics.heal.ToString();
             go.transform.Find("tank").GetComponent<Text>().text = person.statistics.damageTaken.ToString();
 
-            go.transform.GetComponent<RectTransform>().position = new Vector2(1, ((float)(4 - i * 0.5)));
+            go.transform.GetComponent<RectTransform>().position = new Vector2(1, ((float)(1.1 - i * 0.5)));
 
         }
 

@@ -1,0 +1,16 @@
+<person>
+	<name>Mage</name>
+	<level>1</level>
+	<experience>0</experience>
+	<powerCost>0</powerCost>
+	<powerCostPerLevel>0</powerCostPerLevel>
+	<maxHealth>30</maxHealth>
+	<maxMana>3</maxMana>
+	<numberParrallelCasts>1</numberParrallelCasts>
+	<personImage>texture/troll</personImage>
+	<personModel>models/persons/BasicMageModel</personModel>
+	<items>
+		<item>configs/items/weapons/troll_mace</item>
+	</items>
+	<skillSet>configs/skillSet/heroes/fire_mage</skillSet>
+</person>
