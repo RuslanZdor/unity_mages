@@ -1,6 +1,3 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public enum DialogMessagePosition {
+﻿public enum DialogMessagePosition {
     LEFT, RIGHT
 }

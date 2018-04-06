@@ -1,23 +1,23 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using script;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PersonFactory : MonoBehaviour, AbstractFactory{
 
     private GameObject controller;
 
-    public static int currentID = 0;
+    public static int currentID;
     public GameObject buffIcon;
 
     public List<Person> availableEnemy = new List<Person>();
 
     public List<Person> generatePersonList(MapPoint mapPoint) {
-        List<Person> list = new List<Person>();
+        var list = new List<Person>();
 
         int generated = 0;
         for (int i = 0; i < mapPoint.count; i++) {
-            Person p = generatePersonByPower((mapPoint.fightPower - generated) / (mapPoint.count - i));
+            var p = generatePersonByPower((mapPoint.fightPower - generated) / (mapPoint.count - i));
             if (p != null) {
                 generated += p.calculatePower();
                 list.Add((Person) p.Clone());
@@ -25,11 +25,11 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
         }
 
         while(generated < mapPoint.fightPower) {
-            foreach (Person p in list) {
+            foreach (var p in list) {
                 p.setLevel(p.level + 1);
 
                 generated = 0;
-                foreach (Person p2 in list) {
+                foreach (var p2 in list) {
                     generated += p2.calculatePower();
                 }
 
@@ -43,8 +43,8 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
     }
 
     public Person generatePersonByPower(int powerCost) {
-        List<Person> canBeCreated = new List<Person>();
-        canBeCreated.AddRange(availableEnemy.FindAll((Person p) => p.powerCost <= powerCost));
+        var canBeCreated = new List<Person>();
+        canBeCreated.AddRange(availableEnemy.FindAll(p => p.powerCost <= powerCost));
         if (canBeCreated.Count > 0) {
             int r = Random.Range(0, canBeCreated.Count);
             return canBeCreated[r];
@@ -53,13 +53,13 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
     }
 
     public GameObject create(Person person, string name) {
-        GameObject personModel = Resources.Load<GameObject>(person.personModel);
-        GameObject go = Instantiate(personModel);
+        var personModel = Resources.Load<GameObject>(person.personModel);
+        var go = Instantiate(personModel);
         go.AddComponent<PersonController>();
-        GameObject goClone = Instantiate(go, controller.transform, false);
+        var goClone = Instantiate(go, controller.transform, false);
         Destroy(go);
 
-        Person clone = (Person)person.Clone();
+        var clone = (Person)person.Clone();
         goClone.GetComponent<PersonController>().person = clone;
         clone.id = getNextId();
         clone.name = name;
@@ -71,13 +71,13 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
     }
 
     public GameObject create(Person person) {
-        GameObject personModel = Resources.Load<GameObject>(person.personModel);
-        GameObject go = Instantiate(personModel);
+        var personModel = Resources.Load<GameObject>(person.personModel);
+        var go = Instantiate(personModel);
         go.AddComponent<PersonController>();
-        GameObject goClone = Instantiate(go, controller.transform, false);
+        var goClone = Instantiate(go, controller.transform, false);
         Destroy(go);
 
-        Person clone = (Person)person.Clone();
+        var clone = (Person)person.Clone();
         goClone.GetComponent<PersonController>().person = clone;
         clone.id = getNextId();
         clone.initAbilities();
@@ -88,7 +88,7 @@ public class PersonFactory : MonoBehaviour, AbstractFactory{
     }
 
     public GameObject createBuffIcon(Buff buff) {
-        GameObject go = Instantiate(buffIcon);
+        var go = Instantiate(buffIcon);
         go.GetComponent<Image>().sprite = buff.image;
         return go;
     }

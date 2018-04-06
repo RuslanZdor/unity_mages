@@ -1,10 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using script;
 
 public class SummonGolem : SummonAbility {
 
-	public SummonGolem() : base() {
-        Person summon = XMLFactory.loadPerson("configs/monsters/golems/golem");
+	public SummonGolem()
+	{
+        var summon = XMLFactory.loadPerson("configs/monsters/golems/golem");
         getAbilityTactic().summon = summon;
         timeCast = 1.0f;
 		manaCost = 1;
@@ -14,7 +14,7 @@ public class SummonGolem : SummonAbility {
 
         targetTactic = new ItselfTargetTactic();
 
-		SummonEffect effect = new SummonEffect();
+		var effect = new SummonEffect();
 		effect.person = summon;
 		effect.duration = 0;
 		effectList.Add(effect);

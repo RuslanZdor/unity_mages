@@ -1,16 +1,15 @@
-using UnityEngine;
-using System.Collections;
+using script;
 
 public class UseItemEffect : AbstractAbilityEffect {
 
 	public Item item;
 
     public UseItemEffect() {
-        this.targetsNumber = 1;
+        targetsNumber = 1;
     }
 		
 	public override void applyEffect(Person owner, Person target, float startTime, Ability ab) {
-        UseItemEvent e = new UseItemEvent();
+        var e = new UseItemEvent();
 
         e.owner = owner;
         e.target = target;

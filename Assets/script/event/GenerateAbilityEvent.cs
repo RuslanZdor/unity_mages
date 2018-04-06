@@ -1,12 +1,9 @@
-using UnityEngine;
-using System.Collections;
-
 public class GenerateAbilityEvent : BasicTargetEvent {
 	public override float eventStart() {
         Ability ability = null;
         int priority = -1;
-		foreach (Ability ab in owner.abilityList) {
-            Party party = PartiesSingleton.getParty(ab.targetType);
+		foreach (var ab in owner.abilityList) {
+            var party = PartiesSingleton.getParty(ab.targetType);
 
 			if (ab.abilityTactic.getPriority() > priority
 				&& !owner.usedAbilites.Contains(ab)

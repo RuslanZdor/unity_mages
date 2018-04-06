@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222552740322833806}
   - component: {fileID: 114453313045263940}
   m_Layer: 0
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 222169395925518530}
   - component: {fileID: 114139486579060170}
   m_Layer: 0
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,6 @@ MonoBehaviour:
   isHided: 0
   needUpdate: 0
   background: 
-  heroImage: {fileID: 1866274882534162, guid: c3533c0602e01f94186cd25d7b66993c, type: 2}
 --- !u!114 &114840152207987254
 MonoBehaviour:
   m_ObjectHideFlags: 1

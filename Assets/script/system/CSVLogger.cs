@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
 
 public class CSVLogger {
@@ -19,7 +18,7 @@ public class CSVLogger {
     }
 
     private static void trPostMessage(float time, string person, string channel, string message) {
-        string output = Time.fixedTime + "," + time.ToString() + "," + person + "," + channel + "," + message;
+        string output = Time.fixedTime + "," + time + "," + person + "," + channel + "," + message;
         file.WriteLine(output);
         file.Flush();
     }

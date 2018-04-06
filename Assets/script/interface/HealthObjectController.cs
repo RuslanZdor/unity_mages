@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using script;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthObjectController : MonoBehaviour {
@@ -27,10 +28,10 @@ public class HealthObjectController : MonoBehaviour {
         if (healthSlider != null && person != null) {
             if (healthSlider.value != person.health) {
                 if (healthSlider.value > person.health) {
-                    GameObject damageIndicator = Instantiate(indicator, indicators.transform, false);
+                    var damageIndicator = Instantiate(indicator, indicators.transform, false);
                     damageIndicator.GetComponent<IndicatorController>().damage(healthSlider.value - person.health);
                 } else {
-                    GameObject healIndicator = Instantiate(indicator, indicators.transform, false);
+                    var healIndicator = Instantiate(indicator, indicators.transform, false);
                     healIndicator.GetComponent<IndicatorController>().heal(person.health - healthSlider.value);
                 }
 

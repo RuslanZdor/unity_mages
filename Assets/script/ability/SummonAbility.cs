@@ -1,6 +1,6 @@
-using UnityEngine;
-using System.Collections;
 using System;
+using script;
+using UnityEngine;
 
 public class SummonAbility : Ability{
 
@@ -10,7 +10,7 @@ public class SummonAbility : Ability{
     public SummonAbility clone() {
         SummonAbility clone = null;
         try {
-			clone = (SummonAbility) base.Clone();
+			clone = (SummonAbility) Clone();
 		} catch (Exception e) {
 			Debug.LogError(e);
         }
@@ -23,15 +23,12 @@ public class SummonAbility : Ability{
         return name.Equals(((SummonAbility) obj).name);
     }
 
-	public SummonAbility() : base() {
-    }
-
-    public SummonCastTactic getAbilityTactic() {
-		return (SummonCastTactic) base.abilityTactic;
+	public SummonCastTactic getAbilityTactic() {
+		return (SummonCastTactic) abilityTactic;
     }
 
     public void setAbilityTactic(SummonCastTactic abilityTactic) {
-		base.abilityTactic = abilityTactic;
+		this.abilityTactic = abilityTactic;
     }
 
     public override void setPerson(Person p) {

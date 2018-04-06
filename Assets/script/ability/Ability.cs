@@ -1,7 +1,7 @@
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using script;
+using UnityEngine;
 
 public class Ability : ICloneable {
     public string name;
@@ -17,7 +17,7 @@ public class Ability : ICloneable {
 
     public int requiredLevel = 1;
     public Vector2 position;
-    public Boolean isActive = false;
+    public bool isActive = false;
     
 	public List<AbstractAbilityEffect> effectList = new List<AbstractAbilityEffect>();
 	public AbilityTargetType targetType;
@@ -25,7 +25,7 @@ public class Ability : ICloneable {
 	public AbstractTargetTactic targetTactic;
 
     public float animationTime = 0.5f;
-    public String animation;
+    public string animation;
     public Sprite image;
 
 	public Person personOwner;
@@ -33,25 +33,25 @@ public class Ability : ICloneable {
     public virtual float eventStart(float startTime) {
         if (canUse()) {
             personOwner.mana = personOwner.mana - manaCost;
-			foreach (AbstractAbilityEffect effect in effectList) {
-                AbilityTargetType targetParty = AbilityTargetType.ENEMY;
+			foreach (var effect in effectList) {
+                var targetParty = AbilityTargetType.ENEMY;
                 if (targetType == AbilityTargetType.ENEMY) {
                     targetParty = personOwner.enemy;
                 }else {
                     targetParty = personOwner.ally;
                 }
-                Party party = PartiesSingleton.getParty(targetParty);
-                List<Person> targets = targetTactic.getTargets(party, effect.targetsNumber, this);
-				foreach (Person target in targets) {
+                var party = PartiesSingleton.getParty(targetParty);
+                var targets = targetTactic.getTargets(party, effect.targetsNumber, this);
+				foreach (var target in targets) {
                     effect.applyEffect(personOwner, target, startTime, this);
                 }
             }
 
             if (animationTime > 0) {
                 if (effectList.FindAll(
-                    (AbstractAbilityEffect eff) =>
+                    eff =>
                     eff.attribures.FindAll(
-                        (EffectAttribures attr) => attr == EffectAttribures.MELEE_ATTACK
+                        attr => attr == EffectAttribures.MELEE_ATTACK
                     ).Count > 0
                 ).Count > 0) {
                     personOwner.personController.meleeAttackAbility();
@@ -66,19 +66,19 @@ public class Ability : ICloneable {
         return 0.0f;
     }
 
-    public bool canUse() {
+    public bool canUse()
+    {
         if (manaCost == 0 || personOwner.mana >= manaCost) {
             return true;
-        }else {
-            return false;
         }
+        return false;
     }
 
     public void generateEvents(Person person, float currentTime) {
-        if (this.effectList.Count > 0) {
-            Event e = new Event();
+        if (effectList.Count > 0) {
+            var e = new Event();
             e.eventTime = currentTime + timeCast;
-            e.ability = (Ability) this.Clone();
+            e.ability = (Ability) Clone();
             e.owner = person;
             e.eventDuration = animationTime;
             EventQueueSingleton.queue.add(e);
@@ -91,9 +91,9 @@ public class Ability : ICloneable {
     }
 
 	public object Clone() {
-        Ability ab = (Ability) this.MemberwiseClone();
-        List<AbstractAbilityEffect> newList = new List<AbstractAbilityEffect>();
-        foreach (AbstractAbilityEffect aae in ab.effectList) {
+        var ab = (Ability) MemberwiseClone();
+        var newList = new List<AbstractAbilityEffect>();
+        foreach (var aae in ab.effectList) {
             newList.Add((AbstractAbilityEffect) aae.Clone());
         }
         ab.effectList = newList;
@@ -106,13 +106,13 @@ public class Ability : ICloneable {
     }
 
     public virtual void initAbility() {
-        foreach (AbstractAbilityEffect effect in effectList) {
+        foreach (var effect in effectList) {
             effect.updateLevel(level);
         }
     }
 
     public bool hasAttribute(EffectAttribures attribute) {
-        return effectList.FindAll((AbstractAbilityEffect effect) =>
+        return effectList.FindAll(effect =>
                 effect.attribures.Contains(attribute)).Count > 0;
     }
 

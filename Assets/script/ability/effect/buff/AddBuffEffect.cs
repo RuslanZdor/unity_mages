@@ -1,5 +1,4 @@
-using UnityEngine;
-using System.Collections;
+using script;
 
 public class AddBuffEffect : AbstractAbilityEffect{
 
@@ -7,7 +6,7 @@ public class AddBuffEffect : AbstractAbilityEffect{
 
 	public override void applyEffect(Person owner, Person target, float startTime, Ability ab) {
 
-        Buff ability = new Buff();
+        var ability = new Buff();
         ability.modificator = buff.modificator;
         ability.name = buff.name;
         ability.duration = buff.duration;
@@ -16,7 +15,7 @@ public class AddBuffEffect : AbstractAbilityEffect{
 
         ability.animation = ab.animation;
 
-        AddBuffEvent e = new AddBuffEvent();
+        var e = new AddBuffEvent();
         e.owner = owner;
         e.target = target;
         e.buff= ability;

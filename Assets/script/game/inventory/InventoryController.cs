@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class InventoryController : GameScene, IListenerObject, CanReload {
 
+    public static readonly string INVENTORY_OBJECT = "Inventory";
+    public static readonly string INVENTORY_HERO_LIST = "HeroList";
+    public static readonly string INVENTORY_HERO_TAB = "HeroTab";
+    
     private GameObject heroTab;
     private GameObject heroList;
     private GameObject heroItems;
 
-    public GameObject heroImage;
-
     void Start() {
-        heroTab = transform.Find("HeroTab").gameObject;
-        heroList = transform.Find("HeroList").gameObject;
-        heroItems = transform.Find("Inventory").gameObject;
+        heroTab = transform.Find(INVENTORY_HERO_TAB).gameObject;
+        heroList = transform.Find(INVENTORY_HERO_LIST).gameObject;
+        heroItems = transform.Find(INVENTORY_OBJECT).gameObject;
 
         heroTab.GetComponent<HeroTabController>().isItem = true;
 
@@ -23,10 +24,14 @@ public class InventoryController : GameScene, IListenerObject, CanReload {
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.I)) {
-            navigation().saveGame();
-            navigation().openMainMenu();
-            navigation().closeInventory();
+            closeWindow();
         }
+    }
+
+    public void closeWindow() {
+        navigation().saveGame();
+        navigation().closeActiveWindow();
+        navigation().openMainMenu();
     }
 
     public void reload() {
@@ -45,7 +50,7 @@ public class InventoryController : GameScene, IListenerObject, CanReload {
 
             reload();
         }
-        if (message.type == MessageType.CLOSE_INVENTORY) {
+        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

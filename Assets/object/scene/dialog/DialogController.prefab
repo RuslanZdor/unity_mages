@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114289893617809634}
   - component: {fileID: 212360478101260924}
   m_Layer: 8
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,9 +83,6 @@ MonoBehaviour:
   isHided: 0
   needUpdate: 0
   background: 
-  previousScene: {fileID: 0}
-  nextScene: {fileID: 114336063190021082, guid: ce78cabd48e7d114e8b3bd8c9b326f5c,
-    type: 2}
   message: {fileID: 1666925159407470, guid: 478295b514c51174283ab6a27410469d, type: 2}
 --- !u!212 &212360478101260924
 SpriteRenderer:

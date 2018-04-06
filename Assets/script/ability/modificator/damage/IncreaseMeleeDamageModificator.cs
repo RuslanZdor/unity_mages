@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class IncreaseMeleeDamageModificator : AbstractModificator{
     public float value;
 
@@ -9,8 +6,8 @@ public class IncreaseMeleeDamageModificator : AbstractModificator{
     }
 
 	public override void updateMakingDamage(Ability ability) {
-		ability.effectList.FindAll((AbstractAbilityEffect effect) => 
-			effect.attribures.Contains(EffectAttribures.MELEE_ATTACK)).ForEach((AbstractAbilityEffect effect) =>
+		ability.effectList.FindAll(effect => 
+			effect.attribures.Contains(EffectAttribures.MELEE_ATTACK)).ForEach(effect =>
 				effect.value = (int) (effect.value * (100 + value) / 100));
     }
 }

@@ -8,9 +8,9 @@ public class ShopSideController : AbstractSideController {
         refresh();
 
         for (int s = 0; s < getItemList().Count; s++) {
-            Item currentItem = getItemList()[s];
-            GameObject hitem = Instantiate(heroItem, transform.Find("Items").transform, false);
-            hitem.transform.localPosition = new Vector2(-2.7f + ((s % 4) * 1.8f), 1.8f - ((s / 4) * 1.8f));
+            var currentItem = getItemList()[s];
+            var hitem = Instantiate(heroItem, transform.Find("Items").transform, false);
+            hitem.transform.localPosition = new Vector2(-2.7f + s % 4 * 1.8f, 1.8f - s / 4 * 1.8f);
             hitem.GetComponent<ShopItemController>().setItem(currentItem);
             if (currentItem.Equals(item)) {
                 hitem.GetComponent<ShopItemController>().makeActive();

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using script;
+using UnityEngine;
 
 public abstract class PersonBehavior : MonoBehaviour, HasPerson {
     public Person person;

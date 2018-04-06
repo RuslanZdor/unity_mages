@@ -1,5 +1,5 @@
+using script;
 using UnityEngine;
-using System.Collections;
 
 public class RangeValueGenerator : AbstractValueGenerator {
 

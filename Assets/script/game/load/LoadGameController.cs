@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
+﻿using System.IO;
 using System.Xml;
+using script;
+using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 
 public class LoadGameController : GameScene, IListenerObject {
 
@@ -17,7 +16,7 @@ public class LoadGameController : GameScene, IListenerObject {
             string link = "savedGames/" + load.name + ".xml";
             Debug.Log(link);
             if (File.Exists(link)) {
-                XmlDocument xmldoc = new XmlDocument();
+                var xmldoc = new XmlDocument();
                 xmldoc.Load(link);
                 load.transform.Find("loadField/header").GetComponent<Text>().text = xmldoc["savedGame"]["userName"].InnerText;
                 load.transform.Find("loadField/time").GetComponent<Text>().text = xmldoc["savedGame"]["time"].InnerText;
@@ -30,17 +29,17 @@ public class LoadGameController : GameScene, IListenerObject {
     }
 
     public void loadGame(string link) {
-        MessageController mc = GameObject.Find("MessageController").GetComponent<MessageController>();
-        mc.addMessage(new GameMessage(MessageType.CLOSE_LOAD_GAME));
+        var mc = GameObject.Find(Constants.MESSAGE_CONTROLLER_OBJECT).GetComponent<MessageController>();
+        navigation().closeActiveWindow();
 
         if (File.Exists(link)) {
             mc.addMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
 
-            GameMessage gm = new GameMessage(MessageType.LOAD_SAVED_GAME);
+            var gm = new GameMessage(MessageType.LOAD_SAVED_GAME);
             gm.parameters.Add(link);
             mc.addMessage(gm);
         } else {
-            GameMessage gm = new GameMessage(MessageType.OPEN_START_NEW_GAME);
+            var gm = new GameMessage(MessageType.OPEN_START_NEW_GAME);
             gm.parameters.Add(link);
             mc.addMessage(gm);
         }
@@ -55,7 +54,7 @@ public class LoadGameController : GameScene, IListenerObject {
         if (message.type == MessageType.OPEN_LOAD_GAME) {
             enable();
         }
-        if (message.type == MessageType.CLOSE_LOAD_GAME) {
+        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

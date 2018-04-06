@@ -6,7 +6,7 @@ public class GameMessage {
     public MessageType type;
     public string message;
 
-    public List<Object> parameters = new List<Object>();
+    public List<object> parameters = new List<object>();
 
     public GameMessage(MessageType mt) {
         type = mt;

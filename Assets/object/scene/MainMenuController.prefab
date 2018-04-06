@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 114219081888912738}
   - component: {fileID: 212204359608575382}
   m_Layer: 8
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,6 +133,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 114719666894113372, guid: 3a88d816a2a952443bdd331b500866d3,
+            type: 2}
+          m_MethodName: closeActiveWindow
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 114719666894113372, guid: 3a88d816a2a952443bdd331b500866d3,
             type: 2}
           m_MethodName: openInventory
@@ -255,9 +267,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114719666894113372, guid: 3a88d816a2a952443bdd331b500866d3,
-            type: 2}
-          m_MethodName: openFight
+        - m_Target: {fileID: 114195071570580784}
+          m_MethodName: openNewMission
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

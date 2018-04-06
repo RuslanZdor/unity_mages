@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class DialogMessage {
+﻿public class DialogMessage {
 
     public string message;
     public DialogMessagePosition position;

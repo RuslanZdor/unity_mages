@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using script;
+using UnityEngine;
 
 public class MissionResultController : GameScene, IListenerObject {
 
@@ -12,8 +13,8 @@ public class MissionResultController : GameScene, IListenerObject {
 
     void Start() {
         background = "texture/main_scene";
-        Sprite image = Resources.Load<Sprite>(background) as Sprite;
-        transform.Find("background").GetComponent<SpriteRenderer>().sprite = image;
+        var image = Resources.Load<Sprite>(background);
+        transform.Find(Constants.BACKGROUND).GetComponent<SpriteRenderer>().sprite = image;
 
 
         result = transform.Find("ResultTable/table").gameObject;
@@ -31,12 +32,12 @@ public class MissionResultController : GameScene, IListenerObject {
 
     private void closeResults() {
         generateMessage(new GameMessage(MessageType.SAVE_GAME));
-        generateMessage(new GameMessage(MessageType.CLOSE_MISSION_RESULT));
-        generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
+        navigation().closeActiveWindow();
+        navigation().openMainMenu();
     }
 
     private void reload() {
-        foreach (Person p in PartiesSingleton.activeHeroes) {
+        foreach (var p in PartiesSingleton.activeHeroes) {
             p.setExpirience(p.experience + 100);
         }
     }
@@ -46,7 +47,7 @@ public class MissionResultController : GameScene, IListenerObject {
             enable();
             reload();
         }
-        if (message.type == MessageType.CLOSE_MISSION_RESULT) {
+        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

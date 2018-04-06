@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class RemoveBuffEvent : BasicTargetEvent{
 
 	public Buff buff;

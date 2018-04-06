@@ -1,25 +1,24 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml;
+using UnityEngine;
 
 public class MapFactory {
 
     public static MissionMap loadMissionFromTemplate(string link, int cost) {
-        TextAsset textAsset = (TextAsset)Resources.Load(link);
-        XmlDocument xmldoc = new XmlDocument();
+        var textAsset = (TextAsset)Resources.Load(link);
+        var xmldoc = new XmlDocument();
         xmldoc.LoadXml(textAsset.text);
-        XmlNode map = xmldoc.GetElementsByTagName("map").Item(0);
+        var map = xmldoc.GetElementsByTagName("map").Item(0);
 
-        List<MapPoint> listPoints = new List<MapPoint>();
+        var listPoints = new List<MapPoint>();
         foreach (XmlNode xmlMapPoint in map) {
-            MapPoint mapPoint = new MapPoint();
+            var mapPoint = new MapPoint();
             mapPoint.fightPower = int.Parse(xmlMapPoint["power"].InnerText);
             mapPoint.type = parseMapPoint(xmlMapPoint["type"].InnerText);
             listPoints.Add(mapPoint);
         }
 
-        MissionMap missionMap = new MissionMap();
+        var missionMap = new MissionMap();
         missionMap.cost = cost;
 
         float summory = 0.0f;
@@ -28,16 +27,16 @@ public class MapFactory {
         }
 
         for (int i = 0; i < listPoints.Count; i++) {
-            MapPoint mp = new MapPoint();
+            var mp = new MapPoint();
             mp.fightPower = (int) (missionMap.cost * listPoints[i].fightPower / summory);
             mp.count = generateCount(listPoints[i].type);
             mp.id = i;
-            mp.isFinal = (i == listPoints.Count -1);
+            mp.isFinal = i == listPoints.Count -1;
 
             if (i > 0) {
                 mp.dependList.Add((i - 1).ToString());
             }
-            mp.isEnable = (mp.dependList.Count == 0);
+            mp.isEnable = mp.dependList.Count == 0;
             mp.position = new Vector2(i + 1, 1);
             missionMap.fights.Add(mp);
         }
@@ -45,21 +44,21 @@ public class MapFactory {
     }
 
     public MissionMap loadMissionFromFile(string link) {
-        MissionMap missionMap = new MissionMap();
-        TextAsset textAsset = (TextAsset)Resources.Load(link);
-        XmlDocument xmldoc = new XmlDocument();
+        var missionMap = new MissionMap();
+        var textAsset = (TextAsset)Resources.Load(link);
+        var xmldoc = new XmlDocument();
         xmldoc.LoadXml(textAsset.text);
 
-        XmlNode map = xmldoc.GetElementsByTagName("map").Item(0);
+        var map = xmldoc.GetElementsByTagName("map").Item(0);
         foreach (XmlNode xmlMapPoint in map) {
-            MapPoint mapPoint = new MapPoint();
+            var mapPoint = new MapPoint();
             mapPoint.id = int.Parse(xmlMapPoint["id"].InnerText);
             mapPoint.fightPower = int.Parse(xmlMapPoint["fightPower"].InnerText);
 
             mapPoint.count = int.Parse(xmlMapPoint["count"].InnerText);
 
             if (xmlMapPoint["final"] != null
-                && (xmlMapPoint["final"].InnerText == "true")) {
+                && xmlMapPoint["final"].InnerText == "true") {
                 mapPoint.isFinal = true;
             } else {
                 mapPoint.isFinal = false;

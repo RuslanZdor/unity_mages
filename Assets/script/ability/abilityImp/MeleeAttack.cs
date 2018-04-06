@@ -1,9 +1,9 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using script;
 
 public class MeleeAttack : Ability {
 
-	public MeleeAttack(string n) :  base(){
+	public MeleeAttack(string n)
+	{
 		name = n;
 		timeCast = Constants.PERSON_MELEE_ATTACK_SPEED;
 		targetType = AbilityTargetType.ENEMY;

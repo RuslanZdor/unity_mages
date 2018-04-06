@@ -1,7 +1,5 @@
-using UnityEngine;
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine;
 
 public class Buff : Ability {
 
@@ -11,7 +9,7 @@ public class Buff : Ability {
     public Buff clone() {
         Buff cl = null;
         try {
-			cl = (Buff) this.MemberwiseClone();
+			cl = (Buff) MemberwiseClone();
 		} catch (Exception e) {
 			Debug.LogError(e);
         }
@@ -20,15 +18,15 @@ public class Buff : Ability {
     }
 
     public bool Equals(Buff obj) {
-        return name.Equals(((Buff) obj).name);
+        return name.Equals(obj.name);
     }
 
-    public int compareTo(Buff o) {
+    public int compareTo(Buff o)
+    {
         if (priority < o.priority) {
             return -1;
-        }else {
-            return 1;
         }
+        return 1;
     }
 
     public override void initAbility() {

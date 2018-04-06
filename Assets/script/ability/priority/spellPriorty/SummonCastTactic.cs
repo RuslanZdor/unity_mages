@@ -1,5 +1,4 @@
-using UnityEngine;
-using System.Collections;
+using script;
 
 public class SummonCastTactic : AbstractTactic {
 
@@ -8,9 +7,9 @@ public class SummonCastTactic : AbstractTactic {
 	public override int getPriority() {
 
 		long summonCount = PartiesSingleton.getParty(person.ally).getLivePersons().FindAll(
-			(Person p) => (p.summoner != null && person.name.Equals(p.summoner.name)
-                        && p.name.Equals(summon.name)
-                        && p.isAlive)
+			p => p.summoner != null && person.name.Equals(p.summoner.name)
+			                        && p.name.Equals(summon.name)
+			                        && p.isAlive
         ).Count;
 
         if (person.mana >= ability.manaCost

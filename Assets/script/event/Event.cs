@@ -1,5 +1,4 @@
-using UnityEngine;
-using System.Collections;
+using script;
 
 public class Event {
 	public Person owner;
@@ -7,22 +6,23 @@ public class Event {
 	public float eventTime;
     public float eventDuration = 0.0f;
 
-	public int compareTo(Event o) {
-        if (eventTime < o.eventTime) {
+	public int compareTo(Event o)
+	{
+	    if (eventTime < o.eventTime) {
             return -1;
-        } else {
-            return 1;
         }
-    }
+
+	    return 1;
+	}
 
     public virtual float eventStart() {
         if (owner != null) {
             logEvent("Casting ability " + ability.name);
             return owner.eventStart(ability, eventTime);
-        } else {
-            userLogEvent("Casting ability " + ability.name);
-            return ability.eventStart(eventTime);
         }
+
+        userLogEvent("Casting ability " + ability.name);
+        return ability.eventStart(eventTime);
     }
 
     public void logEvent(string message) {
@@ -32,11 +32,11 @@ public class Event {
         CSVLogger.log(eventTime, "user", GetType().ToString(), message);
     }
 
-    public override string ToString() {
+    public override string ToString()
+    {
         if (ability != null) {
             return "Casting ability " + ability.name;
-        }else {
-            return "";
         }
+        return "";
     }
 }

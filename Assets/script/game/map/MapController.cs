@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using script;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MapController : GameScene, IListenerObject {
@@ -30,50 +31,47 @@ public class MapController : GameScene, IListenerObject {
         missionMap.currentMapPoint = null;
 
         background = "texture/main_scene";
-        Sprite image = Resources.Load<Sprite>(background) as Sprite;
-        transform.Find("background").GetComponent<SpriteRenderer>().sprite = image;
+        var image = Resources.Load<Sprite>(background);
+        transform.Find(Constants.BACKGROUND).GetComponent<SpriteRenderer>().sprite = image;
 
         printFightPoints();
 
         PartiesSingleton.activeHeroes.Clear();
         PartiesSingleton.activeHeroes.AddRange(PartiesSingleton.selectedHeroes);
-        foreach (Person p in PartiesSingleton.activeHeroes) {
+        foreach (var p in PartiesSingleton.activeHeroes) {
             p.initHealthMana();
         }
     }
 
     public void closeFightMap() {
-        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_MAP));
-        generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
+        navigation().closeActiveWindow();
+        navigation().openMainMenu();
     }
 
     public void openMissionResult() {
-        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_MAP));
-        generateMessage(new GameMessage(MessageType.OPEN_MISSION_RESULT));
+        navigation().closeActiveWindow();
+        navigation().openMissionResult();
     }
 
     public void openFightScene() {
-        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_MAP));
-
-        GameMessage gm2 = new GameMessage(MessageType.OPEN_FIGHT_SCENE);
-        gm2.parameters.Add(missionMap.currentMapPoint);
-        generateMessage(gm2);
+        navigation().closeActiveWindow();
+        navigation().openFightScene(missionMap.currentMapPoint);
     }
 
     private void printFightPoints() {
-        GameObject map = transform.Find("Map").gameObject;
+        var map = transform.Find("Map").gameObject;
 
         foreach (Transform child in map.transform) {
             if (child.name.Contains("Point")) {
-                GameObject.Destroy(child.gameObject);
+                Destroy(child.gameObject);
             }
         }
 
         for (int i = 0; i < missionMap.fights.Count; i++) {
-            GameObject mapPoint = Instantiate(fightPoint, map.transform, false);
+            var mapPoint = Instantiate(fightPoint, map.transform, false);
             mapPoint.GetComponent<MapPointController>().mapPoint = missionMap.fights[i];
-            mapPoint.transform.localPosition = new Vector2(-4.5f + (missionMap.fights[i].position.x * 2.2f), -2.0f + (missionMap.fights[i].position.y * 2.2f));
-            mapPoint.transform.Find("Name").GetComponent<Text>().text = "power " + missionMap.fights[i].fightPower.ToString();
+            mapPoint.transform.localPosition = new Vector2(-4.5f + missionMap.fights[i].position.x * 2.2f, -2.0f + missionMap.fights[i].position.y * 2.2f);
+            mapPoint.transform.Find("Name").GetComponent<Text>().text = "power " + missionMap.fights[i].fightPower;
 
             if (mapPoint.GetComponent<MapPointController>().mapPoint.isEnable) {
                 mapPoint.GetComponent<MapPointController>().enablePoint();
@@ -101,11 +99,11 @@ public class MapController : GameScene, IListenerObject {
             init();
         }
 
-        if (message.type == MessageType.CLOSE_FIGHT_MAP) {
+        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
         if (message.type == MessageType.FIGHT_FINISH_HERO_WINS) {
-            foreach (MapPoint mp in missionMap.fights) {
+            foreach (var mp in missionMap.fights) {
                 if (mp.dependList.Contains(missionMap.currentMapPoint.id.ToString())) {
                     mp.isEnable = true;
                 }

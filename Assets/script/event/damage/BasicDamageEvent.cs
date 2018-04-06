@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class BasicDamageEvent : BasicTargetEvent {
 
     public BasicDamageEvent() {
@@ -9,7 +6,7 @@ public class BasicDamageEvent : BasicTargetEvent {
 
     public override float eventStart() {
 
-		foreach (Buff buff in owner.effectList) {
+		foreach (var buff in owner.effectList) {
             if (buff.modificator != null) {
                 buff.modificator.owner = owner;
                 buff.modificator.target = target;
@@ -17,7 +14,7 @@ public class BasicDamageEvent : BasicTargetEvent {
             }
         }
 
-		foreach (Buff buff in target.effectList) {
+		foreach (var buff in target.effectList) {
             if (buff.modificator != null) {
                 buff.modificator.owner = target;
                 buff.modificator.target = owner;

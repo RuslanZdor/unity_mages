@@ -1,22 +1,21 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using script;
 
 public class DamageAbilityEffect : AbstractAbilityEffect {
 
 	public override void applyEffect(Person owner, Person target, float startTime, Ability ab) {
-        foreach(Person p in getTargets(target, ab)) {
+        foreach(var p in getTargets(target, ab)) {
             apply(owner, p, startTime, ab);
         }
     }
 
     public void apply (Person owner, Person target, float startTime, Ability ab) {
-        BasicDamageEvent e = new BasicDamageEvent();
+        var e = new BasicDamageEvent();
 
         value = valueGenerator.getValue();
-        Ability ability = new Ability();
+        var ability = new Ability();
         ability.setAbstractTactic(new MeleeAttackTactic());
-        ability.effectList.Add((AbstractAbilityEffect)base.Clone());
+        ability.effectList.Add((AbstractAbilityEffect)Clone());
 
         ability.animation = ab.animation;
 
@@ -35,14 +34,14 @@ public class DamageAbilityEffect : AbstractAbilityEffect {
     public List<Person> getTargets(Person target, Ability ab) {
         if (ab.hasAttribute(EffectAttribures.ROW_DAMAGE)) {
             return PartiesSingleton.getParty(target.ally).getLivePersons().
-            FindAll((Person p) => p.place.x == target.place.x);
+            FindAll(p => p.place.x == target.place.x);
         }
         if (ab.hasAttribute(EffectAttribures.PIRCING_DAMAGE)) {
             return PartiesSingleton.getParty(target.ally).getLivePersons().
-                        FindAll((Person p) => p.place.y == target.place.y);
+                        FindAll(p => p.place.y == target.place.y);
          }
 
-        List<Person> list = new List<Person>();
+        var list = new List<Person>();
         list.Add(target);
         return list;
     }

@@ -1,9 +1,8 @@
-using UnityEngine;
-using System.Collections;
+using script;
 
 public abstract class AbstractTactic {
 
-	public int defaultPriority = 0;
+	public int defaultPriority;
 	public Person person;
 	public Ability ability;
 

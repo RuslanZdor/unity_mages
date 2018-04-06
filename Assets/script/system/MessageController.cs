@@ -1,16 +1,15 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class MessageController : MonoBehaviour {
-    private List<IListenerObject> list = new List<IListenerObject>();
+    private readonly List<IListenerObject> list = new List<IListenerObject>();
 
     public void addListener(IListenerObject obj) {
         list.Add(obj);
     }
 
     public void addMessage(GameMessage message) {
-        foreach (IListenerObject obj in list) {
+        foreach (var obj in list) {
             obj.readMessage(message);
         }
     }

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using script;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogController : GameScene, IListenerObject {
@@ -8,18 +8,18 @@ public class DialogController : GameScene, IListenerObject {
     public GameObject message;
     private GameObject currentMessage;
 
-    List<DialogMessage> messages = new List<DialogMessage>();
+    readonly List<DialogMessage> messages = new List<DialogMessage>();
 
     void Start() {
         if (!isFinished) {
             background = "texture/main_scene";
-            Sprite image = Resources.Load<Sprite>(background) as Sprite;
-            transform.Find("background").GetComponent<SpriteRenderer>().sprite = image;
+            var image = Resources.Load<Sprite>(background);
+            transform.Find(Constants.BACKGROUND).GetComponent<SpriteRenderer>().sprite = image;
 
             registerListener(this);
             disable();
 
-            DialogMessage m = new DialogMessage();
+            var m = new DialogMessage();
             m.message = "same message";
             m.position = DialogMessagePosition.LEFT;
             messages.Add(m);
@@ -66,7 +66,7 @@ public class DialogController : GameScene, IListenerObject {
     private void moveMessageToRight() {
         currentMessage.transform.position = new Vector2(10.0f, -2.5f);
 
-        Vector3 theScale = currentMessage.transform.Find("PersonImage").transform.localScale;
+        var theScale = currentMessage.transform.Find("PersonImage").transform.localScale;
         theScale.x *= -1;
         currentMessage.transform.Find("PersonImage").transform.localScale = theScale;
 

@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using script;
+using UnityEngine;
 
 public interface AbstractFactory {
 

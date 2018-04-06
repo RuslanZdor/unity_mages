@@ -1,13 +1,13 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using script;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class HeroImageController : PersonBehavior, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData) {
-        GameMessage gm = new GameMessage(MessageType.SELECT_HERO);
+        var gm = new GameMessage(MessageType.SELECT_HERO);
         gm.parameters.Add(person);
-        GameObject.Find("MessageController").GetComponent<MessageController>().addMessage(gm);
+        GameObject.Find(Constants.MESSAGE_CONTROLLER_OBJECT).GetComponent<MessageController>().addMessage(gm);
         transform.root.GetComponent<CanReload>().reload();
     }
 

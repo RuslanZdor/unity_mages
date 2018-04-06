@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PositionsController : GameScene, IListenerObject, CanReload {
 
@@ -28,8 +27,8 @@ public class PositionsController : GameScene, IListenerObject, CanReload {
 
     public void close() {
         generateMessage(new GameMessage(MessageType.SAVE_GAME));
-        generateMessage(new GameMessage(MessageType.CLOSE_POSITIONS));
-        generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
+        navigation().closeActiveWindow();
+        navigation().openMainMenu();
     }
 
     public void readMessage(GameMessage message) {
@@ -37,7 +36,7 @@ public class PositionsController : GameScene, IListenerObject, CanReload {
             enable();
             reload();
         }
-        if (message.type == MessageType.CLOSE_POSITIONS) {
+        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

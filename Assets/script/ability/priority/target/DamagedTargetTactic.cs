@@ -1,13 +1,12 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using script;
 
 public class DamagedTargetTactic : AbstractTargetTactic {
 
 	public override List<Person> getTargets(Party party, int count, Ability ability) {
-		List<Person> resultList = new List<Person>();
-        List<Person> list = party.getLivePersons();
-		resultList = list.FindAll ((Person p) => p.isDamaged());
+		var resultList = new List<Person>();
+        var list = party.getLivePersons();
+		resultList = list.FindAll (p => p.isDamaged());
 
 		while (resultList.Count > count) {
             int c = 0;

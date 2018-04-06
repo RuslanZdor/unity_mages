@@ -1,14 +1,13 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections.Generic;
+using script;
+using script.game;
+using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Collections.Generic;
 
 public class FightStartController : GameScene, IListenerObject {
 
     private GameObject factory;
 
-    public GameScene fightResultTable;
     public GameObject userAbility;
     public GameObject abilityEvent;
 
@@ -23,8 +22,8 @@ public class FightStartController : GameScene, IListenerObject {
     void Start() {
         if (!isFinished) {
             background = "texture/fight_scene";
-            Sprite image = Resources.Load<Sprite>(background) as Sprite;
-            transform.Find("background").GetComponent<SpriteRenderer>().sprite = image;
+            var image = Resources.Load<Sprite>(background);
+            transform.Find(Constants.BACKGROUND).GetComponent<SpriteRenderer>().sprite = image;
             eventLog = transform.Find("CurrentEventLog").gameObject;
             enemyPowerCost = transform.Find("EnemyPowerCost").gameObject;
             personTable = transform.Find("PersonTable").gameObject;
@@ -41,11 +40,11 @@ public class FightStartController : GameScene, IListenerObject {
         if (!isHided) {
             if (PartiesSingleton.hasWinner()) {
                 CSVLogger.log(EventQueueSingleton.queue.nextEventTime, "FightController", "FightController", "Result");
-                foreach (Person hero in PartiesSingleton.heroes.getLivePersons()) {
+                foreach (var hero in PartiesSingleton.heroes.getLivePersons()) {
                     CSVLogger.log(EventQueueSingleton.queue.nextEventTime, "FightController", "FightController", hero.name + "has " + hero.health);
                 }
 
-                foreach (Person hero in PartiesSingleton.enemies.getLivePersons()) {
+                foreach (var hero in PartiesSingleton.enemies.getLivePersons()) {
                     CSVLogger.log(EventQueueSingleton.queue.nextEventTime, "FightController", "FightController", hero.name + "has " + hero.health);
                 }
                 isFinished = true;
@@ -53,7 +52,7 @@ public class FightStartController : GameScene, IListenerObject {
                 openFightResult();
             } else {
                 if (!EventQueueSingleton.queue.fastFight) {
-                    string result = EventQueueSingleton.queue.startEvent(Time.fixedTime).ToString();
+                    string result = EventQueueSingleton.queue.startEvent(Time.fixedTime);
                     if (result.Length > 0) {
                         eventLog.GetComponent<Text>().text = result;
                         displayEvents(EventQueueSingleton.queue.events);
@@ -64,16 +63,16 @@ public class FightStartController : GameScene, IListenerObject {
     }
 
     public void openFightResult() {
-        generateMessage(new GameMessage(MessageType.CLOSE_FIGHT_SCENE));
-        generateMessage(new GameMessage(MessageType.OPEN_FIGHT_RESULT));
+        GameObject.Find(Constants.NAVIGATION_OBJECT).GetComponent<NavigationController>().closeActiveWindow();
+        GameObject.Find(Constants.NAVIGATION_OBJECT).GetComponent<NavigationController>().openFightResult();
     }
 
     private void reload() {
         foreach (Transform child in personTable.transform) {
-            GameObject.Destroy(child.gameObject);
+            Destroy(child.gameObject);
         }
 
-        PersonFactory personFactory = factory.GetComponent<PersonFactory>();
+        var personFactory = factory.GetComponent<PersonFactory>();
 
         personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/heavyTroll"));
         personFactory.availableEnemy.Add(XMLFactory.loadPerson("configs/monsters/trolls/fastTroll"));
@@ -87,34 +86,34 @@ public class FightStartController : GameScene, IListenerObject {
         EventQueueSingleton.queue.realTime = Time.fixedTime;
         EventQueueSingleton.queue.fastFight = false;
 
-        foreach (Person p in PartiesSingleton.activeHeroes.FindAll((Person p) => p.isActive)) {
+        foreach (var p in PartiesSingleton.activeHeroes.FindAll(p => p.isActive)) {
             PartiesSingleton.heroes.addPerson(personFactory.create(p));
         }
 
         int count = 0;
-        foreach (Ability ability in PartiesSingleton.player.abilityList) {
-            GameObject uAbility = Instantiate(userAbility, transform.Find("UserAbility"), false);
+        foreach (var ability in PartiesSingleton.player.abilityList) {
+            var uAbility = Instantiate(userAbility, transform.Find("UserAbility"), false);
             uAbility.GetComponent<UserAbilityController>().ability = ability;
             uAbility.transform.localPosition = new Vector2(0.0f, 0.0f + 1.2f * count++); ;
         }
 
         int powerCalculated = 0;
 
-        foreach (Person p in personFactory.generatePersonList(mapPoint)) {
+        foreach (var p in personFactory.generatePersonList(mapPoint)) {
             powerCalculated += p.calculatePower();
             PartiesSingleton.enemies.addPerson(personFactory.create(p));
         }
-        foreach (GameObject go in PartiesSingleton.enemies.getPartyList()) {
+        foreach (var go in PartiesSingleton.enemies.getPartyList()) {
             go.GetComponent<PersonController>().person.initHealthMana();
         }
         enemyPowerCost.GetComponent<Text>().text = powerCalculated.ToString();
 
 
-        foreach (Person hero in PartiesSingleton.heroes.getLivePersons()) {
+        foreach (var hero in PartiesSingleton.heroes.getLivePersons()) {
             hero.generateEvents(0.0f);
         }
 
-        foreach (Person enemy in PartiesSingleton.enemies.getLivePersons()) {
+        foreach (var enemy in PartiesSingleton.enemies.getLivePersons()) {
             enemy.generateEvents(0.0f);
         }
     }
@@ -127,11 +126,11 @@ public class FightStartController : GameScene, IListenerObject {
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_FIGHT_SCENE) {
             enable();
-            mapPoint = ((MapPoint) message.parameters[0]);
+            mapPoint = (MapPoint) message.parameters[0];
             reload();
             isHided = false;
         }
-        if (message.type == MessageType.CLOSE_FIGHT_SCENE) {
+        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
             isHided = true;
         }
@@ -143,14 +142,14 @@ public class FightStartController : GameScene, IListenerObject {
         }
 
         int count = 0;
-        foreach (Event ev in events) {
+        foreach (var ev in events) {
             if (ev.ability != null
                 && ev.ability.name != null
                 && ev.owner != null
                 && ev.eventDuration > 0) {
-                GameObject abEvent = Instantiate(abilityEvent, eventLine.transform, false);
+                var abEvent = Instantiate(abilityEvent, eventLine.transform, false);
                 abEvent.GetComponent<AbilityEventController>().setEvent(ev);
-                abEvent.transform.localPosition = new Vector2(0.0f + (1.2f * count++), 0.0f);
+                abEvent.transform.localPosition = new Vector2(0.0f + 1.2f * count++, 0.0f);
             }
         }
     }

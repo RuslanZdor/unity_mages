@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using script;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ShieldObjectController : MonoBehaviour {
@@ -23,14 +24,14 @@ public class ShieldObjectController : MonoBehaviour {
         }
     }
 
-    void FixedUpdate() {
+    public void FixedUpdate() {
         if (healthSlider != null && person != null) {
             if (healthSlider.value != person.shield) {
                 if (healthSlider.value > person.shield) {
-                    GameObject damageIndicator = Instantiate(indicator, indicators.transform, false);
+                    var damageIndicator = Instantiate(indicator, indicators.transform, false);
                     damageIndicator.GetComponent<IndicatorController>().loseShield(healthSlider.value - person.shield);
                 } else {
-                    GameObject healIndicator = Instantiate(indicator, indicators.transform, false);
+                    var healIndicator = Instantiate(indicator, indicators.transform, false);
                     healIndicator.GetComponent<IndicatorController>().addShield(person.shield - healthSlider.value);
                 }
 

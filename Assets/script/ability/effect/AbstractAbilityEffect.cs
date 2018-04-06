@@ -1,7 +1,6 @@
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using script;
 
 public abstract class AbstractAbilityEffect : ICloneable{
 
@@ -12,7 +11,7 @@ public abstract class AbstractAbilityEffect : ICloneable{
 	public List<EffectAttribures> attribures = new List<EffectAttribures>();
 
 	public object Clone() {
-        AbstractAbilityEffect ae = (AbstractAbilityEffect) this.MemberwiseClone();
+        var ae = (AbstractAbilityEffect) MemberwiseClone();
         ae.attribures = new List<EffectAttribures>();
         ae.attribures.AddRange(attribures);
         return ae;

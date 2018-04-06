@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class SkillsController : GameScene, IListenerObject, CanReload {
 
     private GameObject heroTab;
     private GameObject heroList;
 
-    public GameObject heroImage;
-
     void Start() {
-        heroTab = transform.Find("HeroTab").gameObject;
-        heroList = transform.Find("HeroList").gameObject;
+        heroTab = transform.Find(InventoryController.INVENTORY_HERO_TAB).gameObject;
+        heroList = transform.Find(InventoryController.INVENTORY_HERO_LIST).gameObject;
 
         heroTab.GetComponent<HeroTabController>().isSkills = true;
 
@@ -20,7 +17,7 @@ public class SkillsController : GameScene, IListenerObject, CanReload {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.S) && !isFinished) {
+        if (Input.GetKeyDown(KeyCode.S)) {
             closeSkills();
         }
     }
@@ -32,8 +29,8 @@ public class SkillsController : GameScene, IListenerObject, CanReload {
 
     public void closeSkills() {
         generateMessage(new GameMessage(MessageType.SAVE_GAME));
-        generateMessage(new GameMessage(MessageType.CLOSE_SKILLS));
-        generateMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
+        navigation().closeActiveWindow();
+        navigation().openMainMenu();
     }
 
     public void readMessage(GameMessage message) {
@@ -44,7 +41,7 @@ public class SkillsController : GameScene, IListenerObject, CanReload {
             heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.selectedHeroes[0];
             reload();
         }
-        if (message.type == MessageType.CLOSE_SKILLS) {
+        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

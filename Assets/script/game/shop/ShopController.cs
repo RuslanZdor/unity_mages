@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class ShopController : GameScene, IListenerObject, CanReload {
 
@@ -14,7 +12,7 @@ public class ShopController : GameScene, IListenerObject, CanReload {
 
     void Start() {
         shopTab = transform.Find("ShopTab").gameObject;
-        heroTab = transform.Find("HeroTab").gameObject;
+        heroTab = transform.Find(InventoryController.INVENTORY_HERO_TAB).gameObject;
  
         disable();
         registerListener(this);
@@ -34,7 +32,7 @@ public class ShopController : GameScene, IListenerObject, CanReload {
 
     public void closeInventory() {
         navigation().saveGame();
-        navigation().closeShop();
+        navigation().closeActiveWindow();
         navigation().openMainMenu();
     }
 
@@ -43,7 +41,7 @@ public class ShopController : GameScene, IListenerObject, CanReload {
             enable();
             reload();
         }
-        if (message.type == MessageType.CLOSE_SHOP) {
+        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class AddShieldEvent : BasicTargetEvent {
 	public override float eventStart() {
         float value = target.addShield(ability);

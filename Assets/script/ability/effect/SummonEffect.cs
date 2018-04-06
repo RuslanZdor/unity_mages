@@ -1,5 +1,4 @@
-using UnityEngine;
-using System.Collections;
+using script;
 
 public class SummonEffect : AbstractAbilityEffect{
 
@@ -8,11 +7,11 @@ public class SummonEffect : AbstractAbilityEffect{
 
 	public override void applyEffect(Person owner, Person target, float startTime, Ability ab) {
 
-		Person clonePerson = (Person) person.Clone();
+		var clonePerson = (Person) person.Clone();
         clonePerson.summoner = owner;
         clonePerson.id = PersonFactory.getNextId();
 
-        SummonEvent e = new SummonEvent();
+        var e = new SummonEvent();
         e.owner = owner;
         e.target = target;
         e.person = clonePerson;
@@ -20,7 +19,7 @@ public class SummonEffect : AbstractAbilityEffect{
         EventQueueSingleton.queue.add(e);
 
         if (duration > 0) {
-            RemoveSummonEvent removeEvent = new RemoveSummonEvent();
+            var removeEvent = new RemoveSummonEvent();
             removeEvent.owner = owner;
             removeEvent.target = target;
             removeEvent.person = clonePerson;

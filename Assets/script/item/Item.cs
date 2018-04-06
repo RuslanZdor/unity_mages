@@ -1,7 +1,6 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using script;
+using UnityEngine;
 
 public class Item {
 	public List<AbstractModificator> modificatorList = new List<AbstractModificator>();
@@ -23,9 +22,8 @@ public class Item {
     public string resource;
 
     public AbstractAbilityEffect getUseItem() {
-        UseItemEffect useItem = new UseItemEffect();
-		useItem.item = this;
-        return useItem;
+	    var useItem = new UseItemEffect {item = this};
+	    return useItem;
     }
 
 	public virtual void init() {

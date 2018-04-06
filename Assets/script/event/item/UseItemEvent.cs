@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class UseItemEvent : BasicTargetEvent {
 
 	public Item item;

@@ -1,28 +1,33 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml;
+using script;
 using UnityEngine;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class XMLFactory {
 
     public static Item loadItem(string name) {
-        Object[] assetList = Resources.LoadAll(name);
+        var assetList = Resources.LoadAll(name);
         int randomIndex = Random.Range(0, assetList.Length);
-        TextAsset textAsset = (TextAsset)assetList[randomIndex];
+        var textAsset = (TextAsset)assetList[randomIndex];
 
-        XmlDocument xmldoc = new XmlDocument();
+        var xmldoc = new XmlDocument();
         xmldoc.LoadXml(textAsset.text);
-        XmlNode xmlItem = xmldoc.GetElementsByTagName("item").Item(0);
+        var xmlItem = xmldoc.GetElementsByTagName("item").Item(0);
 
-        Item item = new Item();
-        item.resource = name;
-        item.cost = System.Int32.Parse(xmlItem["cost"].InnerText);
-        item.maxDurability = System.Int32.Parse(xmlItem["durability"].InnerText);
-        item.name = xmlItem["name"].InnerText;
-        item.level = System.Int32.Parse(xmlItem["level"].InnerText);
-        item.image = Constants.loadSprite(xmlItem["sprite"].InnerText, xmlItem["image"].InnerText);
-        item.type = getItemType(xmlItem["type"].InnerText);
-        item.powerCost = System.Int32.Parse(xmlItem["powerCost"].InnerText);
-        item.powerCostPerLevel = System.Int32.Parse(xmlItem["powerCostPerLevel"].InnerText);
+        var item = new Item {
+            resource = name,
+            cost = int.Parse(xmlItem["cost"].InnerText),
+            maxDurability = int.Parse(xmlItem["durability"].InnerText),
+            name = xmlItem["name"].InnerText,
+            level = int.Parse(xmlItem["level"].InnerText),
+            image = Constants.loadSprite(xmlItem["sprite"].InnerText, xmlItem["image"].InnerText),
+            type = getItemType(xmlItem["type"].InnerText),
+            powerCost = int.Parse(xmlItem["powerCost"].InnerText),
+            powerCostPerLevel = int.Parse(xmlItem["powerCostPerLevel"].InnerText)
+        };
 
         item.modificatorList.AddRange(getModificators(xmlItem["modificators"]));
 
@@ -34,7 +39,7 @@ public class XMLFactory {
         }
 
         if (ItemType.WEAPON == item.type) {
-            Ability attack = new Ability();
+            var attack = new Ability();
             attack.setAbstractTactic(new DamageSpellCastTactic(2));
             attack.name = "Melee Attack by " + item.name;
             attack.abilityTactic.defaultPriority = 2;
@@ -54,79 +59,71 @@ public class XMLFactory {
     }
 
     private static ItemType getItemType(string name) {
-        if ("WEAPON".Equals(name)) {
-            return ItemType.WEAPON;
+        switch (name) {
+            case "WEAPON":
+                return ItemType.WEAPON;
+            case "SHIELD":
+                return ItemType.SHIELD;
+            case "ACTIVE_ITEM":
+                return ItemType.ACTIVE_ITEM;
         }
-        if ("SHIELD".Equals(name)) {
-            return ItemType.SHIELD;
-        }
-        if ("ACTIVE_ITEM".Equals(name)) {
-            return ItemType.ACTIVE_ITEM;
-        }
+
         return ItemType.ACTIVE_ITEM;
     }
 
     private static EffectAttribures getEffectAttribures(string name) {
-        if ("WATER".Equals(name)) {
-            return EffectAttribures.WATER;
+        switch (name) {
+            case "WATER":
+                return EffectAttribures.WATER;
+            case "FIRE":
+                return EffectAttribures.FIRE;
+            case "AIR":
+                return EffectAttribures.AIR;
+            case "EARTH":
+                return EffectAttribures.EARTH;
+            case "COLD":
+                return EffectAttribures.COLD;
+            case "ELECTRICITY":
+                return EffectAttribures.ELECTRICITY;
+            case "POISON":
+                return EffectAttribures.POISON;
+            case "DARK":
+                return EffectAttribures.DARK;
+            case "LIGHT":
+                return EffectAttribures.LIGHT;
+            case "PHYSICS":
+                return EffectAttribures.PHYSICS;
+            case "MELEE_ATTACK":
+                return EffectAttribures.MELEE_ATTACK;
+            case "ROW_DAMAGE":
+                return EffectAttribures.ROW_DAMAGE;
+            case "PIRCING_DAMAGE":
+                return EffectAttribures.PIRCING_DAMAGE;
         }
-        if ("FIRE".Equals(name)) {
-            return EffectAttribures.FIRE;
-        }
-        if ("AIR".Equals(name)) {
-            return EffectAttribures.AIR;
-        }
-        if ("EARTH".Equals(name)) {
-            return EffectAttribures.EARTH;
-        }
-        if ("COLD".Equals(name)) {
-            return EffectAttribures.COLD;
-        }
-        if ("ELECTRICITY".Equals(name)) {
-            return EffectAttribures.ELECTRICITY;
-        }
-        if ("POISON".Equals(name)) {
-            return EffectAttribures.POISON;
-        }
-        if ("DARK".Equals(name)) {
-            return EffectAttribures.DARK;
-        }
-        if ("LIGHT".Equals(name)) {
-            return EffectAttribures.LIGHT;
-        }
-        if ("PHYSICS".Equals(name)) {
-            return EffectAttribures.PHYSICS;
-        }
-        if ("MELEE_ATTACK".Equals(name)) {
-            return EffectAttribures.MELEE_ATTACK;
-        }
-        if ("ROW_DAMAGE".Equals(name)) {
-            return EffectAttribures.ROW_DAMAGE;
-        }
-        if ("PIRCING_DAMAGE".Equals(name)) {
-            return EffectAttribures.PIRCING_DAMAGE;
-        }
+
         return EffectAttribures.PHYSICS;
     }
 
     public static Person loadPerson(string name) {
-        TextAsset textAsset = (TextAsset)Resources.Load(name);
-        XmlDocument xmldoc = new XmlDocument();
+        var textAsset = (TextAsset)Resources.Load(name);
+        var xmldoc = new XmlDocument();
         xmldoc.LoadXml(textAsset.text);
-        XmlNode xmlPerson = xmldoc.GetElementsByTagName("person").Item(0);
+        var xmlPerson = xmldoc.GetElementsByTagName("person").Item(0);
 
-        Person person = new Person();
-        person.resource = name;
-        person.name = xmlPerson["name"].InnerText;
-        person.level = System.Int32.Parse(xmlPerson["level"].InnerText);
+        var person = new Person
+        {
+            resource = name,
+            name = xmlPerson["name"].InnerText,
+            level = int.Parse(xmlPerson["level"].InnerText),
+            powerCost = int.Parse(xmlPerson["powerCost"].InnerText),
+            powerCostPerLevel = int.Parse(xmlPerson["powerCostPerLevel"].InnerText),
+            basicHealth = int.Parse(xmlPerson["maxHealth"].InnerText),
+            basicMana = int.Parse(xmlPerson["maxMana"].InnerText),
+            numberParrallelCasts = int.Parse(xmlPerson["numberParrallelCasts"].InnerText),
+            personImage = xmlPerson["personImage"].InnerText,
+            personModel = xmlPerson["personModel"].InnerText
+        };
         person.setExpirience(int.Parse(xmlPerson["experience"].InnerText));
-        person.powerCost = System.Int32.Parse(xmlPerson["powerCost"].InnerText);
-        person.powerCostPerLevel = System.Int32.Parse(xmlPerson["powerCostPerLevel"].InnerText);
-        person.basicHealth = System.Int32.Parse(xmlPerson["maxHealth"].InnerText);
-        person.basicMana = System.Int32.Parse(xmlPerson["maxMana"].InnerText);
-        person.numberParrallelCasts = System.Int32.Parse(xmlPerson["numberParrallelCasts"].InnerText);
-        person.personImage = xmlPerson["personImage"].InnerText;
-        person.personModel = xmlPerson["personModel"].InnerText;
 
         foreach (XmlNode item in xmlPerson["items"]) {
             person.itemList.Add(loadItem(item.InnerText));
@@ -140,38 +137,40 @@ public class XMLFactory {
     }
 
     public static Ability loadAbility(string abilityLink) {
-        TextAsset textAsset = (TextAsset)Resources.Load(abilityLink);
-        XmlDocument xmldoc = new XmlDocument();
+        var textAsset = (TextAsset)Resources.Load(abilityLink);
+        var xmldoc = new XmlDocument();
         xmldoc.LoadXml(textAsset.text);
-        XmlNode xmlAbility = xmldoc.GetElementsByTagName("ability").Item(0);
+        var xmlAbility = xmldoc.GetElementsByTagName("ability").Item(0);
 
         Ability ability = null;
-        if ("basicAbility".Equals(xmlAbility["type"].InnerText)) {
-            ability = new Ability();
-            ability.setAbstractTactic(new DamageSpellCastTactic(3));
-        }
-        if ("summonAbility".Equals(xmlAbility["type"].InnerText)) {
-            Person summon = loadPerson(xmlAbility["summon"].InnerText);
-            SummonAbility summonAbility = new SummonAbility();
+        switch (xmlAbility["type"].InnerText) {
+            case "basicAbility":
+                ability = new Ability();
+                ability.setAbstractTactic(new DamageSpellCastTactic(3));
+                break;
+            case "summonAbility":
+                var summon = loadPerson(xmlAbility["summon"].InnerText);
+                var summonAbility = new SummonAbility();
 
-            SummonCastTactic tactic = new SummonCastTactic(3);
-            tactic.summon = summon;
+                var tactic = new SummonCastTactic(3);
+                tactic.summon = summon;
 
-            summonAbility.setAbstractTactic(tactic);
-            summonAbility.person = summon;
-            ability = summonAbility;
-        }
-        if ("buffAbility".Equals(xmlAbility["type"].InnerText)
-            || "passiveAbility".Equals(xmlAbility["type"].InnerText)) {
-            Buff buff = new Buff();
-            buff.setAbstractTactic(new DamageSpellCastTactic(3));
-            buff.modificator = getModificators(xmlAbility["modificators"])[0];
-            buff.duration = float.Parse(xmlAbility["duration"].InnerText);
-            ability = buff;
-        }
-        if ("activeBuff".Equals(xmlAbility["type"].InnerText)) {
-            ability = new ActiveBuff();
-            ability.setAbstractTactic(new DamageSpellCastTactic(3));
+                summonAbility.setAbstractTactic(tactic);
+                summonAbility.person = summon;
+                ability = summonAbility;
+                break;
+            case "buffAbility":
+            case "passiveAbility":
+                var buff = new Buff();
+                buff.setAbstractTactic(new DamageSpellCastTactic(3));
+                buff.modificator = getModificators(xmlAbility["modificators"])[0];
+                buff.duration = float.Parse(xmlAbility["duration"].InnerText);
+                ability = buff;
+                break;
+            case "activeBuff":
+                ability = new ActiveBuff();
+                ability.setAbstractTactic(new DamageSpellCastTactic(3));
+                break;
         }
 
         ability.name = xmlAbility["name"].InnerText;
@@ -193,36 +192,42 @@ public class XMLFactory {
 
     public static AbstractAbilityEffect getEffect(XmlNode xmlEffect, object obj) {
         AbstractAbilityEffect effect = null;
-        if ("DamageAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
-            effect = new DamageAbilityEffect();
+        switch (xmlEffect["type"].InnerText) {
+            case "DamageAbilityEffect":
+                effect = new DamageAbilityEffect();
+                break;
+            case "AddBuffEffect":
+            {
+                var buffEffect = new AddBuffEffect {buff = (Buff) obj};
+                effect = buffEffect;
+                break;
+            }
+            case "RowAddBuffEffect":
+            {
+                AddBuffEffect buffEffect = new RowAddBuffEffect();
+                buffEffect.buff = (Buff)obj;
+                effect = buffEffect;
+                break;
+            }
+            case "HealAbilityEffect":
+                effect = new HealAbilityEffect();
+                break;
+            case "SummonEffect":
+                var sumEffect = new SummonEffect();
+                sumEffect.person = ((SummonAbility)obj).person;
+                effect = sumEffect;
+                break;
+            case "UseItemEffect":
+                effect = new UseItemEffect();
+                break;
+            case "AddShieldAbilityEffect":
+                effect = new AddShieldAbilityEffect();
+                break;
+            case "RowAddShieldAbilityEffect":
+                effect = new RowAddShieldAbilityEffect();
+                break;
         }
-        if ("AddBuffEffect".Equals(xmlEffect["type"].InnerText)) {
-            AddBuffEffect buffEffect = new AddBuffEffect();
-            buffEffect.buff = (Buff) obj;
-            effect = buffEffect;
-        }
-        if ("RowAddBuffEffect".Equals(xmlEffect["type"].InnerText)) {
-            AddBuffEffect buffEffect = new RowAddBuffEffect();
-            buffEffect.buff = (Buff)obj;
-            effect = buffEffect;
-        }
-        if ("HealAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
-            effect = new HealAbilityEffect();
-        }
-        if ("SummonEffect".Equals(xmlEffect["type"].InnerText)) {
-            SummonEffect sumEffect = new SummonEffect();
-            sumEffect.person = ((SummonAbility)obj).person;
-            effect = sumEffect;
-        }
-        if ("UseItemEffect".Equals(xmlEffect["type"].InnerText)) {
-            effect = new UseItemEffect();
-        }
-        if ("AddShieldAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
-            effect = new AddShieldAbilityEffect();
-        }
-        if ("RowAddShieldAbilityEffect".Equals(xmlEffect["type"].InnerText)) {
-            effect = new RowAddShieldAbilityEffect();
-        }
+
         effect.targetsNumber = int.Parse(xmlEffect["targetsNumber"].InnerText);
         foreach (XmlNode attribute in xmlEffect["attributes"]) {
             effect.attribures.Add(getEffectAttribures(attribute.InnerText));
@@ -247,7 +252,7 @@ public class XMLFactory {
     }
 
     public static AbilityTargetType getTargetType(string name) {
-        AbilityTargetType att = AbilityTargetType.FRIEND;
+        var att = AbilityTargetType.FRIEND;
         if ("FRIEND".Equals(name)) {
             att = AbilityTargetType.FRIEND;
         }
@@ -278,7 +283,7 @@ public class XMLFactory {
     }
 
     public static List<AbstractModificator> getModificators(XmlNode modificators) {
-        List<AbstractModificator> list = new List<AbstractModificator>();
+        var list = new List<AbstractModificator>();
         foreach (XmlNode buff in modificators) {
             if ("CritChanceModificator".Equals(buff["type"].InnerText)) {
                 list.Add(new CritChanceModificator(float.Parse(buff["value"].InnerText)));
@@ -327,14 +332,14 @@ public class XMLFactory {
     }
 
     public static List<Ability> loadSkillSet(string link) {
-        List<Ability> result = new List<Ability>();
-        TextAsset textAsset = (TextAsset)Resources.Load(link);
-        XmlDocument xmldoc = new XmlDocument();
+        var result = new List<Ability>();
+        var textAsset = (TextAsset)Resources.Load(link);
+        var xmldoc = new XmlDocument();
         xmldoc.LoadXml(textAsset.text);
-        XmlNode xmlAbility = xmldoc.GetElementsByTagName("skillSet").Item(0);
+        var xmlAbility = xmldoc.GetElementsByTagName("skillSet").Item(0);
 
         foreach (XmlNode skill in xmlAbility) {
-            Ability ability = loadAbility(skill["ability"].InnerText);
+            var ability = loadAbility(skill["ability"].InnerText);
             ability.setRequiredLevel(int.Parse(skill["requiredLevel"].InnerText));
             ability.position = laodPosition(skill["position"]);
             ability.isActive = bool.Parse(skill["active"].InnerText);
@@ -346,9 +351,10 @@ public class XMLFactory {
     }
 
     public static Vector2 laodPosition(XmlNode xmlPosition) {
-        Vector2 position = new Vector2();
-        position.x = int.Parse(xmlPosition["x"].InnerText);
-        position.y = int.Parse(xmlPosition["y"].InnerText);
+        var position = new Vector2 {
+            x = int.Parse(xmlPosition["x"].InnerText),
+            y = int.Parse(xmlPosition["y"].InnerText)
+        };
         return position;
     }
 }

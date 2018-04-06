@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using script;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ActiveHeroesController : MonoBehaviour, IListenerObject {
@@ -12,28 +10,28 @@ public class ActiveHeroesController : MonoBehaviour, IListenerObject {
     public GameObject position;
     public GameObject emptyPlace;
 
-    private bool isFinish = false;
+    private bool isFinish;
 
     public void Start() {
-        GameObject.Find("MessageController").GetComponent<MessageController>().addListener(this);
+        GameObject.Find(Constants.MESSAGE_CONTROLLER_OBJECT).GetComponent<MessageController>().addListener(this);
     }
 
     public void reload() {
         preparePlaces();
 
-        foreach (Person p in PartiesSingleton.selectedHeroes.FindAll((Person p) => p.isActive)) {
+        foreach (var p in PartiesSingleton.selectedHeroes.FindAll(p => p.isActive)) {
             if (p.place.x < 1 || p.place.y < 1) {
                 p.place = PartiesSingleton.generatePlace();
             }
-            GameObject himage = Instantiate(heroImage, transform.Find("position" + p.place.x + p.place.y), false);
+            var himage = Instantiate(heroImage, transform.Find("position" + p.place.x + p.place.y), false);
             himage.transform.Find("HeroImage").gameObject.GetComponent<HeroImageController>().person = p;
 
             if (p.Equals(person)) {
-                himage.transform.Find("Background").GetComponent<Image>().color = 
-                    new Color(((float)24 / 256), ((float)252 / 256), ((float)39 / 256), ((float)157 / 256));
+                himage.transform.Find(Constants.BACKGROUND).GetComponent<Image>().color = 
+                    new Color((float)24 / 256, (float)252 / 256, (float)39 / 256, (float)157 / 256);
             }else {
-                himage.transform.Find("Background").GetComponent<Image>().color = 
-                    new Color(((float)148 / 256), ((float)252 / 256), ((float)155 / 256), ((float)157 / 256));
+                himage.transform.Find(Constants.BACKGROUND).GetComponent<Image>().color = 
+                    new Color((float)148 / 256, (float)252 / 256, (float)155 / 256, (float)157 / 256);
             }
         }
     }
@@ -56,7 +54,7 @@ public class ActiveHeroesController : MonoBehaviour, IListenerObject {
         foreach (Transform child in transform) {
             if (child.name.Contains("position")) {
                 foreach (Transform childPosition in child) {
-                    GameObject.Destroy(childPosition.gameObject);
+                    Destroy(childPosition.gameObject);
                 }
             }
         }
@@ -64,7 +62,7 @@ public class ActiveHeroesController : MonoBehaviour, IListenerObject {
         if (!isFinish) { 
             for (int x = 1; x < 3; x++) {
                 for (int y = 1; y < 4; y++) {
-                    GameObject empty = Instantiate(position, transform, false);
+                    var empty = Instantiate(position, transform, false);
                     empty.name = "position" + x + y;
                     empty.transform.localPosition = new Vector2(3.4f - 2.2f * x, -4.4f + 2.2f * y);
                 }
@@ -73,7 +71,7 @@ public class ActiveHeroesController : MonoBehaviour, IListenerObject {
         }
         for (int x = 1; x < 3; x++) {
             for (int y = 1; y < 4; y++) {
-                GameObject empty = Instantiate(emptyPlace, transform.Find("position" + x + y), false);
+                var empty = Instantiate(emptyPlace, transform.Find("position" + x + y), false);
                 empty.transform.Find("Image").GetComponent<EmptyPositionController>().place = new Vector2(x, y);
                 empty.transform.Find("Image").GetComponent<EmptyPositionController>().heroStatus = true;
             }

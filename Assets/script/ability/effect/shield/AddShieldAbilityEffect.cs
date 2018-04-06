@@ -1,13 +1,12 @@
-using UnityEngine;
-using System.Collections;
+using script;
 
 public class AddShieldAbilityEffect : AbstractAbilityEffect {
 
 	public override void applyEffect(Person owner, Person target, float startTime, Ability ab) {
         BasicTargetEvent e = new AddShieldEvent();
 
-        base.value = valueGenerator.getValue();
-        Ability ability = new Ability();
+        value = valueGenerator.getValue();
+        var ability = new Ability();
         ability.setAbstractTactic(new MeleeAttackTactic());
 		ability.effectList.Add(this);
 

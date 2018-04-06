@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class BlockChanceModificator : AbstractModificator{
 
@@ -14,9 +13,9 @@ public class BlockChanceModificator : AbstractModificator{
         if (chance > 0)  {
 			if (Random.Range(0, 100) <= chance) {
 				ability.effectList.FindAll(
-                        (AbstractAbilityEffect effect) =>
+                        effect =>
                         !effect.attribures.Contains(EffectAttribures.BLOCK))
-                    .ForEach((AbstractAbilityEffect effect) => {
+                    .ForEach(effect => {
                         effect.value = effect.value / 2;
                         effect.attribures.Add(EffectAttribures.BLOCK);
                 });

@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UserAbilityController : MonoBehaviour, IPointerClickHandler {
 
     public Ability ability;
 
     private Text count;
-    private bool isDisable = false;
+    private bool isDisable;
 
     public void Start() {
         count = transform.Find("Count/Text").GetComponent<Text>();
@@ -32,7 +30,7 @@ public class UserAbilityController : MonoBehaviour, IPointerClickHandler {
 
     public void disable() {
         transform.Find("Count").gameObject.SetActive(false);
-        transform.GetComponent<Image>().color = new Color(((float)50 / 255), ((float)50 / 255), ((float)50 / 255), 1);
+        transform.GetComponent<Image>().color = new Color((float)50 / 255, (float)50 / 255, (float)50 / 255, 1);
         isDisable = true;
     }
 }

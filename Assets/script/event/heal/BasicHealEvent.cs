@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class BasicHealEvent : BasicTargetEvent {
 	public override float eventStart() {
         float value = target.heal(ability);

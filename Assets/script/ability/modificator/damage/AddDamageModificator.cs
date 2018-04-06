@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class AddDamageModificator : AbstractModificator {
 
     public AbstractAbilityEffect effect;
@@ -12,12 +9,12 @@ public class AddDamageModificator : AbstractModificator {
 
     public override void updateMakingDamage(Ability ability) {
         if (!ability.hasAttribute(EffectAttribures.AUTO_GENERATED)) {
-            BasicDamageEvent e = new BasicDamageEvent();
-            Ability ab = new Ability();
+            var e = new BasicDamageEvent();
+            var ab = new Ability();
             ab.name = "addition damage";
             ab.setAbstractTactic(new MeleeAttackTactic());
 
-            AbstractAbilityEffect dae = (AbstractAbilityEffect) effect.Clone();
+            var dae = (AbstractAbilityEffect) effect.Clone();
             dae.value = effect.valueGenerator.getValue();
             ab.effectList.Add(dae);
             ab.animationTime = 0.0f;

@@ -1,15 +1,16 @@
 using System.Collections.Generic;
+using script;
 
 public class EventQueue {
 	public List<Event> events = new List<Event>();
 	public float nextEventTime;
     public float realTime;
 
-    public bool fastFight = false;
+    public bool fastFight;
 
     public string startEvent(float time) {
         if (realTime <= time || fastFight) {
-            Event e = events[0];
+            var e = events[0];
             events.RemoveAt(0);
             float delta = e.eventStart();
             nextEventTime += delta;
@@ -33,7 +34,7 @@ public class EventQueue {
     }
 
 	public void removePersonEvents(Person person) {
-		events.RemoveAll((Event e) => e.owner.id == person.id);
+		events.RemoveAll(e => e.owner.id == person.id);
     }
 
     public void startFastFight() {

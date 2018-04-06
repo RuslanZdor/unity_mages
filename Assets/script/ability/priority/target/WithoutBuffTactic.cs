@@ -1,6 +1,5 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using script;
 
 public class WithoutBuffTactic : AbstractTargetTactic {
 
@@ -11,14 +10,13 @@ public class WithoutBuffTactic : AbstractTargetTactic {
     }
 
 	public override List<Person> getTargets(Party party, int count, Ability ability) {
-        List<Person> list = party.getLivePersons();
-		list.RemoveAll((Person person) => person.hasEffect(buff));
+        var list = party.getLivePersons();
+		list.RemoveAll(person => person.hasEffect(buff));
 
 		if (count >= list.Count) {
             return list;
-        }else {
-            shuffle(list);
-			return list.GetRange(0, count);
         }
-    }
+	    shuffle(list);
+	    return list.GetRange(0, count);
+	}
 }

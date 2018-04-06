@@ -1,9 +1,7 @@
-using UnityEngine;
-using System.Collections;
-
 public class ActiveBuff : Buff {
 
-	public ActiveBuff() : base() {
+	public ActiveBuff()
+	{
         animationTime = 0.0f;
     }
 

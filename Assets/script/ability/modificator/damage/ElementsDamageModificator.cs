@@ -1,6 +1,3 @@
-using UnityEngine;
-using System.Collections;
-
 public class ElementsDamageModificator : AbstractModificator{
 
     public EffectAttribures value;
@@ -10,8 +7,8 @@ public class ElementsDamageModificator : AbstractModificator{
     }
 
 	public override void updateGettingDamage(Ability ability) {
-		ability.effectList.ForEach((AbstractAbilityEffect effect) => {
-			foreach (EffectAttribures attr in effect.attribures) {
+		ability.effectList.ForEach(effect => {
+			foreach (var attr in effect.attribures) {
                  effect.value = (int) (effect.value * ElementalMiultiplicators.getMultiplicator(attr, value));
              }
          });

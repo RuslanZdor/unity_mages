@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using script;
+using script.game;
+using UnityEngine;
 
 public class GameScene : MonoBehaviour{
 
@@ -8,20 +10,16 @@ public class GameScene : MonoBehaviour{
 
     public string background;
 
-    public bool isFinishedOrHidded() {
-        return isFinished || isHided;
-    }
-
     public void generateMessage(GameMessage gm) {
-        GameObject.Find("MessageController").GetComponent<MessageController>().addMessage(gm);
+        GameObject.Find(Constants.MESSAGE_CONTROLLER_OBJECT).GetComponent<MessageController>().addMessage(gm);
     }
 
     public void registerListener(IListenerObject listener) {
-        GameObject.Find("MessageController").GetComponent<MessageController>().addListener(listener);
+        GameObject.Find(Constants.MESSAGE_CONTROLLER_OBJECT).GetComponent<MessageController>().addListener(listener);
     }
 
     public NavigationController navigation() {
-        return GameObject.Find("Navigation").GetComponent<NavigationController>();
+        return GameObject.Find(Constants.NAVIGATION_OBJECT).GetComponent<NavigationController>();
     }
 
     public void enable() {

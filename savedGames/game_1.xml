@@ -1,1 +1,35 @@
-<savedGame><userName>ruslan</userName><gold>200</gold><time>01:32:44</time><inventory><item>configs/items/weapons/mage_stuff</item><item>configs/items/weapons/troll_mace</item><item>configs/items/weapons/mage_stuff</item><item>configs/items/weapons/troll_mace</item></inventory><persons><person><type>configs/monsters/heroes/mage</type><name>Fire Mage</name><experience>4800</experience><level>12</level><isActive>True</isActive><position><x>1</x><y>2</y></position><items><item>configs/items/weapons/mage_stuff</item><item>configs/items/shields/shield</item></items><activeAbilities><ability>configs/abilities/fire/damage/fire_ball</ability><ability>configs/abilities/fire/passive/inner_fire</ability><ability>configs/abilities/fire/damage/fire_wall</ability></activeAbilities></person></persons></savedGame>
+<savedGame>
+	<userName>ruslan</userName>
+	<gold>200</gold>
+	<time>01:33:42</time>
+	<Inventory>
+		<item>configs/items/weapons/mage_stuff</item>
+		<item>configs/items/weapons/troll_mace</item>
+		<item>configs/items/weapons/mage_stuff</item>
+		<item>configs/items/weapons/troll_mace</item>
+	</Inventory>
+	<persons>
+		<person>
+			<type>configs/monsters/heroes/mage</type>
+			<name>Fire Mage</name>
+			<experience>4800</experience>
+			<level>12</level>
+			<isActive>True</isActive>
+			<position>
+				<x>1</x>
+				<y>2</y>
+			</position>
+			<items>
+				<leftItem>configs/items/weapons/mage_stuff</leftItem>
+				<rightItem>configs/items/shields/shield</rightItem>
+				<armor></armor>
+				<activeItem></activeItem>
+			</items>
+			<activeAbilities>
+				<ability>configs/abilities/fire/damage/fire_ball</ability>
+				<ability>configs/abilities/fire/passive/inner_fire</ability>
+				<ability>configs/abilities/fire/damage/fire_wall</ability>
+			</activeAbilities>
+		</person>
+	</persons>
+</savedGame>

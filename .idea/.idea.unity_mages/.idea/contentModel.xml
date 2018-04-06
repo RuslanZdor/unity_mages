@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\ruslan_zdor\git\unity_mages" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Resources" t="Include">
+          <e p="configs" t="Include">
+            <e p="abilities" t="Include">
+              <e p="buff" t="Include">
+                <e p="weekness.xml" t="Include" />
+              </e>
+              <e p="electricity" t="Include">
+                <e p="buff" t="Include">
+                  <e p="force_shield.xml" t="Include" />
+                  <e p="mass_shield.xml" t="Include" />
+                </e>
+                <e p="damage" t="Include">
+                  <e p="electricity_strike.xml" t="Include" />
+                  <e p="twin_lighting.xml" t="Include" />
+                </e>
+                <e p="passive" t="Include">
+                  <e p="crit_chance.xml" t="Include" />
+                  <e p="getting_more_shield.xml" t="Include" />
+                  <e p="making_more_shield.xml" t="Include" />
+                  <e p="shield_regeneration.xml" t="Include" />
+                </e>
+              </e>
+              <e p="fire" t="Include">
+                <e p="buff" t="Include">
+                  <e p="aoe_buff.xml" t="Include" />
+                  <e p="fire_power.xml" t="Include" />
+                </e>
+                <e p="damage" t="Include">
+                  <e p="fire_ball.xml" t="Include" />
+                  <e p="fire_wall.xml" t="Include" />
+                </e>
+                <e p="passive" t="Include">
+                  <e p="fire_shield.xml" t="Include" />
+                  <e p="incandescent_armor.xml" t="Include" />
+                  <e p="inner_fire.xml" t="Include" />
+                  <e p="long_fire.xml" t="Include" />
+                  <e p="small_regeneration.xml" t="Include" />
+                </e>
+              </e>
+              <e p="heal" t="Include">
+                <e p="healwave.xml" t="Include" />
+              </e>
+              <e p="light" t="Include">
+                <e p="buff" t="Include">
+                  <e p="saint_weapon.xml" t="Include" />
+                </e>
+                <e p="damage" t="Include">
+                  <e p="mark_evil.xml" t="Include" />
+                </e>
+                <e p="heal" t="Include">
+                  <e p="heal.xml" t="Include" />
+                  <e p="shield_of_god.xml" t="Include" />
+                </e>
+                <e p="passive" t="Include">
+                  <e p="god_protection.xml" t="Include" />
+                  <e p="help_of_god.xml" t="Include" />
+                  <e p="power_of_word.xml" t="Include" />
+                  <e p="saint_armor.xml" t="Include" />
+                  <e p="true_faith.xml" t="Include" />
+                </e>
+              </e>
+              <e p="passive" t="Include">
+                <e p="elemental" t="Include">
+                  <e p="AirElemental.xml" t="Include" />
+                  <e p="ColdElemental.xml" t="Include" />
+                  <e p="DarkElemental.xml" t="Include" />
+                  <e p="EarthElemental.xml" t="Include" />
+                  <e p="ElectricityElemental.xml" t="Include" />
+                  <e p="FireElemental.xml" t="Include" />
+                  <e p="LightElemental.xml" t="Include" />
+                  <e p="PhysicElemental.xml" t="Include" />
+                  <e p="PoisonElemental.xml" t="Include" />
+                  <e p="WaterElemental.xml" t="Include" />
+                </e>
+                <e p="small_regeneration.xml" t="Include" />
+              </e>
+              <e p="summon" t="Include">
+                <e p="summon_golem.xml" t="Include" />
+              </e>
+            </e>
+            <e p="items" t="Include">
+              <e p="activeGems" t="Include">
+                <e p="fire_gem.xml" t="Include" />
+                <e p="heal_gem.xml" t="Include" />
+              </e>
+              <e p="shields" t="Include">
+                <e p="shield.xml" t="Include" />
+                <e p="wood_shield.xml" t="Include" />
+              </e>
+              <e p="weapons" t="Include">
+                <e p="axe.xml" t="Include" />
+                <e p="mage_stuff.xml" t="Include" />
+                <e p="sword.xml" t="Include" />
+                <e p="troll_mace.xml" t="Include" />
+              </e>
+            </e>
+            <e p="maps" t="Include">
+              <e p="first.xml" t="Include" />
+              <e p="templates" t="Include">
+                <e p="bigArmyFight.xml" t="Include" />
+                <e p="longRoadToBoss.xml" t="Include" />
+                <e p="smallArmyFight.xml" t="Include" />
+                <e p="smallRoadToBoss.xml" t="Include" />
+              </e>
+            </e>
+            <e p="monsters" t="Include">
+              <e p="golems" t="Include">
+                <e p="golem.xml" t="Include" />
+              </e>
+              <e p="heroes" t="Include">
+                <e p="mage.xml" t="Include" />
+              </e>
+              <e p="trolls" t="Include">
+                <e p="fastTroll.xml" t="Include" />
+                <e p="heavyTroll.xml" t="Include" />
+                <e p="trollSummoner.xml" t="Include" />
+              </e>
+            </e>
+            <e p="skillSet" t="Include">
+              <e p="heroes" t="Include">
+                <e p="electricity_mage.xml" t="Include" />
+                <e p="fire_mage.xml" t="Include" />
+                <e p="light_mage.xml" t="Include" />
+              </e>
+              <e p="trolls" t="Include">
+                <e p="basic_troll.xml" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="script" t="Include">
+          <e p="ability" t="Include">
+            <e p="Ability.cs" t="Include" />
+            <e p="abilityImp" t="Include">
+              <e p="MeleeAttack.cs" t="Include" />
+              <e p="SummonGolem.cs" t="Include" />
+            </e>
+            <e p="AbilityTargetType.cs" t="Include" />
+            <e p="ActiveBuff.cs" t="Include" />
+            <e p="Buff.cs" t="Include" />
+            <e p="effect" t="Include">
+              <e p="AbstractAbilityEffect.cs" t="Include" />
+              <e p="buff" t="Include">
+                <e p="AddBuffEffect.cs" t="Include" />
+                <e p="RowAddBuffEffect.cs" t="Include" />
+              </e>
+              <e p="damage" t="Include">
+                <e p="DamageAbilityEffect.cs" t="Include" />
+              </e>
+              <e p="EffectAttribures.cs" t="Include" />
+              <e p="ElementalMiultiplicators.cs" t="Include" />
+              <e p="HealAbilityEffect.cs" t="Include" />
+              <e p="shield" t="Include">
+                <e p="AddShieldAbilityEffect.cs" t="Include" />
+                <e p="RowAddShieldAbilityEffect.cs" t="Include" />
+              </e>
+              <e p="SummonEffect.cs" t="Include" />
+              <e p="UseItemEffect.cs" t="Include" />
+            </e>
+            <e p="modificator" t="Include">
+              <e p="AbstractModificator.cs" t="Include" />
+              <e p="buff" t="Include">
+                <e p="BuffDurationModificator.cs" t="Include" />
+              </e>
+              <e p="damage" t="Include">
+                <e p="AddDamageModificator.cs" t="Include" />
+                <e p="BlockChanceModificator.cs" t="Include" />
+                <e p="CritChanceModificator.cs" t="Include" />
+                <e p="DodgeChanceModificator.cs" t="Include" />
+                <e p="ElementsDamageModificator.cs" t="Include" />
+                <e p="GettingDamageModificator.cs" t="Include" />
+                <e p="IncreaseDamageModificator.cs" t="Include" />
+                <e p="IncreaseMeleeDamageModificator.cs" t="Include" />
+                <e p="ReturnDamageModificator.cs" t="Include" />
+              </e>
+              <e p="heal" t="Include">
+                <e p="IncreaseGettingHealModificator.cs" t="Include" />
+                <e p="IncreaseMakingHealModificator.cs" t="Include" />
+              </e>
+              <e p="shield" t="Include">
+                <e p="IncreaseGettingShieldModificator.cs" t="Include" />
+                <e p="IncreaseMakingShieldModificator.cs" t="Include" />
+              </e>
+            </e>
+            <e p="priority" t="Include">
+              <e p="spellPriorty" t="Include">
+                <e p="AbstractTactic.cs" t="Include" />
+                <e p="DamageSpellCastTactic.cs" t="Include" />
+                <e p="HealSpellCastTactic.cs" t="Include" />
+                <e p="MeleeAttackTactic.cs" t="Include" />
+                <e p="SummonCastTactic.cs" t="Include" />
+              </e>
+              <e p="target" t="Include">
+                <e p="AbstractTargetTactic.cs" t="Include" />
+                <e p="AllPartyTargetTactic.cs" t="Include" />
+                <e p="DamagedTargetTactic.cs" t="Include" />
+                <e p="ItselfTargetTactic.cs" t="Include" />
+                <e p="RandomTargetTactic.cs" t="Include" />
+                <e p="WithoutBuffTactic.cs" t="Include" />
+              </e>
+            </e>
+            <e p="SummonAbility.cs" t="Include" />
+            <e p="value" t="Include">
+              <e p="AbstractValueGenerator.cs" t="Include" />
+              <e p="ConstantValueGenerator.cs" t="Include" />
+              <e p="RangeValueGenerator.cs" t="Include" />
+            </e>
+          </e>
+          <e p="ActiveInventory.cs" t="Include" />
+          <e p="AnimatorConstants.cs" t="Include" />
+          <e p="Constants.cs" t="Include" />
+          <e p="event" t="Include">
+            <e p="BasicTargetEvent.cs" t="Include" />
+            <e p="buff" t="Include">
+              <e p="AddBuffEvent.cs" t="Include" />
+              <e p="RemoveBuffEvent.cs" t="Include" />
+            </e>
+            <e p="CooldownEvent.cs" t="Include" />
+            <e p="damage" t="Include">
+              <e p="BasicDamageEvent.cs" t="Include" />
+            </e>
+            <e p="Event.cs" t="Include" />
+            <e p="EventQueue.cs" t="Include" />
+            <e p="EventQueueSingleton.cs" t="Include" />
+            <e p="GenerateAbilityEvent.cs" t="Include" />
+            <e p="heal" t="Include">
+              <e p="BasicHealEvent.cs" t="Include" />
+            </e>
+            <e p="item" t="Include">
+              <e p="DestroyItemEvent.cs" t="Include" />
+              <e p="UseItemEvent.cs" t="Include" />
+            </e>
+            <e p="shield" t="Include">
+              <e p="AddShieldEvent.cs" t="Include" />
+            </e>
+            <e p="summon" t="Include">
+              <e p="RemoveSummonEvent.cs" t="Include" />
+              <e p="SummonEvent.cs" t="Include" />
+            </e>
+          </e>
+          <e p="factory" t="Include">
+            <e p="AbstractFactory.cs" t="Include" />
+            <e p="MapFactory.cs" t="Include" />
+            <e p="MapPointType.cs" t="Include" />
+            <e p="PersonFactory.cs" t="Include" />
+          </e>
+          <e p="game" t="Include">
+            <e p="CanReload.cs" t="Include" />
+            <e p="dialog" t="Include">
+              <e p="DialogController.cs" t="Include" />
+              <e p="DialogMessage.cs" t="Include" />
+              <e p="DialogMessagePosition.cs" t="Include" />
+            </e>
+            <e p="fight" t="Include">
+              <e p="AbilityEventController.cs" t="Include" />
+              <e p="FightResultController.cs" t="Include" />
+              <e p="FightStartController.cs" t="Include" />
+              <e p="UserAbilityController.cs" t="Include" />
+            </e>
+            <e p="GameController.cs" t="Include" />
+            <e p="GameScene.cs" t="Include" />
+            <e p="HasPerson.cs" t="Include" />
+            <e p="inventory" t="Include">
+              <e p="HeroItemController.cs" t="Include" />
+              <e p="HeroItemsController.cs" t="Include" />
+              <e p="HeroListController.cs" t="Include" />
+              <e p="HeroTabController.cs" t="Include" />
+              <e p="InventoryController.cs" t="Include" />
+              <e p="SkillController.cs" t="Include" />
+              <e p="SkillsController.cs" t="Include" />
+            </e>
+            <e p="load" t="Include">
+              <e p="LoadGameController.cs" t="Include" />
+            </e>
+            <e p="mainMenu" t="Include">
+              <e p="MainMenuController.cs" t="Include" />
+            </e>
+            <e p="map" t="Include">
+              <e p="MapController.cs" t="Include" />
+              <e p="MapPoint.cs" t="Include" />
+              <e p="MapPointController.cs" t="Include" />
+              <e p="MissionMap.cs" t="Include" />
+            </e>
+            <e p="missionResult" t="Include">
+              <e p="MissionResultController.cs" t="Include" />
+            </e>
+            <e p="NavigationController.cs" t="Include" />
+            <e p="PersonBehavior.cs" t="Include" />
+            <e p="positions" t="Include">
+              <e p="ActiveHeroesController.cs" t="Include" />
+              <e p="EmptyPositionController.cs" t="Include" />
+              <e p="HeroImageController.cs" t="Include" />
+              <e p="PositionsController.cs" t="Include" />
+              <e p="WaitingHeroesController.cs" t="Include" />
+            </e>
+            <e p="shop" t="Include">
+              <e p="AbstractSideController.cs" t="Include" />
+              <e p="SellButtonController.cs" t="Include" />
+              <e p="Shop.cs" t="Include" />
+              <e p="ShopController.cs" t="Include" />
+              <e p="ShopHeroSideController.cs" t="Include" />
+              <e p="ShopItemController.cs" t="Include" />
+              <e p="ShopSideController.cs" t="Include" />
+            </e>
+            <e p="startNewGame" t="Include">
+              <e p="StartNewGameController.cs" t="Include" />
+            </e>
+          </e>
+          <e p="interface" t="Include">
+            <e p="BuffController.cs" t="Include" />
+            <e p="HealthObjectController.cs" t="Include" />
+            <e p="IndicatorController.cs" t="Include" />
+            <e p="ManaObjectController.cs" t="Include" />
+            <e p="ShieldObjectController.cs" t="Include" />
+          </e>
+          <e p="item" t="Include">
+            <e p="Item.cs" t="Include" />
+            <e p="ItemType.cs" t="Include" />
+          </e>
+          <e p="party" t="Include">
+            <e p="PartiesSingleton.cs" t="Include" />
+            <e p="Party.cs" t="Include" />
+          </e>
+          <e p="Person.cs" t="Include" />
+          <e p="PersonController.cs" t="Include" />
+          <e p="PersonStatistics.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="system" t="Include">
+            <e p="ComunicationObject.cs" t="Include" />
+            <e p="CSVLogger.cs" t="Include" />
+            <e p="GameMessage.cs" t="Include" />
+            <e p="MessageController.cs" t="Include" />
+            <e p="MessageType.cs" t="Include" />
+            <e p="XMLFactory.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="unity_mages.sln" t="IncludeFlat" />
+    </e>
+    <e p="C:\Users\ruslan_zdor\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_unity_mages.1105682084.00" t="ExcludeRecursive" />
+  </component>
+</project>

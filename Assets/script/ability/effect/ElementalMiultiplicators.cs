@@ -1,12 +1,10 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class ElementalMiultiplicators {
 	public static Dictionary<EffectAttribures, Dictionary<EffectAttribures, float>> multiplicators = new Dictionary<EffectAttribures, Dictionary<EffectAttribures, float>>();
     
 	static ElementalMiultiplicators() {
-		Dictionary<EffectAttribures, float> waterMultiplicators = new Dictionary<EffectAttribures, float>();
+		var waterMultiplicators = new Dictionary<EffectAttribures, float>();
 		waterMultiplicators.Add(EffectAttribures.WATER, 1.0f);
         waterMultiplicators.Add(EffectAttribures.FIRE, 2.0f);
         waterMultiplicators.Add(EffectAttribures.AIR, 0.5f);
@@ -19,7 +17,7 @@ public class ElementalMiultiplicators {
         waterMultiplicators.Add(EffectAttribures.PHYSICS, 1.0f);
         multiplicators.Add(EffectAttribures.WATER, waterMultiplicators);
 
-        Dictionary<EffectAttribures, float> fireMultiplicators = new Dictionary<EffectAttribures, float>();
+        var fireMultiplicators = new Dictionary<EffectAttribures, float>();
         fireMultiplicators.Add(EffectAttribures.WATER, 0.5f);
         fireMultiplicators.Add(EffectAttribures.FIRE, 1.0f);
         fireMultiplicators.Add(EffectAttribures.AIR, 0.5f);
@@ -32,7 +30,7 @@ public class ElementalMiultiplicators {
         fireMultiplicators.Add(EffectAttribures.PHYSICS, 2.0f);
         multiplicators.Add(EffectAttribures.FIRE, fireMultiplicators);
 
-        Dictionary<EffectAttribures, float> airMultiplicators = new Dictionary<EffectAttribures, float>();
+        var airMultiplicators = new Dictionary<EffectAttribures, float>();
         airMultiplicators.Add(EffectAttribures.WATER, 2.0f);
         airMultiplicators.Add(EffectAttribures.FIRE, 2.0f);
         airMultiplicators.Add(EffectAttribures.AIR, 1.0f);
@@ -45,7 +43,7 @@ public class ElementalMiultiplicators {
         airMultiplicators.Add(EffectAttribures.PHYSICS, 1.0f);
         multiplicators.Add(EffectAttribures.AIR, airMultiplicators);
 
-        Dictionary<EffectAttribures, float> earthMultiplicators = new Dictionary<EffectAttribures, float>();
+        var earthMultiplicators = new Dictionary<EffectAttribures, float>();
         earthMultiplicators.Add(EffectAttribures.WATER, 0.5f);
         earthMultiplicators.Add(EffectAttribures.FIRE, 1.0f);
         earthMultiplicators.Add(EffectAttribures.AIR, 0.5f);
@@ -58,7 +56,7 @@ public class ElementalMiultiplicators {
         earthMultiplicators.Add(EffectAttribures.PHYSICS, 2.0f);
         multiplicators.Add(EffectAttribures.EARTH, earthMultiplicators);
 
-        Dictionary<EffectAttribures, float> electricityMultiplicators = new Dictionary<EffectAttribures, float>();
+        var electricityMultiplicators = new Dictionary<EffectAttribures, float>();
         electricityMultiplicators.Add(EffectAttribures.WATER, 2.0f);
         electricityMultiplicators.Add(EffectAttribures.FIRE, 1.0f);
         electricityMultiplicators.Add(EffectAttribures.AIR, 2.0f);
@@ -71,7 +69,7 @@ public class ElementalMiultiplicators {
         electricityMultiplicators.Add(EffectAttribures.PHYSICS, 0.5f);
         multiplicators.Add(EffectAttribures.ELECTRICITY, electricityMultiplicators);
 
-        Dictionary<EffectAttribures, float> coldMultiplicators = new Dictionary<EffectAttribures, float>();
+        var coldMultiplicators = new Dictionary<EffectAttribures, float>();
         coldMultiplicators.Add(EffectAttribures.WATER, 2.0f);
         coldMultiplicators.Add(EffectAttribures.FIRE, 0.5f);
         coldMultiplicators.Add(EffectAttribures.AIR, 2.0f);
@@ -84,7 +82,7 @@ public class ElementalMiultiplicators {
         coldMultiplicators.Add(EffectAttribures.PHYSICS, 0.5f);
         multiplicators.Add(EffectAttribures.COLD, coldMultiplicators);
 
-        Dictionary<EffectAttribures, float> poisonMultiplicators = new Dictionary<EffectAttribures, float>();
+        var poisonMultiplicators = new Dictionary<EffectAttribures, float>();
         poisonMultiplicators.Add(EffectAttribures.WATER, 0.5f);
         poisonMultiplicators.Add(EffectAttribures.FIRE, 2.0f);
         poisonMultiplicators.Add(EffectAttribures.AIR, 2.0f);
@@ -97,7 +95,7 @@ public class ElementalMiultiplicators {
         poisonMultiplicators.Add(EffectAttribures.PHYSICS, 2.0f);
         multiplicators.Add(EffectAttribures.POISON, poisonMultiplicators);
 
-        Dictionary<EffectAttribures, float> darkMultiplicators = new Dictionary<EffectAttribures, float>();
+        var darkMultiplicators = new Dictionary<EffectAttribures, float>();
         darkMultiplicators.Add(EffectAttribures.WATER, 1.0f);
         darkMultiplicators.Add(EffectAttribures.FIRE, 0.5f);
         darkMultiplicators.Add(EffectAttribures.AIR, 1.0f);
@@ -110,7 +108,7 @@ public class ElementalMiultiplicators {
         darkMultiplicators.Add(EffectAttribures.PHYSICS, 2.0f);
         multiplicators.Add(EffectAttribures.DARK, darkMultiplicators);
 
-        Dictionary<EffectAttribures, float> lightMultiplicators = new Dictionary<EffectAttribures, float>();
+        var lightMultiplicators = new Dictionary<EffectAttribures, float>();
         lightMultiplicators.Add(EffectAttribures.WATER, 1.0f);
         lightMultiplicators.Add(EffectAttribures.FIRE, 0.5f);
         lightMultiplicators.Add(EffectAttribures.AIR, 1.0f);
@@ -123,7 +121,7 @@ public class ElementalMiultiplicators {
         lightMultiplicators.Add(EffectAttribures.PHYSICS, 1.0f);
         multiplicators.Add(EffectAttribures.LIGHT, lightMultiplicators);
 
-        Dictionary<EffectAttribures, float> physicsMultiplicators = new Dictionary<EffectAttribures, float>();
+        var physicsMultiplicators = new Dictionary<EffectAttribures, float>();
         physicsMultiplicators.Add(EffectAttribures.WATER, 1.0f);
         physicsMultiplicators.Add(EffectAttribures.FIRE, 0.5f);
         physicsMultiplicators.Add(EffectAttribures.AIR, 1.0f);
@@ -137,12 +135,13 @@ public class ElementalMiultiplicators {
         multiplicators.Add(EffectAttribures.PHYSICS, physicsMultiplicators);
     }
 
-    public static float getMultiplicator(EffectAttribures first, EffectAttribures second) {
-		if (multiplicators.ContainsKey(first)
+    public static float getMultiplicator(EffectAttribures first, EffectAttribures second)
+    {
+	    if (multiplicators.ContainsKey(first)
 			&& multiplicators[first].ContainsKey(second)) {
 			return multiplicators[first][second];
-        } else {
-            return 1.0f;
         }
+
+	    return 1.0f;
     }
 }

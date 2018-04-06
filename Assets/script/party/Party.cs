@@ -1,6 +1,6 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using script;
+using UnityEngine;
 
 public class Party {
 
@@ -15,15 +15,15 @@ public class Party {
 	private List<GameObject> partyList = new List<GameObject>();
 
     public List<Person> getLivePersons() {
-        List<Person> list = new List<Person>();
-        foreach (GameObject go in partyList.FindAll((GameObject person) => person.GetComponent<PersonController>().person.isAlive)) {
+        var list = new List<Person>();
+        foreach (var go in partyList.FindAll(person => person.GetComponent<PersonController>().person.isAlive)) {
             list.Add(go.GetComponent<PersonController>().person);
         }
         return list;
     }
 
     public bool allDead() {
-		if (partyList.FindAll ((GameObject person) => person.GetComponent<PersonController>().person.isAlive).Count > 0) {
+		if (partyList.FindAll (person => person.GetComponent<PersonController>().person.isAlive).Count > 0) {
 			return false;
 		}
         return true;
@@ -53,14 +53,14 @@ public class Party {
     }
 
     public void setDefaultPosition(GameObject go) {
-        Person person = go.GetComponent<PersonController>().person;
+        var person = go.GetComponent<PersonController>().person;
         if (person.place.x < 1 || person.place.y < 1) {
             person.place = generatePlace();
         }
         float x = 0;
         if (person.ally == AbilityTargetType.ENEMY) {
             x = 2 * person.place.x;
-            Vector3 theScale = go.transform.Find("model").localScale;
+            var theScale = go.transform.Find("model").localScale;
             if (theScale.x > 0) {
                 theScale.x *= -1;
             }
@@ -68,11 +68,11 @@ public class Party {
         } else {
            x = -2 * person.place.x;
         }
-        go.transform.position = new Vector2(x, (person.place.y * 2) - 4);
+        go.transform.position = new Vector2(x, person.place.y * 2 - 4);
     }
 
     public Vector2 generatePlace() {
-        List<Vector2> list = new List<Vector2>();
+        var list = new List<Vector2>();
         for (int i = 1; i < 3; i++) {
             for (int j = 1; j < 4; j++) {
                 if (isPlaceEmpty(i, j)) {
@@ -87,7 +87,7 @@ public class Party {
     }
 
     public bool isPlaceEmpty(int row, int index) {
-        foreach (GameObject go in partyList) {
+        foreach (var go in partyList) {
             if (go.GetComponent<PersonController>().person.place.x == row
                 && go.GetComponent<PersonController>().person.place.y == index) {
                 return false;

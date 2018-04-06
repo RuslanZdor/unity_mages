@@ -1,11 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using script;
+using UnityEngine;
 
 public class BuffController : MonoBehaviour {
 
     private Person person;
-    private List<GameObject> buffs = new List<GameObject>();
+    private readonly List<GameObject> buffs = new List<GameObject>();
 
     private GameObject buffList;
 
@@ -19,17 +19,17 @@ public class BuffController : MonoBehaviour {
     void Update() {
 
         if (person.updateBuffs) {
-            foreach (GameObject child in buffs) {
+            foreach (var child in buffs) {
                 Destroy(child);
             }
 
             int number = 0;
-            foreach (Buff buff in person.effectList) {
-                PersonFactory pf = GameObject.Find("GameFactory").GetComponent<PersonFactory>();
-                GameObject go = pf.createBuffIcon(buff);
+            foreach (var buff in person.effectList) {
+                var pf = GameObject.Find("GameFactory").GetComponent<PersonFactory>();
+                var go = pf.createBuffIcon(buff);
                 go.transform.SetParent(gameObject.transform.Find("model/buff").transform, false);
                 go.transform.GetComponent<RectTransform>().anchoredPosition = 
-                    new Vector3((0.0f - 0.5f * ((int) number / 4)), (0.0f - 0.5f * (number % 4)), 0.0f);
+                    new Vector3(0.0f - 0.5f * (number / 4), 0.0f - 0.5f * (number % 4), 0.0f);
                 number++;
                 buffs.Add(go);
             }

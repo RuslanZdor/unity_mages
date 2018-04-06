@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using script;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HeroTabController : PersonBehavior, IListenerObject {
@@ -6,11 +7,11 @@ public class HeroTabController : PersonBehavior, IListenerObject {
     public GameObject heroSkill;
     public GameObject heroItem;
 
-    public bool isItem = false;
-    public bool isSkills = false;
+    public bool isItem;
+    public bool isSkills;
 
     public void Start() {
-        GameObject.Find("MessageController").GetComponent<MessageController>().addListener(this);
+        GameObject.Find(Constants.MESSAGE_CONTROLLER_OBJECT).GetComponent<MessageController>().addListener(this);
     }
 
     public void reload() {
@@ -25,14 +26,14 @@ public class HeroTabController : PersonBehavior, IListenerObject {
     public void reloadItems() {
         foreach (Transform child in transform.Find("Items")) {
             if (child.name.Contains("Hero")) {
-                GameObject.Destroy(child.gameObject);
+                Destroy(child.gameObject);
             }
         }
 
         for (int s = 0; s < PartiesSingleton.inventory.Count; s++) {
-            Item item = PartiesSingleton.inventory[s];
-            GameObject hitem = Instantiate(heroItem, transform.Find("Items").transform, false);
-            hitem.transform.localPosition = new Vector2(-3.3f + ((s % 4) * 2.2f), 2.2f - ((s / 4) * 2.2f));
+            var item = PartiesSingleton.inventory[s];
+            var hitem = Instantiate(heroItem, transform.Find("Items").transform, false);
+            hitem.transform.localPosition = new Vector2(-3.3f + s % 4 * 2.2f, 2.2f - s / 4 * 2.2f);
             hitem.transform.GetComponent<Image>().sprite = item.image;
             hitem.GetComponent<HeroItemController>().item = item;
         }
@@ -41,14 +42,14 @@ public class HeroTabController : PersonBehavior, IListenerObject {
     public void reloadSkills() {
         foreach (Transform child in transform.Find("HeroSkills")) {
             if (child.name.Contains("Hero")) {
-                GameObject.Destroy(child.gameObject);
+                Destroy(child.gameObject);
             }
         }
 
-        foreach (Ability ab in person.knownAbilities) {
+        foreach (var ab in person.knownAbilities) {
             if (ab.position.x > 0
                 && ab.position.y > 0) {
-                GameObject hskill = Instantiate(heroSkill, transform.Find("HeroSkills").transform, false);
+                var hskill = Instantiate(heroSkill, transform.Find("HeroSkills").transform, false);
                 hskill.GetComponent<SkillController>().ability = ab;
                 hskill.GetComponent<SkillController>().person = person;
                 hskill.transform.localPosition = new Vector2(-1.3f + (ab.position.x - 2) * 2.2f, 2.2f * (ab.position.y - 2));

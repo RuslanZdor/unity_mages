@@ -1,6 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using script;
 
 public class AbstractTargetTactic {
 
@@ -10,11 +10,11 @@ public class AbstractTargetTactic {
 
     public void shuffle(List<Person> list) {
         int n = list.Count;
-        Random rnd = new Random();
+        var rnd = new Random();
         while (n > 1) {
-            int k = (rnd.Next(0, n) % n);
+            int k = rnd.Next(0, n) % n;
             n--;
-            Person value = list[k];
+            var value = list[k];
             list[k] = list[n];
             list[n] = value;
         }
@@ -26,9 +26,9 @@ public class AbstractTargetTactic {
 
     public bool isMelee(Ability ability) {
         return ability.effectList.FindAll(
-                (AbstractAbilityEffect eff) =>
+                eff =>
                 eff.attribures.FindAll(
-                    (EffectAttribures attr) => attr == EffectAttribures.MELEE_ATTACK
+                    attr => attr == EffectAttribures.MELEE_ATTACK
                 ).Count > 0
             ).Count > 0;
     }

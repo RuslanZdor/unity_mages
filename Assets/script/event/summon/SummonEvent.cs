@@ -1,13 +1,13 @@
+using script;
 using UnityEngine;
-using System.Collections;
 
 public class SummonEvent : BasicTargetEvent {
 
 	public Person person;
 
 	public override float eventStart() {
-        PersonFactory pf = GameObject.Find("GameFactory").GetComponent<PersonFactory>();
-        GameObject go = pf.create(person);
+        var pf = GameObject.Find("GameFactory").GetComponent<PersonFactory>();
+        var go = pf.create(person);
 
         PartiesSingleton.getParty(owner.ally).addPerson(go);
         go.GetComponent<PersonController>().person.summoner = owner;
@@ -16,7 +16,6 @@ public class SummonEvent : BasicTargetEvent {
         go.GetComponent<PersonController>().person.initAbilities();
         go.GetComponent<PersonController>().person.generateEvents(eventTime);
 
-        owner.statistics.summonCount++;
         logEvent("summon  " + person.name);
         return 0.0f; ;
     }

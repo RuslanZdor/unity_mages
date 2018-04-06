@@ -1,6 +1,6 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using script;
+using UnityEngine;
 
 public class PartiesSingleton {
 
@@ -31,12 +31,12 @@ public class PartiesSingleton {
         return false;
     }
 
-    public static Party getParty(AbilityTargetType type) {
+    public static Party getParty(AbilityTargetType type)
+    {
         if (type.Equals(AbilityTargetType.ENEMY)) {
             return enemies;
-        }else {
-            return heroes;
         }
+        return heroes;
     }
 
     public static void clear() {
@@ -46,7 +46,7 @@ public class PartiesSingleton {
     }
 
     public static Vector2 generatePlace() {
-        List<Vector2> list = new List<Vector2>();
+        var list = new List<Vector2>();
         for (int i = 1; i < 3; i++) {
             for (int j = 1; j < 4; j++) {
                 if (isPlaceEmpty(i, j)) {
@@ -61,7 +61,7 @@ public class PartiesSingleton {
     }
 
     public static bool isPlaceEmpty(int row, int index) {
-        foreach (Person go in activeHeroes) {
+        foreach (var go in activeHeroes) {
             if (go.place.x == row
                 && go.place.y == index) {
                 return false;

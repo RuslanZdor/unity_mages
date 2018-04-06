@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class DodgeChanceModificator : AbstractModificator{
 
@@ -13,9 +12,9 @@ public class DodgeChanceModificator : AbstractModificator{
         if (chance > 0)  {
 			if (Random.Range(0,100) <= chance) {
                 ability.effectList.FindAll(
-                        (AbstractAbilityEffect effect) =>
+                        effect =>
                         !effect.attribures.Contains(EffectAttribures.DODGE))
-                    .ForEach((AbstractAbilityEffect effect) => {
+                    .ForEach(effect => {
 					    effect.value = 0;
                         effect.attribures.Add(EffectAttribures.DODGE);
                 });
