@@ -16,14 +16,14 @@ public class StartNewGameController : GameScene, IListenerObject {
             enable();
             link = (string) message.parameters[0];
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }
 
     public void startNewGame() {
         var person = XMLFactory.loadPerson("configs/monsters/heroes/mage");
-        PartiesSingleton.selectedHeroes.Add(person);
+        PartiesSingleton.currentGame.selectedHeroes.Add(person);
 
         generateMessage(new GameMessage(MessageType.CLOSE_ACTIVE_WINDOW));
 

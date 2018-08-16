@@ -17,8 +17,12 @@ public class SkillsController : GameScene, IListenerObject, CanReload {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.S)) {
-            closeSkills();
+        base.Update();
+
+        if (isActive) {
+            if (Input.GetKeyDown(KeyCode.S)) {
+                closeSkills();
+            }
         }
     }
 
@@ -37,11 +41,11 @@ public class SkillsController : GameScene, IListenerObject, CanReload {
         if (message.type == MessageType.OPEN_SKILLS) {
             enable();
 
-            heroList.GetComponent<HeroListController>().person = PartiesSingleton.selectedHeroes[0];
-            heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.selectedHeroes[0];
+            heroList.GetComponent<HeroListController>().person = PartiesSingleton.currentGame.selectedHeroes[0];
+            heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.currentGame.selectedHeroes[0];
             reload();
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

@@ -1,9 +1,8 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unity_mages", "Assembly-CSharp.csproj", "{BF0C0EE2-777A-3C85-6E05-7A97391F4190}"
+Project("{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{BF0C0EE2-777A-3C85-6E05-7A97391F4190}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unity_mages", "Assembly-CSharp-Editor-firstpass.csproj", "{E5D5A291-A3A3-2AD1-1925-C3BB367C988D}"
+Project("{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{E5D5A291-A3A3-2AD1-1925-C3BB367C988D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

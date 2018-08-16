@@ -260,6 +260,9 @@
           </e>
           <e p="game" t="Include">
             <e p="CanReload.cs" t="Include" />
+            <e p="common" t="Include">
+              <e p="Game.cs" t="Include" />
+            </e>
             <e p="dialog" t="Include">
               <e p="DialogController.cs" t="Include" />
               <e p="DialogMessage.cs" t="Include" />
@@ -271,7 +274,6 @@
               <e p="FightStartController.cs" t="Include" />
               <e p="UserAbilityController.cs" t="Include" />
             </e>
-            <e p="GameController.cs" t="Include" />
             <e p="GameScene.cs" t="Include" />
             <e p="HasPerson.cs" t="Include" />
             <e p="inventory" t="Include">
@@ -298,7 +300,6 @@
             <e p="missionResult" t="Include">
               <e p="MissionResultController.cs" t="Include" />
             </e>
-            <e p="NavigationController.cs" t="Include" />
             <e p="PersonBehavior.cs" t="Include" />
             <e p="positions" t="Include">
               <e p="ActiveHeroesController.cs" t="Include" />
@@ -318,6 +319,11 @@
             </e>
             <e p="startNewGame" t="Include">
               <e p="StartNewGameController.cs" t="Include" />
+            </e>
+            <e p="system" t="Include">
+              <e p="ActiveButtonsController.cs" t="Include" />
+              <e p="GameController.cs" t="Include" />
+              <e p="NavigationController.cs" t="Include" />
             </e>
           </e>
           <e p="interface" t="Include">
@@ -345,13 +351,19 @@
             <e p="GameMessage.cs" t="Include" />
             <e p="MessageController.cs" t="Include" />
             <e p="MessageType.cs" t="Include" />
-            <e p="XMLFactory.cs" t="Include" />
+            <e p="xml" t="Include">
+              <e p="XMLFactory.cs" t="Include" />
+              <e p="XMLGame.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>
+      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
       <e p="unity_mages.sln" t="IncludeFlat" />
     </e>
     <e p="C:\Users\ruslan_zdor\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_unity_mages.1105682084.00" t="ExcludeRecursive" />

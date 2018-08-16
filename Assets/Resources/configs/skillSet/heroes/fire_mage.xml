@@ -2,84 +2,84 @@
 
 	<skill>
 		<ability>configs/abilities/fire/damage/fire_ball</ability>
-		<position>
-			<x>1</x>
-			<y>3</y>
-		</position>
+		<Position>
+			<X>1</X>
+			<Y>3</Y>
+		</Position>
 		<requiredLevel>1</requiredLevel>
 		<active>true</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/fire/buff/fire_power</ability>
-		<position>
-			<x>1</x>
-			<y>2</y>
-		</position>
+		<Position>
+			<X>1</X>
+			<Y>2</Y>
+		</Position>
 		<requiredLevel>1</requiredLevel>
 		<active>false</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/fire/passive/fire_shield</ability>
-		<position>
-			<x>1</x>
-			<y>1</y>
-		</position>
+		<Position>
+			<X>1</X>
+			<Y>1</Y>
+		</Position>
 		<requiredLevel>1</requiredLevel>
 		<active>false</active>
 	</skill>
 
 	<skill>
 		<ability>configs/abilities/fire/passive/inner_fire</ability>
-		<position>
-			<x>2</x>
-			<y>3</y>
-		</position>
+		<Position>
+			<X>2</X>
+			<Y>3</Y>
+		</Position>
 		<requiredLevel>2</requiredLevel>
 		<active>true</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/fire/passive/small_regeneration</ability>
-		<position>
-			<x>2</x>
-			<y>2</y>
-		</position>
+		<Position>
+			<X>2</X>
+			<Y>2</Y>
+		</Position>
 		<requiredLevel>2</requiredLevel>
 		<active>false</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/fire/passive/long_fire</ability>
-		<position>
-			<x>2</x>
-			<y>1</y>
-		</position>
+		<Position>
+			<X>2</X>
+			<Y>1</Y>
+		</Position>
 		<requiredLevel>2</requiredLevel>
 		<active>false</active>
 	</skill>
 	
 	<skill>
 		<ability>configs/abilities/fire/damage/fire_wall</ability>
-		<position>
-			<x>3</x>
-			<y>3</y>
-		</position>
+		<Position>
+			<X>3</X>
+			<Y>3</Y>
+		</Position>
 		<requiredLevel>3</requiredLevel>
 		<active>true</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/fire/buff/aoe_buff</ability>
-		<position>
-			<x>3</x>
-			<y>2</y>
-		</position>
+		<Position>
+			<X>3</X>
+			<Y>2</Y>
+		</Position>
 		<requiredLevel>3</requiredLevel>
 		<active>false</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/fire/passive/incandescent_armor</ability>
-		<position>
-			<x>3</x>
-			<y>1</y>
-		</position>
+		<Position>
+			<X>3</X>
+			<Y>1</Y>
+		</Position>
 		<requiredLevel>3</requiredLevel>
 		<active>false</active>
 	</skill>

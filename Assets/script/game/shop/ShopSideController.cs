@@ -14,7 +14,7 @@ public class ShopSideController : AbstractSideController {
             hitem.GetComponent<ShopItemController>().setItem(currentItem);
             if (currentItem.Equals(item)) {
                 hitem.GetComponent<ShopItemController>().makeActive();
-                if (PartiesSingleton.gold >= item.cost) {
+                if (PartiesSingleton.currentGame.gold >= item.cost) {
                     transform.Find("SellButton").GetComponent<SellButtonController>().makeActive();
                 }
             }

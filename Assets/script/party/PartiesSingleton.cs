@@ -1,20 +1,16 @@
 using System.Collections.Generic;
 using script;
+using script.game.common;
 using UnityEngine;
 
 public class PartiesSingleton {
 
     public static Shop currentShop;
-
-    public static float gold;
-
+    public static Game currentGame;
+    
     public static Party heroes = new Party(AbilityTargetType.FRIEND, AbilityTargetType.ENEMY);
     public static Party enemies = new Party(AbilityTargetType.ENEMY, AbilityTargetType.FRIEND);
 
-    public static List<Person> activeHeroes = new List<Person>();
-    public static List<Person> selectedHeroes = new List<Person>();
-
-    public static List<Item> inventory = new List<Item>();
     public static Player player = new Player();
 
     public static bool hasWinner() {
@@ -31,8 +27,7 @@ public class PartiesSingleton {
         return false;
     }
 
-    public static Party getParty(AbilityTargetType type)
-    {
+    public static Party getParty(AbilityTargetType type) {
         if (type.Equals(AbilityTargetType.ENEMY)) {
             return enemies;
         }
@@ -61,7 +56,7 @@ public class PartiesSingleton {
     }
 
     public static bool isPlaceEmpty(int row, int index) {
-        foreach (var go in activeHeroes) {
+        foreach (var go in currentGame.activeHeroes) {
             if (go.place.x == row
                 && go.place.y == index) {
                 return false;

@@ -30,8 +30,8 @@ public class HeroTabController : PersonBehavior, IListenerObject {
             }
         }
 
-        for (int s = 0; s < PartiesSingleton.inventory.Count; s++) {
-            var item = PartiesSingleton.inventory[s];
+        for (int s = 0; s < PartiesSingleton.currentGame.inventory.Count; s++) {
+            var item = PartiesSingleton.currentGame.inventory[s];
             var hitem = Instantiate(heroItem, transform.Find("Items").transform, false);
             hitem.transform.localPosition = new Vector2(-3.3f + s % 4 * 2.2f, 2.2f - s / 4 * 2.2f);
             hitem.transform.GetComponent<Image>().sprite = item.image;

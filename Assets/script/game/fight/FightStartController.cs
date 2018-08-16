@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using script;
 using script.game;
 using UnityEngine;
@@ -37,7 +38,9 @@ public class FightStartController : GameScene, IListenerObject {
 
     // Update is called once per frame
     void Update() {
-        if (!isHided) {
+        base.Update();
+
+        if (isActive) {
             if (PartiesSingleton.hasWinner()) {
                 CSVLogger.log(EventQueueSingleton.queue.nextEventTime, "FightController", "FightController", "Result");
                 foreach (var hero in PartiesSingleton.heroes.getLivePersons()) {
@@ -86,7 +89,7 @@ public class FightStartController : GameScene, IListenerObject {
         EventQueueSingleton.queue.realTime = Time.fixedTime;
         EventQueueSingleton.queue.fastFight = false;
 
-        foreach (var p in PartiesSingleton.activeHeroes.FindAll(p => p.isActive)) {
+        foreach (var p in PartiesSingleton.currentGame.activeHeroes.FindAll(p => p.isActive)) {
             PartiesSingleton.heroes.addPerson(personFactory.create(p));
         }
 
@@ -128,11 +131,9 @@ public class FightStartController : GameScene, IListenerObject {
             enable();
             mapPoint = (MapPoint) message.parameters[0];
             reload();
-            isHided = false;
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
-            isHided = true;
         }
     }
 

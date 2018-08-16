@@ -15,8 +15,12 @@ public class PositionsController : GameScene, IListenerObject, CanReload {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            close();
+        base.Update();
+
+        if (isActive) {
+            if (Input.GetKeyDown(KeyCode.P)) {
+                close();
+            }
         }
     }
 
@@ -36,7 +40,7 @@ public class PositionsController : GameScene, IListenerObject, CanReload {
             enable();
             reload();
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

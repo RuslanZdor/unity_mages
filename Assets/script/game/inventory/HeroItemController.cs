@@ -11,10 +11,10 @@ public class HeroItemController : PersonBehavior, IPointerClickHandler {
         if (person != null) {
             putItemtoInventry(item, currentPerson);
         } else {
-            foreach (var pItem in currentPerson.itemList.FindAll(i=> i.type == item.type)) {
+/*            foreach (var pItem in currentPerson.itemList.FindAll(i=> i.type == item.type)) {
                 putItemtoInventry(pItem, currentPerson);
             }
-            putItemToPerson(item, currentPerson);
+*/            putItemToPerson(item, currentPerson);
         }
 
         transform.root.Find(InventoryController.INVENTORY_HERO_LIST).transform.GetComponent<HeroListController>().reload();
@@ -29,11 +29,11 @@ public class HeroItemController : PersonBehavior, IPointerClickHandler {
     }
 
     private void putItemToPerson(Item item, Person person) {
-        PartiesSingleton.inventory.Remove(item);
-        person.itemList.Add(item);
+        PartiesSingleton.currentGame.inventory.Remove(item);
+//        person.itemList.Add(item);
     }
     private void putItemtoInventry(Item item, Person person) {
-        person.itemList.Remove(item);
-        PartiesSingleton.inventory.Add(item);
+//        person.itemList.Remove(item);
+        PartiesSingleton.currentGame.inventory.Add(item);
     }
 }

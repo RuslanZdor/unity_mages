@@ -22,18 +22,6 @@ public class InventoryController : GameScene, IListenerObject, CanReload {
         registerListener(this);
     }
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.I)) {
-            closeWindow();
-        }
-    }
-
-    public void closeWindow() {
-        navigation().saveGame();
-        navigation().closeActiveWindow();
-        navigation().openMainMenu();
-    }
-
     public void reload() {
         heroList.GetComponent<HeroListController>().reload();
         heroTab.GetComponent<HeroTabController>().reload();
@@ -43,14 +31,18 @@ public class InventoryController : GameScene, IListenerObject, CanReload {
     public void readMessage(GameMessage message) {
         if (message.type == MessageType.OPEN_INVENTORY) {
             enable();
-
-            heroList.GetComponent<HeroListController>().person = PartiesSingleton.selectedHeroes[0];
-            heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.selectedHeroes[0];
-            heroItems.GetComponent<HeroItemsController>().person = PartiesSingleton.selectedHeroes[0];
-
+            heroList.GetComponent<HeroListController>().person = PartiesSingleton.currentGame.selectedHeroes[0];
+            heroTab.GetComponent<HeroTabController>().person = PartiesSingleton.currentGame.selectedHeroes[0];
+            heroItems.GetComponent<HeroItemsController>().person = PartiesSingleton.currentGame.selectedHeroes[0];
             reload();
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+
+        if (isActive && message.type == MessageType.CLOSE_INVENTORY) {
+            navigation().saveGame();
+            navigation().closeActiveWindow();
+            navigation().openMainMenu();
+        }
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

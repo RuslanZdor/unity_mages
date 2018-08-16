@@ -24,14 +24,14 @@ public class ShopHeroSideController : AbstractSideController {
     }
 
     public override List<Item> getItemList() {
-        return PartiesSingleton.inventory;
+        return PartiesSingleton.currentGame.inventory;
     }
 
     public override float getGold() {
-        return PartiesSingleton.gold;
+        return PartiesSingleton.currentGame.gold;
     }
 
     public override void setGold(float gold) {
-        PartiesSingleton.gold = gold;
+        PartiesSingleton.currentGame.gold = gold;
     }
 }

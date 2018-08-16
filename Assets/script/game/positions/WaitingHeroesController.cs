@@ -19,7 +19,7 @@ public class WaitingHeroesController : MonoBehaviour, IListenerObject {
     public void reload() {
         preparePlaces();
 
-        foreach (var p in PartiesSingleton.selectedHeroes.FindAll(p => !p.isActive)) {
+        foreach (var p in PartiesSingleton.currentGame.selectedHeroes.FindAll(p => !p.isActive)) {
             if (p.place.x < 1 || p.place.y < 1) {
                 p.place = PartiesSingleton.generatePlace();
             }

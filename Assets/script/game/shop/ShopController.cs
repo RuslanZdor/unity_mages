@@ -5,11 +5,6 @@ public class ShopController : GameScene, IListenerObject, CanReload {
     private GameObject heroTab;
     private GameObject shopTab;
 
-    public GameObject heroItems;
-    public GameObject heroItem;
-
-    public Item activeItem;
-
     void Start() {
         shopTab = transform.Find("ShopTab").gameObject;
         heroTab = transform.Find(InventoryController.INVENTORY_HERO_TAB).gameObject;
@@ -19,8 +14,11 @@ public class ShopController : GameScene, IListenerObject, CanReload {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            closeInventory();
+        base.Update();
+        if (isActive) {
+            if (Input.GetKeyDown(KeyCode.Q)) {
+                closeInventory();
+            }
         }
     }
 
@@ -41,7 +39,7 @@ public class ShopController : GameScene, IListenerObject, CanReload {
             enable();
             reload();
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

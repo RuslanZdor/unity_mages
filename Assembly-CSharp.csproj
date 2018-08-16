@@ -8,12 +8,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{BF0C0EE2-777A-3C85-6E05-7A97391F4190}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
@@ -39,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.XML" />
+    <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
@@ -51,229 +52,232 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\script\ability\Ability.cs" />
-     <Compile Include="Assets\script\ability\abilityImp\MeleeAttack.cs" />
-     <Compile Include="Assets\script\ability\abilityImp\SummonGolem.cs" />
-     <Compile Include="Assets\script\ability\AbilityTargetType.cs" />
-     <Compile Include="Assets\script\ability\ActiveBuff.cs" />
-     <Compile Include="Assets\script\ability\Buff.cs" />
-     <Compile Include="Assets\script\ability\effect\AbstractAbilityEffect.cs" />
-     <Compile Include="Assets\script\ability\effect\buff\AddBuffEffect.cs" />
-     <Compile Include="Assets\script\ability\effect\buff\RowAddBuffEffect.cs" />
-     <Compile Include="Assets\script\ability\effect\damage\DamageAbilityEffect.cs" />
-     <Compile Include="Assets\script\ability\effect\EffectAttribures.cs" />
-     <Compile Include="Assets\script\ability\effect\ElementalMiultiplicators.cs" />
-     <Compile Include="Assets\script\ability\effect\HealAbilityEffect.cs" />
-     <Compile Include="Assets\script\ability\effect\shield\AddShieldAbilityEffect.cs" />
-     <Compile Include="Assets\script\ability\effect\shield\RowAddShieldAbilityEffect.cs" />
-     <Compile Include="Assets\script\ability\effect\SummonEffect.cs" />
-     <Compile Include="Assets\script\ability\effect\UseItemEffect.cs" />
-     <Compile Include="Assets\script\ability\modificator\AbstractModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\buff\BuffDurationModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\AddDamageModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\BlockChanceModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\CritChanceModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\DodgeChanceModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\ElementsDamageModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\GettingDamageModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\IncreaseDamageModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\IncreaseMeleeDamageModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\damage\ReturnDamageModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\heal\IncreaseGettingHealModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\heal\IncreaseMakingHealModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\shield\IncreaseGettingShieldModificator.cs" />
-     <Compile Include="Assets\script\ability\modificator\shield\IncreaseMakingShieldModificator.cs" />
-     <Compile Include="Assets\script\ability\priority\spellPriorty\AbstractTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\spellPriorty\DamageSpellCastTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\spellPriorty\HealSpellCastTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\spellPriorty\MeleeAttackTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\spellPriorty\SummonCastTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\target\AbstractTargetTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\target\AllPartyTargetTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\target\DamagedTargetTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\target\ItselfTargetTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\target\RandomTargetTactic.cs" />
-     <Compile Include="Assets\script\ability\priority\target\WithoutBuffTactic.cs" />
-     <Compile Include="Assets\script\ability\SummonAbility.cs" />
-     <Compile Include="Assets\script\ability\value\AbstractValueGenerator.cs" />
-     <Compile Include="Assets\script\ability\value\ConstantValueGenerator.cs" />
-     <Compile Include="Assets\script\ability\value\RangeValueGenerator.cs" />
-     <Compile Include="Assets\script\ActiveInventory.cs" />
-     <Compile Include="Assets\script\AnimatorConstants.cs" />
-     <Compile Include="Assets\script\Constants.cs" />
-     <Compile Include="Assets\script\event\BasicTargetEvent.cs" />
-     <Compile Include="Assets\script\event\buff\AddBuffEvent.cs" />
-     <Compile Include="Assets\script\event\buff\RemoveBuffEvent.cs" />
-     <Compile Include="Assets\script\event\CooldownEvent.cs" />
-     <Compile Include="Assets\script\event\damage\BasicDamageEvent.cs" />
-     <Compile Include="Assets\script\event\Event.cs" />
-     <Compile Include="Assets\script\event\EventQueue.cs" />
-     <Compile Include="Assets\script\event\EventQueueSingleton.cs" />
-     <Compile Include="Assets\script\event\GenerateAbilityEvent.cs" />
-     <Compile Include="Assets\script\event\heal\BasicHealEvent.cs" />
-     <Compile Include="Assets\script\event\item\DestroyItemEvent.cs" />
-     <Compile Include="Assets\script\event\item\UseItemEvent.cs" />
-     <Compile Include="Assets\script\event\shield\AddShieldEvent.cs" />
-     <Compile Include="Assets\script\event\summon\RemoveSummonEvent.cs" />
-     <Compile Include="Assets\script\event\summon\SummonEvent.cs" />
-     <Compile Include="Assets\script\factory\AbstractFactory.cs" />
-     <Compile Include="Assets\script\factory\MapFactory.cs" />
-     <Compile Include="Assets\script\factory\MapPointType.cs" />
-     <Compile Include="Assets\script\factory\PersonFactory.cs" />
-     <Compile Include="Assets\script\game\CanReload.cs" />
-     <Compile Include="Assets\script\game\dialog\DialogController.cs" />
-     <Compile Include="Assets\script\game\dialog\DialogMessage.cs" />
-     <Compile Include="Assets\script\game\dialog\DialogMessagePosition.cs" />
-     <Compile Include="Assets\script\game\fight\AbilityEventController.cs" />
-     <Compile Include="Assets\script\game\fight\FightResultController.cs" />
-     <Compile Include="Assets\script\game\fight\FightStartController.cs" />
-     <Compile Include="Assets\script\game\fight\UserAbilityController.cs" />
-     <Compile Include="Assets\script\game\GameController.cs" />
-     <Compile Include="Assets\script\game\GameScene.cs" />
-     <Compile Include="Assets\script\game\HasPerson.cs" />
-     <Compile Include="Assets\script\game\inventory\HeroItemController.cs" />
-     <Compile Include="Assets\script\game\inventory\HeroItemsController.cs" />
-     <Compile Include="Assets\script\game\inventory\HeroListController.cs" />
-     <Compile Include="Assets\script\game\inventory\HeroTabController.cs" />
-     <Compile Include="Assets\script\game\inventory\InventoryController.cs" />
-     <Compile Include="Assets\script\game\inventory\SkillController.cs" />
-     <Compile Include="Assets\script\game\inventory\SkillsController.cs" />
-     <Compile Include="Assets\script\game\load\LoadGameController.cs" />
-     <Compile Include="Assets\script\game\mainMenu\MainMenuController.cs" />
-     <Compile Include="Assets\script\game\map\MapController.cs" />
-     <Compile Include="Assets\script\game\map\MapPoint.cs" />
-     <Compile Include="Assets\script\game\map\MapPointController.cs" />
-     <Compile Include="Assets\script\game\map\MissionMap.cs" />
-     <Compile Include="Assets\script\game\missionResult\MissionResultController.cs" />
-     <Compile Include="Assets\script\game\NavigationController.cs" />
-     <Compile Include="Assets\script\game\PersonBehavior.cs" />
-     <Compile Include="Assets\script\game\positions\ActiveHeroesController.cs" />
-     <Compile Include="Assets\script\game\positions\EmptyPositionController.cs" />
-     <Compile Include="Assets\script\game\positions\HeroImageController.cs" />
-     <Compile Include="Assets\script\game\positions\PositionsController.cs" />
-     <Compile Include="Assets\script\game\positions\WaitingHeroesController.cs" />
-     <Compile Include="Assets\script\game\shop\AbstractSideController.cs" />
-     <Compile Include="Assets\script\game\shop\SellButtonController.cs" />
-     <Compile Include="Assets\script\game\shop\Shop.cs" />
-     <Compile Include="Assets\script\game\shop\ShopController.cs" />
-     <Compile Include="Assets\script\game\shop\ShopHeroSideController.cs" />
-     <Compile Include="Assets\script\game\shop\ShopItemController.cs" />
-     <Compile Include="Assets\script\game\shop\ShopSideController.cs" />
-     <Compile Include="Assets\script\game\startNewGame\StartNewGameController.cs" />
-     <Compile Include="Assets\script\interface\BuffController.cs" />
-     <Compile Include="Assets\script\interface\HealthObjectController.cs" />
-     <Compile Include="Assets\script\interface\IndicatorController.cs" />
-     <Compile Include="Assets\script\interface\ManaObjectController.cs" />
-     <Compile Include="Assets\script\interface\ShieldObjectController.cs" />
-     <Compile Include="Assets\script\item\Item.cs" />
-     <Compile Include="Assets\script\item\ItemType.cs" />
-     <Compile Include="Assets\script\party\PartiesSingleton.cs" />
-     <Compile Include="Assets\script\party\Party.cs" />
-     <Compile Include="Assets\script\Person.cs" />
-     <Compile Include="Assets\script\PersonController.cs" />
-     <Compile Include="Assets\script\PersonStatistics.cs" />
-     <Compile Include="Assets\script\Player.cs" />
-     <Compile Include="Assets\script\system\ComunicationObject.cs" />
-     <Compile Include="Assets\script\system\CSVLogger.cs" />
-     <Compile Include="Assets\script\system\GameMessage.cs" />
-     <Compile Include="Assets\script\system\MessageController.cs" />
-     <Compile Include="Assets\script\system\MessageType.cs" />
-     <Compile Include="Assets\script\system\XMLFactory.cs" />
-     <None Include="Assets\Resources\configs\abilities\fire\damage\fire_ball.xml" />
-     <None Include="Assets\Resources\configs\items\weapons\sword.xml" />
-     <None Include="Assets\Resources\configs\items\activeGems\heal_gem.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\passive\power_of_word.xml" />
-     <None Include="Assets\Resources\configs\items\weapons\axe.xml" />
-     <None Include="Assets\Resources\configs\abilities\electricity\passive\shield_regeneration.xml" />
-     <None Include="Assets\Resources\configs\abilities\buff\weekness.xml" />
-     <None Include="Assets\Resources\configs\items\shields\wood_shield.xml" />
-     <None Include="Assets\Resources\configs\monsters\heroes\mage.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\PoisonElemental.xml" />
-     <None Include="Assets\Resources\configs\maps\templates\bigArmyFight.xml" />
-     <None Include="Assets\Resources\configs\monsters\trolls\fastTroll.xml" />
-     <None Include="Assets\Resources\configs\items\weapons\mage_stuff.xml" />
-     <None Include="Assets\Resources\configs\abilities\heal\healwave.xml" />
-     <None Include="Assets\Resources\configs\maps\templates\smallRoadToBoss.xml" />
-     <None Include="Assets\Resources\configs\monsters\trolls\heavyTroll.xml" />
-     <None Include="Assets\Resources\configs\skillSet\trolls\basic_troll.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\small_regeneration.xml" />
-     <None Include="Assets\Resources\configs\abilities\electricity\damage\electricity_strike.xml" />
-     <None Include="Assets\Resources\configs\abilities\electricity\damage\twin_lighting.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\passive\true_faith.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\WaterElemental.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\buff\saint_weapon.xml" />
-     <None Include="Assets\Resources\configs\abilities\fire\passive\incandescent_armor.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\ElectricityElemental.xml" />
-     <None Include="Assets\Resources\configs\abilities\fire\passive\long_fire.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\heal\shield_of_god.xml" />
-     <None Include="Assets\Resources\configs\monsters\trolls\trollSummoner.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\PhysicElemental.xml" />
-     <None Include="Assets\Resources\configs\abilities\electricity\passive\getting_more_shield.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\EarthElemental.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\passive\help_of_god.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\DarkElemental.xml" />
-     <None Include="Assets\Resources\configs\abilities\electricity\passive\crit_chance.xml" />
-     <None Include="Assets\Resources\configs\maps\first.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\heal\heal.xml" />
-     <None Include="Assets\Resources\configs\abilities\electricity\buff\mass_shield.xml" />
-     <None Include="Assets\Resources\configs\abilities\fire\buff\fire_power.xml" />
-     <None Include="Assets\Resources\configs\maps\templates\smallArmyFight.xml" />
-     <None Include="Assets\Resources\configs\items\weapons\troll_mace.xml" />
-     <None Include="Assets\Resources\configs\abilities\fire\buff\aoe_buff.xml" />
-     <None Include="Assets\Resources\configs\abilities\fire\passive\fire_shield.xml" />
-     <None Include="Assets\Resources\configs\abilities\summon\summon_golem.xml" />
-     <None Include="Assets\Resources\configs\abilities\electricity\buff\force_shield.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\FireElemental.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\passive\saint_armor.xml" />
-     <None Include="Assets\Resources\configs\abilities\electricity\passive\making_more_shield.xml" />
-     <None Include="Assets\Resources\configs\items\shields\shield.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\ColdElemental.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\AirElemental.xml" />
-     <None Include="Assets\Resources\configs\abilities\fire\passive\small_regeneration.xml" />
-     <None Include="Assets\Resources\configs\abilities\fire\passive\inner_fire.xml" />
-     <None Include="Assets\Resources\configs\skillSet\heroes\electricity_mage.xml" />
-     <None Include="Assets\Resources\configs\monsters\golems\golem.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\damage\mark_evil.xml" />
-     <None Include="Assets\Resources\configs\abilities\light\passive\god_protection.xml" />
-     <None Include="Assets\Resources\configs\abilities\fire\damage\fire_wall.xml" />
-     <None Include="Assets\Resources\configs\skillSet\heroes\light_mage.xml" />
-     <None Include="Assets\Resources\configs\maps\templates\longRoadToBoss.xml" />
-     <None Include="Assets\Resources\configs\skillSet\heroes\fire_mage.xml" />
-     <None Include="Assets\Resources\configs\abilities\passive\elemental\LightElemental.xml" />
-     <None Include="Assets\Resources\configs\items\activeGems\fire_gem.xml" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Timeline">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UIAutomation">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\script\ability\Ability.cs" />
+    <Compile Include="Assets\script\ability\abilityImp\MeleeAttack.cs" />
+    <Compile Include="Assets\script\ability\abilityImp\SummonGolem.cs" />
+    <Compile Include="Assets\script\ability\AbilityTargetType.cs" />
+    <Compile Include="Assets\script\ability\ActiveBuff.cs" />
+    <Compile Include="Assets\script\ability\Buff.cs" />
+    <Compile Include="Assets\script\ability\effect\AbstractAbilityEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\buff\AddBuffEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\buff\RowAddBuffEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\damage\DamageAbilityEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\EffectAttribures.cs" />
+    <Compile Include="Assets\script\ability\effect\ElementalMiultiplicators.cs" />
+    <Compile Include="Assets\script\ability\effect\HealAbilityEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\shield\AddShieldAbilityEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\shield\RowAddShieldAbilityEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\SummonEffect.cs" />
+    <Compile Include="Assets\script\ability\effect\UseItemEffect.cs" />
+    <Compile Include="Assets\script\ability\modificator\AbstractModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\buff\BuffDurationModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\AddDamageModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\BlockChanceModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\CritChanceModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\DodgeChanceModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\ElementsDamageModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\GettingDamageModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\IncreaseDamageModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\IncreaseMeleeDamageModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\damage\ReturnDamageModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\heal\IncreaseGettingHealModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\heal\IncreaseMakingHealModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\shield\IncreaseGettingShieldModificator.cs" />
+    <Compile Include="Assets\script\ability\modificator\shield\IncreaseMakingShieldModificator.cs" />
+    <Compile Include="Assets\script\ability\priority\spellPriorty\AbstractTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\spellPriorty\DamageSpellCastTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\spellPriorty\HealSpellCastTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\spellPriorty\MeleeAttackTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\spellPriorty\SummonCastTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\target\AbstractTargetTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\target\AllPartyTargetTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\target\DamagedTargetTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\target\ItselfTargetTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\target\RandomTargetTactic.cs" />
+    <Compile Include="Assets\script\ability\priority\target\WithoutBuffTactic.cs" />
+    <Compile Include="Assets\script\ability\SummonAbility.cs" />
+    <Compile Include="Assets\script\ability\value\AbstractValueGenerator.cs" />
+    <Compile Include="Assets\script\ability\value\ConstantValueGenerator.cs" />
+    <Compile Include="Assets\script\ability\value\RangeValueGenerator.cs" />
+    <Compile Include="Assets\script\ActiveInventory.cs" />
+    <Compile Include="Assets\script\AnimatorConstants.cs" />
+    <Compile Include="Assets\script\Constants.cs" />
+    <Compile Include="Assets\script\event\BasicTargetEvent.cs" />
+    <Compile Include="Assets\script\event\buff\AddBuffEvent.cs" />
+    <Compile Include="Assets\script\event\buff\RemoveBuffEvent.cs" />
+    <Compile Include="Assets\script\event\CooldownEvent.cs" />
+    <Compile Include="Assets\script\event\damage\BasicDamageEvent.cs" />
+    <Compile Include="Assets\script\event\Event.cs" />
+    <Compile Include="Assets\script\event\EventQueue.cs" />
+    <Compile Include="Assets\script\event\EventQueueSingleton.cs" />
+    <Compile Include="Assets\script\event\GenerateAbilityEvent.cs" />
+    <Compile Include="Assets\script\event\heal\BasicHealEvent.cs" />
+    <Compile Include="Assets\script\event\item\DestroyItemEvent.cs" />
+    <Compile Include="Assets\script\event\item\UseItemEvent.cs" />
+    <Compile Include="Assets\script\event\shield\AddShieldEvent.cs" />
+    <Compile Include="Assets\script\event\summon\RemoveSummonEvent.cs" />
+    <Compile Include="Assets\script\event\summon\SummonEvent.cs" />
+    <Compile Include="Assets\script\factory\AbstractFactory.cs" />
+    <Compile Include="Assets\script\factory\MapFactory.cs" />
+    <Compile Include="Assets\script\factory\MapPointType.cs" />
+    <Compile Include="Assets\script\factory\PersonFactory.cs" />
+    <Compile Include="Assets\script\game\CanReload.cs" />
+    <Compile Include="Assets\script\game\common\Game.cs" />
+    <Compile Include="Assets\script\game\dialog\DialogController.cs" />
+    <Compile Include="Assets\script\game\dialog\DialogMessage.cs" />
+    <Compile Include="Assets\script\game\dialog\DialogMessagePosition.cs" />
+    <Compile Include="Assets\script\game\fight\AbilityEventController.cs" />
+    <Compile Include="Assets\script\game\fight\FightResultController.cs" />
+    <Compile Include="Assets\script\game\fight\FightStartController.cs" />
+    <Compile Include="Assets\script\game\fight\UserAbilityController.cs" />
+    <Compile Include="Assets\script\game\GameScene.cs" />
+    <Compile Include="Assets\script\game\HasPerson.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroItemController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroItemsController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroListController.cs" />
+    <Compile Include="Assets\script\game\inventory\HeroTabController.cs" />
+    <Compile Include="Assets\script\game\inventory\InventoryController.cs" />
+    <Compile Include="Assets\script\game\inventory\SkillController.cs" />
+    <Compile Include="Assets\script\game\inventory\SkillsController.cs" />
+    <Compile Include="Assets\script\game\load\LoadGameController.cs" />
+    <Compile Include="Assets\script\game\mainMenu\MainMenuController.cs" />
+    <Compile Include="Assets\script\game\map\MapController.cs" />
+    <Compile Include="Assets\script\game\map\MapPoint.cs" />
+    <Compile Include="Assets\script\game\map\MapPointController.cs" />
+    <Compile Include="Assets\script\game\map\MissionMap.cs" />
+    <Compile Include="Assets\script\game\missionResult\MissionResultController.cs" />
+    <Compile Include="Assets\script\game\PersonBehavior.cs" />
+    <Compile Include="Assets\script\game\positions\ActiveHeroesController.cs" />
+    <Compile Include="Assets\script\game\positions\EmptyPositionController.cs" />
+    <Compile Include="Assets\script\game\positions\HeroImageController.cs" />
+    <Compile Include="Assets\script\game\positions\PositionsController.cs" />
+    <Compile Include="Assets\script\game\positions\WaitingHeroesController.cs" />
+    <Compile Include="Assets\script\game\shop\AbstractSideController.cs" />
+    <Compile Include="Assets\script\game\shop\SellButtonController.cs" />
+    <Compile Include="Assets\script\game\shop\Shop.cs" />
+    <Compile Include="Assets\script\game\shop\ShopController.cs" />
+    <Compile Include="Assets\script\game\shop\ShopHeroSideController.cs" />
+    <Compile Include="Assets\script\game\shop\ShopItemController.cs" />
+    <Compile Include="Assets\script\game\shop\ShopSideController.cs" />
+    <Compile Include="Assets\script\game\startNewGame\StartNewGameController.cs" />
+    <Compile Include="Assets\script\game\system\ActiveButtonsController.cs" />
+    <Compile Include="Assets\script\game\system\GameController.cs" />
+    <Compile Include="Assets\script\game\system\NavigationController.cs" />
+    <Compile Include="Assets\script\interface\BuffController.cs" />
+    <Compile Include="Assets\script\interface\HealthObjectController.cs" />
+    <Compile Include="Assets\script\interface\IndicatorController.cs" />
+    <Compile Include="Assets\script\interface\ManaObjectController.cs" />
+    <Compile Include="Assets\script\interface\ShieldObjectController.cs" />
+    <Compile Include="Assets\script\item\Item.cs" />
+    <Compile Include="Assets\script\item\ItemType.cs" />
+    <Compile Include="Assets\script\party\PartiesSingleton.cs" />
+    <Compile Include="Assets\script\party\Party.cs" />
+    <Compile Include="Assets\script\Person.cs" />
+    <Compile Include="Assets\script\PersonController.cs" />
+    <Compile Include="Assets\script\PersonStatistics.cs" />
+    <Compile Include="Assets\script\Player.cs" />
+    <Compile Include="Assets\script\system\ComunicationObject.cs" />
+    <Compile Include="Assets\script\system\CSVLogger.cs" />
+    <Compile Include="Assets\script\system\GameMessage.cs" />
+    <Compile Include="Assets\script\system\MessageController.cs" />
+    <Compile Include="Assets\script\system\MessageType.cs" />
+    <Compile Include="Assets\script\system\xml\XMLFactory.cs" />
+    <Compile Include="Assets\script\system\xml\XMLGame.cs" />
+    <None Include="Assets\Resources\configs\abilities\fire\damage\fire_ball.xml" />
+    <None Include="Assets\Resources\configs\items\weapons\sword.xml" />
+    <None Include="Assets\Resources\configs\items\activeGems\heal_gem.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\passive\power_of_word.xml" />
+    <None Include="Assets\Resources\configs\items\weapons\axe.xml" />
+    <None Include="Assets\Resources\configs\abilities\electricity\passive\shield_regeneration.xml" />
+    <None Include="Assets\Resources\configs\abilities\buff\weekness.xml" />
+    <None Include="Assets\Resources\configs\items\shields\wood_shield.xml" />
+    <None Include="Assets\Resources\configs\monsters\heroes\mage.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\PoisonElemental.xml" />
+    <None Include="Assets\Resources\configs\maps\templates\bigArmyFight.xml" />
+    <None Include="Assets\Resources\configs\monsters\trolls\fastTroll.xml" />
+    <None Include="Assets\Resources\configs\items\weapons\mage_stuff.xml" />
+    <None Include="Assets\Resources\configs\abilities\heal\healwave.xml" />
+    <None Include="Assets\Resources\configs\maps\templates\smallRoadToBoss.xml" />
+    <None Include="Assets\Resources\configs\monsters\trolls\heavyTroll.xml" />
+    <None Include="Assets\Resources\configs\skillSet\trolls\basic_troll.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\small_regeneration.xml" />
+    <None Include="Assets\Resources\configs\abilities\electricity\damage\electricity_strike.xml" />
+    <None Include="Assets\Resources\configs\abilities\electricity\damage\twin_lighting.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\passive\true_faith.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\WaterElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\buff\saint_weapon.xml" />
+    <None Include="Assets\Resources\configs\abilities\fire\passive\incandescent_armor.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\ElectricityElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\fire\passive\long_fire.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\heal\shield_of_god.xml" />
+    <None Include="Assets\Resources\configs\monsters\trolls\trollSummoner.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\PhysicElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\electricity\passive\getting_more_shield.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\EarthElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\passive\help_of_god.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\DarkElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\electricity\passive\crit_chance.xml" />
+    <None Include="Assets\Resources\configs\maps\first.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\heal\heal.xml" />
+    <None Include="Assets\Resources\configs\abilities\electricity\buff\mass_shield.xml" />
+    <None Include="Assets\Resources\configs\abilities\fire\buff\fire_power.xml" />
+    <None Include="Assets\Resources\configs\maps\templates\smallArmyFight.xml" />
+    <None Include="Assets\Resources\configs\items\weapons\troll_mace.xml" />
+    <None Include="Assets\Resources\configs\abilities\fire\buff\aoe_buff.xml" />
+    <None Include="Assets\Resources\configs\abilities\fire\passive\fire_shield.xml" />
+    <None Include="Assets\Resources\configs\abilities\summon\summon_golem.xml" />
+    <None Include="Assets\Resources\configs\abilities\electricity\buff\force_shield.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\FireElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\passive\saint_armor.xml" />
+    <None Include="Assets\Resources\configs\abilities\electricity\passive\making_more_shield.xml" />
+    <None Include="Assets\Resources\configs\items\shields\shield.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\ColdElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\AirElemental.xml" />
+    <None Include="Assets\Resources\configs\abilities\fire\passive\small_regeneration.xml" />
+    <None Include="Assets\Resources\configs\abilities\fire\passive\inner_fire.xml" />
+    <None Include="Assets\Resources\configs\skillSet\heroes\electricity_mage.xml" />
+    <None Include="Assets\Resources\configs\monsters\golems\golem.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\damage\mark_evil.xml" />
+    <None Include="Assets\Resources\configs\abilities\light\passive\god_protection.xml" />
+    <None Include="Assets\Resources\configs\abilities\fire\damage\fire_wall.xml" />
+    <None Include="Assets\Resources\configs\skillSet\heroes\light_mage.xml" />
+    <None Include="Assets\Resources\configs\maps\templates\longRoadToBoss.xml" />
+    <None Include="Assets\Resources\configs\skillSet\heroes\fire_mage.xml" />
+    <None Include="Assets\Resources\configs\abilities\passive\elemental\LightElemental.xml" />
+    <None Include="Assets\Resources\configs\items\activeGems\fire_gem.xml" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:\ruslan_zdor\git\unity_mages\Library\resharper-unity-libs\nunit3.5.0\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIAutomation">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>C:/Users/Ruslan_Zdor/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -283,5 +287,44 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:/Program Files/Unity/Editor\Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:/Program Files/Unity/Editor\Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:/Program Files/Unity/Editor\Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:/Program Files/Unity/Editor\Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:/Program Files/Unity/Editor\Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:/Program Files/Unity/Editor\Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:/Program Files/Unity/Editor\Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:/Program Files/Unity/Editor\Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

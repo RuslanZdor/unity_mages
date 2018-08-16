@@ -1,12 +1,15 @@
 ﻿using System.IO;
 using System.Xml;
 using script;
+using script.system.xml;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LoadGameController : GameScene, IListenerObject {
 
     void Start() {
+        base.Start();
+        isActive = true;
         registerListener(this);
         reload();
      }
@@ -18,8 +21,8 @@ public class LoadGameController : GameScene, IListenerObject {
             if (File.Exists(link)) {
                 var xmldoc = new XmlDocument();
                 xmldoc.Load(link);
-                load.transform.Find("loadField/header").GetComponent<Text>().text = xmldoc["savedGame"]["userName"].InnerText;
-                load.transform.Find("loadField/time").GetComponent<Text>().text = xmldoc["savedGame"]["time"].InnerText;
+                load.transform.Find("loadField/header").GetComponent<Text>().text = xmldoc[XMLGame.XML_SAVED_GAME][XMLGame.XML_USER_NAME].InnerText;
+                load.transform.Find("loadField/time").GetComponent<Text>().text = xmldoc[XMLGame.XML_SAVED_GAME][XMLGame.XML_TIME].InnerText;
             } else {
                 load.transform.Find("delete").gameObject.SetActive(false);
                 load.transform.Find("loadField/header").GetComponent<Text>().text = "New Game";
@@ -33,8 +36,7 @@ public class LoadGameController : GameScene, IListenerObject {
         navigation().closeActiveWindow();
 
         if (File.Exists(link)) {
-            mc.addMessage(new GameMessage(MessageType.OPEN_MAIN_MENU));
-
+            navigation().openMainMenu();
             var gm = new GameMessage(MessageType.LOAD_SAVED_GAME);
             gm.parameters.Add(link);
             mc.addMessage(gm);
@@ -54,7 +56,7 @@ public class LoadGameController : GameScene, IListenerObject {
         if (message.type == MessageType.OPEN_LOAD_GAME) {
             enable();
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

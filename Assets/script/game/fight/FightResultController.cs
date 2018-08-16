@@ -24,10 +24,13 @@ public class FightResultController : GameScene, IListenerObject {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            closeResults();
-            if (PartiesSingleton.isHeroesWinner()) {
-                generateMessage(new GameMessage(MessageType.FIGHT_FINISH_HERO_WINS));
+        base.Update();
+        if (isActive) {
+            if (Input.GetKeyDown(KeyCode.Mouse0)) {
+                closeResults();
+                if (PartiesSingleton.isHeroesWinner()) {
+                    generateMessage(new GameMessage(MessageType.FIGHT_FINISH_HERO_WINS));
+                }
             }
         }
     }
@@ -76,7 +79,7 @@ public class FightResultController : GameScene, IListenerObject {
 
         foreach (var go in PartiesSingleton.heroes.getPartyList()) {
             var person = go.GetComponent<PersonController>().person;
-            PartiesSingleton.activeHeroes.FindAll(p => p.name.Equals(person.name))
+            PartiesSingleton.currentGame.activeHeroes.FindAll(p => p.name.Equals(person.name))
                 .ForEach(p => {
                     p.health = person.health;
                     p.mana = person.mana;
@@ -91,7 +94,7 @@ public class FightResultController : GameScene, IListenerObject {
             enable();
             reload();
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

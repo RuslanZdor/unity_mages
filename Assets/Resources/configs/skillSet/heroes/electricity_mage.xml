@@ -1,75 +1,75 @@
 <skillSet>
 	<skill>
 		<ability>configs/abilities/electricity/damage/electricity_strike</ability>
-		<position>
-			<x>1</x>
-			<y>3</y>
-		</position>
+		<Position>
+			<X>1</X>
+			<Y>3</Y>
+		</Position>
 		<requiredLevel>1</requiredLevel>
 		<active>true</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/electricity/buff/force_shield</ability>
-		<position>
-			<x>1</x>
-			<y>2</y>
-		</position>
+		<Position>
+			<X>1</X>
+			<Y>2</Y>
+		</Position>
 		<requiredLevel>1</requiredLevel>
 		<active>false</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/electricity/passive/shield_regeneration</ability>
-		<position>
-			<x>1</x>
-			<y>1</y>
-		</position>
+		<Position>
+			<X>1</X>
+			<Y>1</Y>
+		</Position>
 		<requiredLevel>1</requiredLevel>
 		<active>false</active>
 	</skill>
 
 	<skill>
 		<ability>configs/abilities/electricity/passive/crit_chance</ability>
-		<position>
-			<x>2</x>
-			<y>3</y>
-		</position>
+		<Position>
+			<X>2</X>
+			<Y>3</Y>
+		</Position>
 		<requiredLevel>2</requiredLevel>
 		<active>true</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/electricity/passive/making_more_shield</ability>
-		<position>
-			<x>2</x>
-			<y>2</y>
-		</position>
+		<Position>
+			<X>2</X>
+			<Y>2</Y>
+		</Position>
 		<requiredLevel>2</requiredLevel>
 		<active>false</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/electricity/passive/getting_more_shield</ability>
-		<position>
-			<x>2</x>
-			<y>1</y>
-		</position>
+		<Position>
+			<X>2</X>
+			<Y>1</Y>
+		</Position>
 		<requiredLevel>2</requiredLevel>
 		<active>false</active>
 	</skill>
 	
 	<skill>
 		<ability>configs/abilities/electricity/damage/twin_lighting</ability>
-		<position>
-			<x>3</x>
-			<y>3</y>
-		</position>
+		<Position>
+			<X>3</X>
+			<Y>3</Y>
+		</Position>
 		<requiredLevel>3</requiredLevel>
 		<active>true</active>
 	</skill>
 	<skill>
 		<ability>configs/abilities/electricity/buff/mass_shield</ability>
-		<position>
-			<x>3</x>
-			<y>2</y>
-		</position>
+		<Position>
+			<X>3</X>
+			<Y>2</Y>
+		</Position>
 		<requiredLevel>3</requiredLevel>
 		<active>false</active>
 	</skill>

@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class MissionResultController : GameScene, IListenerObject {
 
-    private GameObject result;
-    private GameObject resultHeader;
-
-    public GameObject personStatistics;
-
     public List<Party> parties = new List<Party>();
 
     void Start() {
         background = "texture/main_scene";
         var image = Resources.Load<Sprite>(background);
         transform.Find(Constants.BACKGROUND).GetComponent<SpriteRenderer>().sprite = image;
-
-
-        result = transform.Find("ResultTable/table").gameObject;
-        resultHeader = transform.Find("ResultTable/Header").gameObject;
-
         registerListener(this);
         disable();
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            closeResults();
+        base.Update();
+        if (isActive) {
+            if (Input.GetKeyDown(KeyCode.Mouse0)) {
+                closeResults();
+            }
         }
     }
 
@@ -37,7 +30,7 @@ public class MissionResultController : GameScene, IListenerObject {
     }
 
     private void reload() {
-        foreach (var p in PartiesSingleton.activeHeroes) {
+        foreach (var p in PartiesSingleton.currentGame.activeHeroes) {
             p.setExpirience(p.experience + 100);
         }
     }
@@ -47,7 +40,7 @@ public class MissionResultController : GameScene, IListenerObject {
             enable();
             reload();
         }
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
     }

@@ -34,9 +34,12 @@ public class DialogController : GameScene, IListenerObject {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isFinished) {
-            destroyMessage();
-            createNextMessage();
+        base.Update();
+        if (isActive) {
+            if (Input.GetKeyDown(KeyCode.Mouse0)) {
+                destroyMessage();
+                createNextMessage();
+            }
         }
     }
 

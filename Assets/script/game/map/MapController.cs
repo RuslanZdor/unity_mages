@@ -5,9 +5,6 @@ using UnityEngine.UI;
 public class MapController : GameScene, IListenerObject {
 
     public GameObject fightPoint;
-
-    public FightStartController fight;
-
     private MissionMap missionMap;
 
     void Start() {
@@ -16,11 +13,14 @@ public class MapController : GameScene, IListenerObject {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.F) && !isFinished) {
-            closeFightMap();
+        base.Update();
+        if (isActive) {
+            if (Input.GetKeyDown(KeyCode.F)) {
+                closeFightMap();
+            }
         }
 
-        if (!isHided && needUpdate) {
+        if (isActive && needUpdate) {
             printFightPoints();
             needUpdate = false;
         }
@@ -36,9 +36,9 @@ public class MapController : GameScene, IListenerObject {
 
         printFightPoints();
 
-        PartiesSingleton.activeHeroes.Clear();
-        PartiesSingleton.activeHeroes.AddRange(PartiesSingleton.selectedHeroes);
-        foreach (var p in PartiesSingleton.activeHeroes) {
+        PartiesSingleton.currentGame.activeHeroes.Clear();
+        PartiesSingleton.currentGame.activeHeroes.AddRange(PartiesSingleton.currentGame.selectedHeroes);
+        foreach (var p in PartiesSingleton.currentGame.activeHeroes) {
             p.initHealthMana();
         }
     }
@@ -82,7 +82,6 @@ public class MapController : GameScene, IListenerObject {
     }
 
     public void openFight(MapPoint mp) {
-        isHided = true;
         needUpdate = true;
         missionMap.currentMapPoint = mp;
         openFightScene();
@@ -99,7 +98,7 @@ public class MapController : GameScene, IListenerObject {
             init();
         }
 
-        if (gameObject.activeInHierarchy && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
+        if (isActive && message.type == MessageType.CLOSE_ACTIVE_WINDOW) {
             disable();
         }
         if (message.type == MessageType.FIGHT_FINISH_HERO_WINS) {
